@@ -1,0 +1,7 @@
+<p> Hi
+
+<p>
+	<%=@invited_by.full_name%> Invited you  to Grapple to collaborate a <%=@collaboration_object.class.name%>
+	<a href=<%="http://localhost:3000/#/app/#{@collaboration_object.class.name.downcase.pluralize}/acccept_invitation/#{@collaboration_object.id}"%> >
+ 		click mail invitation </a>
+</p>

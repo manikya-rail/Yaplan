@@ -1,0 +1,41 @@
+<div class="modal-overlay {{if active 'active' ''}} g-modal-add-collaborator">
+  <div class="modal"  style="width: auto; height: auto;">
+    <a class="close ico_close-mo" href="" {{action (toggle 'active')}}></a>
+    <div class="g-people-modal attachment-document-modal">
+      <div class="dialog-title">{{ if (has-class node 'document') "Document" "Decision" }}</div>
+      <!-- {{reg/support/g-reg-notify type=notification.type msg=notification.msg}} -->
+      <div class="dialog-input">
+        <div style="display: flex; flex-direction: column">
+          <div style="display: flex; flex-direction: row;">
+            <div class='g-form-group' style="flex-grow: 1;">
+              <label class="g-control-label"><h4>Assign to</h4></label>
+              <select name='' id='assignee' class='g-form-control'>
+                {{#each users as |user|}}
+                  <option value={{user.id}}>{{user.fullName}} ({{user.email}})</option>
+                {{/each}}
+              </select><i class="fa fa-angle-down select-down-arrow" aria-hidden="true"></i>
+            </div>
+            {{#if (has-class node 'document')}}
+              <div class='g-form-group' style="margin-left: 10px;">
+                <label class="g-control-label">
+                  <h4>Approver</h4>
+                </label>
+                <select name='' id='approver' class='g-form-control'>
+                  {{#each users as |user|}}
+                    <option value={{user.id}}>{{user.fullName}} ({{user.email}})</option>
+                    {{!-- <li {{ action 'assignTo' user.id }} style="cursor: pointer; cursor: hand;">
+                      <b>{{user.fullName}} ({{user.email}})</b>
+                    </li> --}}
+                  {{/each}}
+                </select>
+              </div>
+            {{/if}}
+          </div>
+          <button class="primary" {{ action 'assignTo' }}>
+            Update
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

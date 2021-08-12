@@ -1,0 +1,277 @@
+<div class='clearfix'>
+	{{reg/support/g-reg-notify type=notification.type msg=notification.msg}}
+	<ul class="pull-right g-list-unstyled-project-toggle grid-list-toogle-category">
+		<li class="mr-1 mt-0">
+			<div class="g-search-filter">
+				<input class="g-search-field" id="searchinput" type="text" placeholder="Search by keyword" oninput={{action 'searchDocuments'}}>
+				<i id="g-search-icon" class="fa fa-search"></i>
+			</div>
+		</li>
+		{{#if templates.length}}
+			{{#if isTile}}
+				 <li class=""  {{action 'isListdata'}} style="margin-right: 10px;"><i class="list-icon" aria-hidden="true"></i></li>
+				<li class="no-margin" {{action 'isTiledata'}}><i class="grid-icon active" aria-hidden="true"></i></li>
+			{{else}}
+				<li class=""  {{action 'isListdata'}} style="margin-right: 10px;"><i class="list-icon active" aria-hidden="true"></i></li>
+				<li class="no-margin " {{action 'isTiledata'}}><i class="grid-icon" aria-hidden="true"></i></li>
+			{{/if}}
+		{{/if}}
+		{{#if isAdmin}}
+			{{#if (if-equal scope 'project' true false)}}
+				<a href='#' style="float: right; margin-left: 15px; " {{action 'create'}}><span class="add-new-project"></span></a>
+			{{/if}}
+		{{/if}}
+	</ul>
+
+</div>
+{{#if archived}}
+<div class="pull-left">
+	<p style="padding: 10px 50px;margin-left: -10px;">ARCHIVED DOCUMENTS</p>
+</div>
+{{/if}}
+{{#unless templates.length}}
+	<div class="mt-2 pt-2" style="text-align: center;">
+		{{#if archived}}
+			<h1>No document templates have been archived.</h1>
+			<h3>When a document template is archived, it will appear here.</h3>
+		{{else if showText}}
+			<h1>It looks like no document templates have been created.</h1>
+			<h3>When a document template is created, it will appear here.</h3>
+		{{else}}
+			<h2>No Document Templates Available</h2>
+		{{/if}}
+	</div>
+{{/unless}}
+{{#if sortedTemplates.length}}
+	<div class='g-form-group pull-right mb-0 mr-2'>
+		<select name='' id='' class='g-form-control' onchange={{action "setSortProps" value="target.value"}}>
+			<option value='updatedAt'>Most Recent</option>
+			<option value='title'>Alphabetical</option>
+			<option value='category'>Category</option>
+		</select><i class="fa fa-angle-down select-down-arrow" aria-hidden="true"></i>
+	</div>
+	<div class='clearfix'></div>
+{{/if}}
+{{#if isTile}}
+{{#if showLoadingText}}
+	<br /><br />
+	<center><h3>Loading...</h3></center>
+{{else}}
+	<div class="g-doc-holder">
+		<div class="">
+			{{#each templates as |template|}}
+				<div class="d-card document-card-holder">
+					<div class="c-container">
+						<div class="top-options" {{action 'clickTemplate' template}}>
+							<h3 class="document-name">{{template.title}}</h3>
+							<div class="doc-text">
+								Category: {{template.category_name}}<br/>
+								{{template.description}}
+							</div>
+						</div>
+						<div class="bottom-options">
+							<div class="bottom-right ">
+								<ul>
+									<li>
+										<div class="tooltip">
+											<i>
+												<span
+													class="tooltip-icon"
+													{{action 'showDocumentInformation' template}}
+												/>
+											</i>
+										</div>
+									</li>
+									<li>
+										<div class="tooltip share-options">
+											<i class="view-more-options" aria-hidden="true"></i>
+											<div class="tooltiptext">
+												{{#if archived}}
+													<span {{action 'restoreDocument' template.id}}>Restore Document</span>
+												{{else}}
+													<span {{action 'previewDocument' template}}>Preview</span>
+													{{#if isAdmin}}
+														{{#if template.is_public}}
+															<span {{action 'unPublishTemplate' template}}>Unpublish Template</span>
+															<span {{action 'assignProject' template}}>Assign to Project</span>
+															<span {{action 'exportDocument' template}}>Export as PDF</span>
+														{{else}}
+															<span {{action 'updateTemplateAttributes' template}}>Update Attributes</span>
+															<span {{action 'clickTemplate' template}}>Edit</span>
+															<span {{action 'archiveDoc' template}}>Archive</span>
+															<span {{action 'publishTemplate' template}}>Publish Template</span>
+														{{/if}}
+													{{else}}
+														{{#if (id-equality template.created_by.id currentUser.user.id)}}
+															<span {{action 'updateTemplateAttributes' template}}>Update Attributes</span>
+															<span {{action 'clickTemplate' template}}>Edit</span>
+															<span {{action 'archiveDoc' template}}>Archive</span>
+														{{/if}}
+														<span {{action 'assignProject' template}}>Assign to Project</span>
+														<span {{action 'exportDocument' template}}>Export as PDF</span>
+													{{/if}}
+												{{/if}}
+											</div>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			{{/each}}
+		</div>
+	</div>
+{{/if}}
+{{/if}}
+
+{{#if isList}}
+{{#if showLoadingText}}
+	<br /><br />
+	<center><h3>Loading...</h3></center>
+{{else}}
+	<table class="templates-table-view">
+		{{#if templates.length}}
+			<tr>
+				<th>Templates</th>
+				<th>Category</th>
+				<th>Description</th>
+				<th>Options</th>
+			</tr>
+			{{#each templates as |template|}}
+				<tr>
+					<td style="cursor: pointer;" {{action 'clickTemplate' template}}>{{template.title}}</td>
+					<td>{{template.category_name}}</td>
+					<td>
+						{{#if template.description}}
+							{{template.description}}
+						{{else}}
+							-
+						{{/if}}
+					</td>
+					<td>
+						<span>
+							<i class="tooltip-icon" style="cursor: pointer;" {{action 'showDocumentInformation' template}}>
+							</i>
+						</span>
+						<span>
+							<span class="view-more-options tooltip" aria-hidden="true">
+								<div class="tooltiptext">
+									<ul>
+										{{#if archived}}
+											<li {{ action 'restoreDocument' template.id }}>Restore Document</li>
+										{{else}}
+											<li {{action 'previewDocument' template}}>Preview</li>
+												{{#if isAdmin}}
+													{{#if template.is_public}}
+														<li {{action 'unPublishTemplate' template}}>Unpublish Template</li>
+														<li {{action 'assignProject' template}}>Assign to Project</li>
+														<li {{action 'exportDocument' template}}>Export as PDF</li>
+													{{else}}
+														<li {{action 'updateTemplateAttributes' template}}>Update Attributes</li>
+														<li {{action 'clickTemplate' template}}>Edit</li>
+														<li {{action 'archiveDoc' template}}>Archive</li>
+														<li {{action 'publishTemplate' template}}>Publish Template</li>
+													{{/if}}
+												{{else}}
+													{{#if (id-equality template.created_by.id currentUser.user.id)}}
+														<li {{action 'updateTemplateAttributes' template}}>Update Attributes</li>
+														<li {{action 'clickTemplate' template}}>Edit</li>
+														<li {{action 'archiveDoc' template}}>Archive</li>
+													{{/if}}
+													<li {{action 'assignProject' template}}>Assign to Project</li>
+													<li {{action 'exportDocument' template}}>Export as PDF</li>
+												{{/if}}
+										{{/if}}
+									</ul>
+								</div>
+							</span>
+						</span>
+					</td>
+				</tr>
+			{{/each}}
+		{{/if}}
+	</table>
+{{/if}}
+{{/if}}
+<div class="mr-2">
+	{{
+		g-pagination 
+		page=page 
+		pages=pages 
+		callNext='callNext' 
+		totalRecords=totalTemplates 
+		prevPage='prevPage'
+		nextPage='nextPage'
+		totalPages=totalPages
+	}}
+</div>
+
+{{#if archived}}
+	{{#link-to "app.templates.documents"}}
+		<p style="color: #87aa5c; cursor:pointer; margin: 0px 0px 60px 40px; "><u>Active Document Templates</u></p>
+	{{/link-to}}
+{{else if archivedDocumentCount}}
+<div style="position:relative">
+	{{#link-to "app.templates.archived-doc-templates"}}
+		{{#if (compare totalTemplates '>' 15)}}
+			<p style="color: #012169; cursor:pointer; margin: 0px 0px 60px 40px; position: absolute; bottom: 30px; width: 400px; ">
+			<u>&nbsp;{{archivedDocumentCount}} Document Templates Archived</u>
+		</p>
+		{{else}}
+			<p style="color: #012169; cursor:pointer; margin: 10px 0px 60px 40px; position: absolute; width: 400px; ">
+			<u>&nbsp;{{archivedDocumentCount}} Document Templates Archived</u>
+			</p>
+		{{/if}}
+	{{/link-to}}
+	</div>
+{{/if}}
+{{
+	documents/modal/g-doc-rename
+	active=onDocumentEdit
+	editDocument=editDocument
+	editDocumentName="editDocumentName"
+}}
+
+{{
+	documents/modal/g-template-category
+	active=onCreateTemplate
+	categories=categories
+}}
+
+{{
+	documents/modal/g-doc-info
+	active=onShowDocumentInformation
+	document=documentInformation
+	categories=categories
+	workflowsAssociated=workflowsAssociated
+	time_zone=time_zone
+	is_template=true
+}}
+
+{{
+	g-project-list
+	template=assignTemplate
+	active=onAssignProject
+	projects=allProjects
+}}
+
+{{
+	g-document-update
+	document=updateTemplate
+	active=onUpdate
+	refreshPage='refreshPage'
+	is_template=true
+}}
+
+{{
+	projects/modal/g-confirm
+	active=onArchive
+	archive_this_Project="null"
+	onArchiveProject='onArchiveProject'
+	archive_this_Document=archive_document_id
+	onArchiveDocument="onArchiveDocument"
+	showNotification='showNotification'
+	refreshPage='refreshPage'
+	deleteDoc='deleteDoc'
+}}

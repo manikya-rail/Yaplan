@@ -1,0 +1,27 @@
+<div class="dashboard-templates-route">
+  <div class="content-header">
+    <span class="tip">Create from scratch, choose a template as a starter or <a class="upload">upload</a> your own document</span>
+    <ol class="g-breadcrumb">
+      <!-- {{#link-to 'app.dashboard.projects' tagName='li' href=true}}My Projects{{/link-to}} -->
+      {{#link-to 'app.projects.project' tagName='li' href=true}}My Projects{{/link-to}}
+      {{#link-to 'app.dashboard.documents' model.project.id tagName='li' href=true}}{{model.project.title}}{{/link-to}}
+        <li class="active">New Document</li>
+    </ol>
+  </div>
+  <div class="content inner">
+    {{g-search placeholder="Search Templates" onChanging="changeKeyword"}}
+    <ul class="g-templates">
+      <li class="blank" {{action 'createDocument'}}>
+        <div class="icon"><i></i></div>
+        <div class="title">Create from Scratch</div>
+      </li>
+
+      {{#each model.templates as |template|}}
+        <li {{action 'createByTemplate' template}}>
+          <div class="icon"></div>
+          <div class="title">{{template.title}}</div>
+        </li>
+      {{/each}}
+    </ul>
+  </div>
+</div>

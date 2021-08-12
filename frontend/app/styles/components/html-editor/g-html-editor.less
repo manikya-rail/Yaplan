@@ -1,0 +1,125 @@
+@import "../../_base";
+
+.g-html-editor {
+  position: relative;
+  padding: 15px;
+  border: 1px solid #e0e0e0;
+  margin-left: 20px;
+  margin-top: 6px;
+  iframe {
+    width: 100%;
+    table {
+      td,th {
+        border-color: #e0e0e0 !important;
+      }
+    }
+  }
+
+  &.empty{
+    &:before{
+      position: absolute;
+      color: #9c9c9c;
+      font-size: 16px;
+      content: "Write something...";
+    }
+  }
+}
+
+.html-editor-toolpane {
+  position: absolute;
+  visibility: hidden;
+  padding: 0 5px;
+  height: 42px;
+  border-radius: 2px;
+
+  z-index: 10;
+  background-color: #37474f;
+
+  span {
+    display: block;
+    float: left;
+    width: 42px;
+    height: 42px;
+    text-align: center;
+    cursor: pointer;
+    color: #fff;
+
+    &:hover {
+      color: @orange;
+    }
+
+    i::after {
+      .fa-icon;
+      line-height: 42px;
+    }
+
+    &.bold i::after {
+      content: @fa-var-bold;
+    }
+    &.italic i::after {
+      content: @fa-var-italic;
+    }
+    &.underline i::after {
+      content: @fa-var-underline;
+    }
+    &.strikeout i::after {
+      content: @fa-var-strikethrough;
+    }
+    &.unordered-list i::after {
+      content: @fa-var-list-ul;
+    }
+    &.ordered-list i::after {
+      content: @fa-var-list-ol;
+    }
+
+    &.align-left i::after {
+      content: @fa-var-align-left;
+    }
+    &.align-center i::after {
+      content: @fa-var-align-center;
+    }
+    &.align-right i::after {
+      content: @fa-var-align-right;
+    }
+    &.align-full i::after {
+      content: @fa-var-align-justify;
+    }
+
+    &.font-up i::after {
+      content: @fa-var-plus-square;
+    }
+    &.font-down i::after {
+      content: @fa-var-minus-square;
+    }
+
+    &.h-2 i::after {
+      font-family: @font-family;
+      content: 'H2';
+    }
+    &.h-3 i::after {
+      font-family: @font-family;
+      content: 'H3';
+    }
+    &.h-4 i::after {
+      font-family: @font-family;
+      content: 'H4';
+    }
+    &.h-5 i::after {
+      font-family: @font-family;
+      content: 'H5';
+    }
+  }
+
+  .arrow {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    left: 50%;
+    bottom: -4px;
+    margin-left: -4px;
+    transform: rotate(45deg);
+
+    background-color: #37474f;
+  }
+}
+

@@ -1,0 +1,16 @@
+
+<div class="payments-route">
+  <div class="content-header">
+    <span class="page-title">Payment Details</span>
+  </div>
+{{#if errors}}
+  {{#each errors.messages}}
+  {{/each}}
+{{/if}}
+  <div class="content inner">
+    <form {{action "chargeUser" this on="submit" id=payment-form}} >
+      {{input value=stripeToken type="text" data-stripe=number}}
+      <button type="submit" class="btn">Pay now</button>
+   </form>
+  </div>
+</div>

@@ -1,0 +1,14 @@
+<!-- {{outlet}} -->
+<div class="projects-route">
+	<div class="content-header collaborator-header">
+		<ul class="submenu">
+      {{#if model.project.project_workflow_id }}
+        {{#link-to "app.dashboard.projecttab.workflow" model.project_id href=true tagName='li'}}Workflowing{{/link-to}}
+      {{/if}}
+			{{#link-to "app.dashboard.projecttab.task" model.project_id href=true tagName='li'}}Task{{/link-to}}
+			{{#link-to "app.dashboard.projecttab.document" model.project_id href=true tagName='li'}}Documents{{/link-to}}
+			{{#link-to "app.dashboard.projecttab.collaborator" model.project_id href=true tagName='li'}}Collaborators{{/link-to}}
+		</ul>
+	</div>
+	{{outlet}}
+</div>

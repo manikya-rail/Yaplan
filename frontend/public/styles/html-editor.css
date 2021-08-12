@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+@font-face {
+  font-family: 'FontAwesome';
+  src: url('/fonts/fontawesome-webfont.eot?v=@{fa-version}');
+  src: url('/fonts/fontawesome-webfont.eot?#iefix&v=@{fa-version}') format('embedded-opentype'),
+  url('/fonts/fontawesome-webfont.woff2?v=@{fa-version}') format('woff2'),
+  url('/fonts/fontawesome-webfont.woff?v=@{fa-version}') format('woff'),
+  url('/fonts/fontawesome-webfont.ttf?v=@{fa-version}') format('truetype'),
+  url('/fonts/fontawesome-webfont.svg?v=@{fa-version}#fontawesomeregular') format('svg');
+//  src: url('@{fa-font-path}/FontAwesome.otf') format('opentype'); // used when developing fonts
+font-weight: normal;
+  font-style: normal;
+}
+
+html, body{
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif !important;
+  color: #2e353a !important;
+  font-size: 10pt;
+  overflow: hidden;
+}
+
+
+
+body > div {
+  outline: none;
+  height: auto;
+  min-height: 150px;
+}
+
+table{
+  border: solid #e0e0e0;
+  border-width: 1px 0 0 1px;
+  border-spacing: 0;
+  font-weight: 100;
+  font-size: 10pt;
+}
+
+tr{
+  border-bottom: 1px solid #e0e0e0;
+  min-height: 20px;
+}
+
+td{
+  border: solid #e0e0e0;
+  border-width: 0 1px 1px 0;
+  height: 20px;
+}
+/*
+table {
+  padding: 0;
+  margin: 0;
+  border-spacing: 0;
+}
+
+td {
+  height: 24px;
+}
+
+td:not(:last-child) {
+  border-right: 1px solid #333;
+}
+
+tr:not(:last-child) td {
+  border-bottom: 1px solid #333;
+}
+*/
+.grapple-image.align-left {
+  display: block;
+  margin: 0 auto 0 0;
+}
+
+.grapple-image.align-right {
+  display: block;
+  margin: 0 0 0 auto;
+}
+
+.grapple-image.align-center {
+  display: block;
+  margin: 0 auto;
+}
+
+.grapple-image{
+  margin: 5px;
+}
+
+.image-pane {
+  position: absolute;
+  visibility: hidden;
+  list-style: none;
+  min-width: 260px;
+  padding: 0 10px;
+  margin: 0;
+  height: 42px;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.image-pane.active {
+  visibility: visible;
+}
+
+.image-pane li {
+  float: left;
+  height: 42px;
+  width: 42px;
+  font: 16px/42px FontAwesome;
+  color: #fff;
+  text-align: center;
+  cursor: pointer;
+}
+
+.image-pane li:hover {
+  color: #ffa000;
+}
+
+.image-pane .align-left:after {
+  content: "\f036";
+}
+
+.image-pane .align-center:after {
+  content: "\f037";
+}
+
+.image-pane .align-right:after {
+  content: "\f038";
+}
+
+.image-pane .size-decrease:after {
+  content: "\f146";
+}
+.image-pane .size-increase:after {
+  content: "\f0fe";
+}
+
+.image-pane .remove {
+  float: right;
+}
+
+.image-pane .remove:after {
+  content: "\f00d";
+}
+
+img.grapple-image.size-ico {
+    width: 5%;
+    min-width: 32px;
+}
+
+img.grapple-image.size-xs {
+    width: 10%;
+    min-width: 64px;
+}
+
+img.grapple-image.size-sm {
+    width: 25%;
+    min-width: 100px;
+}
+
+img.grapple-image.size-md {
+    width: 50%;
+}
+
+img.grapple-image.size-lg {
+    width: 75%;
+}
+
+img.grapple-image.size-full {
+    width: 100%;
+}

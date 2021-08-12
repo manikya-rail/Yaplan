@@ -1,0 +1,77 @@
+@import '../_base';
+
+.g-modal {
+  .modal-overlay {
+    position: fixed;
+    display: none;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+
+    background-color: rgba(0, 0, 0, 0.4);
+
+    &.active {
+      display: block;
+    }
+
+    .modal {
+      .abs-middle;
+
+      position: absolute;
+      padding: 40px 40px 30px 40px;
+
+      background-color: white;
+      border-radius: 2px;
+
+      .close {
+        position: absolute;
+        display: block;
+        top: 22px;
+        right: 22px;
+
+        cursor: pointer;
+      }
+
+      .dialog-title {
+        font-size: @large;
+        margin-bottom: 35px;
+        text-align: center;
+      }
+
+      
+    }
+  }
+
+}
+.modal-invite-member {
+  .modal-body {
+    margin: 0% 5%;    
+  }
+}
+
+.confirm-modal {  
+  .dialog-title {
+    margin-bottom: 15px !important;
+  }
+  .action-buttons {
+    text-align: center;
+    .m-btn {
+      display: inline-block;
+      width: 100px;
+      &.gray-btn-secondary
+      {
+        padding-left: 30px;
+        padding-right: 30px;
+      }
+    }
+  }
+}
+
+.g-modal-add-collaborator {
+  .dialog-title {
+    font-size: 20px !important;
+    font-weight: 500;
+  }
+}

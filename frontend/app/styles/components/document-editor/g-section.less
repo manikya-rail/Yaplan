@@ -1,0 +1,163 @@
+@import '../../_base';
+
+.g-section {
+  position: relative;
+  background-color: #fff;
+
+  .ia-handler {
+    position: relative;
+    float: left;
+    line-height: 24px;
+    margin-right: 10px;
+    cursor: move;
+    left: -10px;
+    top: 16px;
+    z-index: 1;
+  }
+  .g-input-title{
+    display: inline-block;
+    width: ~"calc(100% - 20px)";
+  }
+
+  &.ghost {
+    &:after {
+      position: absolute;
+      content: "";
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+
+      background-color: rgba(255, 255, 255, 0.8);
+    }
+  }
+
+  textarea {
+    border: none;
+    font-size: 18px;
+    color: @dark-gray;
+  }
+
+  .section-menu {
+    position: absolute;
+
+    width: 15px;
+    height: 15px;
+    right: 20px;
+    padding: 5px;
+    border: 1px solid transparent;
+    text-align: center;
+    cursor: pointer;
+    z-index: 1;
+
+    &:after {
+      .fa-icon;
+      content: @fa-var-ellipsis-h;
+    }
+
+    &:hover {
+      border: 1px solid #eee;
+    }
+  }
+
+  .g-popup {
+    top: 60px;
+  }
+
+  .g-dd {
+    margin: 7px -2px 0 0;
+    padding: 15px;
+    &.active {
+      display: block;
+    }
+
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+
+      li {
+        padding: 0 30px 0 10px;
+        line-height: 30px;
+        cursor: pointer;
+      }
+    }
+
+  }
+
+  dl {
+    margin: 0;
+  }
+
+  dt {
+    position: relative;
+
+    i.handle {
+      float: right;
+    }
+  }
+
+  dd {
+    position: relative;
+
+    margin: 24px 0 0 0;
+    padding-bottom: 16px;
+    min-height: 100px;
+    color: #333;
+    // border-bottom: 1px solid #eee;
+
+    .htmleditor {
+      box-sizing: border-box;
+      width: 100%;
+      min-height: 200px;
+      outline: none;
+
+      resize: none;
+
+      &:focus {
+        color: #333;
+      }
+    }
+
+    .upload-button {
+      display: none;
+    }
+
+    .upload-zone {
+      position: absolute;
+      display: none;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: 10000;
+
+      &:after {
+        .fa-icon;
+        display: block;
+        text-align: center;
+        font-size: 30px;
+        content: @fa-var-upload;
+      }
+    }
+  }
+
+  .cells-popup {
+    width: 206px;
+    height: 200px;
+
+    span {
+      display: block;
+      float: left;
+      width: 14px;
+      height: 14px;
+      border:1px solid #999;
+      margin: 0 4px 4px 0;
+
+      &.active{
+        background-color: @orange;
+      }
+    }
+  }
+
+}

@@ -1,0 +1,121 @@
+{{reg/support/g-reg-notify type=notification.type msg=notification.msg}}
+<div class="dashboard-list g-upper-mytask">
+  <div class="dashboard-header">
+    <span class="dashboard-heading">My Tasks</span>
+  </div>
+  <div class="inner-table-horizontal-scroll">
+    {{#if userTasks.length}}
+      {{#each userTasks as |userTask|}}
+        <div style="padding: 10px; border-bottom: 1px solid #ddd;">
+          {{#if (if-equal userTask.constructor.modelName 'activity' true false)}}
+            <div style="display: flex; flex: 1; flex-direction: row; justify-content: space-between; margin-bottom: 10px;">
+              <h3 class="rbt-fnt-med mt-0" style="flex: 1;">{{userTask.text}} - {{userTask.trackable.title}}</h3>
+              <div class="pull-right" style="align-items: center; display: flex;">
+                <button
+                  class="outline-info-btn" {{ action 'rejectInvite' userTask}}
+                >
+                  Reject
+                </button>
+                <button
+                  class="outline-info-btn" {{ action 'acceptInvite' userTask}}
+                >
+                  Accept
+                </button>
+              </div>
+            </div>
+          {{else}}
+            <div style="display: flex; flex: 1; flex-direction: row; justify-content: space-between; margin-bottom: 10px;">
+              <h3 class="rbt-fnt-med mt-0" style="flex: 1;cursor:pointer;" {{action 'showTaskInfo' userTask}}>{{userTask.task.title}} ({{userTask.projectName}})</h3>
+              <div class="pull-right" style="align-items: center; display: flex;">
+                <div class="right">
+                  {{#if (if-equal userTask.taskType 'approve' true false) }}
+                    <button
+                      class="outline-info-btn" {{ action 'showRejectReason' userTask}}
+                    >
+                      {{#if (if-equal userTask.task.type "Document" true false)}}
+                        Reject Document
+                      {{else}}
+                        Reject
+                      {{/if}}
+                    </button>
+                    <button
+                      class="outline-info-btn"
+                      {{ action 'acceptTask' userTask}}
+                    >
+                      {{#if (if-equal userTask.task.type "Document" true false)}}
+                        Approve Document
+                      {{else}}
+                        Accept
+                      {{/if}}
+                    </button>
+                  {{else if (if-equal userTask.taskType 'decision' true false) }}
+                    <button
+                      class="trans-gray-btn" {{ action 'showRejectReason' userTask}}
+                    >
+                      Reject
+                    </button>
+                    <button
+                      class="gray-btn-secondary ml-1"
+                      {{ action 'acceptTask' userTask}}
+                    >
+                      Approve
+                    </button>
+                  {{else if (if-equal userTask.taskType 'assign' true false) }}
+                    <button
+                      class="outline-info-btn"
+                      {{action 'acceptTask' userTask}}
+                    >
+                      {{#if (if-equal userTask.task.type "Document" true false)}}
+                        {{#if userTask.reIssued}}
+                          Re-Issue for Approval
+                        {{else}}
+                          Issue for Approval
+                        {{/if}}
+                      {{else}}
+                        {{#if userTask.reIssued}}
+                          Re-Mark as Complete
+                        {{else}}
+                          Mark as Complete
+                        {{/if}}
+                      {{/if}}
+                    </button>
+                  {{/if}}
+                </div>
+              </div>
+            </div>
+            {{#if (if-equal userTask.task.type "Document" true false)}}
+              {{#if (if-equal userTask.taskType 'approve' true false)}}
+                <p class="rbt-fnt-reg task-descp no-margin">This document has been submitted for review and is awaiting your approval.</p>
+              {{else if (if-equal userTask.taskType 'assign' true false) }}
+                {{#if userTask.reIssued}}
+                  <p class="rbt-fnt-reg task-descp no-margin">This document was not approved. It requires your review and re-issue for approval when ready.</p>
+                {{else}}
+                  <p class="rbt-fnt-reg task-descp no-margin">This document is the next task in this project. It is ready for your review and issue for approval when ready.</p>
+                {{/if}}
+              {{/if}}
+            {{else if (if-equal userTask.task.type "Decision" true false)}}
+              <p class="rbt-fnt-reg task-descp no-margin">A decision regarding this project is ready for your review. Please click <a href={{false}} {{ action 'showDescription' userTask}}>here</a> for more information.</p>
+            {{else}}
+              {{#if (if-equal userTask.taskType 'approve' true false)}}
+                <p class="rbt-fnt-reg task-descp no-margin">This action has been marked as complete and is awaiting your confirmation.</p>
+              {{else if (if-equal userTask.taskType 'assign' true false) }}
+                {{#if userTask.reIssued}}
+                  <p class="rbt-fnt-reg task-descp no-margin">This action was not confirmed. It requires your review and re-mark as complete when ready. Please click <a href={{false}} {{ action 'showDescription' userTask}}>here</a> for more information.</p>
+                {{else}}
+                  <p class="rbt-fnt-reg task-descp no-margin">This action is the next task in this project. It is ready for you to undertake and mark as complete when ready. Please click <a href={{false}} {{ action 'showDescription' userTask}}>here</a> for more information.</p>
+                {{/if}}
+              {{/if}}
+            {{/if}}
+          {{/if}}
+        </div>
+      {{/each}}
+    {{else}}
+      <div class="no-content">
+        No pending tasks
+      </div>
+    {{/if}}
+  </div>
+</div>
+{{ g-decision-description userTask=selectedUserTask active=taskDescActive}}
+{{ tasks/g-reject-popup task=selectedTask rejectTask='rejectTask' active=rejectReasonVisible }}
+{{ g-task-info userTask=selectedUserTask active=onShowTaskInfo }}

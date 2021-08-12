@@ -1,0 +1,29 @@
+<div class="modal-overlay {{if active 'active' ''}} g-modal-add-collaborator">
+{{reg/support/g-reg-notify type=notification.type msg=notification.msg}}
+	<div class="modal"  style="width: auto; height: auto;">
+		<a class="close ico_close-mo" href="" {{action (toggle 'active')}}></a>
+		<div class="g-people-modal attachment-document-modal">
+			<div class="dialog-title">Choose Project</div>
+			<div class="dialog-input g-vertical-doc-scroll">
+				<div class="colloborator-modal">
+					{{#if showMessage}}
+						<center><p>Loading..</p></center>
+					{{else}}
+					<ul class="document-attach-list">
+						{{#if projects}}
+							{{#each projects as |project|}}
+								<li {{ action 'selectProject' project.id project.title project}} style="cursor: pointer; cursor: hand;">
+									<b>{{project.title}}</b>
+								</li>
+							{{/each}}
+						{{else}}
+							<center><h3>No Projects</h3></center>
+						{{/if}}
+					</ul>
+					{{/if}}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+

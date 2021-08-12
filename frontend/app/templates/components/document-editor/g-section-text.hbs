@@ -1,0 +1,19 @@
+<dl class="g-section-text">
+  <dt>
+  	<label class="editor-label">Section Heading</label>
+    {{
+      document-editor/support/g-elastic-input 
+      model=sectionTextProxy.title 
+      linkedDocuments=linkedDocuments 
+      placeholder="Untitled Section"
+    }}
+   <!-- {{input value=sectionTextProxy.title placeholder="Untitled Section"}} -->
+  </dt>
+  <dd>
+  	<label class="editor-label" style="margin-left: 20px;">Section Body</label>
+    <div id={{editorId}}>
+      {{tinymce-editor options=options value=sectionTextProxy.text}}
+    </div>
+  </dd>
+  <div id="upload_zone_{{sectionText.id}}" class="upload-zone"></div>
+</dl>

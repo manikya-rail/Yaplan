@@ -1,0 +1,46 @@
+.g-breadcrumb {
+  display: inline-block;
+  padding-left: 0;
+  margin: 0;
+
+  list-style: none;
+  line-height: 64px;
+
+  &::after {
+    content: ' ';
+    display: block;
+    clear: both;
+  }
+
+  li {
+    float: left;
+    font-size: 16px;
+
+    &:not(:last-child) {
+      color: @mid-gray;
+      cursor: pointer;
+
+      &::after {
+        margin: 0 15px;
+        color: @mid-gray;
+        content: ' ► ';
+      }
+    }
+
+    a {
+      color: @mid-gray;
+      text-decoration: none;
+    }
+  }
+}
+.g-document-header-limit-character {
+  display: block;
+  max-width: 400px;
+  display: block;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+   

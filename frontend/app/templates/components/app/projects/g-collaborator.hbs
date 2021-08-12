@@ -1,0 +1,108 @@
+<div class="g-collaborator-pane cust-collaborator">
+	{{reg/support/g-reg-notify type=notification.type msg=notification.msg}}
+	<div class="person">
+		<div class="profile-pic" style="background-image: url('{{project.created_by.portrait.image.url}}');"></div>
+		<div>
+			<div class="info">
+				<h6 class="stats">Role</h6>
+				<p class="title">Project Manager</p>
+			</div>
+			<div class="info">
+				<h6 class="stats">Project Name</h6>
+				<p class="title">{{project.title}}</p>
+			</div>
+		</div>
+		<div>
+			<div class="info">
+				<h6 class="stats">Email</h6>
+				<p class="title g-limit-char" title="{{project.created_by.email}}">{{project.created_by.email}}</p>
+			</div>
+			{{#if (if-equal project.workflow null false true)}}
+				<div class="info">
+					<h6 class="stats">Workflow</h6>
+					<p class="title">{{project.workflow}}</p>
+				</div>
+			{{/if}}
+		</div>
+	</div>
+</div>
+
+<div class="sub-title-holder mt-2">
+	<span>PROJECT COLLABORATORS</span>
+	<div align="right">
+		<button class="gray-btn-secondary" style=" width:auto !important; margin: 0 15px;"  {{action 'addCollaborator' project.created_by.id}}>Add Invite</button>
+	</div>
+</div>
+
+<div class="collabrator-tab">
+	<div id="Collaborators" class="tab-content">
+		{{#if showMessage}}
+			<p align="center">Loading ..</p>
+		{{else}}
+		{{#unless collaborators.length}}
+			<p align="center">No Collaborators available</p>
+		{{/unless}}
+		<div>
+			<table style="margin-top: 0px;">
+				{{#if collaborators.length}}
+					<tr>
+						<th> <b>Name</b></th>
+						<th> <b>Email</b></th>
+						<th> <b>Access Level</b> </th>
+						<th> <b>Role</b></th>
+						<th> <b>Status</b></th>
+					</tr>
+					{{#each collaborators as |collaborator|}}
+						<tr>
+							<td>{{collaborator.user_name}}</td>
+							<td class="g-limit-char" title="{{collaborator.user_email}}">{{collaborator.user_email}}</td>
+							<td>
+								{{#if collaborator.project_access}}
+									Project
+								{{else}}
+									{{#if collaborator.document_access}}
+										<p class="no-margin" style="cursor:pointer; color:#51caff" {{action 'showDocuments' collaborator.document_access}}>Document</p>
+									{{else}}
+										Document
+									{{/if}}
+								{{/if}}
+							</td>
+							<td>{{collaborator.role}}</td>
+							<td>
+								{{#if collaborator.project_access}}
+									{{#if   (if-equal collaborator.status 'Pending' true false)}}
+										<p class="no-margin" style="color:#51caff">{{collaborator.status}}</p>
+									{{/if}}
+									{{#if   (if-equal collaborator.status 'Accepted' true false)}}
+										<p class="no-margin" style="color:#87aa5c;">{{collaborator.status}}</p>
+									{{/if}}
+									{{#if   (if-equal collaborator.status 'Rejected' true false)}}
+										<p class="no-margin" style="color:#b74138;">{{collaborator.status}}</p>
+									{{/if}}
+								{{else}}
+									{{#if collaborator.document_access}}
+										<p class="no-margin" style="cursor:pointer;  color:#51caff" {{action 'showDocuments' collaborator.document_access}}><u>View Status</u></p>
+									{{else}}
+										View Status
+									{{/if}}
+								{{/if}}
+
+								
+							</td>
+						</tr>
+					{{/each}}
+				{{/if}}
+			</table>
+		</div>
+		{{/if}}
+	</div>
+</div>
+
+{{
+	app/projects/modal/g-invite-collaborator
+	active=isAddCollaboratorOpened project_id=project.id document_id="null"
+	inviteCollaborators='inviteCollaborators' collaborators=collaborators
+	collaborations=collaborations
+}}
+
+{{g-document-list documents=documentsAssigned active=onShowAssignedDocuments}}

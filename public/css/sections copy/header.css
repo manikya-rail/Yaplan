@@ -1,0 +1,104 @@
+#section-header{
+	background: url('/assets/imgs/background-header.png') no-repeat;
+	background-size: cover;
+	border: 20px solid #fff;
+	color: white;
+}
+
+#section-header h1, #section-header h3{
+	color: white
+}
+#section-header .header__top{
+	padding: 30px;
+	margin-bottom: 120px;
+}
+#section-header .header__top::after{
+	content: '';
+	display: block;
+	clear: both;
+}
+#section-header .header__top > * {
+	display: inline-block;
+	float: right;
+}
+#section-header .header__top > .gl-logo{
+	float: left;
+}
+#section-header .header__top > .gl-link{
+	margin-right : 20px;
+
+	-webkit-transform: translateY(50%);
+	-ms-transform: translateY(50%);
+	transform: translateY(50%);
+}
+
+#section-header .header__intro{
+	margin-bottom: 80px;
+}
+
+#section-header .header__separator{
+	width: 50px;
+	height: 3px;
+	margin: 0px auto 80px;
+
+	background-color: rgba(255, 255, 255, 0.2);
+}
+
+#section-header .header__cta{
+	font-family: 'Raleway-Regular';
+	font-size: 24px;
+}
+#section-header .header__cta .gl-button{
+	margin: 80px 0px 100px;
+}
+#section-header .header__cta span{
+	margin: 0px 3px;
+
+	font-family: 'Raleway-ExtraBold';
+	font-size: 40px;
+}
+
+#section-header .header__subscribe{
+	padding: 30px 40px 30px;
+}
+#section-header .header__subscribe > .form-block{
+	width: 100%;
+}
+
+#section-header .header__subscribe .form-content {
+	font-size: 0px;
+}
+#section-header .header__subscribe .form-intro{
+	margin-bottom: 15px;
+
+	font-family: 'Roboto';
+	font-size: 14px;
+}
+#section-header .header__subscribe .form-content input{
+	box-sizing: border-box;
+	width: 280px;
+	height: 48px;
+	margin: 0px;
+	padding-left: 20px;
+	padding-right: 20px;
+
+	text-align: left;
+	border: none;
+	border-top-right-radius: 0px;
+	border-bottom-right-radius: 0px;
+	border-top-left-radius: 2px;
+	border-bottom-left-radius: 2px;
+
+	font-family: 'Roboto';
+	font-size: 14px;
+}
+#section-header .header__subscribe .form-content button{
+	border-top-left-radius: 0px;
+	border-bottom-left-radius: 0px;
+}
+
+#section-header .header__nav {
+	padding: 30px;
+
+	text-align: right;
+}

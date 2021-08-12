@@ -1,0 +1,27 @@
+{
+  "extends": ["eslint:recommended", "plugin:import/errors", "plugin:import/warnings", "airbnb-base"],
+  "plugins": ["html", "import"],
+  "settings": {
+    "html/html-extensions": [".hbs"],
+    "import/core-modules": ["ember"]
+  },
+  "env": {
+    "browser": true,
+    "es6": true,
+    "node": true,
+  },
+  "globals": {
+    "cytoscape": true,
+    "NProgress": true,
+  },
+  "rules": {
+    "quotes": [2, "single", "avoid-escape"],
+    "indent": [2],
+    "func-names": 0,
+    "no-use-before-define": [2, "nofunc"],
+    "prefer-arrow-callback": 0,
+    "prefer-rest-params": 0,
+    "import/no-unresolved": 0,
+    "no-underscore-dangle": 0
+  }
+}

@@ -1,0 +1,122 @@
+@import '../_base';
+
+@import "../components/dashboard/g-choose-project";
+
+.dashboard-projects-route {
+
+  .inner{ padding: 0 0 0 100px; }
+
+  .content-header {
+    .inner;
+
+    position: relative;
+    height: 64px;
+    background-color: #fff;
+
+    .project-title {
+      .fs-medium;
+
+      line-height: 64px;
+      color: @dark-gray;
+    }
+
+    button.add{
+      position: absolute;
+      right: 100px;
+      top: 30px;
+    }
+
+    .choose-project{
+      .i-chevron-down;
+
+      &.on{
+        .i-chevron-up;
+      }
+
+      float: right;
+      margin: 13px 20px 0 0;
+    }
+
+    .project-sortby{
+      .i-chevron-down;
+
+      position: relative;
+
+      &.on{
+        .i-chevron-up;
+      }
+
+      float: right;
+      margin: 13px 80px 0 0;
+    }
+  }
+}
+
+.project-documents {
+    background: url(/assets/images/Group-372.png) no-repeat center;
+    height: 85px;
+    width: 125px;
+    /*margin-left: 37%;*/
+    /*margin-top: 6%;*/
+    margin: 0 auto;
+}
+.project1-documents {
+    background: url(/assets/images/Group-374.png) no-repeat center;
+    height: 85px;
+    width: 125px;
+    /*margin-left: 43%;*/
+    /*margin-top: 6%;*/
+    margin: 0 auto;
+}
+.project-word
+{
+  /*margin: 10px;*/
+  margin-top: 20px;
+  font-size: 20px;
+}
+/*.flex-rectangle:hover {
+  box-shadow: 0 2px 9px rgba(0, 0, 0, 0.2);
+  -webkit-transform: scale(1, 1);
+  transform: scale(1, 1);
+  cursor: pointer;
+  .project-documents {
+    background: url(/assets/images/noun_583248_cc.png) no-repeat;
+  }
+  .project-word {
+    color:#ffa000;
+  }
+}*/
+.flex-rectangle{
+  padding: 40px 0px;
+    &:hover {
+    box-shadow: 0 2px 9px rgba(0, 0, 0, 0.2);
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1);
+    cursor: pointer;
+    .project1-documents {
+      background: url(/assets/images/noun_542002_cc.png) no-repeat center;
+    }
+    .project-documents {
+      background: url(/assets/images/noun_583248_cc.png) no-repeat center;
+    }
+    .project-word {
+      color:#ffa000;
+    }
+  }
+}
+.create-project-holder{
+  padding: 30px;
+  .right-box{
+    margin-left: 15px;
+    margin-right: 0;
+  }
+}
+.project-block{
+  padding: 30px;
+  .g-projects{
+    margin:0;
+  }
+  .card-header li{
+    height:7px;
+  }
+}

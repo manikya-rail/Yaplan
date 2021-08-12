@@ -1,0 +1,195 @@
+{{reg/support/g-reg-notify type=notification.type msg=notification.msg}}
+<div class="workflow-disable-ipad">
+  <h1>Please use desktop browser for workflow configuration</h1>
+</div>
+<div class="workflow-toggle-click">
+  <input id="workflow-slide-sidebar" type="checkbox" role="button" />
+  <label class="workflow-slide-sidebar-label" for="workflow-slide-sidebar">
+    <span>
+      <i class="fa fa-caret-right fa-uni-icon" aria-hidden="true"></i>
+      <i class="fa fa-caret-left fa-uni-icon" aria-hidden="true"></i>
+    </span>
+  </label>
+
+  <div class='first-flex'>
+    <div id="workflow-editor" />
+  </div>
+
+  <div class="flex-aside">
+    <div class='dashboard-list'>
+      <div class='dashboard-header g-side-dashboard-header q-text-uppercase'>
+        Add Component
+      </div>
+      <ul class="g-list-unstyled">
+        <li class="workflow-icon-set" title="Project Start/End">
+          <i class="g-w-icon g-a-start" {{action 'addComponent' 'startStop'}}>
+          </i>
+        </li>
+        <li class="workflow-icon-set" title="Document">
+          <i
+            class="g-w-icon g-a-doc" id="add-document"
+            {{ action 'addComponent' 'document' }}
+          >
+          </i>
+        </li>
+        <li class="workflow-icon-set" title="Decision">
+          <i class="g-w-icon g-a-dia" {{ action 'addComponent' 'decision' }} />
+        </li>
+        <li class="workflow-icon-set" title="Communication">
+          <i
+            class="g-w-icon g-a-triangle"
+            {{ action 'addComponent' 'communication' }}
+          />
+        </li>
+        <li class="workflow-icon-set" title="Action">
+          <i
+            class="g-w-icon g-a-hexa"
+            {{ action 'addComponent' 'action' }}
+          />
+        </li>
+      </ul>
+      <button
+        class="g-btn-workflow"
+        style="border-bottom: none; border-top: 1px solid #eee; margin-top:10px"
+        {{ action 'save' }}
+      >
+        Update workflow
+      </button>
+      {{!-- <button
+        class="g-btn-workflow"
+        style="border-bottom: none; border-top: 1px solid #eee; margin-top:10px"
+        {{action 'save' (if-equal projectWorkflow.published false true false)}}
+      >
+        {{ if projectWorkflow.published 'Unpublish' 'Publish' }} template
+      </button> --}}
+      <button
+        class="g-btn-workflow"
+        style="border-bottom: none; border-top: 1px solid #eee; margin-top:10px"
+        {{ action 'generatePreview'}}
+      >
+        Preview Template
+      </button>
+    </div>
+  </div>
+</div>
+
+{{
+  workflows/label-input active=labelEditorActive
+  updateLabel='updateLabel' labelToEdit=labelToEdit isDecision=isDecision
+}}
+{{
+  document-picker
+  documents=documents
+  active=documentPickerActive
+  selectDocument='selectDocument'
+}}
+{{
+  workflows/g-communication
+  active=communicationActive
+  step=selectedStep
+  node=selectedNode
+  updateCommunication='updateCommunication'
+  cancelCommunication='cancelCommunication'
+}}
+{{
+  workflows/g-action
+  active=actionActive
+  step=selectedStep
+  users=model.collaborators
+  updateAction='updateAction'
+  cancelAction='cancelAction'
+}}
+{{
+  workflows/g-decision-info
+  active=decisionActive
+  step=selectedStep
+  users=model.collaborators
+  updateDecision='updateDecision'
+  cancelDecision='cancelDecision'
+}}
+{{
+  workflows/g-document-info
+  active=documentInfoActive
+  step=selectedStep
+  users=model.collaborators
+  docs=documents
+  updateDocumentInfo='updateDocumentInfo'
+  cancelDocumentInfo='cancelDocumentInfo'
+}}
+{{
+  workflows/workflow-template-preview snapshot=snapshot active=showPreview
+}}
+
+<style>
+  .first-flex {
+    display: flex;
+    flex: 1;
+  }
+  .flex-container {
+    display: flex;
+    height: 100%;
+  }
+
+  .flex-horizontally-scrolled-items {
+    display: flex;
+    width: 100%;
+    overflow-x: scroll;
+    border-right: 1px solid #EEE;
+  }
+  /*.flex-workflow {
+    
+    flex-grow: 1;
+    position: fixed;
+  }*/
+  .flex-aside {
+    width: 250px;
+    position: fixed;
+    right: 0;
+    top: 170px;
+    height: 72vh;
+    overflow-y: auto;
+    background-color: #fff;
+    z-index: 1;
+    -webkit-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    transition: all 0.4s;
+  }
+  #workflow-editor {
+    height: 100vh;
+    width: 100%;
+    resize: both;
+    /*position: fixed;*/
+  }
+
+  #workflow-editor canvas:last {
+    display: none;
+  }
+  .workflow-textarea {
+    width: 95% !important;
+    padding-right: 0px !important;
+    min-height: 36px;
+  }
+  textarea.workflow-text {
+    height: 120px !important;
+  }
+  .workflow-text {
+    /*height: 36px !important;*/
+    padding-right: 0px !important;
+  }
+  .ctxt-item {
+    background-color: white;
+    font-family: 'Lato', sans-serif;
+    height: 30px;
+
+  }
+  .ctxt-menu {
+    border-radius: 2px !important;
+    border-color: rgb(238, 238, 238) !important;
+  }
+  #node-resize {
+    z-index: 4 !important;
+  }
+  .tooltiptext {
+    display: none;
+  }
+</style>

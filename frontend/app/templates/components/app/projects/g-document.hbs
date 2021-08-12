@@ -1,0 +1,421 @@
+<div class='clearfix' style="margin-right: 10px;">
+	<ul class="pull-right g-list-unstyled-project-toggle grid-list-toogle">
+		<li class="mr-1 mt-0">
+			<div class="g-search-filter">
+				<input class="g-search-field" id="searchinput" type="text" placeholder="Search by keyword" oninput={{action 'searchDocuments'}}>
+				<i id="g-search-icon" class="fa fa-search"></i>
+			</div>
+		</li>
+		{{#if isTile}}
+				<li class=""  {{action 'isListdata'}} style="margin-right: 10px;"><i class="list-icon" aria-hidden="true"></i></li>
+				<li class="no-margin" {{action 'isTiledata'}}><i class="grid-icon active" aria-hidden="true"></i></li>
+			{{/if}}
+			{{#if isList}}
+				<li class=""  {{action 'isListdata'}} style="margin-right: 10px;"><i class="list-icon active" aria-hidden="true"></i></li>
+				<li class="no-margin " {{action 'isTiledata'}}><i class="grid-icon" aria-hidden="true"></i></li>
+			{{/if}}
+		{{#if (if-equal scope 'project' true false)}}
+			{{#if showDocuments}}
+				<a href='#' style="float: right; margin-left: 15px; " {{action 'createDocument'}}><span class="add-new-project"></span></a>
+			{{/if}}
+		{{else}}
+			<a href='#' style="float: right; margin-left: 15px; " {{action 'showProjects'}}><span class="add-new-project"></span></a>
+		{{/if}}
+	</ul>
+</div>
+{{#if showDocuments}}
+
+	{{#if sortedDocs.length}}
+	{{else if (if-equal scope 'project' true false)}}
+		<div style="text-align: center;">
+			{{#if showText}}
+				<h2>It looks like no documents have been created for this project</h2>
+				<h4>When a document is created for this project, or assigned to the project workflow, it will appear here.</h4>
+			{{else}}
+				<h3>No Documents Available</h3>
+			{{/if}}
+		</div>
+	{{/if}}
+
+
+	{{#unless sortedDocs.length}}
+		{{#if (if-equal scope 'user' true false)}}
+			{{#if showText}}
+				<div style="text-align: center;">
+					<h1>It looks like no documents have been created.</h1>
+					<h3>When a document is created for a project, or assigned to a project workflow, it will appear here.</h3>
+				</div>
+			{{else}}
+				<div style="text-align: center;">
+					<h3>No Documents Available</h3>
+				</div>
+			{{/if}}
+
+		{{/if}}
+	{{/unless}}
+
+	<div class="g-document-card-block">
+		{{reg/support/g-reg-notify type=notification.type msg=notification.msg}}
+		{{#if sortedDocs.length}}
+		<div class='g-form-group pull-right mb-0 mr-2'>
+			<select name='' id='' class='g-form-control' onchange={{action "setSortProps" value="target.value"}}>
+				<option value='updatedAt'>Most Recent</option>
+				<option value='title'>Alphabetical</option>
+				{{#if (if-equal scope 'user' true false)}}
+					<option value='project'>Project</option>
+					<option value='category'>Category</option>
+				{{/if}}
+			</select><i class="fa fa-angle-down select-down-arrow" aria-hidden="true"></i>
+		</div>
+		{{/if}}
+		<div class='clearfix'></div>
+		{{#if isTile}}
+		{{#if showLoadingText}}
+			<center><h3>Loading...</h3></center>
+		{{else}}
+			<div class="g-doc-holder">
+				{{#each sortedDocs as |doc|}}
+					{{#if doc.is_template}}
+						{{else}}
+							<div class="d-card document-card-holder">
+								<div class="c-container">
+									<div class="top-options" {{action 'clickDocument' doc}}>
+										{{#if   (if-equal doc.state 'created' true false)}}
+											<i class="status-circle" style="border: 2px solid #898989" title="Created" ></i>
+										{{/if}}
+										 {{#if   (if-equal doc.state 'assigned' true false)}}
+											<i class="status-circle" style="background-color: #012169" title="Assigned"></i>
+										{{/if}}
+										 {{#if   (if-equal doc.state 'approved' true false)}}
+											<i class="status-circle" style="background-color: #3cba54" title="Approved"></i>
+										{{/if}}
+										{{#if   (if-equal doc.state 'rejected' true false)}}
+											<i class="status-circle" style="background-color: #db3236" title="Rejected"></i>
+										{{/if}}
+										{{#if   (if-equal doc.state 'published' true false)}}
+											<i class="status-circle" style="background-color: #3cba54" title="Published"></i>
+										{{/if}}
+										{{#if   (if-equal doc.state 'draft' true false)}}
+											<i class="status-circle" style="background-color: #db8d3b" title="Draft"></i>
+										{{/if}}
+										{{#if   (if-equal doc.state 'paused' true false)}}
+											<i class="status-circle" style="background-color: #898989" title="Paused"></i>
+										{{/if}}
+										<h3 class="document-name">{{doc.title}}</h3>
+
+										<div class="doc-text">Project Name: {{doc.project.title}} <br/> {{doc.description}}</div>
+									</div>
+									<div class="bottom-options">
+										<div class="bottom-left pull-left">
+												{{#if   (if-equal doc.collaborators.length '0' false true)}}
+													{{#link-to "app.projects.projecttab.collaborator" doc.project.id}}
+														<span class="icon-collborator"><i class="user-icon"></i></span><span class="document-colla-count">{{doc.collaborators.length}}</span>
+													{{/link-to}}
+											{{/if}}
+										</div>
+										{{#if doc.linked_documents}}
+ 											<div class="bottom-left pull-left">
+ 												<span class="link-col-icon"  {{action 'showLinkedDcouments' doc.linked_documents}}></span><span class="document-colla-count">{{doc.linked_documents.length}}</span>
+ 											</div>
+ 										{{/if}}
+										<div class="bottom-right ">
+											<ul>
+												<li>
+													<div class="tooltip"><i><span class="tooltip-icon" {{action 'showDocumentInfo' doc}}></span></i>
+													</div>
+												</li>
+												<li>
+													<div class="tooltip share-options"><i class="view-more-options" aria-hidden="true"></i>
+														<div class="tooltiptext">
+															<span {{action 'updateAttributes' doc}}>Update Attributes</span>
+															{{#link-to 'app.documents.editor' doc.id tagName='span'}}Edit{{/link-to}}
+															{{#link-to 'app.documents.preview' doc.id tagName='span'}}Preview{{/link-to}}
+															<span {{action 'saveAsTemplate' doc}}>Save as Template</span>
+															<span {{action 'archiveDoc' doc}}>Archive</span>
+														</div>
+													</div>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+					{{/if}}
+				{{/each}}
+				<div class="mr-2">
+					{{
+						g-pagination 
+						page=page 
+						pages=pages 
+						callNext='callNext' 
+						totalRecords=totalDocuments 
+						prevPage='prevPage'
+						nextPage='nextPage'
+						totalPages=totalPages
+					}}
+				</div>
+			</div>
+		{{/if}}
+		{{/if}}
+		{{#if isList}}
+		{{#if showLoadingText}}
+			<center><h3>Loading...</h3></center>
+		{{else}}
+			<table class="project-table-view ml-3">
+				{{#if sortedDocs.length}}
+					<tr>
+						<th>Document Title</th>
+						<th>Document Owner</th>
+						<th>Project Name</th>
+						<th>Document Description</th>
+						<th>Options</th>
+					</tr>
+					{{#each sortedDocs as |doc|}}
+						<tr>
+							{{#if doc.is_template}}
+							{{else}}
+								<td style="cursor:pointer">
+									{{#if   (if-equal doc.state 'created' true false)}}
+											<i class="status-circle" style="border: 2px solid #898989" title="Created"></i>
+										{{/if}}
+										 {{#if   (if-equal doc.state 'assigned' true false)}}
+											<i class="status-circle" style="background-color: #012169" title="Assigned"></i>
+										{{/if}}
+										 {{#if   (if-equal doc.state 'approved' true false)}}
+											<i class="status-circle" style="background-color: #3cba54" title="Approved"></i>
+										{{/if}}
+										{{#if   (if-equal doc.state 'rejected' true false)}}
+											<i class="status-circle" style="background-color: #db3236" title="Rejected"></i>
+										{{/if}}
+										{{#if   (if-equal doc.state 'published' true false)}}
+											<i class="status-circle" style="background-color: #3cba54" title="Published"></i>
+										{{/if}}
+										{{#if   (if-equal doc.state 'draft' true false)}}
+											<i class="status-circle" style="background-color: #db8d3b" title="Draft"></i>
+										{{/if}}
+										{{#if   (if-equal doc.state 'paused' true false)}}
+											<i class="status-circle" style="background-color: #898989" title="Pushed"></i>
+										{{/if}}
+										{{#if doc.linked_documents}}
+ 											<div class="bottom-left pull-left">
+ 												<span class="link-col-icon" style="margin-right: 8px;"{{action 'showLinkedDcouments' doc.linked_documents}}></span>
+ 											</div>
+ 										{{/if}}
+									<span style="padding-right: 20px;" {{action 'clickDocument' doc}}>{{doc.title}}</span>
+								</td>
+								<td>{{doc.created_by.full_name}}</td>
+								<td>
+									{{doc.project.title}}
+								</td>
+								<td>
+									{{#if doc.description}}
+										{{doc.description}}
+									{{else}}
+										-
+									{{/if}}
+								</td>
+								<td class="pl-1">
+									<span>
+										<i class="tooltip-icon" {{action 'showDocumentInfo' doc}}>
+										</i>
+									</span>
+									<span>
+										<span class="view-more-options tooltip" aria-hidden="true">
+											<div class="tooltiptext">
+												<ul>
+													<li><a {{action 'updateAttributes' doc}}>Update Attributes</a></li>
+													<li><a {{action 'clickDocument' doc}}>Edit</a></li>
+													{{#link-to 'app.documents.preview' doc.id tagName='li'}}Preview{{/link-to}}
+													<li><a {{action 'saveAsTemplate' doc}}>Save as Template</a></li>
+													<li><a {{action 'archiveDoc' doc}}>Archive</a></li>
+												</ul>
+											</div>
+										</span>
+									</span>
+								</td>
+						{{/if}}
+						</tr>
+					{{/each}}
+				{{/if}}
+			</table>
+
+			<div class="mr-2 mt-2">
+			{{
+				g-pagination 
+				page=page 
+				pages=pages 
+				callNext='callNext' 
+				totalRecords=totalDocuments 
+				prevPage='prevPage'
+				nextPage='nextPage'
+				totalPages=totalPages
+			}}
+		</div>
+		{{/if}}
+		{{/if}}
+
+		{{#if (if-equal scope 'project' true false)}}
+			{{#unless sortedDocs.length}}
+				{{#if showText}}
+					<button class="primary" type="submit" style="margin: 30px auto; width:200px; text-align:center" {{action 'createDocument'}}>Create Document</button>
+				{{/if}}
+			{{/unless}}
+		{{/if}}
+
+		{{#if archivedDocuments}}
+		{{#if isTile}}
+			{{#if (compare totalDocuments '>' 15)}}
+				<p class="archived-text" style="cursor:pointer;color:#012169; padding:0 40px; margin-bottom: 50px;position: absolute; bottom:110px" {{action 'goToArchivedDocs' projectID}}><u>{{archivedDocuments}} Documents archived.</u></p>
+			{{else}}
+				<p class="archived-text" style="cursor:pointer;color:#012169; padding:0 40px; margin-bottom: 50px;position: absolute; bottom:0px" {{action 'goToArchivedDocs' projectID}}><u>{{archivedDocuments}} Documents archived.</u></p>
+			{{/if}}
+		{{else}}
+			{{#if (compare totalDocuments '>' 15)}}
+				<p class="archived-text" style="cursor:pointer;color:#012169; padding:0 40px; margin-bottom: 50px;position: absolute; bottom:5px" {{action 'goToArchivedDocs' projectID}}><u>{{archivedDocuments}} Documents archived.</u></p>
+			{{else}}
+				<p class="archived-text" style="cursor:pointer;color:#012169; padding:0 40px; margin-bottom: 0px;position: absolute" {{action 'goToArchivedDocs' projectID}}><u>{{archivedDocuments}} Documents archived.</u></p>
+			{{/if}}
+		{{/if}}
+		{{/if}}
+		
+	</div>
+
+{{/if}}
+
+{{#if showArchivedDocuments}}
+
+
+	{{#if isTile}}
+		<div class="g-doc-holder g-doc-arc-holder">
+			<h4>Archived Documents</h4>
+			{{#each archiveddocuments as |doc|}}
+				<div class="d-card document-card-holder">
+					<div class="c-container">
+						<div class="top-options">
+							<h3 class="document-name">{{doc.title}}</h3>
+							<div class="doc-text">{{doc.description}}</div>
+						</div>
+						<div class="bottom-options">
+							<div class="bottom-left pull-left">
+									{{#if   (if-equal doc.collaborator_count '0' false true)}}
+								<span class="icon-collborator"><i class="user-icon"></i></span><span class="document-colla-count">{{doc.collaborator_count}}</span>
+								{{/if}}
+							</div>
+							<div class="bottom-right ">
+								<ul>
+									<li>
+										<div class="tooltip"><i><span class="tooltip-icon" {{action 'showDocumentInfo' doc}}></span></i>
+										</div>
+									</li>
+									<li>
+										<div class="tooltip share-options"><i class="view-more-options" aria-hidden="true"></i>
+											<div class="tooltiptext">
+												<span {{action 'restoreDocument' doc.id doc.project doc}}>Restore Doc</span>
+											</div>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			{{/each}}
+		</div>
+	{{/if}}
+
+
+	{{#if isList}}
+		<table class="project-table-view">
+			<h4>Archived Documents</h4>
+			{{#if archiveddocuments.length}}
+				<tr>
+					<th>Document Title</th>
+					<th>Owner</th>
+					<th>Options</th>
+				</tr>
+				{{#each archiveddocuments as |doc|}}
+					<tr>
+						<td>
+							{{doc.title}}
+						</td>
+						<td>{{doc.created_by.full_name}}</td>
+							<td class="pl-1">
+						<span>
+							<i class="tooltip-icon" {{action 'showDocumentInfo' doc}}>
+							</i>
+						</span>
+						<span>
+							<span class="view-more-options tooltip" aria-hidden="true">
+								<div class="tooltiptext">
+									<ul>
+										<li><a  {{action 'restoreDocument' doc.id doc.project doc}}>Restore Doc</a></li>
+									</ul>
+								</div>
+							</span>
+						</span>
+					</td>
+					</tr>
+				{{/each}}
+			{{/if}}
+		</table>
+	{{/if}}
+
+<br/>
+
+{{/if}}
+
+{{
+	app/projects/modal/g-invite-collaborator
+	active=isAddCollaboratorOpened
+	project_id="null"
+	document_id=document_id
+	inviteCollaborators='inviteCollaborators'
+	collaborators=collaborators
+}}
+
+{{
+	projects/modal/g-confirm
+	active=onArchive
+	archive_this_Project="null"
+	onArchiveProject='onArchiveProject'
+	archive_this_Document=archive_document_id
+	onArchiveDocument="onArchiveDocument"
+	showNotification='showNotification'
+	refreshPage='refreshPage'
+	deleteDoc='deleteDoc'
+}}
+
+{{
+	documents/modal/g-doc-info
+	active=infoDoc
+	document=documentinformation
+	categories=null
+	time_zone=time_zone
+	is_template=false
+	workflowsAssociated=workflowsAssociated
+}}
+
+{{
+	g-project-list
+	template=null
+	active=onAssignProject
+	projects=allProjects
+}}
+
+{{
+	g-document-update
+	document=updateTemplate
+	active=onUpdate
+	refreshPage='refreshPage'
+	createDoc=createDoc
+	projectID=projectID
+	categories=categories
+	allProjects=allProjects
+	scope=scope
+}}
+
+{{	
+	g-linked-documents 
+	documents=linkedDocuments 
+	active=showDocs
+}}

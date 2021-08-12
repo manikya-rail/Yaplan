@@ -1,0 +1,8 @@
+	<div id = "document-footer" style="height: 40px; width: 100%; text-align:center; font-family: 'Roboto', sans-serif; color: #747474;">
+        <%if !!@document.show_page_number %> 
+			<small style="float: left">Page <span class="page"></span> of <span class="topage"></span></small>
+		<%end%>
+		<%if @document.footer.present?%>
+			<small style="margin-left:-65px;"><%= @document.footer.html_safe%></small>
+		<%end%>	
+	</div>

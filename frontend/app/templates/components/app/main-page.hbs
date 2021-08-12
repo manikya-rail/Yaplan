@@ -1,0 +1,40 @@
+
+  <div class="sidebar-toggle-click">
+    <input id="slide-sidebar" type="checkbox" role="button" />
+    <label class="slide-sidebar-label" for="slide-sidebar">
+      <span>
+        <i class="fa fa-caret-right fa-uni-icon" aria-hidden="true"></i>
+        <i class="fa fa-caret-left fa-uni-icon" aria-hidden="true"></i>
+      </span>
+    </label>
+    <ul id="sidebar">
+      {{#link-to "app.dashboard" class="projects" href=true tagName='li'}}
+        <img src='assets/images/dashboard_icon.png' class='right-24' />Dashboard
+      {{/link-to}}
+      {{#link-to "app.projects"  class="projects" href=true tagName='li'}}
+        <img src='assets/images/projects_icon.png' class='right-20' />Projects
+      {{/link-to}}
+      {{#link-to "app.documents" class="projects" href=true tagName='li'}}
+        <img src='assets/images/icon_document.png' class='right-28' />Documents
+      {{/link-to}}
+      {{#link-to "app.workflows" class="projects" href=true tagName='li'}}
+        <img src='assets/images/icon_workflow.png' class='right-24' />Workflows
+      {{/link-to}}
+      {{#link-to "app.templates.documents" current-when="app.templates.documents app.templates.workflows app.templates.archived-doc-templates" class="documents" href=true tagName='li'}}
+        <img src='assets/images/templates_icon.png' class='right-28' />Templates
+      {{/link-to}}
+      {{#if   (if-equal userInformation.role.name 'admin' true false)}}
+        {{#link-to "app.admin.category" class="documents" href=true tagName='li'}}
+          <img src='assets/images/category_icon.png' class='right-24' />Categories
+        {{/link-to}}
+      {{/if}}
+    </ul>
+    <div id="content-outer" >
+      <div id="content">
+        {{outlet updateProfile='updateUserProfile'}}
+      </div>
+    </div>
+  </div>
+  <footer class="g-footer g-text-center">
+    <small>© Yakkaplan, 2017. All rights reserved</small>
+  </footer>

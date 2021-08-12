@@ -1,0 +1,45 @@
+<div class="clearfix"></div>
+<div>
+	<div>
+		<div class="clearfix" style="margin-right: 10px; margin-top: 25px">
+			<ul class="pull-right g-list-unstyled-project-toggle grid-list-toogle-category">
+				<li class="mr-1 mt-0">
+					<div class="g-search-filter">
+						<input class="g-search-field" id="searchinput" type="text" placeholder="Search by keyword" oninput={{action 'searchDocuments'}}>
+						<i id="g-search-icon" class="fa fa-search"></i>
+					</div>
+				</li>
+				{{#if isGrid }}
+					<li class="" {{action (toggle 'isGrid')}} style="margin-right: 10px;"><i class="list-icon" aria-hidden="true"></i></li>
+					<li class="no-margin "><i class="grid-icon active" aria-hidden="true"></i></li>
+				{{else}}
+					<li class="" style="margin-right: 10px;"><i class="list-icon active" aria-hidden="true"></i></li>
+					<li class="no-margin" {{action (toggle 'isGrid')}}><i class="grid-icon" aria-hidden="true"></i></li>
+				{{/if}}
+				{{#link-to 'app.templates.workflows.new' class="workflow-link mt-0" tagName="li" id="add-template"}}<span class="add-new-project"></span>{{/link-to}}
+			</ul>
+		</div>
+	</div>
+	{{
+		workflows/g-workflow-template categories=categories workflowTemplates=filteredWorkflowTemplates isGrid=isGrid projectWorkflow=projectWorkflow
+	}}
+	<div class="mr-2 mb-2">
+		{{
+			g-pagination 
+			page=page 
+			pages=pages 
+			callNext='callNext' 
+			totalRecords=totalTemplates 
+			prevPage='prevPage'
+			nextPage='nextPage'
+			totalPages=totalPages
+		}}
+	</div>
+</div>
+
+<style>
+	.workflow-link {
+		float: right;
+		margin-left: 15px;
+	}
+</style>

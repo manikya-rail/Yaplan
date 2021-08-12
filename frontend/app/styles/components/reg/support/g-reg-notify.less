@@ -1,0 +1,34 @@
+.g-reg-notify{
+	
+	padding: 15px;
+	box-sizing: border-box;
+
+	color: white;
+	font-size: 14px;
+	cursor: pointer;
+	// border-radius: 4px;
+
+	top: 10px;
+    width: 320px;
+    margin: 0 auto;
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    right: 0;
+
+	&.hidden{
+		display: none;
+	}
+
+	&.error{
+		background-color: rgba(243, 116, 94, 0.7);
+	}
+
+	&.success{
+		background-color: rgba(106,166,226, 0.7);		
+	}
+
+	&.warning{
+		background-color: rgba(1,33,105,1);
+	}
+}

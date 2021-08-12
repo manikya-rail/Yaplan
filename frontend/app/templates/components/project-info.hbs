@@ -1,0 +1,33 @@
+{{#if project}}
+	<div class="modal-overlay {{if active 'active' ''}} g-modal-add-collaborator">
+		<div class="modal"  style="width: auto; height: auto;">
+			<a class="close ico_close-mo" href="" {{action (toggle 'active')}}></a>
+			<div class="g-people-modal">
+				<div class="dialog-title" style="color:#51caff">{{project.title}}</div>
+				<div class="dialog-input">
+					<div class="colloborator-modal">
+						<dl class="modal-doc-info">
+						  <dt><b>Project Category</b></dt>
+						  	<dd>{{project.category_name}}</dd>
+							<dt><b>Description</b></dt>
+							{{#if project.description}}
+							<dd><p class="min-line-height">{{project.description}}</p>
+							</dd>
+							{{else}}
+							<dd>
+								Not Available
+							</dd>		
+							{{/if}}
+							<dt><b>Created By</b></dt>
+							<dd>{{project.created_by.full_name}}</dd>
+							<dt><b>Created At</b></dt>
+							<dd>{{fuzzy-date project.createdAt time_zone}}</dd>
+							<dt><b>Modified Date</b></dt>
+							<dd>{{fuzzy-date project.updatedAt time_zone}}</dd>
+						</dl>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+{{/if}}

@@ -1,0 +1,6 @@
+{{input class="g-elastic-input" value=model placeholder=placeholder key-down=(action "resizeTitleHeight")}}
+{{#if linkedDocuments}}
+    <span class="tooltip share-options" style="vertical-align: middle" {{action 'showLinkedDcouments' linkedDocuments}}><img class="doc-link-icon" src="assets/images/icon_link.png">
+    </span>
+{{/if}}
+{{g-linked-documents documents=linkedDocuments active=showDocs}}

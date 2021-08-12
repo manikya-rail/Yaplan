@@ -1,0 +1,289 @@
+.sprite(@left, @top, @height, @width) {
+  background: url(/assets/images/sprite-ico.png) no-repeat @left @top;
+  height: @height;
+  width: @width;
+}
+
+/* demidn: not good naming {{{ */
+.ico_documents {
+  .sprite(-60px, -0px, 24px, 24px)
+}
+
+.ico_documents-a {
+  .sprite(-0px, -46px, 24px, 24px)
+}
+
+.ico_settings {
+  .sprite(-24px, -46px, 24px, 24px)
+}
+
+.ico_settings-a {
+  .sprite(-48px, -46px, 24px, 24px)
+}
+
+.ico_reg_check {
+  .sprite(-84px, -0px, 23px, 30px)
+}
+
+.ico_home-a {
+  .sprite(-84px, -23px, 23px, 24px)
+}
+.ico_home {
+  background: url(/assets/images/home-icn.png) no-repeat;
+  width: 24px;
+  height: 24px;
+}
+
+.ico_stats-a {
+  .sprite(-84px, -46px, 22px, 22px)
+}
+
+.ico_stats {
+  .sprite(-60px, -24px, 22px, 22px)
+}
+
+.ico_collaborators {
+  .sprite(-0px, -70px, 21px, 22px)
+}
+
+.ico_collaborators-a {
+  .sprite(-22px, -70px, 21px, 22px)
+}
+
+.ico_reg_eyeoff {
+  .sprite(-44px, -70px, 17px, 20px)
+}
+
+.ico_reg_eyeon {
+  .sprite(-64px, -70px, 14px, 20px)
+}
+
+.ico_close-mo {
+  .sprite(-84px, -70px, 14px, 14px)
+}
+
+//  naming }}
+
+.i-button-floating-plus {
+  .sprite(0, -91px, 68px, 68px);
+}
+
+.-ia {
+  &:after {
+    display: block;
+    content: "";
+  }
+}
+
+.i-upload-cloud {
+  .sprite(-115px, -5px, 92px, 90px);
+}
+
+.ia-download {
+  &:after {
+    .fa-icon;
+    content: @fa-var-download;
+  }
+}
+
+.ib-preview {
+  &:before{
+    .fa-icon;
+    content: @fa-var-eye;
+  }
+}
+
+.ib-download {
+  &:before{
+    .fa-icon;
+    content: @fa-var-download;
+  }
+}
+
+.ib-edit{
+  &:before{
+    .fa-icon;
+    content: @fa-var-pencil;
+  }
+}
+.ib-back{
+  &:before{
+    .fa-icon;
+    content: @fa-var-arrow-left;
+  }
+}
+
+.ib-plus{
+  &:before{
+    .fa-icon;
+    content: @fa-var-plus;
+  }
+}
+
+.ib-plus-person{
+  &:before{
+    .fa-icon;
+    content: @fa-var-user-plus;
+  }
+}
+
+.ib-file-o {
+  &:before{
+    .fa-icon;
+    content: @fa-var-file-o;
+  }
+}
+
+.ib-check {
+  &:before{
+    .fa-icon;
+    content: @fa-var-check;
+  }
+}
+
+.ib-circle-o {
+  &:before{
+    .fa-icon;
+    content: @fa-var-circle-o;
+  }
+}
+
+.ib-clock-o {
+  &:before{
+    .fa-icon;
+    content: @fa-var-clock-o;
+  }
+}
+
+.ia-angle-down{
+  &:after{
+    .fa-icon;
+    content: @fa-var-angle-down;
+  }
+}
+
+.ia-chevron-down{
+  &:after{
+    .fa-icon;
+    content: @fa-var-chevron-down;
+  }
+}
+
+.ia-chevron-up{
+  &:after{
+    .fa-icon;
+    content: @fa-var-chevron-up;
+  }
+}
+
+.ia-upload-cloud {
+  .-ia;
+
+  &:after {
+    .i-upload-cloud;
+  }
+}
+
+
+.fa-uni-icon {
+  font-size: 20px;
+}
+
+.doc-link-icon {
+  width: 20px;
+}
+
+.list-icon {
+  width: 16px;
+  height: 15px;
+  background-image: url('/assets/images/icon_list_view_normal.svg');
+  background-repeat: no-repeat;
+  display: inline-block;
+  opacity: 0.8;
+  &.active {
+    background-image: url('/assets/images/icon_list_view_selected.svg');
+  }
+  &:hover {
+    opacity: 1;
+    cursor: pointer;
+  }
+}
+.grid-icon {
+  width: 16px;
+  height: 16px;
+  background-image: url('/assets/images/icon_grid_view_normal.svg');
+  background-repeat: no-repeat;
+  display: inline-block;
+  &.active {
+    background-image: url('/assets/images/icon_grid_view_selected.svg');
+  }
+  &:hover {
+    opacity: 1;
+    cursor: pointer;
+  }
+}
+.view-more-options {
+  width: 20px;
+  height: 20px;
+  background-image: url('/assets/images/icon_more.svg');
+  background-repeat: no-repeat;
+  display: inline-block;
+  background-position: 50%;
+  /*opacity: 0.8;*/
+  &:hover {
+    opacity: 1;
+    cursor: pointer;
+  }
+}
+.archived-icon {
+ width: 20px;
+  height: 20px;
+  background-image: url('/assets/images/icon_archive.svg');
+  background-repeat: no-repeat;
+  display: inline-block; 
+  opacity: 0.8;
+  &:hover {
+    opacity: 1;
+    cursor: pointer;
+  }
+}
+.editor-icon {
+ width: 20px;
+  height: 20px;
+  background-image: url('/assets/images/icon_edit.svg');
+  background-repeat: no-repeat;
+  display: inline-block; 
+  /*opacity: 0.8;*/
+  &:hover {
+    opacity: 1;
+    cursor: pointer;
+  }
+}
+.user-icon {
+ width: 20px;
+  height: 20px;
+  background-image: url('/assets/images/icon_person.svg');
+  background-repeat: no-repeat;
+  display: inline-block; 
+  top: 2px;
+  position: relative;
+  opacity: 0.8;
+  &:hover {
+    opacity: 1;
+    cursor: pointer;
+  }
+}
+.link-col-icon {
+  width: 20px;
+  height: 20px;
+  background-image: url('/assets/images/icon_link.svg');
+  background-repeat: no-repeat;
+  display: inline-block; 
+  top: 2px;
+  position: relative;
+  opacity: 0.8;
+  &:hover {
+    opacity: 1;
+    cursor: pointer;
+  }
+}

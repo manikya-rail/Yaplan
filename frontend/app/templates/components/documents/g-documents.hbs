@@ -1,0 +1,65 @@
+{{#unless documents.length}}
+    {{#if type}}
+      {{#if  (if-equal type 'Import' true false)}}
+        {{#unless document_templates.length}}
+          <div class="g-documents empty">
+            <hr/>
+            <h1>Oops, looks like there is no documents here.</h1>
+            <h3>Once you have created one or more documents, they will appear.</h3>
+            <h3>Documents are created inside project</h3>
+          </div>
+        {{/unless}}
+      {{else}}
+         <div class="g-documents empty">
+          <hr/>
+          <h1>Oops, looks like there is no documents here.</h1>
+          <h3>Once you have created one or more documents, they will appear.</h3>
+          <h3>Documents are created inside project</h3>
+        </div>
+      {{/if}}
+    {{else}}
+      <div class="g-documents empty">
+          <hr/>
+          <h1>Oops, looks like there is no documents here.</h1>
+          <h3>Once you have created one or more documents, they will appear.</h3>
+          <h3>Documents are created inside project</h3>
+        </div>
+    {{/if}}
+{{/unless}}
+
+<ul class="g-documents">
+  {{#each documents as |document|}}
+  <li {{action 'clickDocument' document}}>
+    <div class="data">
+      <h3 class="title">{{document.title}}</h3>
+      <p>Project : {{document.project.title}}</p>
+      <div class="lastedited">Last edited: {{moment-from-now document.updatedAt locale "en"}} 
+      </div>
+    </div>
+    <div class="status">
+      Created By : {{document.created_by.full_name}}
+    </div>
+  </li>
+  {{/each}}
+  {{#if type}}
+    {{#if  (if-equal type 'Import' true false)}}
+      {{#if document_templates}}
+        {{#each document_templates as |template|}}
+          <li {{action 'clickDocument' template}}>
+            <div class="data">
+              <h3 class="title">{{template.title}}</h3>
+              <p>Project : {{template.project.title}}</p>
+              <div class="lastedited">Last edited: {{moment-from-now template.updated_at locale "en"}} 
+              </div>
+            </div>
+            <div class="status">
+              Created By : {{template.created_by.full_name}}
+            </div>
+          </li>
+        {{/each}}
+      {{/if}}
+    {{/if}}
+  {{/if}}
+</ul>
+
+

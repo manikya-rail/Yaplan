@@ -1,0 +1,169 @@
+@media(max-width: 550px){
+	.g-landing .scrollable-section:not(#scrollto-section-1):not(:last-child) .gl-section .cls-content{
+		height: 450px;
+	}
+
+	#section-header .header__subscribe .form-content input , #section-footer .footer__subscribe .form-content input{
+		width: 100%;
+		margin-bottom: 10px;
+		border-top-right-radius: 2px;
+		border-bottom-right-radius: 2px;
+	}
+	#section-header .header__subscribe .form-content button, #section-footer .footer__subscribe .form-content button{
+		border-top-left-radius: 2px;
+		border-bottom-left-radius: 2px;
+	}
+}
+@media(max-width: 750px){
+	.g-landing h1{
+		margin: 15px 10px;
+
+		font-size: 36px;
+		font-family: 'Raleway-ExtraBold';
+	}
+	.g-landing h3{
+		margin: 10px 10px;
+
+		font-size: 20px;
+		font-family: 'Raleway-Regular';
+	}
+
+	#section-header .header__subscribe{
+		padding: 0px 0px 0px 0px;
+	}
+
+	#section-header .header__cta{
+		margin: 0px 10px;
+		font-family: 'Raleway-Regular';
+		font-size: 20px;
+	}
+	#section-header .header__cta span{
+		margin: 0px 3px;
+
+		font-family: 'Raleway-ExtraBold';
+		font-size: 36px;
+	}
+	#section-footer .footer__cta .cta-text-1{
+		margin: 0px 10px;
+		font-size: 20px;
+	}
+	#section-footer .footer__cta .cta-text-1 span{
+		margin: 0px 3px;
+
+		font-family: 'Raleway-ExtraBold';
+		font-size: 36px;
+	}
+	#section-footer .footer__cta .cta-text-2{
+		margin: 10px 0px 60px;
+
+		font-size: 20px;
+	}
+	
+	#section-template .card-1, #section-template .card-3 {
+		display: none;
+	}
+	#section-template .card-2{
+		width: 90%;
+		padding: 45% 0px;
+		height: 0px;
+
+		left: calc(50% - 45%);
+	}
+
+	#section-customize .card-1{
+		width: 90%;
+		padding: 45% 0px;
+		height: 0px;
+
+		left: calc(50% - 45%);
+	}
+
+	#section-sections .sections-card-group{
+		width: 90%;
+		left: calc(50% - 45%);
+	}
+	#section-sections .card-1, #section-sections .card-2, #section-sections .card-4, #section-sections .card-5{
+		display: none;
+	}
+	#section-sections .sections-card-group > .card-col-2{
+		width: 100%;
+	}
+	#section-sections .card-3 {
+		width: 100%;
+		padding: 60% 0px;
+		height: 0px;
+	}
+
+	#section-link .card-1{
+		width: 70%;
+		padding: 37% 0px;
+		height: 0px;
+
+		left: calc(40% - 35%);
+	}
+	#section-link .card-2{
+		width: 60%;
+		padding: 36% 0px;
+		height: 0px;
+
+		left: calc(40% + 20%);
+	}
+	#section-link .marker-1{
+		width: 10%;
+		padding: 5% 0px;
+		height: 0px;
+		margin-top: 32%;
+
+		top: 100px;
+		left: calc(40% + 30%);
+	}
+
+	#section-collaborate .gl-card{
+		width: 90%;
+		padding: 11% 0px;
+		height: 0px;
+	}
+	#section-collaborate .card-1{
+		left: calc(33% - 45%);
+	}
+	#section-collaborate .card-2{
+		left: calc(38% - 45%);
+	}
+	#section-collaborate .card-3{
+		left: calc(50% - 45%);
+	}
+	#section-collaborate .card-4{
+		left: calc(56% - 45%);
+	}
+	#section-collaborate .card-5{
+		left: calc(66% - 45%);
+
+	}
+
+	#section-generate .gl-card{
+		width: 50%;
+		padding: 37% 0px;
+		height: 0px;
+	}
+	#section-generate .card-2{
+		left: calc(50% - 52%);
+	}
+	#section-generate .card-3{
+		left: calc(50% + 2%);
+	}
+	#section-generate .card-1, #section-generate .card-4, #section-generate .marker-1{
+		display: none;
+	}
+	#section-generate .marker-2{
+		margin-top: 37%;
+		top: calc(100px - 22px);
+		left: calc(50% + 27% - 22px);
+	}
+
+	#section-link .card-1 .overlayer {
+		margin-top: 7%;
+	}
+	#section-link .card-2 .overlayer {
+		margin-top: -30%;
+	}
+}

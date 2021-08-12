@@ -1,0 +1,16 @@
+<!-- {{yield}} -->
+<div class="modal-overlay {{if active 'active' ''}}">
+  <div class="modal confirm-modal" style="width: auto; height: auto;">
+    <a class="close ico_close-mo" href="" {{action (toggle 'active')}}></a>
+    <div class="g-confirm-modal">
+        <div class="dialog-title">{{title}}</div>
+        <div class="dialog-input">
+          <p>{{message}}</p>
+        </div>
+      <div class="action-buttons">
+        <button class="primary button-cancel m-btn" type="submit" {{action (toggle 'active')}}>NO</button> &nbsp;&nbsp;
+        <button class="primary m-btn" type="submit" {{action 'proceed'}}>YES</button>
+      </div>
+    </div>
+  </div>
+</div>

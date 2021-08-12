@@ -1,0 +1,13 @@
+<div class="g-toaster {{if active 'active'}} {{position}}">
+	<i class="fa fa-{{icon}}"></i>
+	<span class="description">{{text}}</span>
+	<span class="links">
+		{{#each links as |link|}}
+			{{#if link.toggler}}
+				<a class="link close" href="" {{action (toggle 'active')}}>{{link.title}}</a>
+			{{else}}
+				{{#link-to link.target class='link'}}{{link.title}}{{/link-to}}
+			{{/if}}
+		{{/each}}
+	</span>
+</div>

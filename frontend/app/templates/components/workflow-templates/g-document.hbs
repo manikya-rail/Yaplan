@@ -1,0 +1,57 @@
+<div class="modal-overlay {{if active 'active' ''}} g-modal-add-collaborator">
+  <div class="modal"  style="width: auto; height: auto; max-height: calc(100vh - 199px); overflow-y: auto;">
+    <a class="close ico_close-mo" href="" {{action 'cancelDocumentInfo'}}></a>
+    <div class="g-people-modal attachment-document-modal">
+      <div class="dialog-title">Document</div>
+      <!-- {{reg/support/g-reg-notify type=notification.type msg=notification.msg}} -->
+      <div class="dialog-input">
+        <div style="display: flex; flex-direction: column">
+          <div class='g-form-group' style="flex-grow: 1;">
+            <label class="g-control-label">Name</label>
+            <input
+              name="name" value={{step.node.data.text}} disabled={{noEdit}}
+              class="g-form-control ember-view ember-text-field workflow-text"
+             disabled={{noEdit}}
+            />
+          </div>
+          <div class='g-form-group' style="flex-grow: 1;">
+            <label class="g-control-label">Description<span class="pull-right editor-label">{{descriptionCharacterCount}}/240</span></label>
+            <textarea
+              name="description" value={{step.description}} onkeyup={{action 'checkCharacter'}} maxlength="240" 
+              class="g-form-control ember-view ember-text-field "
+            />
+          </div>
+          <div class='g-form-group' style="flex-grow: 1;">
+            <label class="g-control-label">Document</label>
+            <li style="list-style-type: none; padding: 15px;border: 1px solid #eee">
+              <b>
+                {{#if selectedDocument}}
+                  {{selectedDocument.title}}
+                {{else}}
+                  No document added
+                {{/if}}
+              </b>
+              <a
+                class="pull-right" href="" style="margin-top: -2px;"
+                {{action (toggle 'documentPickerActive')}}
+              >
+                {{#if selectedDocument}}
+                  Change
+                {{else}}
+                  Add
+                {{/if}}
+              </a>
+            </li>
+          </div>
+          <button class="primary mt-0 mb-0" {{ action 'updateDocumentInfo' }}>
+            Update
+          </button>
+          <button class="primary" {{ action 'removeStep' }} style="background-color: transparent; color: #2e353a; border: 1px solid #2e353a;">
+            Remove
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

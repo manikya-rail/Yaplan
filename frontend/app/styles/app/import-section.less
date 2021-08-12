@@ -1,0 +1,47 @@
+@import "../_base";
+@import "../components/import-section/g-choose-section";
+
+.import-section-route {
+    margin: 0px auto 0px;
+    max-width: 1300px;
+    min-width: 900px;
+
+  .content-header {
+    .cancel {
+      line-height: 64px;
+      color: #000;
+      &:before {
+        .fa-icon;
+
+        margin-right: 4px;
+        content: @fa-var-arrow-left;
+      }
+    }
+
+    h2 {
+      display: inline;
+      margin-left: 25%;
+      line-height: 64px;
+    }
+
+    .done{
+      float: right;
+      margin-top: 15px;
+      margin-right: 25px;
+    }
+  }
+
+  .g-choose-section{
+    margin: 40px 25px 0 25px;
+    padding:  0px 25px;
+    .document-header {
+      height: auto;
+      padding: 0;
+      border-bottom: 0;
+    }
+  }
+
+  .help {
+
+  }
+}

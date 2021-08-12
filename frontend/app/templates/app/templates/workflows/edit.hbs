@@ -1,0 +1,34 @@
+{{
+  workflow-editor
+  workflowTemplate=model.workflowTemplate
+  documents=model.documents
+  categories=model.categories
+  setCy='setCy'
+  setCyJson='setCyJson'
+  makeDirty='makeDirty'
+  reloadPage='reloadPage'
+}}
+<style>
+  .flex-container {
+    display: flex;
+    height: 100%;
+  }
+
+  .flex-horizontally-scrolled-items {
+    display: flex;
+    width: 100%;
+    overflow-x: scroll;
+    border-right: 1px solid #EEE;
+  }
+  .flex-workflow {
+    min-width: 2000px;
+    flex-grow: 1;
+  }
+  /*.flex-aside {
+    width: 300px;
+  }*/
+  #workflow-editor {
+    height: 100vh;
+    width: 100%;
+  }
+</style>{{outlet}}

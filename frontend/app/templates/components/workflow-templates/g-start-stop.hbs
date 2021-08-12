@@ -1,0 +1,26 @@
+<div class="modal-overlay {{if active 'active' ''}} g-modal-add-collaborator">
+  <div class="modal"  style="width: auto; height: auto; max-height: 80vh; overflow-y: auto;">
+    <a class="close ico_close-mo" href="" {{action 'cancelStartStop'}}></a>
+    <div class="g-people-modal attachment-document-modal">
+      <div class="dialog-title">Start/Stop</div>
+      <!-- {{reg/support/g-reg-notify type=notification.type msg=notification.msg}} -->
+      <div class="dialog-input">
+        <div style="display: flex; flex-direction: column">
+          <div class='g-form-group' style="flex-grow: 1;">
+            <label class="g-control-label">Name</label>
+            <input
+              name="name" value={{step.node.data.text}} id="name"
+              class="g-form-control ember-view ember-text-field workflow-text"
+            />
+          </div>
+          <button class="primary" {{ action 'updateStartStop' }} style="margin-bottom: 0px;">
+            Update
+          </button>
+          <button class="primary" {{ action 'removeStep' }} style="background-color: transparent; color: #2e353a; border: 1px solid #2e353a;">
+            Remove
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

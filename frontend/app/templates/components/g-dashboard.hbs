@@ -1,0 +1,38 @@
+<div class="dashboard-header-content">
+  <div class="g-form-group mt-1 mr-2 pt-0">
+    <div class="pull-left g-dashboard-title-holder">DASHBOARD</div>
+    <div class="pull-right">
+      <div class="g-search-filter">
+        <input class="g-search-field" type="text"
+          placeholder="Search by keyword" oninput={{ action 'searchProjects' }}
+        >
+        <i id="g-search-icon" class="fa fa-search"></i>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="clearfix mt-2 pt-1"></div>
+<div class="two-columns">
+  <div class="flex-column">
+    {{
+      dashboard/user-tasks
+      userTasks=filteredUserTasks
+      acceptTask='acceptTask' rejectTask='rejectTask'
+      acceptInvite='acceptInvite'
+      rejectInvite='rejectInvite'
+      time_zone=time_zone
+    }}
+    {{
+      dashboard/user-projects
+      userProjects=filteredProjects
+      time_zone=time_zone
+    }}
+  </div>
+  <div class="flex-column">
+    {{
+      dashboard/project-activity
+      activities=filteredActivities
+      time_zone=time_zone
+    }}
+  </div>
+</div>

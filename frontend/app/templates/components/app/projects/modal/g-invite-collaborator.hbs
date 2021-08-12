@@ -1,0 +1,32 @@
+<!-- {{yield}} -->
+<div class="modal-overlay {{if active 'active' ''}} g-modal-add-collaborator">
+	<div class="modal"  style="width: auto; height: auto;">
+		<a class="close ico_close-mo" href="" {{action (toggle 'active')}}></a>
+		<div class="g-people-modal">
+			<div class="dialog-title">Add a new collaborator</div>
+			{{reg/support/g-reg-notify type=notification.type msg=notification.msg}}
+			<div class="dialog-input">
+				<div class="colloborator-modal">
+					<fieldset class="g-form-group">
+						{{!-- {{input value=name type="name" placeholder = "Name" class="g-form-control" oninput='inputChange'}} --}}
+						<input type="text" id="uname" value={{name}} placeholder="Name" class="g-form-control" oninput={{action "findNameArray"}}> 
+						<span id="nameResult"></span>
+					</fieldset>
+					<fieldset class="g-form-group">
+						<input type="text" id="uemail" value={{email}} placeholder="Email" class="g-form-control" oninput={{action "findEmailArray"}}> 
+						<span id="emailResult"></span>
+						{{!-- {{input value=email type="email" placeholder = "Email" class="g-form-control"}} --}}
+					</fieldset>
+					<fieldset class="g-form-group">
+						{{textarea value=message placeholder="Message..."  class="g-form-control"}}
+					</fieldset>
+				</div>
+			</div>
+			<button class="primary" type="submit" disabled={{isNotFilled}} {{action 'addCollaborator'}}>Send Invite</button>
+			<div class="dialog-tagline">
+				We will notify you when this person responds to your invitation
+			</div>
+		</div>
+	</div>
+</div>
+

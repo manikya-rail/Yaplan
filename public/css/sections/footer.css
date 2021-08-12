@@ -1,0 +1,74 @@
+#section-footer{
+	z-index: 60;
+	position: relative;
+
+	background: url('/assets/imgs/background-footer.png') no-repeat;
+	background-size: cover;
+	color: white;
+}
+
+#section-footer .footer__top{
+	padding: 170px 0px 150px;
+}
+#section-footer .footer__top .gl-logo{
+	margin: 0px auto;
+}
+
+#section-footer .footer__cta{
+	margin-bottom: 150px;
+
+	font-family: 'Raleway-Regular';
+}
+#section-footer .footer__cta .cta-text-1{
+	font-size: 24px;
+}
+#section-footer .footer__cta .cta-text-1 span{
+	margin: 0px 3px;
+
+	font-family: 'Raleway-ExtraBold';
+	font-size: 48px;
+}
+#section-footer .footer__cta .cta-text-2{
+	margin: 10px 0px 60px;
+
+	font-size: 24px;
+}
+
+#section-footer .footer__subscribe{
+	padding: 0px 40px 80px;
+}
+#section-footer .footer__subscribe > .form-block{
+	width: 100%;
+}
+
+#section-footer .footer__subscribe .form-content {
+	font-size: 0px;
+}
+#section-footer .footer__subscribe .form-intro{
+	margin-bottom: 15px;
+
+	font-family: 'Roboto';
+	font-size: 14px;
+}
+#section-footer .footer__subscribe .form-content input{
+	box-sizing: border-box;
+	width: 280px;
+	height: 48px;
+	margin: 0px;
+	padding-left: 20px;
+	padding-right: 20px;
+
+	text-align: left;
+	border: none;
+	border-top-right-radius: 0px;
+	border-bottom-right-radius: 0px;
+	border-top-left-radius: 2px;
+	border-bottom-left-radius: 2px;
+
+	font-family: 'Roboto';
+	font-size: 14px;
+}
+#section-footer .footer__subscribe .form-content button{
+	border-top-left-radius: 0px;
+	border-bottom-left-radius: 0px;
+}

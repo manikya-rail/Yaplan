@@ -1,0 +1,34 @@
+<div class="g-collaborator-pane {{if active '' 'hidden'}}">
+	<div class="person">
+		<div class="photo">
+			{{g-avatar src=(portrait collaborator.info.id false)}}
+		</div>
+		<div class="info">
+			<div class="title">
+				{{full-name collaborator.full_name}}
+			</div>
+			<div class="stats">
+				{{collaborator.info.email}} - {{collaborator.docs.length}} documents across {{collaborator.projects.length}} projects
+				<span class="expander" {{action (toggle "expanded")}}><i class="fa fa-angle-{{if expanded 'up' 'down'}}"></i></span>
+			</div>
+		</div>
+		<div class="action">
+			<span><i class="fa fa-ellipsis-h"></i></span>
+		</div>
+	</div>
+	<div class="doc-list {{if expanded 'show' 'hidden'}}">
+		{{#each collaborator.docs as |document|}}
+			<div class="doc" {{action 'onGoTo' document.id}}>
+				<span class="status-icon">
+					<i class='fa fa-circle-o'></i>
+				</span>
+				<span class="title">
+					{{document.title}}
+				</span>
+				<span class="status">
+					Active
+				</span>
+			</div>
+		{{/each}}
+	</div>
+</div>

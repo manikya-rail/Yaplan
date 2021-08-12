@@ -1,0 +1,41 @@
+<div class="payment-method">
+  <form {{action "save" plan on="submit"}}>
+    <div>
+      <label>
+        <span >Selected Card Number:</span>
+      </label>
+      <select id=source-list onchange={{action "selSource"}}>
+        <option value=""> --Populating source -- </option>
+      </select>
+    </div>
+    <div id="card_field" class="hidden">
+      <table>
+        <tr>
+          <td >Card Number:</td>
+          <td >
+            {{input type="text" id=card_no maxlength=16 value=card_num  }}
+          </td>
+        </tr>
+        <tr>
+          <td >CVV:</td>
+          <td>
+            {{input type="text" id=card_cvv maxlength=4 value=cvv action="validateCVV" on="focus-out" }}
+          </td>
+        </tr>
+        <tr>
+          <td>Expiry Month:</td>
+          <td>
+            {{input type="text" id=card_em value=expmonth maxlength=2  action="validateEM" on="focus-out" }}
+          </td>
+        </tr>
+        <tr>
+          <td>Expiry Year:</td>
+          <td>
+            {{input type="text" id=card_ey value=expyear maxlength=4  action="validateEY" on="focus-out" }}
+          </td>
+        </tr>
+      </table>
+      <button type="submit" class="btn btn-primary">Save card</button>
+    </div>
+  </form>
+</div>

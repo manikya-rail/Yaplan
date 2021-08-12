@@ -1,0 +1,17 @@
+<ul class="g-collaborator">
+	{{#if isOwner}}
+    <li class="edit button" {{action 'edit'}}><i class="fa fa-pencil"></i></li>
+	{{/if}}
+
+	{{#each document.collaborators as |collaborator|}}
+  	<li class="person tooltip tooltip-top {{if-equal collaborator.id user_id 'me' ''}}" data-tooltip="{{collaborator.email}}">
+  		<i class="fa fa-check {{if-equal collaborator.id document.approverId '' 'hidden'}}"></i>
+  		{{!-- {{g-avatar src=(portrait collaborator.id false)}} --}}
+  		{{#if collaborator.portrait.image.url}}
+			<img class="g-avatar" src="{{collaborator.portrait.image.url}}" />
+		{{else}}
+			<img class="g-avatar" src="../assets/images/profile/default.png"/>
+		{{/if}}
+  	</li>
+	{{/each}}
+</ul>

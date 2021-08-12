@@ -1,0 +1,188 @@
+<div class="modal-overlay {{if active 'active' ''}} g-modal-add-collaborator">
+	<div class="modal"  style="width: auto; height: auto; max-height: 80vh; overflow-y: auto;">
+		<a class="close ico_close-mo" href="" {{action 'cancelCommunication'}}></a>
+		<div class="g-people-modal attachment-document-modal">
+			<div class="dialog-title">Communication</div>
+			<!-- {{reg/support/g-reg-notify type=notification.type msg=notification.msg}} -->
+			{{#if showEditMode}}
+			<div class="dialog-input">
+				<div style="display: flex; flex-direction: column">
+					<div class='g-form-group' style="flex-grow: 1;">
+						<label class="g-control-label">Name</label>
+						<input
+							name="name" value={{name}} disabled={{noEdit}} id="name"
+							class="g-form-control ember-view ember-text-field workflow-text"
+							
+						/>
+					</div>
+					<div class='g-form-group' style="flex-grow: 1;">
+						<label class="g-control-label">Subject</label>
+						<input
+							name="subject" value={{communication.subject}} id="subject"
+							class="g-form-control ember-view ember-text-field workflow-text"
+							
+						/>
+					</div>
+					<div class='g-form-group' style="flex-grow: 1;">
+						<label class="g-control-label">Message</label>
+						<textarea
+							name="message" value={{communication.message}} id="message"
+							class="g-form-control ember-view ember-text-field workflow-text"
+						/>
+					</div>
+					<div class='g-form-group' style="flex-grow: 1;">
+						<label class="g-control-label">State</label>
+						<select
+							name="communication_mode" value={{communication.communicationMode}}
+							class="g-form-control ember-view ember-text-field workflow-text"
+							 id="communication-mode"
+						>
+							<option value="approved">Approved</option>
+							<option value="rejected">Rejected</option>
+						</select><i class="fa fa-angle-down select-down-arrow" aria-hidden="true"></i>
+					</div>
+					<div class='g-form-group' style="flex-grow: 1;">
+						<label class="g-control-label">Emails</label>
+						<ul class="document-attach-list" style="padding-left: 0px;">
+							{{#each recepientEmails as |email index|}}
+
+								<li style="list-style-type: none; padding: 15px;border: 1px solid #eee">
+									<b>{{email}}</b>
+									<a
+										class="pull-right" href="" style="margin-top: -2px;"
+										{{action 'removeEmail' index}}
+									>
+										<i class="fa fa-times fa-uni-icon" aria-hidden="true"></i>
+									</a>
+								</li>
+
+							{{/each}}
+						</ul>
+						<div style="display: flex; flex-direction: row;">
+
+							<input 
+								id="new-email" placeholder="Email"
+								class="g-form-control ember-view ember-text-field workflow-text"
+								style="height: 36px; margin-right: 5px; padding:0px; padding-left: 10px; line-height: 34px;" list="collaboratorlist" data-list-focus='true'>
+							{{!-- <datalist id="collaboratorlist">
+								{{#each users as |user|}}
+									<option>{{user.email}}</option>
+								{{/each}}
+							</datalist> --}}
+							<button
+								class='gray-btn-secondary'
+								style="margin-top: 0px;"
+								{{ action 'addEmail' }}
+							>
+								Add
+							</button>
+
+						</div>
+					</div>
+					<div class='g-form-group' style="flex-grow: 1;">
+						<label class="g-control-label">Attachments</label>
+						<ul
+							class="document-attach-list" style="padding-left: 0px;"
+							id="attachment-list"
+						>
+							{{#each attachments as |attachment index|}}
+								{{#unless attachment._destroy}}
+									<li style="list-style-type: none; padding: 15px;border: 1px solid #eee">
+										<b>{{attachment-file-name attachment}}</b>
+										<a
+											class="pull-right" href="" style="margin-top: -2px;"
+											{{action 'removeAttachment' index}}
+										>
+											<i class="fa fa-times fa-uni-icon" aria-hidden="true"></i>
+										</a>
+									</li>
+								{{/unless}}
+							{{/each}}
+						</ul>
+						<div style="display: flex; flex-direction: row;">
+							<input
+								name="attachment"
+								id="new-attachment"
+								type='file'
+								class="g-form-control ember-view ember-text-field workflow-text"
+								style=" margin-right: 5px; height: 36px;padding-top: 6px"
+							/>
+							<button
+								class='gray-btn-secondary'
+								style="margin-top: 0px;"
+								{{ action 'addAttachment' }}
+							>
+								Add
+							</button>
+						</div>
+						<div id="results"></div>
+					</div>
+					<button class="primary mt-0 mb-0" {{ action 'updateCommunication' }}>
+						Update
+					</button>
+					<button class="primary" {{ action 'removeStep' }} style="background-color: transparent; color: #2e353a; border: 1px solid #2e353a;">
+						Remove
+					</button>
+				</div>
+			</div>
+			{{else}}
+				<div class="dialog-input">
+					<div class="colloborator-modal">
+						<dl class="modal-doc-info">
+							<dt><b>Name</b></dt>
+							<dd>{{name}}</dd>
+							<dt><b>Subject</b></dt>
+							<dd>
+								{{#if communication.subject}}
+									{{communication.subject}}
+								{{else}}
+									-
+								{{/if}}
+							</dd>
+							<dt><b>Message</b></dt>
+							<dd>
+								{{#if communication.message}}
+									{{communication.message}}
+								{{else}}
+									-
+								{{/if}}
+							</dd>
+							<dt><b>State</b></dt>
+							<dd>
+								{{#if communication.communicationMode}}
+									{{communication.communicationMode}}
+								{{else}}
+									-
+								{{/if}}
+							</dd>
+							<dt><b>Emails</b></dt>
+							<dd>
+								{{#if recepientEmails}}
+								{{#each recepientEmails as |email index|}}
+									{{email}}
+								{{/each}}
+								{{else}}
+									-
+								{{/if}}
+							</dd>
+							<dt><b>Attachments</b></dt>
+							<dd>
+								{{#if attachments}}
+								{{#each attachments as |attachment index|}}
+									{{#unless attachment._destroy}}
+										<li style="list-style-type:none">
+											{{attachment-file-name attachment}}
+										</li>
+									{{/unless}}
+								{{/each}}
+								{{else}}
+									-
+								{{/if}}
+							</dd>
+						</dl>
+					</div>
+				</div>
+			{{/if}}
+		</div>
+	</div>
+</div>

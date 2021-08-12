@@ -1,0 +1,21 @@
+<div class="section-menu" {{action (toggle 'isMenuActive')}}></div>
+{{#g-popup isOpened=isMenuActive}}
+  <ul class="context-list">
+    <li {{action 'cloneSection' section}}>Clone Section</li>
+    {{!-- <li {{action 'attachImage' section}}>Attach Image</li> --}}
+    {{!-- <li {{action 'showCreateTableMenu'}}>Create Table</li> --}}
+    <li {{action 'deleteSection' section}}>Delete Section</li>
+  </ul>
+{{/g-popup}}
+{{
+  document-editor/g-createtable-popup
+  isTableMenuActive=isTableMenuActive
+  createTable='createTable'
+}}
+<div class="ia-handler"></div>
+{{
+  document-editor/g-section-text sectionText=section.section_text
+  linkedDocuments=section.linked_documents onSaving='onSaving'
+  onSaved='onSaved' registerAs=sectionTextCmp
+}}
+

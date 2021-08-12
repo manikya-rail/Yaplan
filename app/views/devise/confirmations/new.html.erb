@@ -1,0 +1,88 @@
+<head>
+<style type="text/css">
+@import "../../bower_components/font-awesome/less/font-awesome";
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700');
+
+body {
+	margin: 0px;
+	 -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+	.reg {
+	  position: fixed;
+	  width: 100%;
+	  min-height: 100%;
+	}
+	.reg .reg-top {
+	  height: 270px;
+	  background: url('/assets/images/top-banner.jpg');
+	  background-size: cover;
+	}
+	.reg .reg-top .logo {
+	  position: relative;
+	  width: 206px;
+	  height: 28px;
+	  top: 80px;
+	  left: 50%;
+	  transform: translateX(-50%);
+	  background: url('/assets/images/logo-alt_icn.png') no-repeat;
+	  background-size: cover;
+	}
+	.reg .password-container {
+	 width: 460px;
+	 background-color: #fff;
+	 margin: -80px auto 8% auto;
+	 font-family: 'Roboto';
+	 text-align: center;
+	 padding: 15px;
+	 box-shadow: 0px 2px 35px rgba(0, 0, 0, 0.06);
+	}
+	.reg .password-container .pwd-logo {
+	 margin: 0 auto;
+	 height: 65px;
+	 border-bottom: 1px solid #747474;
+	 background: url('/assets/images/logo.gif') no-repeat center;
+	}
+	.reg .password-container .g-form-caption {
+	 font-weight: 400;
+	 color: #37474f;
+	}
+	.reg .password-container .g-form-caption .user-name{
+	 font-weight: 500;
+	 color: #ff9f00;
+	}
+	.reg .password-container .gl-button.orange {
+	 padding: 15px 50px;
+	 color: #fff;
+	 border: 0;
+	 cursor: pointer;
+	 border-radius: 2px;
+	 font-size: 14px;
+	 font-family: 'Roboto';
+	 text-align: center;
+	 background-color: #ffa000;
+	}
+	.reg .password-container .text-center {
+	 text-align: center;
+	}
+	input {
+		outline: none;
+	}
+</style>
+</head>
+
+<div class="reg">
+    <div class="reg-top">
+        <div class="logo"></div>
+	</div>   
+	<div class="password-container">
+		<h2 class="g-form-caption">Hey <span class="user-name"><%= resource.full_name %></span> !</h2>
+		<h2 class="g-form-caption">Your account is already confirmed.</h2>
+		
+		<div class="text-center">
+		  <a href="<%= root_url %>#/reg/login"><button class="gl-button orange small">Login</button></a>
+		</div>
+	</div>
+</div>
+

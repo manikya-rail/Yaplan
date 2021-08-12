@@ -1,0 +1,19 @@
+<!-- {{yield}} -->
+<div class="modal-overlay {{if active 'active' ''}}">
+	<div class="modal confirm-modal" style="width: auto; height: auto;">
+		<a class="close ico_close-mo" href="" {{action (toggle 'active')}}></a>
+		<div class="g-confirm-modal">
+			<div class="dialog-title">Edit Template Name</div>
+      <br>
+
+			<div class="dialog-input">
+      	{{input type="text" value=documenttitle name="documenttitle" class="input-field-width-height" placeholder="Untitled Doc."}}
+			</div>
+			<br>
+			<div class="action-buttons">
+				<button class="gray-btn-secondary m-btn" type="submit" {{action (toggle 'active')}} >Cancel</button> &nbsp;&nbsp;
+				<button class="primary m-btn" disabled={{isNotFilled}} type="submit" {{action 'UpdateDocument' documenttitle editDocument.id}}>Update</button>
+			</div>
+		</div>
+	</div>
+</div>

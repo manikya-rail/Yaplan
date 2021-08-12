@@ -1,0 +1,35 @@
+<div class="modal-overlay {{if active 'active' ''}} g-modal-add-collaborator">
+	<div class="modal"  style="width: auto; height: auto;">
+		<a class="close ico_close-mo" href="" {{action (toggle 'active')}}></a>
+    {{reg/support/g-reg-notify type=notification.type msg=notification.msg}}
+		<div class="g-people-modal">
+			<div class="dialog-title">
+        {{#if categoryEdit}}
+          Edit Category
+        {{else}}
+          Add a new Category
+        {{/if}}
+      </div>
+			<div class="dialog-input">
+				<div class="colloborator-modal">
+					<fieldset class="g-form-group">
+						{{input value=categoryName type="name" placeholder = "Category Name" class="g-form-control"}}
+					</fieldset>
+					<fieldset class="g-form-group">
+						<div class="g-category-img-preview" id="categoryImage" style="background-image: url('assets/images/upload_default_image.png')"></div>
+            		<!-- <img id="categoryImage" src="assets/images/profile/default.png"/> -->
+					</fieldset>
+					<fieldset class="g-form-group q-text-center">
+        				<input type="file" id="categoryImageFilePicker" style="display: none" {{action "onFileSelect" on="change"}} accept="image/png, image/jpeg">
+						<button class="colored secondary mt-0" {{action "uploadCategoryImage"}}><i class="fa fa-cloud-upload"></i> Upload Category Image</button>
+					</fieldset>
+				</div>
+			</div>
+      {{#if categoryEdit}}
+        <button class="primary" type="submit" disabled={{isNotFilled}} {{action 'CreateCategory'}}>Edit Category</button>
+      {{else}}
+        <button class="primary" type="submit" disabled={{isNotFilled}} {{action 'CreateCategory'}}>Create Category</button>
+      {{/if}}
+		</div>
+	</div>
+</div>

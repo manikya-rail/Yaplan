@@ -1,0 +1,15 @@
+<div class="modal-overlay  g-modal-add-collaborator {{if active 'active' ''}}" style="z-index: 9999">
+  <div class="modal-auto-size" style="min-width: 400px;">
+    <h3 style="text-align: center; text-transform: capitalize;">{{userTask.task.title}} ({{userTask.taskType}})</h3>
+    <a class="close ico_close-mo" href="" {{action (toggle "active")}}></a>
+    <div class="g-form-group mb-2" >
+      {{userTask.task.description}}
+      {{#if userTask.task.attachments.length}}
+        <p><b>Attachments</b></p>
+        {{#each userTask.task.attachments as |attachment|}}
+          <a href="{{attachment.fileAttachment.url}}" download>{{attachment.fileAttachment.name}}</a>
+        {{/each}}
+      {{/if}}
+    </div>
+  </div>
+</div>

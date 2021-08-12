@@ -1,0 +1,33 @@
+<div class="modal-overlay {{if active 'active' ''}} g-modal-collaborator">
+	<div class="modal" style="width: auto; height: auto;">
+		<a class="close ico_close-mo" href="" {{action (toggle "active")}}></a>
+		<div class="g-people-modal">
+			<div class="dialog-title">Edit Collaborators</div>
+			<div class="dialog-people-list mCustomScrollbar" data-mcs-theme="minimal-dark">
+				{{#each document.collaborators as |collaborator|}}
+					<div class="item-person">
+						<div class="photo">
+							{{!-- {{g-avatar src=(portrait collaborator.id false)}} --}}
+							{{#if collaborator.portrait.image.url}}
+								<img class="g-avatar" src="{{collaborator.portrait.image.url}}" />
+							{{else}}
+								<img class="g-avatar" src="../assets/images/profile/default.png"/>
+							{{/if}}
+						</div>
+						<div class="info">
+							<span class="name">{{full-name collaborator.name}}</span>
+							<span class="email">{{collaborator.email}}</span>
+						</div>
+						{{!-- <div class="marker checked" {{action 'remove' collaborator.id}}>
+							<i class="fa fa-close"></i>
+						</div> --}}
+					</div>
+				{{/each}}
+			</div>
+			<div class="dialog-tagline">
+				Not listed above? <span class="action" {{action 'addNew'}}>Click to invite by email</span>
+			</div>
+      <button class="primary" type="submit" disabled={{isNotSelected}} {{action (toggle "active")}}>Done</button>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,680 @@
+@import '../../../_base';
+.g-project-modal {
+  width: 460px;
+  .input-group {
+    margin: 15px 0 40px;
+    font-size: @font-size-nao;
+    label {
+      color: #757575 !important;
+      font-weight: normal !important;
+      font-size: @medium;
+    }
+    input {
+      color: @dark-gray;
+      font-weight: normal;
+      font-size: @medium;
+    }
+    span.input {
+      margin-bottom: 5px;
+    }
+  }
+  button {
+    width: 100%;
+  }
+}
+
+.modal-overlay {
+  position: fixed;
+  display: none;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 20;
+  background-color: rgba(0, 0, 0, 0.4);
+  &.active {
+    display: block;
+  }
+  .modal {
+    .abs-middle;
+    position: absolute;
+    padding: 40px 40px 30px 40px;
+    background-color: white;
+    border-radius: 2px;
+    height: 85%;
+    width: 976px;
+    .close {
+      position: absolute;
+      display: block;
+      top: 22px;
+      right: 22px;
+      cursor: pointer;
+    }
+    .dialog-title {
+      font-size: @large;
+      margin-bottom: 35px;
+      text-align: center;
+    }
+  }
+  .modal-auto-size {
+    .abs-middle;
+    position: absolute;
+    padding: 40px 40px 30px 40px;
+    background-color: white;
+    border-radius: 2px;
+    .close {
+      position: absolute;
+      display: block;
+      top: 22px;
+      right: 22px;
+      cursor: pointer;
+    }
+    .dialog-title {
+      font-size: @large;
+      margin-bottom: 35px;
+      text-align: center;
+    }
+  }
+}
+
+.input-field-width-height {
+  width: 95%;
+  height: 30px;
+  font-size: 17px;
+}
+
+div.cards {
+  margin-left: 7%;
+  margin-top: 4%;
+  max-height: 550px;
+  overflow-y: scroll;
+}
+
+div.card {
+  background: #ffffff;
+  display: inline-block;
+  margin: 8px;
+  max-width: 300px;
+  -webkit-perspective: 1000;
+  perspective: 1000;
+  position: relative;
+  text-align: left;
+  -webkit-transition: all 0.3s 0s ease-in;
+  transition: all 0.3s 0s ease-in;
+  z-index: 1;
+}
+
+div.card span {
+  max-width: 300px;
+}
+
+div.card div.card-title {
+  background: #ffffff;
+  padding: 6px 15px 10px;
+  position: relative;
+  z-index: 0;
+}
+
+div.card div.card-title a.toggle-info {
+  border-radius: 32px;
+  height: 32px;
+  padding: 0;
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  width: 32px;
+}
+
+div.card div.card-title a.toggle-info span {
+  background: #ffffff;
+  display: block;
+  height: 2px;
+  position: absolute;
+  top: 16px;
+  -webkit-transition: all 0.15s 0s ease-out;
+  transition: all 0.15s 0s ease-out;
+  width: 12px;
+}
+
+div.card div.card-title a.toggle-info span.left {
+  right: 14px;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+div.card div.card-title a.toggle-info span.right {
+  left: 14px;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+div.card div.card-title label {
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: -0.05em;
+  margin: 0;
+  padding: 0;
+  margin-left: -16px;
+}
+
+div.card div.card-title h2 small {
+  display: block;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+}
+
+div.card div.card-description {
+  padding: 0 15px 10px;
+  position: relative;
+  font-size: 14px;
+}
+
+div.card div.card-actions {
+  box-shadow: 0 2px 0px 0 rgba(0, 0, 0, 0.075);
+  padding: 10px 15px 20px;
+  text-align: center;
+}
+
+div.card div.card-flap {
+  background: #d9d9d9;
+  position: absolute;
+  width: 100%;
+  -webkit-transform-origin: top;
+  transform-origin: top;
+  -webkit-transform: rotateX(-90deg);
+  transform: rotateX(-90deg);
+}
+
+div.card div.flap1 {
+  -webkit-transition: all 0.3s 0.3s ease-out;
+  transition: all 0.3s 0.3s ease-out;
+  z-index: -1;
+}
+
+div.card div.flap2 {
+  -webkit-transition: all 0.3s 0s ease-out;
+  transition: all 0.3s 0s ease-out;
+  z-index: -2;
+}
+
+div.cards.showing div.card {
+  cursor: pointer;
+  opacity: 0.6;
+  -webkit-transform: scale(0.88);
+  transform: scale(0.88);
+}
+
+.no-touch div.cards.showing div.card:hover {
+  opacity: 0.94;
+  -webkit-transform: scale(0.92);
+  transform: scale(0.92);
+}
+
+div.card.show {
+  opacity: 1 !important;
+  -webkit-transform: scale(1) !important;
+  transform: scale(1) !important;
+}
+
+div.card.show div.card-title a.toggle-info {
+  background: #ff6666 !important;
+}
+
+div.card.show div.card-title a.toggle-info span {
+  top: 15px;
+}
+
+div.card.show div.card-title a.toggle-info span.left {
+  right: 10px;
+}
+
+div.card.show div.card-title a.toggle-info span.right {
+  left: 10px;
+}
+
+.checkbox label {
+  cursor: pointer;
+  padding-left: 0;
+}
+
+.checkbox input[type=radio] {
+  opacity: 0;
+  /* position: absolute; */
+  /* margin-top: -39px; */
+  /* z-index: -1; */
+  /* width: 0; */
+  /* height: 0; */
+  /* overflow: hidden; */
+  /* left: 0; */
+  pointer-events: none;
+}
+
+.checkbox .checkbox-material {
+  vertical-align: middle;
+  position: relative;
+}
+
+.checkbox .checkbox-material:before {
+  position: absolute;
+  left: 8px;
+  top: 2px;
+  content: "";
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 4px;
+  width: 4px;
+  border-radius: 50%;
+  z-index: 1;
+  opacity: 0;
+  margin: 0;
+}
+
+.checkbox .checkbox-material .check {
+  position: relative;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 2px solid;
+  border-radius: 50%;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.checkbox .checkbox-material .check:before {
+  position: absolute;
+  content: "";
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  display: block;
+  margin-top: -2px;
+  margin-left: 8px;
+  width: 0;
+  height: 0;
+  box-shadow: 0 0 0 0, 0 0 0 0, 0 0 0 0, 0 0 0 0, 0 0 0 0, 0 0 0 0, 0 0 0 0 inset;
+  -webkit-animation: checkbox-off 0.3s forwards ease-out;
+  animation: checkbox-off 0.3s forwards ease-out;
+}
+
+.checkbox input[type=radio]:focus + .checkbox-material .check:after {
+  opacity: 0.2;
+}
+
+.checkbox input[type=radio]:checked + .checkbox-material .check:before {
+  box-shadow: 0 0 0 10px, 10px -10px 0 10px, 32px 0px 0 20px, 0px 32px 0 20px, -5px 5px 0 10px, 20px -12px 0 11px;
+  -webkit-animation: checkbox-on 0.3s forwards ease-out;
+  animation: checkbox-on 0.3s forwards ease-out;
+}
+
+.checkbox input[type=radio]:not(:checked) + .checkbox-material:before {
+  -webkit-animation: rippleOff 700ms forwards ease-out;
+  animation: rippleOff 700ms forwards ease-out;
+}
+
+.checkbox input[type=radio]:checked + .checkbox-material:before {
+  -webkit-animation: rippleOn 700ms forwards ease-out;
+  animation: rippleOn 700ms forwards ease-out;
+}
+
+.checkbox input[type=radio]:not(:checked) + .checkbox-material .check:after {
+  -webkit-animation: rippleOff 700ms forwards ease-out;
+  animation: rippleOff 700ms forwards ease-out;
+}
+
+.checkbox input[type=radio]:checked + .checkbox-material .check:after {
+  -webkit-animation: rippleOn 700ms forwards ease-out;
+  animation: rippleOn 700ms forwards ease-out;
+}
+
+.checkbox input[type=radio][disabled]:not(:checked) ~ .checkbox-material .check:before,
+.checkbox input[type=radio][disabled] + .circle {
+  opacity: 0.5;
+}
+
+.checkbox input[type=radio][disabled] + .checkbox-material .check:after {
+  background-color: rgba(0, 0, 0, 0.84);
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+.checkbox-material .check {
+  /*color: #2FAEF8;*/
+}
+
+.checkbox-material:before {
+  background-color: transparent;
+  border: 1px solid orange;
+}
+
+.checkbox input[type=radio]:checked + .checkbox-material .check {
+  color: white;
+  border-radius: 50%;
+  background-color: @orange;
+  border-color: @orange;
+}
+
+@-webkit-keyframes checkbox-on {
+  0% {
+    // box-shadow: 0 0 0 10px, 10px -10px 0 10px, 32px 0px 0 20px, 0px 32px 0 20px, -5px 5px 0 10px, 15px 2px 0 11px;
+  }
+  50% {
+    // box-shadow: 0 0 0 10px, 10px -10px 0 10px, 32px 0px 0 20px, 0px 32px 0 20px, -5px 5px 0 10px, 20px 2px 0 11px;
+  }
+  100% {
+    // box-shadow: 0 0 0 10px, 10px -10px 0 10px, 32px 0px 0 20px, 0px 32px 0 20px, -5px 5px 0 10px, 20px -12px 0 11px;
+  }
+}
+
+@keyframes checkbox-on {
+  0% {
+    // box-shadow: 0 0 0 10px, 10px -10px 0 10px, 32px 0px 0 20px, 0px 32px 0 20px, -5px 5px 0 10px, 15px 2px 0 11px;
+  }
+  50% {
+    // box-shadow: 0 0 0 10px, 10px -10px 0 10px, 32px 0px 0 20px, 0px 32px 0 20px, -5px 5px 0 10px, 20px 2px 0 11px;
+  }
+  100% {
+    // box-shadow: 0 0 0 10px, 10px -10px 0 10px, 32px 0px 0 20px, 0px 32px 0 20px, -5px 5px 0 10px, 20px -12px 0 11px;
+  }
+}
+
+@-webkit-keyframes checkbox-off {
+  0% {
+    // box-shadow: 0 0 0 10px, 10px -10px 0 10px, 32px 0px 0 20px, 0px 32px 0 20px, -5px 5px 0 10px, 20px -12px 0 11px, 0 0 0 0 inset;
+  }
+  25% {
+    // box-shadow: 0 0 0 10px, 10px -10px 0 10px, 32px 0px 0 20px, 0px 32px 0 20px, -5px 5px 0 10px, 20px -12px 0 11px, 0 0 0 0 inset;
+  }
+  50% {
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    margin-top: -4px;
+    margin-left: 6px;
+    width: 0px;
+    height: 0px;
+    // box-shadow: 0 0 0 10px, 10px -10px 0 10px, 32px 0px 0 20px, 0px 32px 0 20px, -5px 5px 0 10px, 15px 2px 0 11px, 0 0 0 0 inset;
+  }
+  51% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+    margin-top: -2px;
+    margin-left: -2px;
+    width: 20px;
+    height: 20px;
+    // box-shadow: 0 0 0 0, 0 0 0 0, 0 0 0 0, 0 0 0 0, 0 0 0 0, 0 0 0 0, 0px 0px 0 10px inset;
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+    margin-top: -2px;
+    margin-left: -2px;
+    width: 20px;
+    height: 20px;
+    // box-shadow: 0 0 0 0, 0 0 0 0, 0 0 0 0, 0 0 0 0, 0 0 0 0, 0 0 0 0, 0px 0px 0 0px inset;
+  }
+}
+
+@keyframes checkbox-off {
+  0% {
+    // box-shadow: 0 0 0 10px, 10px -10px 0 10px, 32px 0px 0 20px, 0px 32px 0 20px, -5px 5px 0 10px, 20px -12px 0 11px, 0 0 0 0 inset;
+  }
+  25% {
+    // box-shadow: 0 0 0 10px, 10px -10px 0 10px, 32px 0px 0 20px, 0px 32px 0 20px, -5px 5px 0 10px, 20px -12px 0 11px, 0 0 0 0 inset;
+  }
+  50% {
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    margin-top: -4px;
+    margin-left: 6px;
+    width: 0px;
+    height: 0px;
+    // box-shadow: 0 0 0 10px, 10px -10px 0 10px, 32px 0px 0 20px, 0px 32px 0 20px, -5px 5px 0 10px, 15px 2px 0 11px, 0 0 0 0 inset;
+  }
+  51% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+    margin-top: -2px;
+    margin-left: -2px;
+    width: 20px;
+    height: 20px;
+    // box-shadow: 0 0 0 0, 0 0 0 0, 0 0 0 0, 0 0 0 0, 0 0 0 0, 0 0 0 0, 0px 0px 0 10px inset;
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+    margin-top: -2px;
+    margin-left: -2px;
+    width: 20px;
+    height: 20px;
+    // box-shadow: 0 0 0 0, 0 0 0 0, 0 0 0 0, 0 0 0 0, 0 0 0 0, 0 0 0 0, 0px 0px 0 0px inset;
+  }
+}
+
+// @-webkit-keyframes rippleOn {
+//   0% {
+//     opacity: 0.5;
+//   }
+//   100% {
+//     opacity: 0;
+//     -webkit-transform: scale(13, 13);
+//     transform: scale(13, 13);
+//   }
+// }
+
+// @keyframes rippleOn {
+//   0% {
+//     opacity: 0.5;
+//   }
+//   100% {
+//     opacity: 0;
+//     -webkit-transform: scale(13, 13);
+//     transform: scale(13, 13);
+//   }
+// }
+
+// @-webkit-keyframes rippleOff {
+//   0% {
+//     opacity: 0.5;
+//   }
+//   100% {
+//     opacity: 0;
+//     -webkit-transform: scale(13, 13);
+//     transform: scale(13, 13);
+//   }
+// }
+
+// @keyframes rippleOff {
+//   0% {
+//     opacity: 0.5;
+//   }
+//   100% {
+//     opacity: 0;
+//     -webkit-transform: scale(13, 13);
+//     transform: scale(13, 13);
+//   }
+// }
+
+.wrapper {
+  text-align: center;
+  display: inline-block;
+  position: absolute;
+  left: 50%;
+}
+
+.button-cancel {
+  display: inline-block !important;
+  margin-left: 10px;
+  background-color: white !important;
+  color: @blue-gray !important;
+  border: 1px solid @blue-gray !important;
+  margin-top: 30px;
+}
+
+.form-margin {
+  margin-top: -3%;
+}
+
+.initial-addprojectlabel {
+  margin-left: -64%;
+  font-size: 16px;
+}
+
+.initial-form-margin {
+  display: inline-block;
+  text-align: center;
+}
+
+.initial-input-field-width-height {
+  width: 73%;
+  height: 30px;
+  font-size: 17px;
+}
+
+.container {
+  width: 80%;
+  margin: 5% auto;
+  background: #FFF;
+  padding: 5%;
+}
+
+.file-placeholder {
+  position: relative;
+  cursor: pointer;
+  width: 400px;
+  height: 40px;
+  /*
+  you can use the label to trigger the event    */
+  /*
+  or the input file. here I use both but you don't have to   */
+}
+
+.file-placeholder label {
+  display: block;
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  width: 100%;
+  max-width: 400px;
+  height: 40px;
+}
+
+.file-placeholder label:before {
+  content: 'File';
+  position: absolute;
+  top: -15px;
+  left: 10px;
+  background-color: #c7c7c7;
+  padding: 2px 5px;
+  color: #FFF;
+}
+
+.file-placeholder input[type=file] {
+  position: absolute;
+  z-index: 3;
+  top: 0;
+  left: 0;
+  width: 100%;
+  max-width: 400px;
+  height: 40px;
+  opacity: 0;
+}
+
+.file-placeholder .file-browse {
+  width: 100%;
+  height: 40px;
+  border: 1px solid #ccc;
+}
+
+.file-placeholder .file-browse .file-browse-txt {
+  display: block;
+  float: left;
+  line-height: 40px;
+  width: 80%;
+  padding-left: 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.file-placeholder .file-browse .file-browse-txt.hasValue {
+  background-color: #ededed;
+}
+
+.file-placeholder .file-browse .browse {
+  display: block;
+  float: left;
+  width: 20%;
+  background-color: #42b5e8;
+  color: #FFF;
+  height: 40px;
+  line-height: 40px;
+  padding: 0 10px;
+}
+
+.image-card {
+  max-width: 100%;
+  width: 100%;
+  height: 180px;
+  text-align: center;
+  margin: 0 auto;
+  display: block;
+  border: 1px solid #d1d5d8;
+  border-bottom: 3px solid @orange;
+  
+}
+
+.category-card {
+  max-width: 33%;
+  width: 30.7%;
+  margin-right: 25px;
+  margin-bottom: 25px;
+  display: inline-block;
+  // flex-direction: column;
+  &:nth-child(3n) {
+    margin-right: 0px;
+  }
+  .image-view-card {
+    width: 245px;
+    height: 184px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: 50% 50%; 
+    display: block; 
+  }
+  .category-name {
+    font-size: 20px;
+    color: @dark-gray;
+    font-weight: bold;
+  }
+}
+
+// .category-row {
+//   flex-direction: row;
+//   // justify-content: space-between;
+//   // display: flex;
+//   height: 260px;
+//   overflow-y: scroll;
+// }
+
+.category-label-row {
+  margin-top: 15px;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  display: flex
+}
+
+.button-list {
+  flex-direction: row;
+  justify-content: flex-end;
+  display: flex;
+}
+.g-ab-modal-footer {
+    position: absolute;
+    bottom: -24px;
+    right: 5%;
+}
+.project-label {
+  font-weight: bold;
+  font-size: 24px;
+}
+

@@ -1,0 +1,155 @@
+@import '../../../_base';
+
+.g-people-modal {
+	width: 460px;
+	margin: 0 auto;
+	.dialog-title {
+		margin-bottom: 10px !important;
+	}
+	
+	.dialog-tagline {
+		margin-bottom: 30px;
+
+		text-align: center;
+		font-size: @xsmall;
+		color: @mid-gray;
+
+		.action {
+			cursor: pointer;
+		}
+	}
+
+	.dialog-link {
+		display: block;
+		margin-top: 20px;		
+
+		text-align: center;
+		color: @dark-gray;
+    	text-decoration: none;
+
+    	&:hover {
+    		color: @mid-gray;
+    	}
+	}
+
+	.dialog-people-list {
+		height: 300px;
+		padding: 0px 30px 0px 20px;
+		margin-bottom: 25px;
+
+		overflow: hidden;
+		border: 1px solid #ccc;
+
+		.item-person {
+			.clearfix;
+
+			padding: 15px 0px;
+			height: 50px;
+
+			&:not(:last-child) {
+				border-bottom: 1px solid #ccc;
+			}
+
+			.photo {
+				.vert-middle;
+
+				position: relative;
+				float: left;
+				width: 40px;
+				height: 40px;
+
+				overflow: hidden;
+				background-color: #ccc;
+				border-radius: 50%;
+
+			}
+
+			.info {
+				float: left;
+				padding: 0px 10px;
+				width: ~"calc(100% - 70px)";
+
+				box-sizing: border-box;
+				
+				.name {
+					display: block;
+					margin-bottom: 5px;
+
+					font-size: @medium;
+					color: @dark-gray;
+				}
+
+				.email {
+					display: block;
+
+					font-size: @xsmall;
+					color: @mid-gray;
+				}
+			}
+
+			.marker {
+				.vert-middle;
+
+				position: relative;
+				float: left;
+				width: 28px;
+				height: 28px;
+
+				overflow: hidden;
+				text-align: center;
+				border: 1px solid #ccc;
+				border-radius: 50%;
+
+				i {
+					.vert-middle;
+
+					position: relative;
+					display: none;
+
+					font-size: @medium;
+					color: @orange;
+				}
+
+				&.checked {
+					border: 1px solid @dark-gray;
+
+					i {
+						display: inline-block;
+					}
+				}
+			}
+		}
+	}
+
+	button.primary {
+		width: 100%;
+		font-size: @font-size-button;
+	}
+	&.attachment-document-modal {
+		.colloborator-modal {
+			ul.document-attach-list {
+				padding: 0;
+				border-top: 1px solid #eee;
+				li {
+					list-style-type: none;
+					padding: 15px;
+					border: 1px solid #eee;
+					border-top: none;
+					&:last-child {
+						// border: 1px solid #eee;
+						border-top: none;
+					}
+				}
+			}
+		}
+	}
+}
+
+
+ul.document-attach-list {
+	li {
+		b {
+			word-break: break-word;
+		}
+	}
+}

@@ -1,0 +1,10 @@
+<div class="documents-route">
+  <div class="content-header">
+    <ul class="submenu">
+      {{#link-to "app.documents.archiveddocuments" href=true tagName='li'}}Archived Documents{{/link-to}}
+      <!-- {{#link-to "app.documents.templates" href=true tagName='li'}}Document Templates{{/link-to}} -->
+    </ul>
+  </div>
+</div>
+
+{{documents/g-archived-documents archivedDocumentsList=model.archivedDocumentsList scope='user' refreshPage='refreshPage'}}

@@ -1,0 +1,88 @@
+<style type="text/css">
+body {
+  color: #2e353a;
+}
+  img {
+    display: block;
+  }
+  .sec_content {
+    color: #2e353a;
+  }
+  .mb-1 {
+    margin-bottom: 40px;
+  }
+  .pt-1 {
+    padding-top: 20px;
+  }
+  .mt-1 {
+    margin-top: 40px;
+  }
+  .mb-2 {
+    margin-bottom: 15px;
+  }
+  .table-contents {
+    font-size: 11pt;
+  }
+</style>
+<% content_for :title do %>
+  <%= @document.title %>
+<% end %>
+
+<%if @document.cover_page.present?%>
+  <div class="page-break"  style="page-break-after: always;">
+    
+      <div class="g-coverpage" style="padding: 10px 0px;">
+      <div class="g-coverpage-view">
+        <!-- <input type="file" id="coverpageFilePicker" style="display: none" {{action "onFileSelect" on="change"}} accept="image/*">
+        <div class="dropzone" id="dropzone" {{action "uploadCoverPage"}} style="background-image: url('{{document.cover_page.url}}')"> -->
+          <%if @document.cover_page.present? and @document.show_cover%>
+            <div class="cover-profile-image" style="background: url('<%=@document.logo.url%>');width: 35px;height: 35px;background-repeat: no-repeat;padding: 30px;border-radius: 50%;margin-bottom: 70px;background-size: 100%;background-position: 50%; margin-left: 10px">
+            </div>
+
+          <div class="cover-image" style="height: 450px; margin-top:0px;display: block; text-align: center; background-image: url('<%= @document.cover_page.url %>'); background-repeat: no-repeat; background-size: 100%; background-position: 50%;">
+              <%#=wicked_pdf_image_tag(@document.cover_page.url)%>
+          </div>
+          <%end%>
+          <!-- <img src='{{document.cover_page.url}}' class='image-card'/> -->
+        </div>
+        <div class="mt-2 coverpage-txt">
+          <h5 class="mb-1 mt-1" style="text-transform: uppercase; font-size: 24px;" class="bot-border-srt"><%= @document.title %></h5>
+          <!-- <p><b>Description:</b>&nbsp;<%#= @document.description %></p> -->
+          <% if @document.subtitle.present?%>
+            <p><%= @document.subtitle %></p>
+          <%end%>
+
+          <p class="mt-2"><%= @document.created_at.strftime("%d %b %Y") %></p>
+        </div>
+        <div class="g-cover-bottom-sec">
+          <div style=" margin-top: 10px;">
+             <p style=""><%= @document.created_by.full_name %></p>
+          </div>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+    </div>
+  </div>
+<%end%>
+
+<div class="doc_container">
+  <!-- <p class='doc_title'><%#= @document.title %></p> -->
+ <%if @document.show_contents or @document.show_contents.nil?%>
+    <p class="sec_title mb-1 mt-1"><b> Table of Contents </b></p>
+    <% @document.section_texts.to_enum.with_index(1).each do |section_text,index|%>
+    <p class = 'sec_title table-contents mb-2'><%=index%> <span> : </span><%=section_text.title%></p>
+    <%end%>
+    <div class="page-break" style="page-break-after: always;"></div>
+  <%end%>
+
+  <% @document.section_texts.each do |section| %>
+      <div class="sec_container" >
+        <p class="sec_title bot-border-srt mb-1 mt-1"><%= section.title %></p>
+        <p class="sec_content">
+         <%= section.content.html_safe  if (section.content != nil) &&(raw(section.content) != '<br>')%>
+       </p>
+     </div>
+  <% end %>
+</div>
+
+

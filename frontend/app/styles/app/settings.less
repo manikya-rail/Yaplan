@@ -1,0 +1,92 @@
+@import '../_base';
+@import  '../components/settings/g-profile';
+@import  '../components/settings/g-password';
+@import  '../components/settings/g-billing';
+@import  '../components/settings/support/g-modal-stripe';
+@import  '../components/settings/support/g-modal-card';
+@import  '../components/settings/g-plan';
+
+.settings-route {
+
+	.inner{ padding: 0 40px;}
+
+	.content-header {
+		.inner;
+		.transition;
+
+		height: 64px;
+		background-color: #fff;
+		border-bottom: 1px solid #eee;
+		position: fixed;
+		top: 65px;
+		z-index: 1;
+		right: 0;
+    	// left: 240px;
+
+		ul.submenu {
+	      .inner;
+
+	      margin: 0;
+	      padding: 0;
+	      list-style: none;
+
+	      li {
+	        float: left;
+	        line-height: 64px;
+	        height: 62px;
+	        margin-right: 40px;
+	        border: solid transparent;
+	        border-width: 0 0 2px 0;
+	        cursor: pointer;
+
+	        &.active {
+	          border-color: @orange;
+	        }
+	      }
+	    }
+	}
+
+	.filters{
+	  margin-top: -49px;
+	  margin-bottom: 49px;
+
+	  button {
+	  	.button-toggle-type1;
+
+	  	float: right;
+    	margin: 0 100px 0 0;
+
+   		font-size: @font-size-button;
+
+   		i {
+   			color: @orange;
+   		}
+	  }
+	}
+
+	.input-group{
+	    margin: 15px 0px;
+
+	    font-size: @font-size-nao;
+
+	    span.input{
+	      margin-bottom: 5px;
+	    }
+
+	    .input--password{
+	      position: relative;
+
+	      a.tool-reveal{
+	        position: absolute;
+	        display: block;
+	        bottom: 15px;
+	        right: 15px;
+
+	        &.ico_reg_eyeon{
+	          bottom: 16px;
+	        }
+	      }
+	    }
+	}
+
+}

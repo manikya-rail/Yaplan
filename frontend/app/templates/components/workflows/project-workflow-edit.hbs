@@ -1,0 +1,279 @@
+{{reg/support/g-reg-notify type=notification.type msg=notification.msg}}
+<div class="workflow-disable-ipad">
+  <h1>Please use desktop browser for workflow configuration</h1>
+</div>
+<div class="workflow-toggle-click">
+  <input id="workflow-slide-sidebar" type="checkbox" role="button" />
+  <label class="workflow-slide-sidebar-label" for="workflow-slide-sidebar">
+    <span>
+      <i class="fa fa-caret-right fa-uni-icon" aria-hidden="true"></i>
+      <i class="fa fa-caret-left fa-uni-icon" aria-hidden="true"></i>
+    </span>
+  </label>
+
+  <div class='first-flex'>
+    <div id="workflow-editor" />
+  </div>
+
+  <div class="flex-aside">
+    <div class='dashboard-list' style="margin-bottom: 5px;">
+      <div class='dashboard-header g-side-dashboard-header q-text-uppercase'>
+        <span> Add Component</span><span class="help-icon pull-right" {{ action 'showWorkflowInformation'}}><span>?</span></span>
+      </div>
+       <ul class="g-list-unstyled">
+        <li class="workflow-icon-set">
+          <span class="g-w-icon g-a-start tooltip share-options" {{action 'addComponent' 'startStop'}}>
+            <div class="tooltiptext">
+              <span><b>Start : </b>This task is always the first step in your project workflow.</span><br>
+              <span><b>Stop : </b>This task is always used as the last step in your project, or at termination points along the way.</span>
+            </div>
+          </span>
+        </li>
+        <li class="workflow-icon-set">
+          <span class="g-w-icon g-a-doc tooltip share-options" id="add-document"
+            {{ action 'addComponent' 'document' }}>
+           <div class="tooltiptext">
+              <span><b>Document : </b>This task relates to any document that can be created and edited in Yakkaplan.   Every document is assigned a Document Owner, a Document Approver (can be the same person) and a Document Template.</span>
+            </div>
+          </span>
+        </li>
+        <li class="workflow-icon-set">
+          <span class="g-w-icon g-a-dia tooltip share-options" {{ action 'addComponent' 'decision' }}> 
+            <div class="tooltiptext">
+              <span><b>Decision : </b>This task relates to any decision or "gate" required as part of your process. It could, for example, be a client review or an internal management approval.</span>
+            </div>
+          </span>
+        </li>
+        <li class="workflow-icon-set">
+          <span
+            class="g-w-icon g-a-triangle tooltip share-options"
+            {{ action 'addComponent' 'communication' }}
+          >
+            <div class="tooltiptext">
+              <span><b>Communication : </b>This task automatically sends a short, customised email message to people you nominate, based on a previous task being completed and approved. For example, you might send your team an email when a project plan has been approved, or to senior management to notify them of a specific client decision.</span>
+            </div>
+          </span>
+        </li>
+        <li class="workflow-icon-set">
+          <span class="g-w-icon g-a-hexa tooltip share-options"{{ action 'addComponent' 'action' }}>
+            <div class="tooltiptext">
+              <span><b>Action : </b>This task relates to any activity performed "outside" Yakkaplan. This could be meetings, site visits, or the creation of any documents that can't be created in Yakkaplan, such as designs and drawings.</span>
+            </div>
+          </span>
+        </li>
+      </ul>
+    </div>
+    <button class="g-btn-workflow" {{action 'save'}} disabled={{saving}}>
+      Save workflow
+    </button>
+    <button class="g-btn-workflow" {{action 'cancel'}} disabled={{saving}}>
+      Cancel
+    </button>
+    {{#link-to 'app.projects.projecttab.workflow' project.id class="g-btn-workflow" tagName="button" disabled=saving}}
+      Exit
+    {{/link-to}}
+     <!-- workflow config info -->
+      {{!-- <div class="config-text">
+        <span><b>Workflow Configuration Instructions:</b></span>
+        <p>1. This is your Workflow Configuration Editor. It consists of the main Workflow Canvas to the left, and the Task Panel above.</p>
+        <p>2. Different shapes represent different kinds of Tasks. Hover over the icons in the Task Panel to see what each shape is for.</p>
+        <p>3. Click on any of the icons in the Task Panel, to add it to your Workflow Canvas.  It will appear in the top left of the Canvas as a new Task.</p>
+        <p>4. Drag the Task to any location on the Canvas and resize as necessary.</p>
+
+        <span><b>Creating Workflows:</b></span>
+
+        <p>5. Your workflow is designed to map and mirror your own project processes, by connecting different types of tasks together in a logical way.</p>
+        <p>6. Connect Tasks by clicking on the dot that appears when you hover over a Task, and dragging an arrow to the next Task.</p>
+
+        <span><b>Task Attributes:</b></span>
+
+        <p>7. Each task has different attributes.  Right click on each shape in your Workflow Canvas to add or edit the information to suit your requirements.</p>
+        <p>8. When you are ready, click "Update Workflow". This will update the workflow in your project and make it available for everyone in your project to see.</p>
+        <p>9. Don't worry - Yakkaplan has a few gentle safeguards built in to make sure you don't leave out important information!</p>
+      </div> --}}
+  </div>
+</div>
+
+{{g-component-description active=workflowInstruction}}
+
+{{
+  workflows/label-input active=labelEditorActive selectedDecision=selectedDecision
+  updateLabel='updateLabel' labelToEdit=labelToEdit isDecision=isDecision
+}}
+{{
+  workflows/g-communication
+  active=communicationActive
+  step=selectedStep
+  node=selectedNode
+  updateCommunication='updateCommunication'
+  cancelCommunication='cancelCommunication'
+  removeStep='removeStep'
+  users=model.collaborators
+  projectWorkflow=projectWorkflow
+}}
+{{
+  workflows/g-action
+  active=actionActive
+  step=selectedStep
+  users=model.collaborators
+  updateAction='updateAction'
+  cancelAction='cancelAction'
+  removeStep='removeStep'
+}}
+{{
+  workflows/g-decision-info
+  active=decisionActive
+  step=selectedStep
+  users=model.collaborators
+  updateDecision='updateDecision'
+  cancelDecision='cancelDecision'
+  removeStep='removeStep'
+}}
+{{
+  g-start-stop
+  active=startStopActive
+  step=selectedStep
+  updateStartStop='updateStartStop'
+  cancelStartStop='cancelStartStop'
+  removeStep='removeStep'
+}}
+{{
+  workflows/g-document-info
+  active=documentInfoActive
+  step=selectedStep
+  users=model.collaborators
+  docs=documents
+  removeStep='removeStep'
+  updateDocumentInfo='updateDocumentInfo'
+  cancelDocumentInfo='cancelDocumentInfo'
+}}
+<style>
+  .first-flex {
+    display: flex;
+    flex: 1;
+  }
+  .flex-container {
+    display: flex;
+    height: 100%;
+  }
+
+  .flex-horizontally-scrolled-items {
+    display: flex;
+    width: 100%;
+    overflow-x: scroll;
+    border-right: 1px solid #EEE;
+  }
+  /*.flex-workflow {
+    
+    flex-grow: 1;
+    position: fixed;
+  }*/
+  .flex-aside {
+    width: 250px;
+    position: fixed;
+    right: 0;
+    top: 170px;
+    height: 72vh;
+    overflow-y: auto;
+    background-color: #fff;
+    border-left: 1px solid #EEEEF2;
+    z-index: 1;
+    -webkit-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    transition: all 0.4s;
+  }
+  #workflow-editor {
+    height: 100vh;
+    width: 100%;
+    resize: both;
+    /*position: fixed;*/
+  }
+
+  #workflow-editor canvas:last {
+    display: none;
+  }
+  .workflow-textarea {
+    width: 95% !important;
+    padding-right: 0px !important;
+    min-height: 36px;
+  }
+  textarea.workflow-text {
+    height: 120px !important;
+  }
+  .workflow-text {
+    /*height: 36px !important;*/
+    padding-right: 0px !important;
+  }
+  .ctxt-item {
+    background-color: white;
+    font-family: 'Lato', sans-serif;
+    height: 30px;
+
+  }
+  .ctxt-menu {
+    border-radius: 2px !important;
+    border-color: rgb(238, 238, 238) !important;
+  }
+  #node-resize {
+    z-index: 4 !important;
+  }
+  /*.tooltiptext {
+    display: none;
+  }*/
+  .help-icon {
+    width: 10px;
+    height: 10px;
+    background-color: #51caff;
+    border-radius: 50%;
+    text-align: center;
+    padding: 3px;
+    line-height: 10px;
+    cursor: pointer;
+    position: relative;
+    left: 35px;
+  }
+  .config-text {
+    font-size: 10.5pt;
+    letter-spacing: 0.2px;
+    line-height: 18px;
+    opacity: 0.8;
+  }
+  .flex-aside .tooltiptext {
+    width: 190px;
+    top: 35px;
+    left: 0px;
+  }
+  .flex-aside .tooltiptext:after {
+    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    filter: drop-shadow(rgba(0, 0, 0, 0.1) 1px -1px 4px);
+    top: -20px;
+    left: 1px;
+  }
+  .g-a-doc .tooltiptext {
+    left: -50px;
+  }
+  .g-a-doc .tooltiptext:after {
+    left: 52px;
+  }
+
+  .g-a-dia .tooltiptext {
+    left: -98px;
+  }
+  .g-a-dia .tooltiptext:after {
+    left: 100px;
+  }
+  .g-a-triangle .tooltiptext {
+    left: -142px;
+  }
+  .g-a-triangle .tooltiptext:after {
+    left: 144px;
+  }
+  .g-a-hexa .tooltiptext {
+    left: -190px;
+  }
+  .g-a-hexa .tooltiptext:after {
+    left: 192px;
+  }
+</style>

@@ -1,0 +1,28 @@
+<div class="dashboard-list g-lower-myprojects">
+  <div class="dashboard-header">
+    <span class="dashboard-heading">My Projects</span>
+  </div>
+  <ul class="g-list-unstyled myproject-header">
+    <li>Projects</li>
+    <li>Role</li>
+    <li>Progress</li>
+  </ul>
+  <div class="inner-table-horizontal-scroll">
+    {{#if sortedProjects.length}}
+      {{#each (saved-models sortedProjects) as |project|}}
+        <ul class="g-list-unstyled" {{ action 'navigateToProject' project.id}} style='cursor: pointer'>
+          <li>{{project.title}}</li>
+          <li>{{project.role}}</li>
+          <li>
+            <div class="meter">
+              <span style="width: {{project.progress}}%; background-color:#51caff"></span>
+            </div>
+            <small class="project-progress-bar">{{project.progress}}%</small>
+          </li>
+        </ul>
+      {{/each}}
+    {{else}}
+      <p class="q-text-center">No Projects</p>
+    {{/if}}
+  </div>
+</div>

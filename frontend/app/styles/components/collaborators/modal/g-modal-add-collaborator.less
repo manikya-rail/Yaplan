@@ -1,0 +1,119 @@
+.g-modal-add-collaborator {
+	.dialog-input {
+		margin: 20px 0 0px;
+		&.g-vertical-doc-scroll {
+			max-height: 80vh;
+			overflow-y: auto;
+		}
+		input {
+			display: block;
+			box-sizing: border-box;
+			width: 100%;
+			padding: 10px;
+
+			font-size: @font-size-main;
+			border: 1px solid @b-dark-gray;
+			color: @mid-gray;
+		}
+		input[type=file] {
+			padding: 6px;
+		}
+
+		fieldset {
+			padding: 0px;
+		}
+
+		textarea {		    
+			display: block;
+			overflow: hidden;
+			box-sizing: border-box;
+
+			width: 100%;
+			height: 120px;
+			margin-top: 7px;
+			padding: 10px;
+
+			border: 1px solid @b-dark-gray;
+			font-family: @font-family;
+			color: @mid-gray;
+			font-size: @font-size-main;	    
+
+			resize: none;		    
+		}
+	}
+
+	.dialog-choices {
+		margin: 10px 0 0;
+
+		label {
+			display: block;
+			padding: 5px 0px;
+		}
+
+		.select-wrapper {
+			.ia-angle-down;
+
+			position: relative;
+			
+			&:after {
+				display: block;
+				position: absolute;
+				right: 12px;
+				top: 12px;
+			}
+		}
+
+		select {
+			display: block;
+			position: relative;
+			width: 100%;
+			margin-bottom: 7px;
+			padding: 10px;
+
+			border: 1px solid @orange;
+			border-radius: 0;
+
+			font-size: @font-size-main;		    
+			color: @mid-gray;
+			background-color: #fff;
+
+			-webkit-appearance: none;
+			-moz-appearance: none;
+			appearance: none;
+
+		}
+	}
+
+	.dialog-tagline{
+		margin-bottom: 10px;
+	}
+
+	button {
+		margin: 15px 0 15px;
+	}
+}
+
+@-moz-document url-prefix() {
+	.g-modal-add-collaborator {
+		.dialog-input {
+			input[type=file] {
+				padding: 0px;
+			}
+		}
+	}
+}
+
+
+//safari browser
+
+@media not all and (min-resolution:.001dpcm) {
+	@supports (-webkit-appearance:none) {
+		.g-modal-add-collaborator {
+			.dialog-input {
+				input[type=file] {
+					padding: 0px;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,20 @@
+Options
+{{#g-popup isOpened=on}}
+  <ul class="context-list">
+    <li {{action 'preview' document}}>Preview Document</li>
+    {{#if isOwner}}
+      {{#if (if-equal document.state 'assigned' true false)}}
+        <li {{action 'onIssueForApproval' document}}>Issue For Approval</li>
+      {{/if}}
+      {{#unless document.is_template}}
+        <li {{action 'onSaveAsTemplate' document}}>Save As Template</li>
+      {{/unless}}
+      {{#unless document.is_template}}
+        <li {{action 'onDeleteDocument' document}}>Archive Document</li>
+      {{/unless}}
+      {{!-- {{#unless document.is_template}}
+        <li {{action 'onChangeApprover' document}}>Change Approver</li>
+      {{/unless}} --}}
+    {{/if}}
+  </ul>
+{{/g-popup}}

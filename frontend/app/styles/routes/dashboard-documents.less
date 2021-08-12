@@ -1,0 +1,51 @@
+@import '../_base';
+
+@import "../components/dashboard/g-choose-project";
+
+.dashboard-documents-route {
+
+  .inner {
+    padding: 0 100px;
+  }
+
+  .content-header {
+    .inner;
+
+    position: relative;
+    height: 64px;
+    background-color: #fff;
+
+    button.add{
+      position: absolute;
+      right: 100px;
+      top: 30px;
+    }
+
+    .edit-project{
+      .i-chevron-down;
+
+      position: relative;
+
+      &.on{
+        .i-chevron-up;
+      }
+
+      float: right;
+      margin: 13px 80px 0 0;
+    }
+
+    .project-sortby{
+      .i-chevron-down;
+
+      position: relative;
+
+      &.on{
+        .i-chevron-up;
+      }
+
+      float: right;
+      margin: 13px 20px 0 0;
+    }
+  }
+
+}

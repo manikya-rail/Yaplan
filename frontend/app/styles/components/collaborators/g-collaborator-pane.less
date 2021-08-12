@@ -1,0 +1,238 @@
+.g-collaborator-pane {
+	padding: 20px;
+
+	background-color: #fff;
+
+	&.hidden {
+		display: none
+	}
+
+	.person {
+		.clearfix;
+
+		> div {
+			float: left;
+			box-sizing: border-box;
+		}
+
+		.photo {
+			width: 100px;
+			padding: 10px;
+		}
+
+		.info {
+			width: ~"calc(100% - 120px)";
+			padding: 20px 10px;
+
+			.title {
+				margin: 3px 15px 10px 0px;
+				font-size: 18px;
+				color: @dark-gray;
+			}
+
+			.stats {
+				font-size: 15px;
+				color: @mid-gray;
+
+				.expander {
+					
+					&:hover {
+						border-color: @dark-gray;
+					}
+
+					display: inline-block;
+					width: 18px;
+					margin-left: 5px;
+
+					cursor: pointer;
+					border: 1px solid #ccc;			    			    
+				    
+				    text-align: center;
+				    line-height: 18px;		    
+				}
+			}
+		}
+
+		.action {
+			width: 20px;
+			padding-top: 20px;
+
+			span
+			{
+				cursor: pointer;
+
+				text-align: center;
+				line-height : 20px;
+			}
+		}
+	}
+
+	.doc-list {
+		padding: 20px 0px 0px;
+
+		&.hidden {
+			display: none;
+		}
+
+		.doc {
+			.clearfix;
+
+			display: block;
+			padding: 10px;
+
+			cursor: pointer;
+
+			&:hover {
+				background-color: #eee;
+			}
+
+			.status-icon {
+				display: inline-block;
+				width: 15px;
+			}
+
+			.status {
+				display: inline-block;
+				float: right;
+
+				text-align: right;
+				color: @mid-gray;
+			}
+		}
+	}
+}
+/*styling for collaboratore*/
+.cust-collaborator{
+	// width: 100%;
+	padding: 50px 40px;
+	.person{
+		display: inherit;
+		width: 100%;
+		> div{
+		box-sizing: initial;
+		}
+		.profile-pic{
+			width:150px;
+			height: 150px;
+			display: block;
+			background-repeat: no-repeat;
+			background-position: center;
+			margin-right: 30px;
+			border-radius: 50%;
+			background-size: contain;
+		}
+		.info{
+			padding: 10px 0;
+			width: 300px;
+			.stats {
+				font-size: 12px;
+				font-weight: 400;
+				color: @grey-text;
+				text-transform: uppercase;
+			}
+			.title{
+				font-weight: 400;
+			}
+		}
+	}
+	h6{
+		margin:0;
+	}
+}
+.title-holder{
+	.transition;
+  	// box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+  	border: 1px solid #eee;
+    padding: 10px 25px 0 50px;
+    position: fixed;
+    z-index: 0;
+    right: 0;
+    // left: 240px;
+    // width: 100%;
+    background-color: #fff;
+    z-index: 1;
+    top: 65px;
+
+  span{
+    color: #666;
+    font-size: 18px;
+    font-weight: 500;
+  }
+}
+
+.sub-title-holder {
+  	border-bottom: 1px solid #eee;
+  	border-top: 1px solid #eee;
+    padding: 10px 40px;
+    position: relative;
+    background-color: #fff;
+
+  span{
+    color: #666;
+    font-size: 16px;
+    float: left;
+    line-height: 2;
+    margin-top: 4px;
+  }
+}
+
+.collabrator-tab {
+	margin: 50px 40px;
+	.tab{
+    position: absolute;
+    display: flex;
+		button {
+	    background-color: inherit;
+	    float: left;
+	    outline: none;
+	    color: #666;
+	    height: 50px;
+	    border-right: 1px solid #ddd;
+	    line-height: 1;
+	    border-radius: 0;
+	    padding: 0;
+    	height: 41px;
+    	font-size: 16px;
+    	padding: 0px 15px 0px 15px;
+		}
+	  button:not(.disabled):not([disabled]):not(.colored):hover{
+	  	box-shadow:none;
+	  }
+		button.tablinks.active {
+	    color: #000;
+	    font-weight: 400;
+		}
+	}
+	.tab-content {
+    padding: 6px 0px 40px;
+    table{
+    	border:0;
+    	th{
+    		font-size: 16px;
+    	}
+    }
+    th, td{
+    	border-right-width: 0;
+    	border-color: #ddd;
+    	padding: 8px 5px 8px 5px;
+    	display: inline-block;
+    	width: 18%;
+    }
+	}
+}
+
+.documet-list-modal {
+	table{
+    	border:0;
+    	th{
+    		font-size: 16px;
+    	}
+    }
+    th, td{
+    	border-right-width: 0;
+    	border-color: #ddd;
+    	padding: 8px 5px 8px 5px;
+    	display: inline-block;
+    	width: 47%;
+    }
+}

@@ -1,0 +1,8 @@
+<div class="import-section-route documents-route">
+  <div class="content-header">
+    <button class="primary done" disabled={{isEmptySelection}} {{action 'clickDone'}}>Done</button>
+    {{#link-to "app.documents.editor" docid href=true class="cancel"}}Cancel{{/link-to}}
+    <h2>{{type}} Existing Section</h2>
+  </div>
+  {{import-section/g-choose-section sectionsProxy=sectionsProxy}}
+</div>

@@ -1,0 +1,17 @@
+<div class="modal-overlay {{if active 'active' ''}}" style="z-index: 9999">
+  <div class="modal-auto-size">
+    <h3 style="text-align: center;">Reject Task</h3>
+    <a class="close ico_close-mo" href="" {{action (toggle "active")}}></a>
+    <div class="g-form-group mb-2" >
+      <label class="g-control-label">REASON FOR REJECTION</label>
+      <textarea
+        name="label" id="rejection-reason"
+        class="g-form-control ember-view ember-text-field workflow-text"
+        style="height: 36px; width: 400px; resize: vertical;"
+      />
+    </div>
+    <button class="primary" style="width: 425px; !important" disabled={{isNotFilled}} {{ action 'rejectTask' task }}>
+      Reject
+    </button>
+  </div>
+</div>

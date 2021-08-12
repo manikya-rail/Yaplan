@@ -1,0 +1,79 @@
+<!-- app/views/application/index.html.erb -->
+<!--<#% if request.user_agent =~ /\b(iPhone|iPod|Windows|Android Phone|Opera Mobi|Kindle|BlackBerry)\b/i %>-->
+
+<% if request.user_agent =~ /\b(Mobile | iPhone | Windows |Opera |Mobi |Kindle |BlackBerry | !iPad )\b/i %>
+
+  
+  <style type="text/css">
+  @import url('https://fonts.googleapis.com/css?family=Lato:300,400');
+  body {
+    margin: 0;
+    font-family: 'Lato';
+  }
+  .g-login {
+    position: absolute;
+    top: 185px;
+    left: 50%;
+    width: 584px;
+    padding: 40px;
+    margin-left: -292px;
+    background: #fff;
+    box-shadow: 0 0 14px 0 rgba(0, 0, 0, 0.11);
+    box-sizing: border-box;
+    font-size: 2.5em;
+    color: #2e353a;
+    text-align: center;
+    
+  }
+  .reg-top {
+      height: 270px;
+      background: url(/assets/images/top_bg.jpg) 0 0/cover;
+  }
+  .reg .reg-top:after {
+    background: rgba(1,33,105,.85);
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  content: " ";
+  width: 100%;
+  height: 270px;
+}
+  .logo {
+      position: relative;
+      width: 206px;
+      height: 58px;
+      top: 80px;
+      left: 50%;
+      z-index: 100;
+      transform: translateX(-50%);
+      background: url(/assets/images/logo_yp_white.png) 0 0/cover no-repeat;
+  }
+
+  </style>
+
+  <div class="reg">
+    <div class="reg-top">
+      <div class="logo"></div>
+    </div>
+    <div class="g-login">
+      <span style="font-family: 'Lato'">
+        Yakkaplan is not available on a mobile browser yet. Please visit our website using a desktop browser. Thank You!
+      </span>
+    </div>
+  </div>
+  
+<% else %>
+  <%= render_ember_app :frontend do |head| %>
+      <% head.append do %>
+          <%= csrf_meta_tags %>
+          <script>
+            var config = {};
+            config.segmentWriteKey = "<%= ENV['SEGMENT_WRITE_KEY'] %>";
+            config.sentryPublicDNS = "<%= ENV['SENTRY_PUBLIC_DSN'] %>";
+          </script>
+      <% end %>
+  <% end %>
+
+<% end %>
+ 

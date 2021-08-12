@@ -1,0 +1,224 @@
+{{reg/support/g-reg-notify type=notification.type msg=notification.msg}}
+<div class="content-top-pane">
+  <ol class="g-breadcrumb">
+    {{#link-to 'app.projects.project' tagName='li' href=true}}My Projects{{/link-to}}
+    <li class="over-ellipsis" {{action 'redirectToProject' document.is_template}}>{{document.project.title}}</li>
+    <li class="active over-ellipsis">{{document.title}}</li>
+  </ol>
+  {{#link-to "app.documents.preview" document.id tagName="button" class='back ib ib-preview secondary test'}}Preview{{/link-to}}
+  {{#if isOwner}}
+    {{#if document.is_template}}
+      {{#if document.is_public}}
+        {{else}}
+          {{#link-to "app.documents.editor" document.id tagName="button" class='back ib ib-edit secondary test'}}Edit{{/link-to}}
+        {{/if}}
+    {{else}}
+      {{#link-to "app.documents.editor" document.id tagName="button" class='back ib ib-edit secondary test'}}Edit{{/link-to}}
+    {{/if}}
+  {{/if}}
+  <button class="back ib ib-back secondary" {{action 'back'}}>Back</button>
+</div>
+
+<div class="g-document-view">
+	<div class="main-wrap">
+    <input id="g-doc-slide-sidebar" type="checkbox" role="button" checked />
+    <label for="g-doc-slide-sidebar" class="g-doc-toogle"><i class="fa fa-cog" aria-hidden="true"></i></label>
+    <div class="g-doc-sidebar">
+    	<div class="g-doc-desc-info">
+    		<div class="g-doc-header">
+    			<h4 class="q-text-center rbt-fnt-light">Document Details</h4>
+  				<div class="mt-1 mb-1">
+  					<small class="g-doc-header-name">DOCUMENT NAME</small>
+  					<p class="no-margin">{{document.title}}</p>
+  				</div>
+  				<div class="mt-1 mb-1">
+  					<small class="g-doc-header-name">DOCUMENT TYPE</small>
+  					{{#if categories}}
+              <p class="no-margin">{{category-picker categories document}}</p>
+				  	{{else}}
+              <p class="no-margin">{{document.category_name}}</p>
+				  	{{/if}}
+  				</div>
+  				{{#if document.assigned_to}}
+    				<div class="mt-1 mb-1">
+    					<small class="g-doc-header-name">DOCUMENT OWNER</small>
+    					<p class="no-margin">{{document.assigned_to.email}}</p>
+    				</div>
+  				{{/if}}
+  				{{#if document.approver}}
+    				<div class="mt-1 mb-1">
+    					<small class="g-doc-header-name">DOCUMENT APPROVER</small>
+    					<p class="no-margin">{{document.approver.email}}</p>
+    				</div>
+  				{{/if}}
+  				{{#if document.description}}
+    				<div class="mt-1 mb-1">
+	    				<small class="g-doc-header-name">DESCRIPTION</small>
+	    				<p class="no-margin">{{document.description}}</p>
+    				</div>
+  				{{/if}}
+  				{{#if document.collaborators.length}}
+    				<div class="mt-1 mb-1">
+    					<small class="g-doc-header-name">COLLABORATORS</small>
+					  		{{#each document.collaborators as |collaborator|}}
+					  			<p class="no-margin">{{collaborator.email}}</p>
+							{{/each}}
+    				</div>
+  				{{/if}}
+  				<div class="mt-1 mb-1">
+  					<small class="g-doc-header-name">CREATED BY</small>
+  					<p class="no-margin">{{document.created_by.full_name}}</p>
+  				</div>
+  				<div class="mt-1 mb-1">
+  					<small class="g-doc-header-name">CREATED AT</small>
+  					<p class="no-margin">{{fuzzy-date document.created_at time_zone}}</p>
+  				</div>
+  				<div class="mt-1 mb-1">
+  					<small class="g-doc-header-name">DOCUMENT STATUS</small>
+  					<p class="no-margin" style="text-transform: capitalize;">{{document.state}}</p>
+  				</div>
+  				<div class="mt-1 mb-1">
+  					<small class="g-doc-header-name">STATUS DATE</small>
+  					<p class="no-margin">{{fuzzy-date document.updated_at time_zone}}</p>
+  				</div>
+  				<div class="version-control-view">
+  					<div class="version-control-list">
+  						<div class="version-header">Revision History</div>
+  						<ul class="version-control-orderlist">
+                {{#if sortedVersions.length}}
+                  {{#each sortedVersions as |version|}}
+	    							{{#link-to "app.documents.document-version-view" document.id version.version_number tagName="li" class="clickable"}}
+    									<div class="edited-time">{{version-date version.created_at "lll"}}</div>
+    									<div class="editor-name">
+                        <span class="status-info"></span>
+                        {{version.created_by}}
+                      </div>
+		    						{{/link-to}}
+                  {{/each}}
+                {{else}}
+                  <b>No revisions exist</b>
+                {{/if}}
+  						</ul>
+  					</div>
+  				</div>
+					<span>
+  					{{#if document.is_template}}
+  						{{#unless document.is_public}}
+    						<button class="primary" type="submit" style="margin: 15px auto" {{action 'configureCoverPage' document.id}}>Configure Document Cover Page</button>
+    					{{/unless}}
+  					{{else}}
+     					<button class="primary" type="submit" style="margin: 15px auto" {{action 'configureCoverPage' document.id}}>Configure Document Cover Page</button>
+     				{{/if}}
+  				</span>
+    			{{#unless document.is_template}}
+						<div class="clearfix"></div>
+						<div class="g-doc-details-input mt-2">
+  						<fieldset class="g-form-group no-padding">
+  							<label class="g-control-label">Comments: </label>
+    						{{textarea value=docComment placeholder="Add a comment..."  class="g-form-control g-comment-txt-area"}}
+  						</fieldset>
+  						<div class="pull-right mr-1">
+   							<button class="primary" type="submit" disabled={{isCommentNull}} {{action 'writeComment' document.id}} style="margin-bottom: 20px;">Share Comment</button>
+  					  </div>
+						</div>
+					{{/unless}}
+				  <div class="clearfix"></div>
+  				{{#if comments}}
+  					{{#if comments.length}}
+              <div class="comment-section mt-2 mb-2">
+                {{#each comments as |comment|}}
+      						<ul class="g-list-unstyled">
+      							<li class="no-padding">
+      								{{#if comment.commenter.portrait}}
+          							<img src="{{comment.commenter.portrait.image.url}}" class='g-avatar commented-by-profile'/>
+          						{{else}}
+          							<img src="../assets/images/profile/default.png" class='g-avatar commented-by-profile'/>
+          						{{/if}}
+       								</li>
+      							<li class="no-padding">
+      				      	<div class="commenttxt-block">
+      				        	<span class="comment-name">{{comment.commenter.full_name}} commented {{moment-from-now comment.created_at locale "en" timeZone=time_zone}}</span> 
+      				        	<span class="comment-txt">{{comment.comment_text}}</span> 
+      				        	{{#if  (if-equal comment.commenter.id currentUser true false)}}
+      				         		<p class="delete-comment" {{action 'deleteComment' comment comment.commenter.id}}><i class="fa fa-trash" aria-hidden="true"></i></p>
+      				         	{{/if}}
+      				         	<div class="clearfix"></div>
+      				      	</div>
+      							</li>
+      						</ul>
+                {{/each}}
+              </div>
+  					{{/if}}
+  				{{/if}}
+    		</div>
+    	</div>
+    </div>
+    <div class="doc-content-details">
+    	<div class="g-doc-view-info">
+    		<div class="g-doc-view-header">
+    			<div class="g-doc-view-heading">
+    				<h2>{{document.title}}</h2>
+    			</div>
+    			<div class="g-doc-details-info">
+    				{{#each sectionsProxy as |section index|}}
+					   	<div class="section-divider">
+					    	<p>
+					    		{{#if section.data.linked_documents}}
+					    			<div class="tooltip share-options" {{action 'showLinkedDcouments' section.data.linked_documents}}><img class="doc-link-icon" src="assets/images/icon_link.png">
+                  					</div>
+					    		{{/if}}
+					    		<h3 class="no-margin" class="bot-bor-srt" style="display:inline-block">{{section.data.section_text.title}}</h3>
+					    	</p>
+					      <p>{{{section.data.section_text.text}}}</p>
+						    {{#if document.is_template}}
+  							{{else}}
+		  						<div class="clearfix"></div>
+		  						<div class="g-doc-details-input mt-2">
+		    						<fieldset class="g-form-group no-padding">
+	      							<label class="g-control-label">Comments: </label>
+	        						<textarea id='section_comment_{{section.data.id}}' placeholder="Add a comment..." class="g-form-control g-comment-txt-area"/>
+		    						</fieldset>
+		    						<div class="pull-right">
+			   							<button class="primary" type="submit" {{action 'writeSectionComment' section.data.id section.data.comments}}>Share Comment</button>
+			  						</div>
+		  						</div>
+								  <span class="clearfix"></span>
+			  					{{#if section.data.comments}}
+  		  						<div class="clearfix"></div>
+  		  						{{#if section.data.comments.length}}
+  		  							<div class="comment-section mt-2 mb-2 section-comments-view">
+  		    							{{#each section.data.comments as |SectionComment|}}
+  		    								<ul class="g-list-unstyled">
+  		    									<li class="no-padding">
+  		    										{{#if SectionComment.commenter.portrait.image.url}}
+        												<img src="{{SectionComment.commenter.portrait.image.url}}" class='g-avatar commented-by-profile'/>
+        											{{else}}
+        												<img src="../assets/images/profile/default.png" class='g-avatar commented-by-profile'/>
+        											{{/if}}
+  		   		 								</li>
+  		    									<li class="no-padding">
+  										      	<div class="commenttxt-block">
+  										        	<span class="comment-name">{{SectionComment.commenter.full_name}} commented {{moment-from-now SectionComment.created_at locale "en" timeZone=time_zone}}</span> 
+  										        	<span class="comment-txt">{{SectionComment.comment_text}}</span> 
+  										        	{{#if  (if-equal SectionComment.commenter.id currentUser true false)}}
+  										         		<p class="delete-comment" {{action 'deleteSectionComment' SectionComment SectionComment.commenter.id}}><i class="fa fa-trash" aria-hidden="true"></i></p>
+  										         	{{/if}}
+  										         	<div class="clearfix"></div>
+  										      	</div>
+  		    									</li>
+  		    								</ul>
+  		    							{{/each}}
+  		    						</div>
+  		  						{{/if}}
+									{{/if}}
+								{{/if}}
+					    </div>
+						{{/each}}
+    			</div>
+    		</div>
+    	</div>
+    </div>
+	</div>
+</div>
+{{g-linked-documents documents=linkedDocuments active=showDocs}}
+

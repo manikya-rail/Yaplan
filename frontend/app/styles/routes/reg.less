@@ -1,0 +1,95 @@
+@import '../components/reg/g-login';
+@import '../components/reg/g-registration';
+@import '../components/reg/g-success';
+@import '../components/reg/support/g-reg-notify';
+@import '../components/reg/support/g-reg-nao-input';
+
+.reg {
+  position: fixed;
+  width: 100%;
+  min-height: 100%;
+  background-color: #eee;
+
+  .reg-top {
+    height: 270px;
+    background: url('/assets/images/top-banner.jpg');
+    background-size: cover;
+
+    .logo {
+      position: relative;
+      width: 206px;
+      height: 28px;
+      top: 80px;
+      left: 50%;
+
+      transform: translateX(-50%);
+      background: url('/assets/images/logo-alt_icn.png') no-repeat;
+      background-size: cover;
+    }
+  }
+
+  .input-group{
+    margin: 15px 0px;
+
+    font-size: @font-size-nao;  
+
+    span.input{
+      margin-bottom: 5px;
+    }
+
+    .input--password{
+      position: relative;
+
+      a.tool-reveal{
+        position: absolute;
+        display: block;
+        bottom: 15px;
+        right: 15px;
+      }
+    }
+  }
+
+  /**
+  Candidates for moving to controls.less
+  
+
+  input[type=text], input[type=password] {
+    width: 100%;
+    height: 45px;
+    line-height: 55px;
+    padding: 0;
+    box-sizing: border-box;
+
+    border: solid #eee;
+    border-width: 0 0 1px 0;
+    background: transparent;
+    font-size: 16px;
+    outline: none;
+
+    &:-webkit-autofill {
+      -webkit-box-shadow: 0 0 0 1000px white inset;
+    }
+
+  }
+*/
+  button {
+    width: 100%;
+    height: 56px;
+    line-height: 56px;
+    border: none;
+    color: #fff;
+    border-radius: 4px;
+    font-size: @font-size-button;
+    text-align: center;
+    background-color: @orange;
+
+    &[disabled]{
+      background-color: #b1b1b1;
+    }
+
+    &::-moz-focus-inner {
+      border: 0;
+    }
+  }
+
+}

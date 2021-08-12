@@ -1,0 +1,51 @@
+{{reg/support/g-reg-notify type=notification.type msg=notification.msg}}
+<div class="content-top-pane">
+  <ol class="g-breadcrumb">
+    {{#link-to 'app.projects.project' tagName='li' href=true}}My Projects{{/link-to}}
+    {{#link-to 'app.projects.projecttab.document' document.project.id tagName='li' href=true class="over-ellipsis"}}
+      {{document.project.title}}
+    {{/link-to}}
+    {{#link-to 'app.documents.document-view' document.id tagName='li' href=true class="active over-ellipsis"}}
+      {{document.title}}
+    {{/link-to}}
+  </ol>
+  {{#if isDocOwner}}
+    <button class='back ib ib-preview secondary test' {{action (toggle 'restoreConfirmationVisible')}} disabled={{restoring}}>
+      Restore this version
+    </button>
+  {{/if}}
+  {{#unless (if-equal versionNumber 1 true false) }}
+    {{#link-to "app.documents.version-diff" document.id versionNumber tagName="button" class="back ib ib-back secondary" disabled=restoring}}
+      View Changes
+    {{/link-to}}
+  {{/unless}}
+  {{#link-to "app.documents.document-view" document.id tagName="button" class="back ib ib-back secondary" disabled=restoring}}
+    Back
+  {{/link-to}}
+</div>
+
+<div class="g-document-view">
+  <div class="main-wrap">
+    <div class="doc-content-details">
+      <div class="g-doc-view-info">
+        <div class="g-doc-view-header">
+          <div class="g-doc-view-heading">
+            <h2>{{version.document.title}}</h2>
+          </div>
+          <div class="g-doc-details-info">
+            {{#each version.document.section_texts as |section_text index|}}
+              <div class="section-divider">
+                <p>
+                  <h3 class="no-margin" class="bot-bor-srt" style="display:inline-block">{{section_text.title}}</h3>
+                </p>
+                <p>{{{section_text.content}}}</p>
+              </div>
+            {{/each}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{{g-confirm-popup proceed="restoreVersion" title="Restore version" message="Are you sure you want to restore the document to this version? All the current content will be discarded. The document will be replaced with contents of this version" active=restoreConfirmationVisible}}

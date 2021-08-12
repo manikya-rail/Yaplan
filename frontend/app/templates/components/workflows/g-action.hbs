@@ -1,0 +1,149 @@
+<div class="modal-overlay {{if active 'active' ''}} g-modal-add-collaborator">
+  <div class="modal"  style="width: auto; height: auto; max-height: calc(100vh - 100px); overflow-y: auto;">
+    <a class="close ico_close-mo" href="" {{action 'cancelAction'}}></a>
+    <div class="g-people-modal attachment-document-modal">
+      <div class="dialog-title">Action</div>
+      <!-- {{reg/support/g-reg-notify type=notification.type msg=notification.msg}} -->
+      {{!-- starts here --}}
+      {{#if showEditMode}}
+      <div class="dialog-input">
+        <div style="display: flex; flex-direction: column">
+          <div class='g-form-group' style="flex-grow: 1;">
+            <label class="g-control-label">Name</label>
+            <input
+              name="name" value={{step.node.data.text}}
+              class="g-form-control ember-view ember-text-field workflow-text"
+              disabled={{noEdit}}
+            />
+          </div>
+          <div class='g-form-group' style="flex-grow: 1;">
+            <label class="g-control-label">Description<span class="pull-right editor-label">{{descriptionCharacterCount}}/240</span></label>
+            <textarea
+              name="description" value={{step.description}} onkeyup={{action 'checkCharacter'}} maxlength="240" 
+              class="g-form-control ember-view ember-text-field"
+            />
+          </div>
+          <div class='g-form-group' style="flex-grow: 1;">
+            <label class="g-control-label">Attachments</label>
+            <ul
+              class="document-attach-list" style="padding-left: 0px;"
+              id="attachment-list"
+            >
+              {{#each attachments as |attachment index|}}
+                {{#unless attachment._destroy}}
+                  <li style="list-style-type: none; padding: 15px;border: 1px solid #eee">
+                    <b>{{attachment-file-name attachment}}</b>
+                    <a
+                      class="pull-right" href="" style="margin-top: -2px;"
+                      {{action 'removeAttachment' index}}
+                    >
+                      <i class="fa fa-times fa-uni-icon" aria-hidden="true"></i>
+                    </a>
+                  </li>
+                {{/unless}}
+              {{/each}}
+            </ul>
+            <div style="display: flex; flex-direction: row;">
+              <input
+                name="attachment"
+                id="new-attachment"
+                type='file'
+                class="g-form-control ember-view ember-text-field workflow-text"
+                style="margin-right: 5px; height:36px;padding-top: 6px"
+              />
+              <button
+                class='gray-btn-secondary'
+                style="margin-top: 0px;"
+                {{ action 'addAttachment' }}
+              >
+                Add
+              </button>
+            </div>
+          </div>
+          <div class='g-form-group' style="flex-grow: 1;">
+            <label class="g-control-label">Assign to</label>
+            <select name='' id='assignee' class='g-form-control'>
+              <option selected={{not assignedToId}} value=''>Not Selected</option>
+              {{#each users as |user|}}
+                <option value={{user.id}} selected={{id-equality user.id assignedToId}}>{{user.fullName}} ({{user.email}})</option>
+              {{/each}}
+            </select><i class="fa fa-angle-down select-down-arrow" aria-hidden="true"></i>
+          </div>
+          <div class='g-form-group' style="flex-grow: 1;">
+            <label class="g-control-label">Approver</label>
+            <select name='' id='approver' class='g-form-control'>
+              {{log approverId}}
+              <option selected={{not approverId}} value=''>Not Selected</option>
+              {{#each users as |user|}}
+                <option value={{user.id}} selected={{id-equality user.id approverId}}>{{user.fullName}} ({{user.email}})</option>
+              {{/each}}
+            </select>
+          </div>
+          <button class="primary mt-0 mb-0" {{ action 'updateAction' }}>
+            Update
+          </button>
+            <button class="primary" {{ action 'removeStep' }} style="background-color: transparent; color: #2e353a; border: 1px solid #2e353a;">
+            Remove
+          </button>
+        </div>
+      </div>
+      {{else}}
+        <div class="dialog-input">
+          <div class="colloborator-modal">
+            <dl class="modal-doc-info">
+              <dt><b>Name</b></dt>
+              <dd>{{step.node.data.text}}</dd>
+              <dt><b>Description</b></dt>
+              <dd>
+                {{#if step.description}}
+                  {{step.description}}
+                {{else}}
+                  -
+                {{/if}}
+              </dd>
+              <dt><b>Attachments</b></dt>
+              <dd>
+                {{#if attachments}}
+                {{#each attachments as |attachment index|}}
+                  {{#unless attachment._destroy}}
+                    <li style="list-style-type:none">
+                      {{attachment-file-name attachment}}
+                    </li>
+                  {{/unless}}
+                {{/each}}
+                {{else}}
+                  -
+                {{/if}}
+              </dd>
+              <dt><b>Assigned To</b></dt>
+              <dd>
+                {{#if assignedToId}}
+                {{#each users as |user|}}
+                  {{#if (id-equality user.id assignedToId)}}
+                    {{user.fullName}} ({{user.email}})
+                  {{/if}}
+                {{/each}}
+                {{else}}
+                  -
+                {{/if}}
+              </dd>
+              <dt><b>Approver</b></dt>
+              <dd>
+                {{#if approverId}}
+                {{#each users as |user|}}
+                  {{#if (id-equality user.id approverId)}}
+                    {{user.fullName}} ({{user.email}})
+                  {{/if}}
+                {{/each}}
+                {{else}}
+                  -
+                {{/if}}
+              </dd>
+            </dl>
+          </div>
+        </div>
+      {{/if}}
+      {{!-- completes here --}}
+    </div>
+  </div>
+</div>

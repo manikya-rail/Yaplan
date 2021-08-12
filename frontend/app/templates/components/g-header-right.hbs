@@ -1,0 +1,12 @@
+<!-- {{yield}} -->
+<ul class="pull-right submenu" style="margin-right: 25px;">
+	{{#if isTile}}
+    <li class=""  {{action 'isListdata'}} style="margin-right: 10px;"><i class="list-icon" aria-hidden="true"></i></li>
+    <li class="no-margin" {{action 'isTiledata'}}><i class="grid-icon active" aria-hidden="true"></i></li>
+  {{/if}}
+  {{#if isList}}
+    <li class=""  {{action 'isListdata'}} style="margin-right: 10px;"><i class="list-icon active" aria-hidden="true"></i></li>
+    <li class="no-margin " {{action 'isTiledata'}}><i class="grid-icon" aria-hidden="true"></i></li>
+  {{/if}}
+</ul>
+<div class='clearfix'></div>	

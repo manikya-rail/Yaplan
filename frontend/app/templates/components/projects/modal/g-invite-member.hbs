@@ -1,0 +1,78 @@
+<div class="modal-overlay {{if active 'active' ''}} modal-invite-member" >
+  <div class="modal" style="height: auto; max-height: calc(100vh - 100px);
+    overflow-y: auto;">
+    <div class="modal-content">
+      <div class="modal-body">
+        <a class="close ico_close-mo" href="" {{action 'cancelInvite'}}></a>
+        <h2 class="q-header-caption q-text-center">Invite Project Members</h2>
+        {{reg/support/g-reg-notify type=notification.type msg=notification.msg}}
+        <h5 class="q-header-description q-text-center mt-0">Include your team members to get an update on the project you created</h5>
+        <div style="margin-top: 5%">
+          <span class="invite-subheading pull-left">Invite users to collaborate</span>
+          <div class="pull-right">
+            <button class="primary pull-right add-invite-btn" {{action 'hiderow'}}>ADD USER</button>
+          </div>
+        </div>
+        <div class="thirddiv clearfix">
+          <table>
+            <thead>
+                 <tr>
+                   <th>NAME</th>
+                   <th class="b-r-0">EMAIL</th>
+                </tr>
+            </thead>
+            <tbody>
+              {{#if isClicked}}
+              <tr>
+                <td>
+                  <div class="firstinputfield">
+                    <div class="g-form-group">
+                     {{!--  {{input type="text" class="input-sm g-form-control  invite-firstinput"  name="invitename"  value=invitename    placeholder="NAME"}} --}}
+                     <input type="text" id="uname" value={{invitename}} placeholder="NAME" class="input-sm g-form-control  invite-firstinput" oninput={{action "findNameArray"}}> 
+                     <span id="nameResult"></span>
+                    </div>
+                  </div>
+                </td>
+                <td class="b-r-0">
+                  <div style="margin-top: 4%;">
+                    <div class="g-form-group">
+                      {{!-- {{input type="text" class="input-sm g-form-control  invite-secondinput"    name="inviteemail" value=inviteemail     placeholder="EMAIL"}} --}}
+                      <input type="text" id="uemail" value={{inviteemail}} placeholder="Email" class="input-sm g-form-control  invite-secondinput" oninput={{action "findEmailArray"}}> 
+                      <span id="emailResult"></span>
+                    </div>
+                  </div>
+                  <div class="pull-right mb-1 mr-1">
+                  <div class="pull-left"><button type="button" class="cancel-in-mem" {{action 'hiderow'}}>CANCEL</button> </div>
+                    <div class="pull-right mr-1"><button type="button" disabled={{isNotFilled}} class="add-in-mem ml-1 primary" {{action 'addcollaborator' }}>ADD</button> </div>
+                    <div class="clearfix"></div>
+                  </div>
+                </td>
+              </tr>
+              {{/if}}
+                {{#each collaborators as |collaborator|}}
+                <tr>
+                  <td>{{collaborator.name}}</td>
+                  <td>{{collaborator.email}}<a class="pull-right" {{action 'deleteCollaborator' collaborator}}> 
+                    <i class="fa fa-trash" aria-hidden="true" style="color: #D51414; font-size: 20px; cursor:pointer"></i> </a></td>
+                </tr>
+              {{/each}}
+            </tbody>
+          </table>
+        </div>
+        <div class="g-form-group">
+          {{textarea value=invitemessage rows="6" id="invitemessage" class="textaraeinvite g-form-control" placeholder="Send a Message" focus-in="isMessage"}}
+        </div>
+        <div class="mt-3">
+          <p class="q-header-description">NOTE: Collaborators invited at this stage will (by default) be given the permission level to view or edit any part of the project workflow or any project documents. A user can change  permission level of collaborators after sending the invites</p>
+        </div>
+        <span class='button-list'>
+          <button class="primary button-cancel" style='margin-top: 0px; width: auto;' type="reset" {{action 'cancelInvite'}}>Skip</button>
+        <!--   <button class="primary button-cancel" style='margin-top: 0px; width: auto;' type="reset" {{action 'onCancel'}}>Cancel</button> -->
+          <button class="primary" style="margin-left: 10px; width: auto;" disabled={{isSend}} {{action 'sendinvitation'}}>
+            DONE
+          </button>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>

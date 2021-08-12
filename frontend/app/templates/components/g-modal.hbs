@@ -1,0 +1,6 @@
+<div class="modal-overlay {{if active 'active' ''}}">
+    <div class="modal">
+        <a class="close ico_close-mo" href="" {{action (toggle "active")}}></a>
+        {{yield}}
+    </div>
+</div>

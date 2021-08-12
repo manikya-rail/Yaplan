@@ -1,0 +1,23 @@
+<div class="modal-overlay {{if active 'active' ''}} g-modal-card">
+	<div class="modal">
+		<a class="close ico_close-mo" href="" {{action (toggle "active")}}></a>
+		<div class="g-people-modal">
+			<div class="dialog-title">Select Payment Option</div>
+			<div class="dialog-tagline">Subscribe for <b>{{plan.name}}</b></div>
+			<div class="dialog-people-list mCustomScrollbar" data-mcs-theme="minimal-dark">
+				{{#each cards as |card|}}
+				<div class="item-person">
+					<div class="info">
+						<span class="name">**** **** **** {{card.card_num}}</span>
+					</div>
+					<div class="marker {{if-equal card.token cardToken 'checked' ''}}" {{action 'select' card}}>
+						<i class="fa fa-check"></i>
+					</div>
+				</div>
+				{{/each}}
+			</div>
+			<button class="primary" type="submit" disabled={{isNotChanged}} {{action 'save'}}>Confirm</button>
+			<a class="dialog-link" href="" {{action "add"}}>Use another card</a>
+		</div>
+	</div>
+</div>

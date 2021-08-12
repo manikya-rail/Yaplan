@@ -1,0 +1,70 @@
+
+<div class="modal-overlay {{if active 'active' ''}} g-modal-add-collaborator">
+  <div class="modal">
+    <a class="close ico_close-mo" href="" {{action (toggle 'active')}}></a>
+    <div class="g-people-modal attachment-document-modal" style="width: 100%">
+      <div class="dialog-title" style="margin-bottom: 30px !important;">
+        Select a new workflow
+      </div>
+      {{#if showAnimation}}
+      <div class="loader-ani">
+      <h1> Configuring Workflow...</h1>
+        <div class="slider">
+          <div class="line"></div>
+          <div class="break dot1"></div>
+          <div class="break dot2"></div>
+          <div class="break dot3"></div>
+        </div>
+    </div>
+    {{/if}}
+      <!-- {{reg/support/g-reg-notify type=notification.type msg=notification.msg}} -->
+      <div style="overflow-y: auto; height: 70vh; margin-top: 30px;">
+        {{#if matchingWorkflows.length}}
+          {{#each (chunk matchingWorkflows 3) as |templateGroup|}}
+            <div>
+              {{#each templateGroup as |template|}}
+                <div class='category-card'>
+                  <img src='{{template.snapshot.url}}' class='image-card' {{ action 'generatePreview' template }} style="cursor: pointer"/>
+                  <div class="category-label-row">
+                    <label for="template_{{template.id}}" class="category-label category-ellipse">
+                      {{template.name}}
+                    </label>
+                    <div class="checkbox">
+                      <label>
+                        <input
+                          id="workflow_template_id_{{template.id}}" type="radio"
+                          name="workflow_template_id"
+                          checked={{id-equality newTemplateId template.id}}
+                          onclick={{action 'setTemplateId' template.id}}
+                        >
+                        <span class="checkbox-material">
+                          <span class="check"></span>
+                        </span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              {{/each}}
+            </div>
+          {{/each}}
+        {{else}}
+          <div style="text-align: center">
+            <h3 class="pt-2 mt-2">No workflow templates available.</h3>
+          </div>
+        {{/if}}
+      </div>
+    
+
+      <button
+        class="primary pull-right"
+        style="width: 200px; height: 30px; line-height: 30px;"
+        disabled={{disabled}} {{action 'assignWorkflow'}}
+      >
+        Update
+      </button>
+    </div>
+  </div>
+</div>
+{{
+  workflows/workflow-template-preview snapshot=snapshot active=showPreview
+}}

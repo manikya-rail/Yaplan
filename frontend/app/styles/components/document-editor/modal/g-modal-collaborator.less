@@ -1,0 +1,53 @@
+.g-modal-collaborator {
+	.dialog-input {
+		margin: 20px 0 15px;
+
+		&:after {
+			content: '';
+			display: block;
+			clear: both;
+		}
+
+		input {					    
+		    float: left;		    
+		    box-sizing: border-box;
+		    width: ~"calc(100% - 50px)";
+		    height: 40px;
+		    padding: 5px;		    
+
+		    font-size: @font-size-main;
+		}
+
+		button.btn-add {
+			float: right;
+			width: 40px;
+			height: 40px;
+			padding: 0;
+
+			text-align: center;
+			border-radius: 50%;
+    		
+    		&.disabled, &[disabled] {
+    			background-color: #999;
+    		}
+
+			i {
+				line-height: 40px;
+			}
+		}
+	}
+	.dialog-people-list {
+		margin-top: 20px;
+
+		.item-person {
+			.marker {
+				cursor: pointer;
+				border: none !important;
+
+				i {
+					color: @dark-gray;
+				}
+			}
+		}
+	}
+}

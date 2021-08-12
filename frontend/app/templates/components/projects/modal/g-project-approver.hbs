@@ -1,0 +1,24 @@
+<div class="modal-overlay {{if active 'active' ''}}">
+	<div class="modal">
+		<a class="close ico_close-mo" href="" {{action (toggle "active")}}></a>
+		<div class="g-people-modal">
+			<div class="dialog-title">Edit Approver</div>
+			<div class="dialog-tagline">By default, you are the approver</div>
+			<div class="dialog-people-list mCustomScrollbar" data-mcs-theme="minimal-dark">
+				<div class="item-person">
+					<div class="photo">
+						<img src="profile.jpg" alt="">
+					</div>
+					<div class="info">
+						<span class="name">Chris O'Halloran</span>
+						<span class="email">chris@grapple.pm</span>
+					</div>
+					<div class="marker checked">
+						<i class="fa fa-check"></i>
+					</div>
+				</div>
+			</div>
+            <button class="primary" type="submit" disabled={{isNotSelected}}>Done</button>
+		</div>
+	</div>
+</div>

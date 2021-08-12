@@ -1,0 +1,151 @@
+html, body{
+	padding: 0px;
+	margin: 0px;
+	
+	box-sizing: border-box;
+}
+.g-landing {
+	width: 100%;
+	overflow: hidden;
+}
+.g-landing * {
+	text-align: center;
+}
+
+/* Logo */
+.g-landing .gl-logo{
+	width: 206px;
+	height: 28px;
+	margin-top: 4px;
+	background: url('/assets/imgs/logo.png') no-repeat;
+	background-size: cover;
+}
+
+/* Section */
+.g-landing .scrollable-section:not(#scrollto-section-1):not(:last-child) .gl-section{
+	position: relative;
+	padding-top: 110px;
+
+	color: #37474f;	
+}
+.g-landing .scrollable-section:not(#scrollto-section-1) .gl-section .gl-nav{
+	position: absolute;
+	bottom: 0px;
+	right: 0px;
+	padding: 30px 50px;
+}
+.g-landing .scrollable-section:not(#scrollto-section-1):not(:last-child) .gl-section .gl-nav .gl-link{
+	color: #37474f;	
+}
+.g-landing .scrollable-section:not(#scrollto-section-1):not(:last-child) .gl-section .cls-content{
+	position: relative;
+	width: 100%;
+	height: 650px;
+}
+.g-landing .scrollable-section:not(#scrollto-section-1):not(:last-child):nth-child(odd) .gl-section{
+	min-height: 400px;
+
+	background-color: #ebecff;	
+}
+.g-landing .scrollable-section:not(#scrollto-section-1):not(:last-child):nth-child(even) .gl-section{
+	min-height: 400px;
+
+	background-color: #fff;	
+}
+
+/* Card */
+.g-landing .gl-card{
+	border-radius: 3px;
+
+	-webkit-box-shadow: 0px 0px 18px -6px rgba(0,0,0,0.4);
+	-moz-box-shadow: 0px 0px 18px -6px rgba(0,0,0,0.4);
+	box-shadow: 0px 0px 18px -6px rgba(0,0,0,0.4);
+
+	opacity: 0;
+}
+
+/* Fonts */
+@font-face {
+	font-family: 'Raleway-Regular';
+	src: url(font/raleway/Raleway-Regular.ttf);
+}
+@font-face {
+	font-family: 'Raleway-ExtraBold';
+	src: url(font/raleway/Raleway-ExtraBold.ttf);
+}
+@font-face {
+	font-family: 'Roboto';
+	src: url(font/roboto/Roboto-Medium.ttf);
+}
+
+.g-landing h1{
+	margin: 15px 0px;
+
+	font-size: 48px;
+	font-family: 'Raleway-ExtraBold';
+}
+.g-landing h3{
+	margin: 10px 0px;
+
+	font-size: 24px;
+	font-family: 'Raleway-Regular';
+}
+
+/* Link */
+.g-landing .gl-nav, .g-landing .header-nav{
+	z-index: 1050;
+}
+.g-landing .gl-link{
+	
+
+	color: white;
+	font-size: 15px;
+	font-family: 'Roboto';
+	text-decoration: none;
+}
+.g-landing .gl-link.ico::after{
+	content: "";
+	position: relative;
+    display: inline-block;
+    top: 3px;
+    width: 16px;
+    height: 16px;
+    margin: 0 0 0 8px;
+}
+.g-landing .gl-link.ico.ico-down::after{
+	background: url('/assets/imgs/arrow-down.png') no-repeat;
+	background-size: cover;
+}
+.g-landing .gl-link.ico.ico-up::after{
+	background: url('/assets/imgs/arrow-up.png') no-repeat;
+	background-size: cover;
+}
+
+/* Button */
+.g-landing button.gl-button{
+	padding: 15px 50px;
+
+	color: #fff;
+	
+	border: none;
+	cursor: pointer;
+	border-radius: 2px;
+	font-size: 14px;
+	font-family: 'Roboto';
+	text-align: center;
+}
+.g-landing button.gl-button:hover{
+	-webkit-transition: all 0.4s;
+  	transition: all 0.4s;
+
+	opacity: 0.8;
+}
+.g-landing button.gl-button.small{
+	padding: 10px 20px;
+}
+.g-landing button.gl-button.orange{
+	background-color: #ffa000;
+}
+.g-landing button.gl-button.gray{
+	background-color: #37474f;	
+}

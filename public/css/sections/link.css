@@ -1,0 +1,82 @@
+#section-link{
+	z-index: 40;
+}
+
+#section-link h1, #section-link h3{
+	opacity: 0;
+}
+
+#section-link .card-1{
+	position: absolute;
+	z-index: 42;
+	width: 580px;
+	height: 620px;
+	top: 100px;
+	left: calc(40% - 290px);
+
+	background-color: white;
+	background-size: cover;	
+}
+#section-link .card-2{
+	position: absolute;
+	z-index: 41;
+	width: 500px;
+	height: 600px;
+	top: 160px;
+	left: calc(40% + 190px);
+
+	background-color: white;
+	background-size: cover;	
+}
+
+#section-link .card-1{position:absolute;z-index:42;width:580px;height:620px;top:100px;left:calc(40% - 290px);background:url('/assets/imgs/link-1.png') no-repeat;background-size:cover}
+#section-link .card-2{position:absolute;z-index:41;width:500px;height:600px;top:160px;left:calc(40% + 190px);background:url('/assets/imgs/link-2.png') no-repeat;background-size:cover}
+#section-link .marker-1{position:absolute;z-index:43;width:140px;height:140px;top:330px;left:calc(40% + 220px);background:url('/assets/imgs/mark-link.png') no-repeat;background-size:cover;opacity:0}
+
+#section-link .card-1 .overlayer {
+	width: 78%;
+	height: 0;
+	padding: 18.2% 0px;
+
+	right: 11%; 
+	margin-top: 60%;
+
+	-webkit-animation: drawmove1 2s infinite; /* Chrome, Safari, Opera */
+    animation: drawmove1 2s infinite;
+}
+#section-link .card-2 .overlayer {
+	width: 92%;
+	height: 0;
+	padding: 21% 0px;
+
+	right: 5%;
+	margin-top: 30%;
+
+	-webkit-animation: drawmove2 2s infinite; /* Chrome, Safari, Opera */
+    animation: drawmove2 2s infinite;
+}
+
+#section-link .overlayer {
+	position: absolute;
+	background: rgba(255, 255, 255, 0.5);
+	
+}
+@-webkit-keyframes drawmove1 {
+    from {width: 79%;}
+    to {width: 0%;}
+}
+
+@keyframes drawmove1 {
+    from {width: 79%;}
+    to {width: 0%;}
+}
+
+@-webkit-keyframes drawmove2 {
+    from {width: 92%;}
+    to {width: 0%;}
+}
+
+@keyframes drawmove2 {
+    from {width: 92%;}
+    to {width: 0%;}
+}

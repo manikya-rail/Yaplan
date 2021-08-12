@@ -1,0 +1,36 @@
+<div class="plans-route">
+  <div class="content-header">
+    <span class="page-title">My Subscription</span>
+  </div>
+  <div id="card_details">
+    <form {{action "createPlan" on="submit"}}>
+      <table>
+        <tr>
+          <td> Plans:</td>
+          <td>
+            <select id=plan_select value=plan_id>
+              <option selected disabled class="blank"> Populating.. </option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td> Card Number:</td>
+          <td>{{input type="text" id=card_no value=cardno maxlength=19 action="validateCard" on="focus-out" }}</td>
+        </tr>
+        <tr>
+          <td>CVV:</td>
+          <td>{{input type="text" id=card_cvv value=cvv maxlength=4 action="validateCVV" on="focus-out"}}</td>    
+        </tr>
+        <tr>
+          <td>Expiry Month</td>
+          <td>{{input type="text" id=card_em value=expmonth maxlength=2 placeholder="MM" action="validateEM" on="focus-out"}}</td>    
+        </tr>
+        <tr>
+          <td>Expiry Year</td>
+          <td>{{input type="text" id=card_ey value=expyear maxlength=4 placeholder="YYYY" action="validateEY" on="focus-out"}}</td>  
+        </tr>
+      </table>
+      <button type="submit" class="btn">Subscribe now</button>
+    </form>
+  </div>
+</div>

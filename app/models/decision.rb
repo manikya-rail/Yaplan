@@ -1,0 +1,2 @@
+class Decision < Task
+end

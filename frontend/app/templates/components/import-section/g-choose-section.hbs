@@ -1,0 +1,17 @@
+<div class="document-header">
+  <h2>{{document.title}}</h2>
+</div>
+<div class="document-content">
+{{#unless sectionsProxy}}
+	<center><b> No content in the document </b></center>
+{{/unless}}
+{{#if sectionsProxy}}
+  {{#each sectionsProxy as |section index|}}
+    <div class="section" {{action (toggle 'selected' section)}}>
+      <h3>{{section.data.section_text.title}}</h3>
+      {{{section.data.section_text.text}}}
+      <div class="checkbox {{if section.selected 'selected' ''}}"></div>
+    </div>
+  {{/each}}
+{{/if}}
+</div>

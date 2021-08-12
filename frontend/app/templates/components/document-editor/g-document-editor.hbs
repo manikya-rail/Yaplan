@@ -1,0 +1,34 @@
+<div class="g-document-editor">
+	<div class="document-header">
+		<div class="content">
+			<label class="editor-label">Document Title</label>
+			{{document-editor/support/g-elastic-input model=documentProxy.title placeholder="Untitled Document"}}
+		</div>
+	</div>
+	<div id="document-content test-doc" class="document-content">
+		{{#each document.section_containers as |section index|}}
+			{{#if section.id}}
+				{{document-editor/g-section section=section importSection='importSection' onSaving='onSaving' onSaved='onSaved' openAttachImageDialog="openAttachImageDialog"}}
+			{{/if}}
+		{{/each}}
+		<div class="add-new-project {{unless showAddSectionWizard 'active'}} " {{action (toggle 'showAddSectionWizard')}} style="margin-left: 25px;"></div><div class="safari-oly-spacing"></div>
+
+		<div class="add-section {{if showAddSectionWizard 'active' ''}}">
+			<div class="close" {{action (toggle 'showAddSectionWizard')}}></div>
+			{{#if document.is_template}}
+			<div class="add-section-limit">
+				<span class="blank" {{action 'addBlankSection'}}>Blank Section<p class="add-section-sub">Add a section with minimal rows with primary and secondary title</p></span>
+				<span class="import" {{action 'importSection'}}>Import Existing<p class="add-section-sub">Import any section from any part of the document listed in the list</p></span>
+			</div>
+			{{else}}
+			<div>
+				<span class="blank" {{action 'addBlankSection'}}>Blank Section<p class="add-section-sub">Add a section with minimal rows with primary and secondary title</p></span>
+				<span class="import" {{action 'importSection'}}>Import Existing<p class="add-section-sub">Import any section from any part of the document listed in the list</p></span>
+				<span class="link" {{action 'linkSection'}}>Link Existing<p class="add-section-sub">Link any section of the document to the current document by link section option</p></span>
+			</div>
+			{{/if}}
+		</div>
+		<div class="safari-oly-spacing"></div>
+	</div>
+	{{document-editor/g-document-image-uploader active=showUploadImageDialog document=document upload="addUploadedImage"}}
+</div>

@@ -1,0 +1,21 @@
+<div class="modal-overlay {{if active 'active' ''}} g-modal-add-collaborator">
+	<div class="modal"  style="width: auto; height: auto;">
+		<a class="close ico_close-mo" href="" {{action (toggle 'active')}}></a>
+		<div class="g-people-modal">
+			<div class="dialog-title">Header and Footer</div>
+			{{reg/support/g-reg-notify type=notification.type msg=notification.msg}}
+			<div class="dialog-input">
+				<div class="colloborator-modal">
+					<fieldset class="g-form-group">
+						{{input value=header placeholder = "Header Text" class="g-form-control" oninput='inputChange'}}
+					</fieldset>
+					<fieldset class="g-form-group">
+						{{input value=footer  placeholder = "Footer Text" class="g-form-control"}}
+					</fieldset>
+				</div>
+			</div>
+			<button class="primary" type="submit" disabled={{isNotFilled}} {{action 'setHeaderFooter'}}>Submit</button>
+		</div>
+	</div>
+</div>
+

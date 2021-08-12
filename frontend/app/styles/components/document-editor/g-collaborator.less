@@ -1,0 +1,89 @@
+@import '../../_base';
+
+.g-collaborator {
+	
+	padding-left: 0px;
+
+	li {
+		position: relative;
+		float: left;
+		width: 40px;
+		height: 40px;
+		margin: 0px 10px 10px 0px;
+
+		border-radius: 50%;
+		overlow: hidden;
+
+		list-style-type: none;
+
+		&.edit {
+			i {
+				line-height: 40px;
+			}
+
+			cursor: pointer;
+
+			text-align: center;
+			color: #fff;
+			background-color: @orange;
+
+		}
+
+		&.person {
+
+			&.me {
+				border: 2px solid @orange;
+				box-sizing: border-box;
+			}
+
+			&.tooltip {
+			  color: #900;
+			  text-decoration: none;
+			}
+			&.tooltip:hover {
+			  color: red;
+			  position: relative;
+			}
+			/* Tooltip on Top */
+			&.tooltip-top[data-tooltip]:hover:after {
+			  content: attr(data-tooltip);
+			  padding: 4px 8px;
+			  position: absolute;
+			  left: -50%;
+			  bottom: 100%;
+			  white-space: nowrap;
+			  z-index: 20px;
+			  border-radius: 3px;
+			  background-color: @dark-gray;
+			  color: #fff;
+			}
+
+			i {
+				position: absolute;
+				display: block;
+				top: -2px;
+				right: -2px;
+				width: 15px;
+				height: 15px;
+
+				font-size: 10px;
+				line-height: 15px;
+				text-align: center;
+				color: white;
+				background-color: @dark-gray;
+				border-radius: 50%;
+
+				&.hidden {
+					display: none
+				}
+			}
+		}
+
+	}
+
+	&:after {
+		content: '';
+		display: block;
+		clear: both;
+	}
+}

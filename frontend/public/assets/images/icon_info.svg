@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="433 207 20 20">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #51caff;
+      }
+    </style>
+  </defs>
+  <path id="icon_info" class="cls-1" d="M9,15h2V9H9ZM10,0A10,10,0,1,0,20,10,10,10,0,0,0,10,0Zm0,18a8,8,0,1,1,8-8A8.011,8.011,0,0,1,10,18ZM9,7h2V5H9Z" transform="translate(433 207)"/>
+</svg>

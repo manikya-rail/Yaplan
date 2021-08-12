@@ -1,0 +1,130 @@
+<dl class="g-document-details">
+  <dt>Project Title</dt>
+  <dd>{{document.project.title}}</dd>
+  <dt>Document Category</dt>
+  <dd>{{document.category_name}}</dd>
+  {{#if document.assigned_to}}
+    <dt>Document Owner</dt>
+    <dd>{{document.assigned_to.email}}</dd>
+  {{/if}}
+  {{#if document.approver}}
+    <dt>Document Approver</dt>
+    <dd>{{document.approver.email}}</dd>
+  {{/if}}
+  <dt>Created By</dt>
+  <dd>{{document.created_by.full_name}}</dd>
+  <dt>Created At</dt>
+  <dd>{{fuzzy-date document.created_at time_zone}}</dd>
+  <dt>Document Status</dt>
+  <dd style="text-transform: capitalize;">{{document.state}}</dd>
+  <dt>Modified Date</dt>
+  <dd>{{fuzzy-date document.updated_at time_zone}}</dd>
+</dl>
+<div class="mt-1 mb-1">
+  <button class="primary" style="width: 96%; margin: 5px;" {{action 'preview' document}}>Preview</button>
+  {{#unless document.is_template}}<button class="primary" style="width: 96%; margin: 5px;" {{action 'onSaveAsTemplate' document}}>Save as Template</button>{{/unless}}
+  {{#unless document.is_template}}<button class="primary" style="width: 96%; margin: 5px;" {{action 'onDeleteDocument' document}}>Archive Document</button>{{/unless}}
+  {{#if document.is_template}}
+    {{#if document.is_public}}
+    {{else}}
+      <button class="primary" style="width: 96%; margin: 5px;" {{action 'configureDocument' document}}>Configure Document Cover Page</button>
+    {{/if}}
+  {{else}}
+      <button class="primary" style="width: 96%; margin: 5px;" {{action 'configureDocument' document}}>Configure Document Cover Page</button>
+  {{/if}}
+ 
+  {{#if document.is_template}}
+    {{#if isAdmin}}
+    {{!-- {{#if   (if-equal user_id document.created_by.id true false)}} --}}
+      {{#if document.published}}
+        <button class="primary" style="width: 96%; margin: 5px;" {{action 'unPublishTemplate' document}}>Unpublish Document Template</button>
+      {{else}}
+        <button class="primary" style="width: 96%; margin: 5px;" {{action 'publishTemplate' document}}>Publish Document Template</button>
+      {{/if}}
+    {{/if}}
+  {{/if}}
+</div>
+<div class="g-doc-details-input">
+	<div class="g-doc-details-fields">
+    <fieldset class="g-form-group no-padding">
+      <label class="g-control-label">Description: <span class="pull-right editor-label">{{descriptionCharacterCount}}/240</span></label>
+      {{textarea value=documentDescription placeholder="DocumentDescription..." key-up="checkCharacter" maxlength=240  class="g-form-control"}}
+    </fieldset>
+    {{#if (if document.is_template false true)}}
+  		<fieldset class="g-form-group no-padding">
+        <label class="g-control-label">Proposed Start Date: </label>
+  			<input type="text" id="datepickers" value="pStartDate" class="g-form-control"/>
+  		</fieldset>
+  		<fieldset class="g-form-group no-padding">
+        <label class="g-control-label">Proposed End Date: </label>
+  			<input type="text" id="datepickere" value="pEndDate" class="g-form-control"/>
+      </fieldset>
+    {{/if}}
+      
+	</div>
+</div>
+
+
+<div class="pull-right" style="margin-right: 15px;">
+  <button class="primary" type="submit"
+  disabled={{isNotFilled}} {{action 'submitDetails'}}>Update Details</button>
+</div>
+<br/><br/>
+<div class="g-doc-details-input">
+  <div class="g-doc-details-fields">
+    <fieldset class="g-form-group no-padding">
+        <label class="g-control-label">Tags: </label>
+        {{input type="text" value=documentTags class="g-form-control" insert-newline="addTag"}}
+        <br/>
+        <div class="tag-container">
+          {{#each document.tags as |tag|}}
+            <span class="tag">{{tag.name}}<a class="tag-remove"{{action "removeTag" tag}}></a></span>
+          {{/each}}
+        </div>
+      </fieldset>
+  </div>
+</div>
+
+
+{{#if document.is_template}}
+{{else}}
+  <div class="clearfix"></div>
+  <div class="g-doc-details-input">
+    <fieldset class="g-form-group no-padding">
+      <label class="g-control-label">Comments: </label>
+      {{textarea value=docComment placeholder="Add a comment..."  class="g-form-control"}}
+    </fieldset>
+  </div>
+  <div class="pull-right mr-1">
+    <button class="primary" type="submit" disabled={{isCommentNull}} {{action 'writeComment' document.id}}>Share Comment</button>
+  </div>
+{{/if}}
+
+{{#if comments}}
+  <div class="clearfix"></div>
+  {{#if comments.length}}
+    <div class="comment-section mt-2 mb-2">
+      {{#each comments as |comment|}}
+        <ul class="g-list-unstyled">
+          <li class="no-padding">
+            {{#if comment.commenter.portrait}}
+              <img src="{{comment.commenter.portrait.image.url}}" class='g-avatar commented-by-profile'/>
+            {{else}}
+              <img src="../assets/images/profile/default.png" class='g-avatar commented-by-profile'/>
+            {{/if}}
+          </li>
+          <li class="no-padding">
+            <div class="commenttxt-block">
+              <span class="comment-name">{{comment.commenter.full_name}} commented {{moment-from-now comment.created_at locale "en" timeZone=time_zone}}</span> 
+              <span class="comment-txt">{{comment.comment_text}}</span> 
+              {{#if  (if-equal comment.commenter.id user_id true false)}}
+                <p class="delete-comment" {{action 'deleteComment' comment}}><i class="fa fa-trash" aria-hidden="true"></i></p>
+              {{/if}}
+              <div class="clearfix"></div>
+            </div>
+          </li>
+        </ul>
+      {{/each}}
+    </div>
+  {{/if}}
+{{/if}}

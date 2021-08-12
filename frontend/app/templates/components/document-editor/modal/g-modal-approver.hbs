@@ -1,0 +1,27 @@
+<div class="modal-overlay {{if active 'active' ''}} g-modal-approver">
+	<div class="modal">
+		<a class="close ico_close-mo" href="" {{action 'close'}}></a>
+		<div class="g-people-modal">
+			<div class="dialog-title">Edit Approver</div>
+			<div class="dialog-tagline">By default, you are the approver</div>
+			<div class="dialog-people-list mCustomScrollbar" data-mcs-theme="minimal-dark">
+				{{#each candidates as |candidate|}}
+					<div class="item-person">
+						<div class="photo">
+							{{g-avatar src=(portrait candidate.id false)}}
+						</div>
+						<div class="info">
+							<span class="name">{{full-name candidate.full_name}} {{if candidate.owner '(You)' ''}}</span>
+							<span class="email">{{candidate.email}}</span>
+						</div>
+
+						<div class="marker {{if-equal candidate.id approverId 'checked' ''}}" {{action 'select' candidate.id}}>
+							<i class="fa fa-check"></i>
+						</div>
+					</div>
+				{{/each}}
+			</div>
+      <button class="primary" type="submit" disabled={{isNotChanged}} {{action 'save'}}>Done</button>
+		</div>
+	</div>
+</div>

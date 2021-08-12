@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8' />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title><%= yield :title %></title>
+
+	<style>
+		body {
+			margin: 0;
+			overflow: hidden;
+			font-size: 14px;
+			font-family: 'Roboto', sans-serif !important;
+			color: #2e353a;
+		}
+
+		.avoid-break {
+			/* display: block; */
+			page-break-inside: avoid !important;
+			margin: 4px 0 4px 0;
+		}
+		img, table, tr, td, th, tbody, thead, tfoot {
+			page-break-inside: avoid !important;
+		}
+
+		.doc_container{
+			color: #37474f;
+			font-family: 'Roboto', sans-serif;
+		}
+		.sec_container{
+			padding-right: 10px;
+			padding-left: 10px
+			width: 100%;
+		}
+
+		.doc_title{
+			font-size: 22px;
+			font-weight: bold;
+			color: #37474f;
+			text-align: center;
+		}
+		.sec_title{
+			font-size: 18px;
+		}
+
+		.grapple-image.align-left{
+			/*float: left;*/
+		}
+
+		.grapple-image.align-right{
+			/*float: right;*/
+		}
+
+		.grapple-image.align-center{
+			display: block;
+			margin: 0 auto;
+		}
+
+		.image-pane {
+			visibility:hidden;
+		}
+
+
+		/* Image sizing */
+		img.grapple-image.size-ico {
+			width: 5%;
+			min-width: 32px;
+		}
+
+		img.grapple-image.size-xs {
+			width: 10%;
+			min-width: 64px;
+		}
+
+		img.grapple-image.size-sm {
+			width: 25%;
+			min-width: 100px;
+		}
+
+		img.grapple-image.size-md {
+			width: 50%;
+		}
+
+		img.grapple-image.size-lg {
+			width: 75%;
+		}
+
+		img.grapple-image.size-full {
+			width: 100%;
+		}
+
+		/* Table related styling */
+		table{
+			border: solid #999;
+			border-width: 1px 1px 0 1px;
+			border-spacing: 0;
+		}
+
+		tr{
+			border-bottom: 1px solid #999;
+			min-height: 20px;
+		}
+
+		td{
+			border: solid #999;
+			border-width: 0 1px 1px 0;
+			height: 20px;
+		}
+
+		.bot-border-srt::after,.document_title::after {
+			content: "";
+	        display: block;
+	        width: 40px;
+	        padding-top: 5px;
+	        border-bottom: 4px solid #ededf1;
+		}
+
+	</style>
+	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+
+	<script>
+		function number_pages() {
+			var vars={};
+			var x=document.location.search.substring(1).split('&');
+			for(var i in x) {var z=x[i].split('=',2);vars[z[0]] = decodeURIComponent(z[1]);}
+				var x=['frompage','topage','page','webpage','section','subsection','subsubsection'];
+			for(var i in x) {
+				var y = document.getElementsByClassName(x[i]);
+				for(var j=0; j<y.length; ++j) y[j].textContent = vars[x[i]];
+			}
+			hideHeaderAndFooter();
+		}
+
+		function hideHeaderAndFooter() {                                                           
+			var vars={};                                                                    
+			var x=document.location.search.substring(1).split('&');                                            
+			for(var i in x) {var z=x[i].split('=',2);vars[z[0]] = unescape(z[1]);}          
+				if(vars['page'] == 1){                                                          
+					var header =  document.getElementById("document-header");
+					var footer =  document.getElementById("document-footer");      
+					header.parentNode.removeChild(header);  
+
+				}                                                                               
+			}
+			
+		</script>
+
+	</head>
+	<body onload="number_pages()">
+
+		<%= yield %>
+
+	</body>
+	</html>

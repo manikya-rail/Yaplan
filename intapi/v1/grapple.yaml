@@ -1,0 +1,39 @@
+swagger: '2.0'
+info:
+  title: Grapple API
+  description: Internal REST API for Grapple project
+  version: 1.0.0
+host: grapple.com
+schemes:
+  - https
+basePath: /v1
+produces:
+  - application/json
+paths:
+  /v1/documents:
+    get:
+      summary: Documents
+      description: |
+        Returns all documents
+      tags: [Documents]
+      responses:
+        '200':
+          description: Array of documents
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Document'
+  
+definitions:
+  Document:
+    type: object
+    properties:
+      id: 
+        type: number
+        description: Unique id of the document
+      title:
+        type: string
+        description: Document title
+      created_at:
+        type: string
+        description: When document was created

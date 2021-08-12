@@ -1,0 +1,17 @@
+<div class="import-section-route documents-route">
+  <div class="content-header">
+    {{#link-to "app.documents.editor" model.document.id href=true class="cancel"}}Cancel{{/link-to}}
+    <h2>{{model.type}} Existing Section</h2>
+  </div>
+  <div class="filters">
+    {{app/dashboard/g-project-sortby placeholder="Sort By" onChange="changeSortBy"}}
+    {{!-- {{app/dashboard/g-choose-project placeholder="All Projects" onChange="changeProject" options=model.projects}} --}}
+  </div>
+  <div class="clearfix"></div>
+  <div class="content inner">
+    <!-- {{g-search placeholder="Search by keyword and tags" onChanging="changeKeyword"}} -->
+    <div class="mt-2">
+    {{documents/g-documents type=model.type documents=model.documents document_templates=model.document_templates clickDocument="clickDocument"}}
+  </div>
+  </div>
+</div>

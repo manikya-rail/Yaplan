@@ -1,0 +1,84 @@
+.g-billing ul {
+	width: 800px;
+	margin: 0px auto;
+	padding-top: 50px;
+
+	list-style: none;
+	
+	li.notifier {
+		display: block;
+		box-sizing: border-fox;
+		width: 90%;
+		margin: 0px 5% 10px;
+	}
+	
+	li.item-plan {
+		display: block;
+		box-sizing: border-box;
+		width: 90%;
+		margin: 0px 5% 20px;
+		padding: 40px 50px;
+
+		cursor: pointer;
+		line-height: 20px;
+		border: 2px solid #DDDDD2;
+
+		.choose .marker{
+			display: none;
+
+			color: @orange;
+		}
+
+		&.active {
+			background-color: #DDDDD2;
+
+			.choose .marker {
+				display: inline;
+			}
+		}
+
+		&:hover {
+			width: 100%;
+			margin-left: 0px;
+			margin-right: 0px;
+			padding-left: ~"calc(5% + 50px)";
+			padding-right: ~"calc(5% + 50px)";
+
+			border: 2px solid @orange;
+		}
+
+		&:after {
+			content: '';
+			display: block;
+			clear: both;
+		}
+
+		div {
+			float: left;
+			width: 25%;
+
+			font-size: @font-size-main;
+			color: @mid-gray;
+
+			&.price, &.choose {
+				text-align: right;
+			}
+
+			&.name {
+				font-size: @font-size-button;
+				font-weight: 700;
+				color: @dark-gray;				
+			}
+
+			&.num_projects {
+				font-weight: 700;
+			}
+		}
+	}
+}
+
+.g-billing .tagline {
+	text-align: center;
+	font-size: @font-size-main;
+	color: @dark-gray;
+}

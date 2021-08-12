@@ -1,0 +1,14 @@
+<div class="g-categories-block">
+ <ul class="g-projects projects-block">
+   {{#each archivedCategories as |category|}}
+     <div class='category-card'>
+     	 <div class="image-card" style="background-image: url('{{category.image.thumb.url}}'); background-position: 50%; background-repeat: no-repeat;background-size: cover;"></div>
+       <!-- <img src='{{category.image.thumb.url}}' class='image-card'/> -->
+       <div class="category-label-row">
+         <label for={{category.id}} class="category-label category-ellipse">{{category.name}}</label>
+         <h3 class="no-margin"><i class="fa fa-undo"  {{action 'restoreCategory' category}} aria-hidden="true"></i></h3>
+       </div>
+     </div>
+   {{/each}}
+ </ul>
+ </div>

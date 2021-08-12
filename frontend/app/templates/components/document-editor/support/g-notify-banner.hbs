@@ -1,0 +1,14 @@
+<div class="g-notify-banner {{if active 'active'}}">
+	<i class="fa fa-{{icon}}"></i>
+	<span class="description">{{text}}</span>
+	<span class="actions">
+		<button class="colored vacant" {{action 'onCancel'}}>
+			<i class="fa fa-close"></i>
+			{{cancelText}}
+		</button>
+		<button class="colored confirm" {{action 'onConfirm'}}>
+			<i class="fa fa-check"></i>
+			{{confirmText}}
+		</button>
+	</span>
+</div>

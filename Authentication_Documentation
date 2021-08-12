@@ -1,0 +1,37 @@
+Authentication
+
+# For ember, there is https://github.com/simplabs/ember-simple-auth
+which is a general framework, and you need some authentication methods implemented on top of it.
+
+There are two authenticator methods already out there.
+* to work with devise (somehow modified to support tokens). THis one adds email and token to each request. It does not appear to refresh or do anything fancy with the token.
+https://github.com/simplabs/ember-simple-auth/tree/master/packages/ember-simple-auth-devise
+* Another one is the below
+https://github.com/jpadilla/ember-cli-simple-auth-token
+which can also refresh the tokens automatically (meaning, it will request a new token every X minutes). This means using ruby-jwt; which requires a little bit of manual work to integrate with Devise. It also sends the password as part of the token for each and every request.
+See following links for ruby-jwt: 
+http://zacstewart.com/2015/05/14/using-json-web-tokens-to-authenticate-javascript-front-ends-on-rails.html
+http://adamalbrecht.com/2014/12/04/add-json-web-token-authentication-to-your-angular-rails-app/
+http://rohitrox.github.io/2015/06/23/so-you-want-to-create-an-awesome-rails-api-backed-with-jwt/
+and sample app
+https://github.com/jimjeffers/rails-devise-cors-jwt-example
+
+Also, there is this very good back-end gem extension to Devise: 
+https://github.com/lynndylanhurley/devise_token_auth
+which refreshes tokens on each request (although this can be turned off). 
+It's not clear which front-end can work with this one; as the ember-simple-auth devise authenticator does not send login in the correct format. 
+
+Back-end, there also is 
+https://github.com/gonzalo-bulnes/simple_token_authentication 
+well there are a number of commits, I do not trust the security. 
+Tokens are fixed once forever. 
+
+So, we are left using tiddle gem, which generates one token per session (and users may have multiple sessions).
+Note that tokens do not expire unfortunately, we need to automatically call clean ups. 
+
+http://adamniedzielski.github.io/blog/2015/04/04/token-authentication-with-tiddle/
+https://github.com/adamniedzielski/tiddle
+
+Improvement on tiddle would be to have token refreshes (and expiry). We'll leave that to v2!
+
+

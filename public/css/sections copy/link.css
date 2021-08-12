@@ -1,0 +1,44 @@
+#section-link{
+	z-index: 40;
+}
+
+#section-link h1, #section-link h3{
+	opacity: 0;
+}
+
+#section-link .card-1{
+	position: absolute;
+	z-index: 42;
+	width: 580px;
+	height: 620px;
+	top: 100px;
+	left: calc(40% - 290px);
+
+	background-color: white;
+	background-size: cover;	
+}
+#section-link .card-2{
+	position: absolute;
+	z-index: 41;
+	width: 500px;
+	height: 600px;
+	top: 160px;
+	left: calc(40% + 190px);
+
+	background-color: white;
+	background-size: cover;	
+}
+
+#section-link .marker-1{
+	position: absolute;
+	z-index: 43;
+	width: 140px;
+	height: 140px;
+	top: 330px;
+	left: calc(40% + 220px);
+
+	background: url('/assets/imgs/mark-link.png') no-repeat;
+	background-size: cover;
+
+	opacity: 0;
+}

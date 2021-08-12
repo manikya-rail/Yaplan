@@ -1,0 +1,41 @@
+<div class="dashboard-list g-upper-timeline">
+  <div class="dashboard-header">
+    <span class="dashboard-heading">Projects Activity</span>
+  </div>
+  <div class="content timeline-inner-table-horizontal-scroll mb-4">
+      {{#if activities.length}}
+        <section id="g-res-timeline">
+          {{#each activities as |activity|}}
+            {{#unless (if-equal activity.recepient_type 'User' true false)}}
+              <div class="timeline-block">
+                <div class="timeline-img picture">
+                  {{#if activity.owner.portrait.image.url}}
+                    <img src={{activity.owner.portrait.image.url}}/>
+                  {{else}}
+                    <img src="../assets/images/profile/default.png"/>
+                  {{/if}}
+                </div>
+                <div class="task-company">
+                  <span class="pull-right">{{activity-name activity}}</span>
+                </div>
+                <div class="timeline-content">
+                  <div class="task-status">
+                    <h4>{{activity-title activity.key}}</h4>
+                    <p>{{activity.text}}</p>
+                  </div>
+                  <span class="date">
+                    {{moment-from-now activity.createdAt locale "en" timeZone=time_zone}}
+                  </span>
+                </div>
+              </div>
+            {{/unless}}
+          {{/each}}
+        </section> 
+    {{else}}
+      <p class="q-text-center">No Activities</p>
+    {{/if}}
+  </div>
+</div>
+
+  
+  

@@ -1,0 +1,65 @@
+<div class="title-holder" style="padding: 12px 30px">
+	<div class='clearfix'>
+		<span style="float: left; padding-top: 10px; padding-left: 10px;">All Notifications</span>
+	</div>
+</div>
+{{reg/support/g-reg-notify type=toast.type msg=toast.msg}}
+
+<div class="notification-panel">
+	<div class="panel panel-primary">
+		<div class="panel-body">
+			{{#if loadingText}}
+			<center><span>Loading ...</span></center>
+			{{else}}
+			{{#if notifications.length}}
+			<table class="project-table-view pl-0">
+				{{#each notifications as |notification|}}
+				<tr>
+					<td>
+						<span href="true" class="title ember-view">
+							{{notification.text}} - {{notification.trackable.title}}
+						</span>
+						<div class="pull-right">
+							{{#if (if-equal notification.key 'project.invitation' true false)}}
+							{{#if   (if-equal notification.trackableType 'Project' true false)}}
+							<span style="color:#51caff; cursor:pointer" {{action 'acceptProjectInvitation' notification.trackable.id}}>Accept</span> <span>&nbsp;|&nbsp;</span>
+							<span style="cursor:pointer" {{action 'rejectProjectInvitation' notification.trackable.id}}>Reject</span>
+							{{/if}}
+							{{else}}
+							{{#if (if-equal notification.key 'document.invitation' true false)}}
+							{{#if   (if-equal notification.trackableType 'Task' true false)}}
+							<span style="color:#51caff; cursor:pointer" {{action 'acceptDocumentInvitation' notification.trackable.id}}>Accept</span> <span>&nbsp;|&nbsp;</span>
+							<span style="cursor:pointer" {{action 'rejectDocumentInvitation' notification.trackable.id}}>Reject</span>
+							{{/if}}
+							{{/if}}
+							{{/if}}
+						</div>
+						<div class="clearfix"></div>
+					</td>
+				</tr>
+				{{/each}}
+			</table>
+			{{else}}
+			<center><span><b>You have no notifications</b></span></center>
+			{{/if}}
+			{{/if}}
+		</div>
+	</div>
+	<div class="mr-2 mt-2">
+		{{
+			g-pagination 
+			page=page 
+			pages=pages 
+			callNext='callNext' 
+			totalRecords=totalNotifications 
+			prevPage='prevPage'
+			nextPage='nextPage'
+			totalPages=totalPages
+		}}
+	</div>
+</div>
+
+
+
+<div class="mt-2 pt-2 pb-2 mb-2"></div>
+

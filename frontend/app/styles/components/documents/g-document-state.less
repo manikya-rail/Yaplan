@@ -1,0 +1,27 @@
+.g-document-state {
+	display: inline-block;
+
+	&.inline {
+		font-weight: 700;
+	}	
+
+	&.ico-state-0 {
+		.ib-file-o;
+	}
+
+	&.ico-state-1 {
+		.ib-circle-o;
+
+		&.inline {
+			.ib-clock-o;
+		}
+	}
+
+	&.ico-state-2 {
+		.ib-check;
+
+		&:before {
+			color: @orange;
+		}
+	}
+}

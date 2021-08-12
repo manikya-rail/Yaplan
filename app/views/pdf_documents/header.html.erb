@@ -1,0 +1,6 @@
+<%if @document.header.present? %>
+	<div id = "document-header"  style="height: 50px; width: 100%; text-align: center;color: #747474;"">
+		<small><%= @document.header.html_safe %></small>
+	</div>
+<%end%>
+

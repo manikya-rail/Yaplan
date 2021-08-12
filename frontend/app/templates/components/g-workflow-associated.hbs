@@ -1,0 +1,38 @@
+<div class="modal-overlay {{if active 'active' ''}} g-modal-add-collaborator">
+  <div class="modal"  style="width: auto; height: auto;">
+    <a class="close ico_close-mo" href="" {{action (toggle 'active')}}></a>
+    <div class="g-people-modal attachment-document-modal">
+      {{#if is_template}}
+        <div class="dialog-title">Workflow Templates</div>
+      {{else}}
+        <div class="dialog-title">Project Workflow</div>
+      {{/if}}
+      <div class="dialog-input g-vertical-doc-scroll">
+        <div class="colloborator-modal documet-list-modal">
+          <table style="margin-top: 0px;">
+            {{#if workflowsAssociated.length}}
+              <tr>
+                <th> <b>Workflow Name</b></th>
+                {{#if is_template}}
+                <th> <b>Category</b></th>
+                {{else}}
+                <th> <b>Project Name</b></th>
+                {{/if}}
+              </tr>
+              {{#each workflowsAssociated as |template|}}
+                <tr>
+                  <td>{{template.name}}</td>
+                  {{#if is_template}}
+                  <td>{{template.category.name}}</td>
+                  {{else}}
+                  <td>{{template.projectName}}</td>
+                  {{/if}}
+                </tr>
+              {{/each}}
+            {{/if}}
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

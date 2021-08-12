@@ -1,0 +1,92 @@
+@import '../_base';
+
+.g-popup {
+  position: absolute;
+  display: none;
+  right: 20px;
+  top: 50px;
+  padding: 10px;
+  z-index: 99;
+
+  background-color: #fff;
+  border: 1px solid #eee;
+  box-shadow: 0 0 18px 0 #d1d1d1;
+
+  &.opened {
+    display: block;
+  }
+
+  &:before{
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    top: -5px;
+    right: 10px;
+    background: #fff;
+
+    content: '';
+
+    transform: rotate(45deg);
+  }
+
+}
+.g-menu-dropdown {
+  .g-popup {
+      top: 36px;
+      right: -2px;
+  }
+}
+//notification layout
+
+.g-notification-section-menu {
+  .g-popup {
+  right: -5px;
+  margin-top: 5px;
+  line-height: 20px;
+  & > ul.context-list {
+    padding: 0px;
+    max-height: 350px;
+    overflow-y: scroll;
+    
+    li {
+      padding: 0px;
+      border-bottom: 1px solid #eee !important;
+      cursor: default;
+      // &:hover {
+      //       background-color: rgba(0, 0, 0, 0.05)
+      //     }
+      ul.context-list {
+        li {
+          padding: 0px;
+          display: inline-block;
+          padding-left: 15px;
+          padding-right: 15px;
+          &.first-child {
+            margin-right: 25px; 
+          }
+          &:hover {
+            background-color: transparent;
+          }
+        }
+        &:last-child {
+          border-bottom: 0px !important;
+        }    
+      }
+      &:last-child {
+          border-bottom: 0px !important;
+        }
+    }
+  }
+  .all-notification {
+    a {
+      display: block;
+      padding-top: 5px;
+    }
+  }
+  }
+}
+
+//notifications view
+.notification-panel {
+  padding: 10px 45px;
+}

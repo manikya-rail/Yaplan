@@ -1,0 +1,63 @@
+<div class="title-holder" style="padding: 12px 30px">
+  <div class='clearfix'>
+    <span style="float: left; padding-top: 10px; padding-left: 10px;">ALL PROJECTS</span>
+    <a href='#' style="float: right;" {{action 'addProject'}}><span class="add-new-project"></span></a>
+    <ul class="pull-right g-list-unstyled-project-toggle" style="margin-right: 15px;">
+      <li class="mr-1 mt-0">
+        <div class="g-search-filter">
+          <input class="g-search-field" id="searchinput" type="text" placeholder="Search by keyword" oninput={{action 'searchProjects'}}>
+          <i id="g-search-icon" class="fa fa-search"></i>
+        </div> 
+      </li>
+      {{#if isTile}}
+      	<li class=""  {{action 'isListdata'}} style="margin-right: 10px;"><i class="list-icon" aria-hidden="true"></i></li>
+      	<li class="no-margin" {{action 'isTiledata'}}><i class="grid-icon active" aria-hidden="true"></i></li>
+      {{/if}}
+      {{#if isList}}
+        <li class=""  {{action 'isListdata'}} style="margin-right: 10px;"><i class="list-icon active" aria-hidden="true"></i></li>
+        <li class="no-margin " {{action 'isTiledata'}}><i class="grid-icon" aria-hidden="true"></i></li>
+      {{/if}}
+    </ul>
+  </div>
+</div>
+<div class="content project-block">
+  {{reg/support/g-reg-notify type=notification.type msg=notification.msg}}
+  {{
+    projects/g-projects
+    projectsList=(saved-models filteredProjects)
+    onProjectClick='onProjectClick'
+    onArchiveProject='onArchiveProject'
+    editProject='editProject'
+    isTile=isTile
+    isList=isList
+    showText=showText
+    categories=model.categories
+    metaData=projects
+    page=page
+    callNextPage='callNextPage'
+  }}
+</div>
+{{
+  projects/modal/g-project-edit
+  active=isAddProjectOpened Category=model.categories onProjectCreated='onProjectCreated'
+  createproject='createproject' onInviteMember='onInviteMember'
+  editProject='editProject' project=project step1=step1
+  refreshPage='refreshPage' disabled=projectModalButtonsDisabled
+  withWorkflow=withWorkflow workflowTemplates=model.workflowTemplates showNotification='showNotification'
+}}
+
+{{
+  projects/modal/g-invite-member
+  active=isinvitememberOpened
+  invitelistofmemeber='invitelistofmemeber' showNotification='showNotification'
+  collaboration=model.collaborations refreshPage='refreshPage'
+}}
+
+{{
+  g-toaster
+  active=planToaster.active
+  text=planToaster.text
+  links=planToaster.links
+  icon=planToaster.icon
+  position='top'
+}}

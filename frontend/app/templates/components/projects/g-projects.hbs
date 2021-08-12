@@ -1,0 +1,168 @@
+{{reg/support/g-reg-notify type=notification.type msg=notification.msg}}
+{{#if projects.length}}
+	<div class='g-form-group pull-right mb-0'>
+		<select name='' id='' class='g-form-control' onchange={{action "setSortProps" value="target.value"}}>
+			<option value='updatedAt'>Most Recent</option>
+			<option value='title'>Alphabetical</option>
+			<option value='category'>Category</option>
+		</select><i class="fa fa-angle-down select-down-arrow" aria-hidden="true"></i>
+	</div>
+	<div class='clearfix'></div>
+	{{#if isTile}}
+		{{#if isLoading}}
+			<center><h3>Loading ..</h3></center>
+		{{else}}
+		<ul class="g-projects projects-block">
+			{{#each projects as |project|}}
+				<li class="project" >
+					<div class="card-header" >
+						{{#link-to
+							"app.projects.projecttab.document"
+							project.id class="title" href=true tagName='span' align="left"
+						}}
+							{{project.title}}
+						{{/link-to}}
+						<span class="pull-right edit-delete-option">
+							<i class="view-more-options"></i>
+							<!-- <ul style="list-style-type:disc">
+								<li></li>
+								<li></li>
+								<li></li>
+							</ul> -->
+							<div class="hover-dropdown">
+								<ul>
+									<li><a {{action 'projectInfo' project}}>Project Info</a></li>
+									<li>
+										<a {{action 'editProject' project}}>
+											Rename
+										</a>
+									</li>
+									<li><a {{action 'archiveProject' project}}>Archive</a></li>
+								</ul>
+							</div>
+						</span>
+					</div>
+					{{#link-to
+						"app.projects.projecttab.document" project.id
+						tagName="p" class="mb-0 category-ellipse"
+					}}
+						Category: {{project.category_name}}
+						{{!-- {{project-category-picker categories project}} --}}
+					{{/link-to}}
+
+					{{#link-to
+						"app.projects.projecttab.document" project.id
+						class="project-description" tagName="p"
+					}}
+						{{project.description}}
+					{{/link-to}}
+					{{#if project.created_by.portrait.image.url}}
+						<div
+							class="icon"
+							style={{
+								safe-style project.created_by.portrait.image.url
+								'background-size: cover;'
+							}}
+						>
+						</div>
+					{{else}}
+						<div class="icon" style='background-size: cover; background-image: url("../assets/images/profile/default.png")' >
+						</div>
+					{{/if}}
+					<div class="footer">
+						<div class="status">
+							<div class="status-icon"></div>
+							{{project.status}}
+							<span class="profile-name">{{project.created_by.full_name}}</span>
+							<small class="uploader">Project Manager</small>
+						</div>
+						<div class="update-time">
+							last updated at<p class="q-text-left"> {{moment-from-now project.updatedAt locale "en" timeZone=time_zone}}</p>
+						</div>
+					</div>
+				</li>
+			{{/each}}
+		</ul>
+		{{/if}}
+	{{/if}}
+
+	{{
+		projects/modal/g-confirm
+		active=onArchive archive_this_Project=archive_this_Project
+		onArchiveProject='onArchiveProject' archive_this_Document='null'
+		onArchiveDocument='onArchiveDocument' showNotification='showNotification'
+	}}
+
+	{{#if isList}}
+		{{#if isLoading}}
+			<center><h3>Loading ..</h3></center>
+		{{else}}
+		<table class="project-table-view pl-0 g-prj-oly">
+			{{#if projects.length}}
+				<tr>
+					<th>Project Name</th>
+					<th>Project Category</th>
+					<th>Description</th>
+					<th>Project Manager</th>
+					<th>Options</th>
+				</tr>
+
+				{{#each projects as |project|}}
+					<tr>
+						<td style="cursor: pointer;">{{#link-to "app.projects.projecttab.document" project.id class="title" href=true tagName='span' align="left"}}
+							 {{project.title}}
+						{{/link-to}}</td>
+						<td>{{project-category-picker categories project}}</td>
+						<td>{{project.description}}</td>
+						<td>{{project.created_by.full_name}}</td>
+						<td class="pl-1">
+							<span class="tooltip-icon tooltip" aria-hidden="true">
+								<div class="tooltiptext">
+									<ul>
+										<li><a {{action 'projectInfo' project}}>Project Info</a></li>
+										<li> <a {{action 'editProject' project}}>Rename</a></li>
+										<li> <a {{action 'archiveProject' project}}>Archive</a></li>
+									</ul>
+								</div>
+							</span>
+						</td>
+					</tr>
+				{{/each}}
+			{{/if}}
+		</table>
+		{{/if}}
+	{{/if}}
+{{else}}
+	<div style="text-align: center;">
+		{{#if showText}}
+			<h1>It looks like no projects have been created.</h1>
+			<h3>When a project is created it will appear here.</h3>
+		{{else}}
+			<h1>No Projects Available</h1>
+		{{/if}}
+	</div>
+{{/if}}
+
+{{
+	g-pagination 
+	page=page 
+	pages=pages 
+	callNext='callNext' 
+	totalRecords=totalProjects 
+	prevPage='prevPage'
+	totalPages=totalPages
+	nextPage='nextPage'
+}}
+
+{{#if archivedProjects}}
+	{{#if (compare totalProjects '>' 15)}}
+		<p style="color: #012169; cursor:pointer; position:relative"  {{action 'goToArchiveProjects'}}><u style="position:absolute; bottom: 90px;">&nbsp;{{archivedProjects}} Projects Archived</u></p>
+	{{else}}
+		<p style="color: #012169; cursor:pointer; position:relative"  {{action 'goToArchiveProjects'}}><u style="position:absolute;">&nbsp;{{archivedProjects}} Projects Archived</u></p>
+	{{/if}}
+{{/if}}
+
+{{
+	project-info project=projectInfo active=showProjectInfo
+ 	time_zone=time_zone
+}}

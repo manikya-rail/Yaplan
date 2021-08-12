@@ -1,0 +1,57 @@
+@import '../_base';
+@import '../components/collaborators/g-collaborators';
+
+.collaborators-route {
+
+  .inner {
+    padding: 0 100px;
+  }
+
+  .content-header {
+    .inner;
+
+    position: relative;
+    height: 64px;
+    background-color: #fff;
+
+    .page-title {
+      .fs-medium;
+
+      line-height: 64px;
+      color: @dark-gray;
+    }
+
+    button.add{
+      position: absolute;
+      right: 100px;
+      top: 30px;
+    }
+
+    .g-choose-project{
+      .i-chevron-down;
+
+      position: relative;
+
+      &.on{
+        .i-chevron-up;
+      }
+
+      float: right;
+      margin: 13px 120px 0 0;
+    }
+
+    .project-sortby{
+      .i-chevron-down;
+
+      position: relative;
+
+      &.on{
+        .i-chevron-up;
+      }
+
+      float: right;
+      margin: 13px 120px 0 0;
+    }
+  }
+
+}

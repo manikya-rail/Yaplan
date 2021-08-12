@@ -1,0 +1,92 @@
+<div class="editor-route {{if detailsPanelVisible 'collapsed' ''}}">
+  <div class="content-top-pane">
+    <ol class="g-breadcrumb">
+      {{#link-to 'app.projects.project' tagName='li' href=true}}
+        My Projects
+      {{/link-to}}
+      <li
+        class="over-ellipsis"
+        {{action 'redirectToProject' document.is_template}}
+      >
+        {{document.project.title}}
+      </li>
+      <li class="active g-document-header-limit-character">
+        {{document.title}}
+      </li>
+    </ol>
+    <span class='edit-info-btn'>editing</span><span class="vert-ruler"></span>
+  </div>
+  <div class="editor-outer">
+    {{
+      document-editor/support/g-notify-banner onCancel='rejectDocument'
+      onConfirm='approveDocument' text=approvalNotify.text cancelText='Reject'
+      active=approvalNotify.isOpen icon='exclamation' confirmText='Approve' time_zone=time_zone
+    }}
+    {{
+      document-editor/g-document-editor document=document
+      onSaved='setSavedState' onSaving='setSavingState'
+      importSection='importSection' linkSection='linkSection' time_zone=time_zone
+    }}
+  </div>
+</div>
+<div class="editor-rightpane {{if detailsPanelVisible '' 'collapsed'}}">
+  <div id="details-toggle" {{action (toggle "detailsPanelVisible")}}>
+    <i class='fa fa-cog'></i>
+  </div>
+  <div class="g-doc-scroll-content">
+    <h3 class="q-text-center">DOCUMENT DETAILS</h3>
+    {{
+      document-editor/g-details document=document comments=comments
+      showNotification='showNotification' onSaveAsTemplate="createTemplate"
+      onDeleteDocument="deleteDocument" onIssueApproval="issueApproval"
+      onChangeApprover="changeApprover" preview="preview" time_zone=time_zone
+    }}
+    {{#unless document.is_template}}
+      <h3>COLLABORATORS</h3>
+      {{
+        document-editor/g-collaborator document=document
+        isOwner=isOwner onEdit='editCollaborator' time_zone=time_zone
+      }}
+    {{/unless}}
+  </div>
+</div>
+{{reg/support/g-reg-notify type=notification.type msg=notification.msg}}
+{{
+  document-editor/modal/g-modal-message-approver active=isApprovalMessageOpened
+  approver=document.approver onRequestApproval='requestApproval' time_zone=time_zone
+}}
+{{
+  document-editor/modal/g-modal-collaborator active=isEditCollaboratorOpened
+  document=document openNewCollaboratorModal="onNewCollaboratorModalTriggered" time_zone=time_zone
+}}
+{{
+  document-editor/modal/g-modal-approver active=isChangeApproverOpened
+  triggerFlag=triggerApprovalMessage document=document time_zone=time_zone
+  approverChanged="onApproverChanged"
+}}
+{{
+  document-editor/modal/g-modal-no-approver active=isNoApproverOpened
+  document=document onApprove='approveDocument' onAssign='openApproverModal' time_zone=time_zone
+}}
+{{
+  collaborators/modal/g-modal-add-collaborator active=isAddCollaboratorOpened
+  collaboratorAdded="onCollaboratorInvited" limited=true document=document
+  showMessage='showMessage' time_zone=time_zone
+}}
+{{
+  g-toaster active=approvalToaster.active text=approvalToaster.text
+  links=approvalToaster.links icon=approvalToaster.icon
+  position='bottom' autoFade=3 time_zone=time_zone
+}}
+{{
+  projects/modal/g-confirm
+  active=onArchive
+  archive_this_Project="null"
+  onArchiveProject='onArchiveProject'
+  archive_this_Document=archive_document_id
+  onArchiveDocument="onArchiveDocument"
+  showNotification='showNotification'
+  onEditMode=true
+  afterDelete='afterDelete'
+  time_zone=time_zone
+}}

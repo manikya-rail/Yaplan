@@ -1,0 +1,134 @@
+{{reg/support/g-reg-notify type=notification.type msg=notification.msg}}
+<div class="title-holder" style="padding: 12px 30px">
+	<div class='clearfix'>
+		<span style="float: left; padding-top: 10px; padding-left: 10px;">ARCHIVED PROJECTS</span>
+ 		<ul class="pull-right g-list-unstyled-project-toggle" style="margin-right: 25px;">
+			<li class="mr-1 mt-0">
+				<div class="g-search-filter">
+					<input class="g-search-field" id="searchinput" type="text" placeholder="Search by keyword" oninput={{action 'searchProjects'}}>
+					<i id="g-search-icon" class="fa fa-search"></i>
+				</div>
+			</li>
+	  	{{#if isTile}}
+      	<li class=""  {{action 'isListdata'}} style="margin-right: 10px;"><i class="list-icon" aria-hidden="true"></i></li>
+      	<li class="no-margin" {{action 'isTiledata'}}><i class="grid-icon active" aria-hidden="true"></i></li>
+    	{{/if}}
+    	{{#if isList}}
+      	<li class=""  {{action 'isListdata'}} style="margin-right: 10px;"><i class="list-icon active" aria-hidden="true"></i></li>
+      	<li class="no-margin " {{action 'isTiledata'}}><i class="grid-icon" aria-hidden="true"></i></li>
+    	{{/if}}
+ 		</ul>
+	</div>
+</div>
+<div class="content project-block">
+	<div class='g-form-group pull-right mb-0'>
+	  <select name='' id='' class='g-form-control' onchange={{action "setSortProps" value="target.value"}}>
+	    <option value='updatedAt'>Most Recent</option>
+	    <option value='title'>Alphabetical</option>
+	    <option value='category'>Category</option>
+	  </select><i class="fa fa-angle-down select-down-arrow" aria-hidden="true"></i>
+	</div>
+	<div class='clearfix'></div>
+	{{#if showMessage}}
+  	<center><h3>Loading ..</h3></center>
+	{{else}}
+		{{#if archivedProjects.length}}
+			{{#if isTile}}
+				<ul class="g-projects projects-block">
+					{{#each archivedProjects as |project|}}
+						<li class="project" >
+							<div class="card-header" >
+						 		<label class="title">{{project.title}}</label>
+								<span class="pull-right edit-delete-option">
+									<i class="view-more-options"></i>
+									<div class="hover-dropdown">
+										<ul>
+											<li><a {{action 'projectInfo' project}}>Project Info</a></li>
+											<li><a {{action 'restoreProject' project.id}}>Restore</a></li>
+										</ul>
+									</div>
+								</span>
+							</div>
+							<p class="project-description arch-proj">
+								{{project.description}}
+							</p>
+							{{#if project.created_by.portrait.image.url}}
+								<div class="icon" style={{safe-style project.created_by.portrait.image.url 
+								'background-size: cover;'}}></div>
+							{{else}}
+								<div class="icon" style='background-size: cover; background-image: url("../assets/images/profile/default.png")' ></div>
+							{{/if}}
+							<div class="footer">
+								<div class="status">
+									<div class="status-icon"></div>
+									{{project.status}}
+									<span class="profile-name">{{project.created_by.full_name}}</span>
+									<small class="uploader">Project Manager</small>
+								</div>
+								<div class="update-time">
+									last updated at<p class="q-text-left"> {{moment-from-now project.updatedAt locale "en" timeZone=time_zone}}</p> 
+								</div>
+							</div>
+						</li>
+					{{/each}}
+				</ul>
+			{{else if isList}}
+				<table class="project-table-view">
+					{{#if archivedProjects.length}}
+						<tr>
+							<th>Project Name</th>
+							<th>Description</th>
+							<th>Project Manager</th>
+							<th>Options</th>
+						</tr>
+						{{#each archivedProjects as |project|}}
+							<tr>
+								<td>{{project.title}}</td>
+								<td>{{project.description}}</td>
+								<td>{{project.created_by.full_name}}</td>
+								<td class="pl-2">
+									<i class="tooltip-icon tooltip" aria-hidden="true">
+									<div class="tooltiptext">
+										<ul>
+											<li><a {{action 'projectInfo' project}}>Project Info</a></li>
+											<li><a {{action 'restoreProject' project.id}}>Restore</a></li>
+										</ul>
+									</div>
+									</i>
+								</td>
+							</tr>
+						{{/each}}
+					{{/if}}
+				</table>
+			{{/if}}
+		{{else}}
+			<center>
+				<h1>No Archived Projects Available</h1>
+			</center>
+		{{/if}}
+	{{/if}}
+</div>
+
+<div class="mr-2">
+	{{
+		g-pagination 
+		page=page 
+		pages=pages 
+		callNext='callNext' 
+		totalRecords=totalArchivedProjects 
+		prevPage='prevPage'
+		nextPage='nextPage'
+		totalPages=totalPages
+	}}
+</div>
+
+{{#link-to "app.projects"}} 
+	<p style="color: #87aa5c; cursor:pointer; margin: 0px 0px 60px 40px; position: relative;">
+	<u style="position: absolute; bottom:115px;">Active Projects</u>
+	</p>
+{{/link-to}}
+
+{{
+	project-info project=projectInfo active=showProjectInfo
+ 	time_zone=time_zone
+}}

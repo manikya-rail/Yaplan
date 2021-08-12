@@ -1,0 +1,59 @@
+<div class="modal-overlay {{if active 'active' ''}}">
+	<div class="modal">
+		<a class="close ico_close-mo" href="" {{action (toggle "active")}}></a>
+		<form {{action "save" on="submit"}} class="g-modal-stripe">
+			<div class="dialog-title">
+				Add Payment Option
+			</div>
+			<div class="dialog-tagline">
+				Fill in your card information.
+			</div>
+			<div class="input-group g-reg-nao-input">
+				{{reg/support/g-reg-notify type=notification.type msg=notification.msg}}
+				<span class="input input--nao">
+				  {{input value=number type="text" name="number" class="input__field input__field--nao"}}
+				    <label class="input__label input__label--nao">
+				        <span class="input__label-content input__label-content--nao">Card Number</span>
+				    </label>
+				  	<svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60"
+				       preserveAspectRatio="none">
+				      	<path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
+				  	</svg>
+				</span>
+				<span class="input input--nao">
+				  {{input value=cvv type="text" name="CVV" maxlength=4 class="input__field input__field--nao"}}
+				    <label class="input__label input__label--nao">
+				        <span class="input__label-content input__label-content--nao">CVV</span>
+				    </label>
+				  	<svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60"
+				       preserveAspectRatio="none">
+				      	<path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
+				  	</svg>
+				</span>
+				<span class="input input--nao">
+				  {{input value=expire_month type="text" name="expire_month" class="input__field input__field--nao" maxlength=2 focus-out="validateEM"}}
+				    <label class="input__label input__label--nao">
+				        <span class="input__label-content input__label-content--nao">Expiry Month</span>
+				    </label>
+				  	<svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60"
+				       preserveAspectRatio="none">
+				      	<path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
+				  	</svg>
+				</span>
+				<span class="input input--nao">
+				  {{input value=expire_year type="text" name="expire_year" class="input__field input__field--nao" maxlength=4 focus-out="validateEY"}}
+				    <label class="input__label input__label--nao">
+				        <span class="input__label-content input__label-content--nao">Expiry Year</span>
+				    </label>
+				  	<svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60"
+				       preserveAspectRatio="none">
+				      	<path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
+				  	</svg>
+				</span>
+			</div>
+			<div>
+                <button class="primary" type="submit" disabled={{isNotFilled}}>Subscribe</button>
+            </div>
+		</form>
+	</div>
+</div>

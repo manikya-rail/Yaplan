@@ -1,0 +1,35 @@
+@import '../_base';
+
+@import "../components/dashboard/g-choose-project";
+
+.dashboard-templates-route {
+
+  .inner {
+    padding: 0 100px;
+  }
+
+  .content-header {
+    .inner;
+
+    position: relative;
+    height: 64px;
+    background-color: #fff;
+
+    .tip{
+      float: right;
+      line-height: 64px;
+
+      .upload{
+        text-decoration: none;
+        color: @orange;
+
+        &:before{
+          .fa-icon;
+
+          margin-right: 3px;
+          content: @fa-var-cloud-upload;
+        }
+      }
+    }
+  }
+}

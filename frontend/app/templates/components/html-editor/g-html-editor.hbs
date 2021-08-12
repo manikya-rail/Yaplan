@@ -1,0 +1,8 @@
+<div class="html-editor-toolpane">
+  <div class="arrow"></div>
+  {{#each commands as |command|}}
+  	{{#if command.text_command}}
+      <span class="{{command.name}}" {{action 'clickPaneIcon' command}}><i></i></span>
+  	{{/if}}
+  {{/each}}
+</div>

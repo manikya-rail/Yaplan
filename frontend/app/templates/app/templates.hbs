@@ -1,0 +1,18 @@
+<div class="documents-route">
+  <div class="content-header">
+    {{#unless model.skipSubmenu}}
+      <ul class="submenu">
+        {{#link-to "app.templates.documents"  current-when="app.templates.documents app.templates.archived-doc-templates"  href=true tagName='li'}}Document Templates{{/link-to}}
+        {{#link-to "app.templates.workflows" href=true tagName='li'}}Workflow Templates{{/link-to}}
+      </ul>
+    {{/unless}}
+  </div>
+  <div class="content-header g-sub-breadcrumb">
+    <ol class="g-breadcrumb">
+      <li>{{#link-to 'app.dashboard'}}Dashboard{{/link-to}}</li>
+      <li class='active'>Templates</li>
+    </ol>
+  </div>
+  <div style="margin-top: 55px;"></div>
+  {{outlet}}
+</div>

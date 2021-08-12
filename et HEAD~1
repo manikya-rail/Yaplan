@@ -1,0 +1,6346 @@
+[33mcommit 1861eaa75fb8a8c62fa4b9ed8eeeda27a27843fc[m
+Author: NikolaMalenic <sjovac@gmail.com>
+Date:   Thu Apr 28 16:10:09 2016 +0200
+
+    Revert "refs #13 Changes seeding method for Plans"
+    
+    This reverts commit a4446b559c2c6b203da2dc6be3e9a416c3a5b837.
+    
+    Conflicts:
+    	app/models/plan.rb
+    	db/migrate/20160428131444_rake_task_for_seeding.rb
+    	lib/tasks/database.rake
+
+[33mcommit 595f70fe7282a50ff667d952b65df8252d326fe8[m
+Author: NikolaMalenic <sjovac@gmail.com>
+Date:   Thu Apr 28 16:06:34 2016 +0200
+
+    refs #13 Changes seeding method for plans
+
+[33mcommit a4446b559c2c6b203da2dc6be3e9a416c3a5b837[m
+Author: NikolaMalenic <sjovac@gmail.com>
+Date:   Thu Apr 28 12:24:39 2016 +0200
+
+    refs #13 Changes seeding method for Plans
+
+[33mcommit 69b2734ae684acfc01bbbe8d85cb5e8d2d7fc969[m
+Author: NikolaMalenic <sjovac@gmail.com>
+Date:   Thu Apr 28 11:25:33 2016 +0200
+
+    refs: #13 Temporary put condition to skip stripe plan create for test env.
+
+[33mcommit 6367a937a81495cb0eb81773c93ec40114bee69d[m
+Author: studiorailsway <info@studiorailsway.com>
+Date:   Thu Apr 28 00:08:20 2016 +0200
+
+    refs: #13 Create rake task for import default stripe plans.
+
+[33mcommit 541945a9c71988a25977f8212cc08ebe40f90c71[m
+Author: yu_marcos@yahoo.com <marcosyu26@gmail.com>
+Date:   Thu Apr 28 01:57:09 2016 +0800
+
+    refs #13 Added stripe actions for the plan subscription (unfinished still need to finalize how to add payment method)
+
+[33mcommit 2b5ae02ee6e8a024ff8a8f9fbd3acf1d5afbc384[m
+Author: yu_marcos@yahoo.com <marcosyu26@gmail.com>
+Date:   Wed Apr 27 18:05:54 2016 +0800
+
+    refs#13 Added seed for plans
+
+[33mcommit 46e3f8bd00e74f68bb318cd02bc4c72f2443ab04[m
+Author: yu_marcos@yahoo.com <marcosyu26@gmail.com>
+Date:   Wed Apr 27 11:45:30 2016 +0800
+
+    refs #13 Added some styles and added initialization of plan_id on user create
+
+[33mcommit 32f99ee9654da73a269a63d14d38dad836f87fff[m
+Author: yu_marcos@yahoo.com <marcosyu26@gmail.com>
+Date:   Wed Apr 27 11:02:39 2016 +0800
+
+    refs #13 Main function is working listing of Plans and checking user's current plan, changing plan. Still need to work on UI
+
+[33mcommit bf1899f00fd83773a9d3a23fba4ffd2f01bc84e9[m
+Merge: f164ff6 d61e8e9
+Author: Nikola_Balent <info@gtgroup.rs>
+Date:   Fri Apr 22 08:31:05 2016 +0200
+
+    Merge pull request #10 from striking/payment-fixes
+    
+    payment changes fixes
+
+[33mcommit d61e8e9fdc5125151de0634bc568c559eef6a89b[m
+Author: nikola <nikola@gtgroup.rs>
+Date:   Fri Apr 22 08:24:41 2016 +0200
+
+    payment changes fixes
+
+[33mcommit f164ff6ac0c4cd66291ada9226a72f7de8eaac5f[m
+Author: PCoder <mobile.passion2015@yandex.com>
+Date:   Thu Apr 21 22:32:51 2016 +0200
+
+    #Bugherd - Proflie/<Reset Password> label
+
+[33mcommit 5187d328b795fc294b24aca43add67a69f7fe885[m
+Merge: 2417f4d c6a92a0
+Author: PCoder <mobile.passion2015@yandex.com>
+Date:   Thu Apr 21 22:28:30 2016 +0200
+
+    Merge branch 'v2' into v2_Den
+
+[33mcommit 2417f4de38bd1a9b8c757b75df41b0a053629d60[m
+Author: PCoder <mobile.passion2015@yandex.com>
+Date:   Thu Apr 21 22:27:53 2016 +0200
+
+    #Bugherd - Name/Email on Profile
+
+[33mcommit c6a92a04c5abca7f88bb16409d3467061264de35[m
+Author: Demid <demidn@gmail.com>
+Date:   Thu Apr 21 22:28:45 2016 +0300
+
+    fixed document options
+
+[33mcommit 92e7bd52e14f4db5c97133cfd8bd7e97c1cff57f[m
+Author: Demid <demidn@gmail.com>
+Date:   Thu Apr 21 22:24:52 2016 +0300
+
+    improved and fixed create table functionality, fixed blank screen in FF when adding new section
+
+[33mcommit 0425efa3810ffe2d9033d5d2964469ec3f58a831[m
+Author: PCoder <mobile.passion2015@yandex.com>
+Date:   Thu Apr 21 20:00:09 2016 +0200
+
+    #Bugherd - Button hover state
+
+[33mcommit 9b20ac367f7339165c95e495fd1620b5e04fd5eb[m
+Author: PCoder <mobile.passion2015@yandex.com>
+Date:   Wed Apr 20 23:57:05 2016 +0200
+
+    #Update - Approver logic (API integration due)
+
+[33mcommit 964588d407d2893990134a1bd312aedf0c744840[m
+Author: PCoder <mobile.passion2015@yandex.com>
+Date:   Sat Apr 16 04:23:51 2016 +0200
+
+    #Patch - PDFJS Error fixed
+
+[33mcommit c390492465f6813eed32fcce62475b3c67c46053[m
+Author: PCoder <mobile.passion2015@yandex.com>
+Date:   Fri Apr 15 22:05:33 2016 +0200
+
+    #Update - Collaborators on Document level
+
+[33mcommit d15a1ba8a2e153f4ae43dff9301f8ba8a4aff68e[m
+Author: PCoder <mobile.passion2015@yandex.com>
+Date:   Thu Apr 14 10:44:23 2016 +0200
+
+    #Patch - Hide Subscription Panel
+
+[33mcommit c29e076154ff18bbdf2143bb2257cac5c252e7c3[m
+Merge: 53d4e6f b16d211
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Thu Apr 14 18:21:13 2016 +1000
+
+    Merge branch 'v2' of github.com:striking/grapple into v2
+
+[33mcommit 53d4e6fd0b0d0bc92639fbc0f0caa163a9ce9c8a[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Thu Apr 14 18:20:53 2016 +1000
+
+    Using correct ENV var for hostname in emails
+
+[33mcommit b16d2113351dd1354f59edd5acaf69714d89afbf[m
+Author: Demid <demidn@gmail.com>
+Date:   Thu Apr 14 11:18:58 2016 +0300
+
+    insert table fix
+
+[33mcommit 49e8536b3f280337d9bc3bcaade435a720a89df0[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Thu Apr 14 18:04:57 2016 +1000
+
+    Reset password email
+
+[33mcommit bd8b5ecbf3d60cb5e3c11a8125a6edc8e83beb8c[m
+Merge: 5c7b6e3 8d19ed0
+Author: PCoder <mobile.passion2015@yandex.com>
+Date:   Wed Apr 13 19:11:13 2016 +0200
+
+    Merge commit '8d19ed0d7bdff1096802a5cdaad65d8e4dfa525b' into v2_Den
+
+[33mcommit 5c7b6e383842680f33e41721c9a3a758dd663159[m
+Author: PCoder <mobile.passion2015@yandex.com>
+Date:   Wed Apr 13 19:10:51 2016 +0200
+
+    #Fix - Segment integration, #Update - Reset Password Page (#/reg/password), #In-progress - Sentry integration
+
+[33mcommit 8d19ed0d7bdff1096802a5cdaad65d8e4dfa525b[m
+Author: Demid <demidn@gmail.com>
+Date:   Wed Apr 13 14:08:44 2016 +0300
+
+    ui fixes
+
+[33mcommit 93139976a628f18db4f3b2a9728fdf507b60cedf[m
+Author: PCoder <mobile.passion2015@yandex.com>
+Date:   Tue Apr 12 23:41:25 2016 +0200
+
+    #Update - Reg class screens responsiveness. Forgot Password integration Beta
+
+[33mcommit dc6b6e8369c0b9a8e8f2d3a94481613761c471e2[m
+Merge: fa45b14 113d31a
+Author: PCoder <mobile.passion2015@yandex.com>
+Date:   Tue Apr 12 23:08:57 2016 +0200
+
+    Merge commit '113d31a74de325acbf144bde968c9fdf2003de73' into v2_Den
+
+[33mcommit fa45b1427281ad9c0ee64e1cd953aef343a94bf4[m
+Author: PCoder <mobile.passion2015@yandex.com>
+Date:   Tue Apr 12 23:08:38 2016 +0200
+
+    #Segment.io (Login, Dashboard, Documents, Settings), Reset Password UI/UX, Hide unimplemented fields
+
+[33mcommit 113d31a74de325acbf144bde968c9fdf2003de73[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Tue Apr 12 18:53:54 2016 +1000
+
+    Fixing for template creation at login
+
+[33mcommit 75e76d78467b231132ed2d5cfdc9e339dfb360f4[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Tue Apr 12 16:26:09 2016 +1000
+
+    Adding Sentry Public DSN for front-end reporting
+
+[33mcommit 685b56ede26c30c454ea15aa3836149f0cc18780[m
+Merge: fad92e1 a8371c9
+Author: Nikola_Balent <info@gtgroup.rs>
+Date:   Mon Apr 11 10:32:03 2016 +0200
+
+    Merge pull request #9 from striking/user-template
+    
+    User template
+
+[33mcommit a8371c940713dbd99fe2496fb772e273c80c6d0b[m
+Author: nikola <nikola@gtgroup.rs>
+Date:   Mon Apr 11 10:27:40 2016 +0200
+
+    add template ids env condition
+
+[33mcommit 1028fcb9c43fef7eb8d8d2d6b9212c15fa41627b[m
+Merge: fad92e1 d54dccf
+Author: nikola <nikola@gtgroup.rs>
+Date:   Mon Apr 11 09:56:09 2016 +0200
+
+    Merge branch '11-User-template' of git.assembla.com:grapple into user-template
+
+[33mcommit fad92e18f24683ff0cce226f1a513541cb0146a4[m
+Author: Demid <demidn@gmail.com>
+Date:   Sun Apr 10 16:17:43 2016 +0300
+
+    connected pdf preview with server
+
+[33mcommit 0064c893b6fd522a464aaffdfe3cd4dcaa16fbff[m
+Author: Demid <demidn@gmail.com>
+Date:   Sun Apr 10 14:06:01 2016 +0300
+
+    removed old files
+
+[33mcommit b48a1c6b93af7f671b53d5e19aa83a4edd75f5a9[m
+Author: Demid <demidn@gmail.com>
+Date:   Sun Apr 10 13:44:34 2016 +0300
+
+    Link / Import section functionality
+
+[33mcommit f1445f85fdf5f6071854461e3f5b858a16e0aaf8[m
+Author: nikola <nikola@gtgroup.rs>
+Date:   Sun Apr 10 11:41:11 2016 +0200
+
+    fixing showing image on pdf
+
+[33mcommit d54dccfe907902a57b48aa9dd85a8d5165d704bb[m
+Author: nikola <nikola@gtgroup.rs>
+Date:   Sun Apr 10 17:34:50 2016 +0800
+
+    refs #11 Added some test cases for document template creation on first login
+
+[33mcommit 9a4af52e9e6b2f9b48660406284230b4122d852c[m
+Author: nikola <nikola@gtgroup.rs>
+Date:   Sun Apr 10 11:33:04 2016 +0200
+
+    fixing showing image on pdf
+
+[33mcommit 0fa15ab5748d2530c62ea2d5f56d06c108582fb3[m
+Author: nikola <nikola@gtgroup.rs>
+Date:   Sun Apr 10 11:13:38 2016 +0200
+
+    fixing showing image on pdf
+
+[33mcommit f17f10f0af6644d997d27612a74a3addc180135d[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Sat Apr 9 21:29:58 2016 +1000
+
+    Adding user_id in return to login for segment identification
+
+[33mcommit 999c62a80282e1ccc493406124e8b508b38e5387[m
+Author: nikola <nikola@gtgroup.rs>
+Date:   Sat Apr 9 16:55:28 2016 +0800
+
+    refs #11 Created template generation for first initial sign in. Note: Please set ENV['TEMPLATE_IDS'] first
+
+[33mcommit 564e927a5e444d97ac3c31dfe8b435230d1a9d1f[m
+Author: PCoder <mobile.passion2015@yandex.com>
+Date:   Fri Apr 8 04:08:42 2016 +0200
+
+    #Update - Profile/Change Information (or Settings/Profile) complete
+
+[33mcommit 579f5d6c01ca7dfa4a5084c7dcb36ea5045c8ee3[m
+Merge: 8743e85 025c3c4
+Author: Nikola_Balent <info@gtgroup.rs>
+Date:   Thu Apr 7 08:04:59 2016 +0200
+
+    Merge pull request #8 from striking/fixing-collaborators-and-print-preview
+    
+    Fixing collaborators and print preview
+
+[33mcommit 025c3c42b569346c5dcf1e7a83fdab74a684b576[m
+Author: nikola <nikola@gtgroup.rs>
+Date:   Thu Apr 7 07:59:34 2016 +0200
+
+    removing dynamicly created files
+
+[33mcommit db0a9ac67349f250615ae3a281e65f910d17a473[m
+Author: nikola <nikola@gtgroup.rs>
+Date:   Thu Apr 7 07:57:42 2016 +0200
+
+    fixing print preview
+
+[33mcommit 8743e859585544c821072e8fceea9ac9ea150a18[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Thu Apr 7 13:24:21 2016 +1000
+
+    Allow user to change email and password
+
+[33mcommit 3642e8c257a0bab9902c88c2f2ad5dd78ce72634[m
+Merge: b724a17 7cafb9d
+Author: PCoder <mobile.passion2015@yandex.com>
+Date:   Wed Apr 6 23:08:48 2016 +0200
+
+    Merge commit '7cafb9dea543234db5f04ba5784ff54d938847bc' into v2_Den
+    
+    Conflicts:
+    	frontend/app/templates/app.hbs
+
+[33mcommit b724a17a9ef28620ca4287c69128efe22bbf0e2f[m
+Author: PCoder <mobile.passion2015@yandex.com>
+Date:   Wed Apr 6 23:04:01 2016 +0200
+
+    #Update - Profile/ResetPassword
+
+[33mcommit 198c7c98b7818638ba282e86c96e1e6720ea7671[m
+Author: PCoder <mobile.passion2015@yandex.com>
+Date:   Tue Apr 5 23:25:24 2016 +0200
+
+    #In-Progress : Settings/Profile, Settings/Password
+
+[33mcommit c377aa60174d0534c33c3738caed8e87b5118b51[m
+Author: nikola <nikola@gtgroup.rs>
+Date:   Tue Apr 5 21:27:39 2016 +0200
+
+    fixing missing test for remove collaborator
+
+[33mcommit 7cafb9dea543234db5f04ba5784ff54d938847bc[m
+Author: nikola <nikola@gtgroup.rs>
+Date:   Tue Apr 5 14:46:03 2016 +0200
+
+    tmp remove delete collaborator tests
+
+[33mcommit cf86c0d09d8e48507464e2dc5233f99cf5013b8d[m
+Author: nikola <nikola@gtgroup.rs>
+Date:   Tue Apr 5 14:36:16 2016 +0200
+
+    fixing collaborators
+
+[33mcommit 32983bb8984097baced314ce680f9f0490e151c7[m
+Author: Demid <demidn@gmail.com>
+Date:   Mon Apr 4 11:37:07 2016 +0300
+
+    removed statitic and collaborators from left side menu
+
+[33mcommit 90c2ed7b7ff0895e433925c53b4a957feec66e18[m
+Merge: 5283303 2d15a60
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Mon Apr 4 14:56:53 2016 +1000
+
+    Merge branch 'v2' of github.com:striking/grapple into v2
+
+[33mcommit 5283303020db14bcec49b805c751447bcbaec490[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Mon Apr 4 14:56:36 2016 +1000
+
+    Adding Segment tracking when collaborators are added or removed
+
+[33mcommit 2d15a60a16cca754f7e261fb0cbdf7e7d1281fea[m
+Author: Demid <demidn@gmail.com>
+Date:   Mon Apr 4 05:03:47 2016 +0300
+
+    cicking on template in documents section now opens document for editing
+
+[33mcommit e48d2412b641e1b8f36d14cc8a8600b41f041cda[m
+Author: Demid <demidn@gmail.com>
+Date:   Mon Apr 4 04:59:35 2016 +0300
+
+    updated image panel position a bit
+
+[33mcommit b766e87b5f533be990bfb0d54323d065960a3cae[m
+Author: Demid <demidn@gmail.com>
+Date:   Mon Apr 4 04:50:37 2016 +0300
+
+    Updated document images manipulation
+
+[33mcommit 245477589339c4d904629f8c33b0dda647abcbeb[m
+Merge: 1e8fd68 5677c0b
+Author: Nikola_Balent <info@gtgroup.rs>
+Date:   Sun Apr 3 20:26:15 2016 +0200
+
+    Merge pull request #7 from striking/fixing-collaborators-and-print-preview
+    
+    fixing collaborators and print preview on new templates
+
+[33mcommit 5677c0b792456e21e562dfb515b09a6ba19b049c[m
+Author: nikola <nikola@gtgroup.rs>
+Date:   Sun Apr 3 20:19:30 2016 +0200
+
+    fixing collaborators and print preview on new templates
+
+[33mcommit 1e8fd6859d1861472ed3a0e61f986b95a8804212[m
+Author: PCoder <mobile.passion2015@yandex.com>
+Date:   Sun Apr 3 16:22:29 2016 +0200
+
+    #Update - Forgot/Reset Password (API integration due) + Responsiveness on "/reg" screens
+
+[33mcommit 8c99356ddc8278a17055d404565430dc5408f495[m
+Merge: 01defc0 86ec132
+Author: PCoder <mobile.passion2015@yandex.com>
+Date:   Wed Mar 30 11:40:25 2016 +0200
+
+    Merge branch 'v2' into v2_Den
+
+[33mcommit 01defc0e8b87b78065f24eaa2a887b21fe53f2d0[m
+Author: PCoder <mobile.passion2015@yandex.com>
+Date:   Wed Mar 30 11:39:16 2016 +0200
+
+    #Update - Change Approver (Modal) UI/UX
+
+[33mcommit 86ec132c4c37ccc9b4ef970a5af510abdf4d4e45[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Tue Mar 29 22:01:59 2016 +1000
+
+    Removing unwanted pasted line
+
+[33mcommit ca54039494d0d12855fe6955ed4a8ed1685316f7[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Tue Mar 29 22:01:43 2016 +1000
+
+    Adding created_by to document responses
+
+[33mcommit 26c54cfbda9fc0db2e34b256750235aa35c1f757[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Mon Mar 28 11:24:09 2016 +1000
+
+    Changing config for AWS
+
+[33mcommit 201de7e2f843d1f012d7b5e53d678cf0828bf7fa[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Mon Mar 28 11:11:44 2016 +1000
+
+    Changing config for AWS
+
+[33mcommit fb967e9d9056ea2aeef9b5611453c11a48ae69da[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Sat Mar 26 23:56:59 2016 +1000
+
+    Creating proper project when duplicating a template with no destination project
+
+[33mcommit eaf14c82be62eafc34fbfc0f8b138770e1c087d7[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Sat Mar 26 23:43:32 2016 +1000
+
+    Dirty fix. AWS complains about invalid SSL cert on their own server!!!!! Anyhow, dirty fix to access different host: grapple.s3-ap-southeast-2.amazonaws.com instead of grapple.grapple.s3-ap-southeast-2.amazonaws.com
+
+[33mcommit 52b4019b5e52dadbbf7f76b665b3f3c6939ed1d7[m
+Author: Demid <demidn@gmail.com>
+Date:   Fri Mar 25 13:35:34 2016 +0300
+
+    fixed import section to be redirected back to editor after OK click
+
+[33mcommit bb35d6d87315d566aeff1d438904423bf02a2649[m
+Author: Demid <demidn@gmail.com>
+Date:   Fri Mar 25 03:16:25 2016 +0300
+
+    styles fix, fixing merge issues
+
+[33mcommit 10d11a7b20f47c3839bf688d75589f00825029f4[m
+Author: PCoder <mobile.passion2015@yandex.com>
+Date:   Thu Mar 24 12:05:47 2016 +0100
+
+    #Update - Segment.io identify integration + UI hide unimplemented functions
+
+[33mcommit 41421fcb07a02d34bf4a3c2cc07e46e4ddf7d9b2[m
+Merge: 43a895c cb3441a
+Author: nikola <nikola@gtgroup.rs>
+Date:   Wed Mar 23 17:08:48 2016 +0100
+
+    Merge branch 'v2' of github.com:striking/grapple into v2
+
+[33mcommit 43a895c5facf6bf310b702978c00110937cd7dd3[m
+Author: nikola <nikola@gtgroup.rs>
+Date:   Wed Mar 23 17:08:31 2016 +0100
+
+    adding stripe to gemfile.lock
+
+[33mcommit cb3441a9590aa98529d63ca7fcddd9d66554cd78[m
+Merge: 6718e80 01d5255
+Author: PCoder <mobile.passion2015@yandex.com>
+Date:   Wed Mar 23 17:04:51 2016 +0100
+
+    Merge commit '01d5255088cabce1eaae2da666969cb00c040158' into v2_Den
+
+[33mcommit 6718e80326afe2555e7c5b712261b1c591435b69[m
+Author: PCoder <mobile.passion2015@yandex.com>
+Date:   Wed Mar 23 17:04:21 2016 +0100
+
+    #Update - Segment.io setup
+
+[33mcommit 01d5255088cabce1eaae2da666969cb00c040158[m
+Merge: 616e481 4ae19bc
+Author: Nikola_Balent <info@gtgroup.rs>
+Date:   Wed Mar 23 17:00:39 2016 +0100
+
+    Merge pull request #6 from striking/image-upload-fixes
+    
+    Image upload fixes
+
+[33mcommit 616e48113e70bd57689e8526ba6cf907410098bf[m
+Merge: 2cbb2ea 79ca810
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Tue Mar 22 23:07:22 2016 +1000
+
+    Merge branch 'v2' of github.com:striking/grapple into v2
+
+[33mcommit 2cbb2eaa8be505cdf097434d63cea099855b6cfe[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Tue Mar 22 23:03:43 2016 +1000
+
+    Adding Segment Write Key for FE
+
+[33mcommit 4ae19bcbfc548ece14c17da1d49fb4bb360d5587[m
+Author: nikola <nikola@gtgroup.rs>
+Date:   Tue Mar 22 11:44:37 2016 +0100
+
+    remove tmp tests
+
+[33mcommit 763051cd529ee1d13827dd736663608a9458dbdb[m
+Author: nikola <nikola@gtgroup.rs>
+Date:   Tue Mar 22 11:39:02 2016 +0100
+
+    remove tmp tests
+
+[33mcommit ba8dd6c099b8e9ca9284679d0a763ed235f51695[m
+Author: nikola <nikola@gtgroup.rs>
+Date:   Tue Mar 22 11:26:14 2016 +0100
+
+    update schema file
+
+[33mcommit 8ba3e4d23d043a051cde29afb0582bc3abb3b6eb[m
+Merge: c96c345 79ca810
+Author: nikola <nikola@gtgroup.rs>
+Date:   Tue Mar 22 10:37:17 2016 +0100
+
+    merging changes
+
+[33mcommit 79ca810cbbf7c57e824f2adbbe5de3bbf016e2f5[m
+Merge: 1dc676f 78376d5
+Author: PCoder <mobile.passion2015@yandex.com>
+Date:   Tue Mar 22 09:30:22 2016 +0100
+
+    Merge commit '78376d5084cf0316b45d8cbf1c4828fedd832265' into v2_Den
+
+[33mcommit 1dc676fa03dddad02bbf7b2f6d2321eabff019bc[m
+Author: PCoder <mobile.passion2015@yandex.com>
+Date:   Tue Mar 22 09:29:58 2016 +0100
+
+    #Update - landing page root URL
+
+[33mcommit 78376d5084cf0316b45d8cbf1c4828fedd832265[m
+Author: Demid <demidn@gmail.com>
+Date:   Tue Mar 22 03:36:49 2016 +0300
+
+    image uploader update, separated modal into own component
+
+[33mcommit c96c345230ae7837b6813a315f2198e56454df88[m
+Merge: f973bd6 d09568b
+Author: studiorailsway <nikola@gtgroup.rs>
+Date:   Mon Mar 21 13:59:07 2016 +0000
+
+    Merge branch '6-image-upload-hotfix' into 'v2'
+    
+    soft reload
+    
+    re #6
+    
+    Merged-on: https://assembla.com/code/grapple/git/merge_requests/2990363
+
+[33mcommit f973bd6c7af7188c5d323039dd77a5b9079e11cc[m
+Merge: 9bddaed 1308d92
+Author: studiorailsway <nikola@gtgroup.rs>
+Date:   Mon Mar 21 13:58:54 2016 +0000
+
+    Merge branch '4-payment-sytem' into 'v2'
+    
+    Payment System
+    
+    Merged-on: https://assembla.com/code/grapple/git/merge_requests/3027933
+
+[33mcommit 9bddaed1134dd31f98e899669361ba9f110c2b1a[m
+Merge: f91568f 30dee1f
+Author: studiorailsway <nikola@gtgroup.rs>
+Date:   Mon Mar 21 13:58:39 2016 +0000
+
+    Merge branch '3-preview-pdf' into 'v2'
+    
+    Preview PDF
+    
+    re #3
+    
+    Merged-on: https://assembla.com/code/grapple/git/merge_requests/3028463
+
+[33mcommit f2946f5d452f020c6090b41f220cb9f344fb140e[m
+Merge: 3639212 7ff50ce
+Author: PCoder <mobile.passion2015@yandex.com>
+Date:   Mon Mar 21 10:55:37 2016 +0100
+
+    Merge commit '7ff50ce6f6988733cc415096760d74bbaaaadb51' into v2_Den
+
+[33mcommit 3639212e74950623c7374efa3e5be99b8ae2c536[m
+Author: PCoder <mobile.passion2015@yandex.com>
+Date:   Mon Mar 21 10:55:23 2016 +0100
+
+    #Update - Landing page finalization
+
+[33mcommit 7ff50ce6f6988733cc415096760d74bbaaaadb51[m
+Author: Demid <demidn@gmail.com>
+Date:   Mon Mar 21 10:30:15 2016 +0300
+
+    spelling mistake
+
+[33mcommit 3d38c1fe07c96b10c4b3af328e30365678bf169f[m
+Author: Demid <demidn@gmail.com>
+Date:   Mon Mar 21 09:06:08 2016 +0300
+
+    fuzzy dates for projects and documents
+
+[33mcommit 6b6d913c215578734ca896e3def9ea0786e5e2bd[m
+Author: Demid <demidn@gmail.com>
+Date:   Mon Mar 21 08:18:09 2016 +0300
+
+    when new section is clicked it should scroll bottom to show wizard (if necessary)
+
+[33mcommit cd98388dcf773d6784ba030b310ad7c0c023cccf[m
+Author: Demid <demidn@gmail.com>
+Date:   Mon Mar 21 08:09:47 2016 +0300
+
+    Section title and editor should use placeholders that get hidden when user starts typing text
+
+[33mcommit da296ba8192fcf0210a549c8a2a6268d7ce1f3ce[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Mon Mar 21 17:28:43 2016 +1000
+
+    Allow importing of nil content sections
+
+[33mcommit 8164770320115e8f0a7a5213157fbb2ea8abe3c1[m
+Author: Demid <demidn@gmail.com>
+Date:   Mon Mar 21 07:43:48 2016 +0300
+
+    update section reordering ui
+
+[33mcommit e38b3a391c54ef7eac47054089be7ae2b361894b[m
+Merge: 08cb9d3 33967e3
+Author: PCoder <mobile.passion2015@yandex.com>
+Date:   Fri Mar 18 23:24:48 2016 +0100
+
+    Merge branch 'v2' into v2_Den
+
+[33mcommit 08cb9d38f1f2984a72adfbc985cffac7add73142[m
+Author: PCoder <mobile.passion2015@yandex.com>
+Date:   Fri Mar 18 23:24:08 2016 +0100
+
+    #Update - Landing page narrow screen patch + 2 sections
+
+[33mcommit 30dee1f020888ee33717a16e3af57e09ccc49db5[m
+Author: nikola <nikola@gtgroup.rs>
+Date:   Fri Mar 18 21:43:22 2016 +0800
+
+    refs #3 Linked pdf service to preview button
+
+[33mcommit 66f885607040664dab7a4f61cb776d4eecd3b080[m
+Merge: ceec612 f91568f
+Author: nikola <nikola@gtgroup.rs>
+Date:   Fri Mar 18 20:09:46 2016 +0800
+
+    Merge branch 'v2' of git.assembla.com:grapple into v2
+
+[33mcommit 33967e3eaeb43b99534fbc8686c22d391cba27d3[m
+Author: Demid <demidn@gmail.com>
+Date:   Fri Mar 18 05:13:57 2016 +0300
+
+    section reordering - update per request
+
+[33mcommit 876a20122664e17a54e9e50d584a6fa9226786ff[m
+Author: Demid <demidn@gmail.com>
+Date:   Fri Mar 18 04:16:19 2016 +0300
+
+    moved 'save as template' to commands, redirects to templates after save
+
+[33mcommit 2c102538fa018f8e1ccbe839f73582ff1e851009[m
+Author: Demid <demidn@gmail.com>
+Date:   Fri Mar 18 04:01:08 2016 +0300
+
+    updated ui classes, updated urls, updated styles, reviewed transitions between routes, created new reusable compoennts, fixed bugs
+
+[33mcommit 1308d92ab054fac618dda10749d0cbfb2c960e96[m
+Author: nikola <nikola@gtgroup.rs>
+Date:   Thu Mar 17 22:11:05 2016 +0800
+
+    refs #4 Added field validation for card details
+
+[33mcommit f91568f6f336ddc8ae3840cc9606d7bfba588e20[m
+Merge: 86c0aa2 66dd802
+Author: PCoder <mobile.passion2015@yandex.com>
+Date:   Thu Mar 17 10:11:37 2016 +0100
+
+    Merge commit '66dd802d12a4df3e732f1555f744f252fa57bbcc' into v2_Den
+
+[33mcommit 86c0aa2ed202d05207e7dd24208a2268ff690937[m
+Author: PCoder <mobile.passion2015@yandex.com>
+Date:   Thu Mar 17 10:09:54 2016 +0100
+
+    #Update - landing page
+
+[33mcommit 66dd802d12a4df3e732f1555f744f252fa57bbcc[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Thu Mar 17 14:23:47 2016 +1000
+
+    Removing typo
+
+[33mcommit f8e65b5dd58c76f97e133b636a5584405adc1a25[m
+Merge: 53291d5 453082a
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Thu Mar 17 14:11:58 2016 +1000
+
+    Merge branch 'v2' of github.com:striking/grapple into v2
+
+[33mcommit 53291d59361d8f7bc084c169e654213cfe96214e[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Thu Mar 17 13:11:35 2016 +1000
+
+    Fixing document duplication bug
+
+[33mcommit b01a53d261adf8d55b0e2cd842d2709ace5a4afb[m
+Author: nikola <nikola@gtgroup.rs>
+Date:   Wed Mar 16 22:59:33 2016 +0800
+
+    corrected alert message
+
+[33mcommit 5a394d4fb8046f7abcfa19d40d31477091b84b6f[m
+Author: nikola <nikola@gtgroup.rs>
+Date:   Wed Mar 16 22:33:02 2016 +0800
+
+    Changed alert message and remove test button
+
+[33mcommit 2bef700d4aaba21b9aed0502c97d2c2b38de5f0d[m
+Author: nikola <nikola@gtgroup.rs>
+Date:   Wed Mar 16 22:28:25 2016 +0800
+
+    refs #4 main logic is working. Missing field validations and specific errors messages
+
+[33mcommit 453082ac482b8382b3880a9d8fb7b334a7000299[m
+Author: PCoder <mobile.passion2015@yandex.com>
+Date:   Wed Mar 16 10:28:09 2016 +0100
+
+    #Update - Mail subscription on Landing page
+
+[33mcommit 8a3bdde197a250f0dab3ff35b9e5b5206c60a16d[m
+Author: PCoder <mobile.passion2015@yandex.com>
+Date:   Wed Mar 16 09:51:50 2016 +0100
+
+    #Update - landing page integration (now accessible via root URL)
+
+[33mcommit e7e65ddffc19800a5ebea698109bb1a1fcbcca4b[m
+Author: nikola <nikola@gtgroup.rs>
+Date:   Wed Mar 16 16:16:10 2016 +0800
+
+    refs #4 Form submission is done. Need to add form validation and pass stripe error messages to UI
+
+[33mcommit 61726414f2d7a2def268a736d7475eff4d6e2c56[m
+Author: nikola <nikola@gtgroup.rs>
+Date:   Tue Mar 15 23:47:16 2016 +0800
+
+    refs #4 changed workflow to match payment workflow on master branch. Still working on form submission for card attributes and listing of plans
+
+[33mcommit f4f06687802fd62e8546f1c0176cc9b154eb4f21[m
+Author: Demid <demidn@gmail.com>
+Date:   Tue Mar 15 16:37:58 2016 +0300
+
+    document deletion, label update
+
+[33mcommit 0df664fbf191d55836da8de4711de4410a7bbffc[m
+Author: Demid <demidn@gmail.com>
+Date:   Tue Mar 15 15:00:58 2016 +0300
+
+    fixed create by template as per server api
+
+[33mcommit e937e1d1c06f4765425575e3a46bb9b190540c2e[m
+Author: nikola <nikola@gtgroup.rs>
+Date:   Tue Mar 15 15:36:21 2016 +0800
+
+    refs #4 created form for payment method
+
+[33mcommit 2d902163e9393a3c271c9cf4e1afd49e6669f7b1[m
+Merge: a85ad10 01201cc
+Author: PCoder <mobile.passion2015@yandex.com>
+Date:   Tue Mar 15 04:11:50 2016 +0100
+
+    Merge branch 'v2' of https://github.com/striking/grapple into v2
+
+[33mcommit a85ad10b8fd2607486a50eb5ee648a9d9efd60b6[m
+Author: PCoder <mobile.passion2015@yandex.com>
+Date:   Tue Mar 15 04:09:18 2016 +0100
+
+    #Update - Landing page iPad-version styling
+
+[33mcommit 01201cce8e1f990f6c59cc62e954065d01266c1d[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Tue Mar 15 12:01:41 2016 +1000
+
+    Return 400 instead of 500 when document data is not wrapped correctly
+
+[33mcommit c6a8f693fec359fc3b747d67f4170681c44cd6a1[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Tue Mar 15 11:51:13 2016 +1000
+
+    Making sure projects are created with the correct template status
+
+[33mcommit ab45e1a84b7e74004dc76fd80f5fdeb0bc3707b7[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Tue Mar 15 11:47:45 2016 +1000
+
+    Excuding template projects from list of projects
+
+[33mcommit 4c4c2b48d315edfaa9039e3df026b3c4fbcf1e95[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Tue Mar 15 11:35:05 2016 +1000
+
+    Removing protection from forgery, not much use for an API, and creating issues at the moment on some repeat actions
+
+[33mcommit cd5345ae56c6a86b694e88de12337911bf0b02e3[m
+Merge: 27e60e0 a926249
+Author: PCoder <mobile.passion2015@yandex.com>
+Date:   Mon Mar 14 22:45:24 2016 +0100
+
+    Merge branch 'v2' of https://github.com/striking/grapple into v2
+
+[33mcommit 27e60e028e25550e79820f84f9fecd61d055c142[m
+Author: PCoder <mobile.passion2015@yandex.com>
+Date:   Mon Mar 14 22:39:42 2016 +0100
+
+    #Update - Landing page style finalization
+
+[33mcommit a926249b736839a386995110a88a4c3b7de1078f[m
+Author: Demid <demidn@gmail.com>
+Date:   Tue Mar 15 00:34:51 2016 +0300
+
+    updating create table functionality per mockup
+
+[33mcommit 9b71bee6c1190534190b3e03df477f7e1406b6c6[m
+Author: Demid <demidn@gmail.com>
+Date:   Mon Mar 14 22:53:04 2016 +0300
+
+    update to meet server api: create document by template
+
+[33mcommit b5e53dda588a40a1cca2829a28c5f41a34409e75[m
+Author: Demid <demidn@gmail.com>
+Date:   Mon Mar 14 22:16:10 2016 +0300
+
+    added authorizations tokens to $
+
+[33mcommit 37c3f000cf74b2a1b2bd3259c504552310ef1d44[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Mon Mar 14 18:56:48 2016 +1000
+
+    Fixing default title for sections, for it not to show
+
+[33mcommit ba23af0954b251ae9f72ab6ede20a4e3683b0aca[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Mon Mar 14 18:33:01 2016 +1000
+
+    Adding project_id
+
+[33mcommit 3cea5e8636b34cb48d7ca8cef12e3e31f9b31659[m
+Author: Demid <demidn@gmail.com>
+Date:   Sat Mar 12 15:29:07 2016 +0300
+
+    sections reordering
+
+[33mcommit 59a4d0987d7e0ebcea68c37c4b777b80b159d62a[m
+Author: PCoder <mobile.passion2015@yandex.com>
+Date:   Fri Mar 11 20:40:33 2016 +0100
+
+    #Landing page
+
+[33mcommit c066f11a89a211f240f62276452f52b975171ad2[m
+Merge: 1982edb a473ee8
+Author: Nikola_Balent <info@gtgroup.rs>
+Date:   Thu Mar 10 12:25:08 2016 +0100
+
+    Merge pull request #5 from striking/document-fixes
+    
+    Document fixes
+
+[33mcommit a473ee84b0bd0a26b446e55fd4302de51625bdf5[m
+Merge: ceec612 1982edb
+Author: nikola <nikola@gtgroup.rs>
+Date:   Thu Mar 10 12:19:41 2016 +0100
+
+    Merge branch 'v2' of github.com:striking/grapple into document-fixes
+
+[33mcommit 1982edb57c6993b9b2531adc59b826f72afd9592[m
+Author: Demid <demidn@gmail.com>
+Date:   Thu Mar 10 05:08:29 2016 +0300
+
+    removed status from documents list (not implemented at backend)
+
+[33mcommit c3836eea0ff0b3663fd2d91338503daf10314be8[m
+Author: Demid <demidn@gmail.com>
+Date:   Thu Mar 10 03:27:07 2016 +0300
+
+    removed collaborators, image uploader as per mockups
+
+[33mcommit df80c977892208541b60c66c9ed1e6237c2df04d[m
+Author: Demid <demidn@gmail.com>
+Date:   Thu Mar 10 03:24:03 2016 +0300
+
+    hide details that are not ready at server, connected clone section with server
+
+[33mcommit 257c48388dda09246df21f51db05911addcfc2b1[m
+Author: Demid <demidn@gmail.com>
+Date:   Thu Mar 10 02:49:15 2016 +0300
+
+    reverted html editor to show toolpane only when text is selected
+
+[33mcommit c5fe9e26c9a2cc4463d41a33a911af4dac58f1ae[m
+Author: Demid <demidn@gmail.com>
+Date:   Thu Mar 10 02:27:29 2016 +0300
+
+    section import - connected with backend
+
+[33mcommit a01d14b147238aef4243b130054bde98206268b0[m
+Author: Demid <demidn@gmail.com>
+Date:   Wed Mar 9 23:11:58 2016 +0300
+
+    added buttons to document editor, added create template
+
+[33mcommit d09568b795ba293f85db24bd7d7c0c678b80cf56[m
+Author: nikola <nikola@gtgroup.rs>
+Date:   Thu Mar 10 01:51:17 2016 +0800
+
+    ref #6 change some status message and clearing of queue list
+
+[33mcommit bc641e5ded101f86432c8422f2c57bc9f4b4107d[m
+Author: nikola <nikola@gtgroup.rs>
+Date:   Thu Mar 10 01:08:12 2016 +0800
+
+    ref #6 changed behavior after file upload
+
+[33mcommit ceec612a046ab4ca14bd09a032dfcdec774383ef[m
+Merge: 157583a a1895ff
+Author: studiorailsway <nikola@gtgroup.rs>
+Date:   Wed Mar 9 06:46:46 2016 +0000
+
+    Merge branch '2-doc_collab_test' into 'v2'
+    
+    Document Collaborators
+    
+    Merged-on: https://assembla.com/code/grapple/git/merge_requests/2968663
+
+[33mcommit 157583ae1df62df6d2f1d43a57e3c93bd405f642[m
+Merge: 9c8149a e9a0780
+Author: studiorailsway <nikola@gtgroup.rs>
+Date:   Wed Mar 9 06:46:34 2016 +0000
+
+    Merge branch '3-pdf_services' into 'v2'
+    
+    Document PDF Service
+    
+    Merged-on: https://assembla.com/code/grapple/git/merge_requests/2970083
+
+[33mcommit e9a07806567018e4e6aac470d4fc9c6a27c89310[m
+Author: nikola <nikola@gtgroup.rs>
+Date:   Mon Mar 7 11:14:28 2016 +0800
+
+    refs #3 re-push codes for document pdf services
+
+[33mcommit a01907734e392a188090884b07f7d5260439b41f[m
+Author: nikola <nikola@gtgroup.rs>
+Date:   Sun Mar 6 21:05:36 2016 +0800
+
+    refs #4 Added new controller for payment method creation, added customer id for user, recoded payment controller. Still working on Payment Method and Payments UI and behavior
+
+[33mcommit 80aec8543e02b4ef783e7dbb90a523f3e576bb61[m
+Author: nikola <nikola@gtgroup.rs>
+Date:   Sun Mar 6 00:09:11 2016 +0800
+
+    refs #4 configured routes and action still working on stripe data submission
+
+[33mcommit e2e12606beebab17430c480c08c7d31af22d4cdf[m
+Author: nikola <nikola@gtgroup.rs>
+Date:   Sat Mar 5 00:26:38 2016 +0800
+
+    added new paths and new templates for the payment system.
+
+[33mcommit a1895ffbfbefeea25b3130aea852b6f4c981b58a[m
+Author: nikola <nikola@gtgroup.rs>
+Date:   Fri Mar 4 22:38:28 2016 +0800
+
+    using factory instead of create
+
+[33mcommit 5aaa3d214ecd12a6ef9ef40a1f0f0e3d844424d9[m
+Author: nikola <nikola@gtgroup.rs>
+Date:   Fri Mar 4 13:31:10 2016 +0800
+
+    fixed syntax error
+
+[33mcommit 96a50addfddbb96733363e0c39a90521bd31c45d[m
+Author: nikola <nikola@gtgroup.rs>
+Date:   Fri Mar 4 13:22:58 2016 +0800
+
+    controller and test changes for collaborator
+
+[33mcommit 9c8149aa2b6dc27c111083f8f88219599dd12caa[m
+Author: PCoder <mobile.passion2015@yandex.com>
+Date:   Thu Mar 3 10:50:42 2016 +0100
+
+    #Bug Fix - Project Creation/Edit, Tags Not Required, View My Project,
+
+[33mcommit f51ca0da62027e39fb55077a96bfa119d2c12920[m
+Author: Demid <demidn@gmail.com>
+Date:   Thu Mar 3 02:44:00 2016 +0300
+
+    changed title from frontend to graple
+
+[33mcommit 56d5fe494b7460562ec14884e4201547fcf1e03b[m
+Author: Demid <demidn@gmail.com>
+Date:   Thu Mar 3 02:35:24 2016 +0300
+
+    added section menu, added delete section functionality
+
+[33mcommit 35510f316ec40c0aadfe70b84814e5fdcb48bc68[m
+Author: Demid <demidn@gmail.com>
+Date:   Thu Mar 3 01:51:30 2016 +0300
+
+    updated documents to be created inside project
+
+[33mcommit 4779a6b718f9e6a3d677d55716c3abbb7b0f3f46[m
+Author: Demid <demidn@gmail.com>
+Date:   Thu Mar 3 01:30:38 2016 +0300
+
+    removed create from scratch from templates, created base functionality for create by template
+
+[33mcommit a011edc0b3e6349e4393437ed707f710ae980d30[m
+Author: Demid <demidn@gmail.com>
+Date:   Thu Mar 3 00:52:50 2016 +0300
+
+    fixed open/close add section wizard
+
+[33mcommit 78dd168fcfc58ae313c192825d43874bcb8cb594[m
+Author: Demid <demidn@gmail.com>
+Date:   Thu Mar 3 00:46:21 2016 +0300
+
+    fixed edit document from projects section
+
+[33mcommit 98d70be401b812a509ad5276aea1679cfb48781f[m
+Author: Demid <demidn@gmail.com>
+Date:   Thu Mar 3 00:27:59 2016 +0300
+
+    fixed save section text on style change
+
+[33mcommit ea96cb62983e8a31228f0f5f700b1466ed971e78[m
+Author: Demid <demidn@gmail.com>
+Date:   Thu Mar 3 00:26:16 2016 +0300
+
+    fix to sections creation
+
+[33mcommit c974a67b82e8791b34a44a95c1d974587949a109[m
+Author: Demid <demidn@gmail.com>
+Date:   Thu Mar 3 00:12:33 2016 +0300
+
+    styles update sections workflow bugfix
+
+[33mcommit 7336e6ceb67d7238e71b8880e569da5b8c910098[m
+Author: Demid <demidn@gmail.com>
+Date:   Wed Mar 2 04:16:40 2016 +0300
+
+    removed old classes
+
+[33mcommit 6927a66f87dbdfe02074e114583bde99756c4f63[m
+Author: Demid <demidn@gmail.com>
+Date:   Wed Mar 2 04:15:32 2016 +0300
+
+    sections importing update
+
+[33mcommit 020ea3ab98b9dab20e347d059895601bd9c98ddf[m
+Author: PCoder <mobile.passion2015@yandex.com>
+Date:   Tue Mar 1 21:30:01 2016 +0100
+
+    no message
+
+[33mcommit 214f1c434062b6d27b464fb234d792afe51646cb[m
+Author: PCoder <mobile.passion2015@yandex.com>
+Date:   Tue Mar 1 21:25:02 2016 +0100
+
+    no message
+
+[33mcommit 57eabd039e7b7d2947da1af01cf36eff83d5b214[m
+Merge: 2ee5cb7 da052d6
+Author: PCoder <mobile.passion2015@yandex.com>
+Date:   Tue Mar 1 21:23:42 2016 +0100
+
+    Merge commit 'da052d6635767695e4a84953aac78a11b452ea05' into v2_Den
+    
+    Conflicts:
+    	frontend/app/router.js
+    	frontend/app/styles/_base.less
+    	frontend/app/templates/app.hbs
+
+[33mcommit da052d6635767695e4a84953aac78a11b452ea05[m
+Merge: 8d9df87 a7b3291
+Author: Nikola_Balent <info@gtgroup.rs>
+Date:   Tue Mar 1 19:45:57 2016 +0100
+
+    Merge pull request #4 from striking/document-collaborators
+    
+    Document collaborators
+
+[33mcommit a7b3291a402d7f5a9d5b77d59c5c2ce9cb006fe5[m
+Merge: 633abae 8d9df87
+Author: nikola <nikola@gtgroup.rs>
+Date:   Tue Mar 1 19:40:10 2016 +0100
+
+    merging changes
+
+[33mcommit 2ee5cb720c5db5c4dd4a65a081cc6b4b52b99be9[m
+Author: PCoder <mobile.passion2015@yandex.com>
+Date:   Tue Mar 1 02:44:56 2016 +0100
+
+    #Project section finish
+
+[33mcommit 8d9df87fccaf58dbece27f0aa8c6d7db7d188e99[m
+Author: Demid <demidn@gmail.com>
+Date:   Tue Mar 1 02:51:19 2016 +0300
+
+    section import, ui fixes
+
+[33mcommit 1e8f46e9c9a36390f7e8c4951c47f24902c288a3[m
+Author: Demid <demidn@gmail.com>
+Date:   Sun Feb 28 04:48:22 2016 +0300
+
+    editor fixes'
+
+[33mcommit 7ae664e69bed5325f7e7c20997a2e34243560d3f[m
+Author: Demid <demidn@gmail.com>
+Date:   Sun Feb 28 02:45:37 2016 +0300
+
+    updated styles to separated ui pack, fixes to editor, section adding, few more fixes
+
+[33mcommit aa5765848fd59935f6cda71fcca83c275074c3aa[m
+Merge: 1e4004f 569de56
+Author: PCoder <mobile.passion2015@yandex.com>
+Date:   Fri Feb 26 15:24:53 2016 +0100
+
+    Merge branch 'v2_Den' of https://github.com/striking/grapple into v2_Den
+    
+    Conflicts:
+    	frontend/package.json
+
+[33mcommit 1e4004fb156f678aa8925d9f47283a2c756b66fd[m
+Author: PCoder <mobile.passion2015@yandex.com>
+Date:   Tue Feb 23 18:52:06 2016 +0100
+
+    #Project - "New project" modal styling
+
+[33mcommit bfcd915bcb57859ca2f3a0f3728dcbd1d8b7e414[m
+Author: PCoder <mobile.passion2015@yandex.com>
+Date:   Tue Feb 23 14:34:52 2016 +0100
+
+    #Project - project blocks styling & transition
+
+[33mcommit 03ccebca76c891f4979c3661e6c29ea4b0131378[m
+Author: Demid <demidn@gmail.com>
+Date:   Fri Feb 26 13:52:59 2016 +0300
+
+    added input with debounced functionality, added keyword search to documents
+
+[33mcommit b8ecb5998ad98f93d9992a5fec49757043ef2155[m
+Author: Demid <demidn@gmail.com>
+Date:   Fri Feb 26 13:16:17 2016 +0300
+
+    removed old buttons
+
+[33mcommit 633abae865fef0898e7a6de80d813d38df0bc56f[m
+Author: nikola <nikola@gtgroup.rs>
+Date:   Fri Feb 26 10:41:29 2016 +0100
+
+    resolve conflict
+
+[33mcommit f4c08880e7a52161264e05492f01179c4bedf5d2[m
+Author: nikola <nikola@gtgroup.rs>
+Date:   Fri Feb 26 10:35:33 2016 +0100
+
+    add invitable to user model
+
+[33mcommit f774f0e16e7e7dc9b7c9149d2916242dc7b85765[m
+Merge: 4390094 1066c9e
+Author: nikola <nikola@gtgroup.rs>
+Date:   Fri Feb 26 10:28:12 2016 +0100
+
+    merging changes
+
+[33mcommit 43900949a81cbfad8abeae33e0c96e7577decc2b[m
+Merge: 05bbce6 79ed22a
+Author: nikola <nikola@gtgroup.rs>
+Date:   Fri Feb 26 10:07:40 2016 +0100
+
+    merging changes
+
+[33mcommit 1066c9e8b7823b93f3b5e31891258cd04b807389[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Fri Feb 26 14:55:40 2016 +1000
+
+    Segment tracking after registration and confirmation
+
+[33mcommit af9371b3ca4cd569758e281cd61dc210138faf5b[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Fri Feb 26 11:48:16 2016 +1000
+
+    Email link to correct domain
+
+[33mcommit 5df74d196a84318ccd5a0d7e7bcfdb3fc377cc7f[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Fri Feb 26 09:53:31 2016 +1000
+
+    Adding Segment reporting for Documents
+
+[33mcommit 0008795b46d32a298c1d342787ee60215a43b310[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Fri Feb 26 09:47:35 2016 +1000
+
+    Sending emails through Gmail
+
+[33mcommit e99410e85dfc9f70cc526a04299658f625767e28[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Thu Feb 25 23:28:18 2016 +1000
+
+    Confirmation email works, with test. It then redirects to login page
+
+[33mcommit d8e135ae841c671e679385d3ffd80e2567316959[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Thu Feb 25 17:35:34 2016 +1000
+
+    WIP, confirmation email after registration
+
+[33mcommit 864302223d752fbfcffb2ace76d40c7620f75816[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Wed Feb 24 17:33:52 2016 +1000
+
+    Adding confirmation email on registration
+
+[33mcommit e0093ed47bca100be5e746d8ecaa83acbf24a762[m
+Author: Demid <demidn@gmail.com>
+Date:   Fri Feb 26 01:42:59 2016 +0300
+
+    added no docs styles and functionality
+
+[33mcommit e083dce1ff4e2f7b096a7efcc42de439cdaa6e03[m
+Author: Demid <demidn@gmail.com>
+Date:   Fri Feb 26 01:23:04 2016 +0300
+
+    added filters to documents, improved dropdown functionality
+
+[33mcommit d89d33c76e01e1df6db904fb237cb9de93c863ff[m
+Author: Demid <demidn@gmail.com>
+Date:   Thu Feb 25 10:51:57 2016 +0300
+
+    added dropdown component, small fixes
+
+[33mcommit 79ed22a6df76cccfe9632589af6873046ed9175f[m
+Author: nikola <nikola@gtgroup.rs>
+Date:   Thu Feb 25 14:40:33 2016 +0800
+
+    refs #2 updated params format for collaborator setting
+
+[33mcommit 5bda6f16f21256fc6f5031f0d326396e45eeb69c[m
+Author: nikola <nikola@gtgroup.rs>
+Date:   Thu Feb 25 14:13:57 2016 +0800
+
+    refs #2 collaborator UI as component
+
+[33mcommit f5cbb314dc87050c09e5b37d70bc7137149d0dab[m
+Author: nikola <nikola@gtgroup.rs>
+Date:   Thu Feb 25 13:53:28 2016 +0800
+
+    refs #2 passing rake tests
+
+[33mcommit 05bbce6d30c2fe35bb803fdd8a9e16d95f97e172[m
+Merge: b78f1ef 8dea69a
+Author: Nikola_Balent <info@gtgroup.rs>
+Date:   Wed Feb 24 10:03:27 2016 +0100
+
+    Merge pull request #3 from striking/add-images-to-document
+    
+    Add images to document
+
+[33mcommit 8dea69a3ee69c5cc0591ef35a0aa823448c87494[m
+Merge: 45c7674 1d33d1c
+Author: nikola <nikola@gtgroup.rs>
+Date:   Wed Feb 24 09:56:24 2016 +0100
+
+    Merge branch 'add-images-to-document' of github.com:striking/grapple into add-images-to-document
+
+[33mcommit 45c7674f73b73a001c3526d509aa8613f32440de[m
+Author: nikola <nikola@gtgroup.rs>
+Date:   Wed Feb 24 09:56:08 2016 +0100
+
+    update schema
+
+[33mcommit b78f1efd5c8e479981753606802e360f1979749b[m
+Author: Demid <demidn@gmail.com>
+Date:   Wed Feb 24 11:53:39 2016 +0300
+
+    fixed front end deps
+
+[33mcommit 42e79301e4021e1bd5bb7bcb236417ae6a3cace1[m
+Author: nikola <nikola@gtgroup.rs>
+Date:   Wed Feb 24 16:24:12 2016 +0800
+
+    collaborators UI in collaborator tab
+
+[33mcommit 1d33d1c71771bffc21151861523be7079e423f01[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Wed Feb 24 10:01:52 2016 +1000
+
+    Adding schema
+
+[33mcommit 90d1bf6f53d19dae301004eaf71283d6b6b47330[m
+Merge: 940e606 0ffe859
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Wed Feb 24 09:56:03 2016 +1000
+
+    Merge branch 'add-images-to-document' of github.com:striking/grapple into add-images-to-document
+
+[33mcommit 0ffe859e10d2ed35af62ede0f31e763182812794[m
+Author: nikola <nikola@gtgroup.rs>
+Date:   Tue Feb 23 23:08:23 2016 +0100
+
+    update missing libraries
+
+[33mcommit 569de56a28139e2d076f18043cc3e4bc9745d44e[m
+Author: PCoder <mobile.passion2015@yandex.com>
+Date:   Tue Feb 23 18:52:06 2016 +0100
+
+    #Project - "New project" modal styling
+
+[33mcommit 10cdf62883a238523e9cb1dae7a71c1ccd55e1f1[m
+Author: PCoder <mobile.passion2015@yandex.com>
+Date:   Tue Feb 23 14:34:52 2016 +0100
+
+    #Project - project blocks styling & transition
+
+[33mcommit 940e606025a6c780413423ede46290cb11287f0b[m
+Merge: 6783bf4 69a861d
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Tue Feb 23 17:21:17 2016 +1000
+
+    Merge branch 'v2' into add-images-to-document
+
+[33mcommit 69a861d50dff11747ab4c34c1a2d0e9d7c42717e[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Tue Feb 23 17:20:57 2016 +1000
+
+    Fixing, hopefully properly, the DB changes
+
+[33mcommit f8933bbaefd477dd1aa1a5950a84cd8cc96cf3ab[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Tue Feb 23 17:13:00 2016 +1000
+
+    Revert "Reverting all changes to database.yml"
+    
+    This reverts commit cf224a9b963037c43f3f09d1197f09c0ce267395.
+
+[33mcommit 6783bf475d738698e3655c92fd677db4ccffdbd0[m
+Merge: a1a6c08 cf224a9
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Tue Feb 23 17:09:37 2016 +1000
+
+    Merge branch 'v2' into add-images-to-document
+
+[33mcommit cf224a9b963037c43f3f09d1197f09c0ce267395[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Tue Feb 23 17:07:57 2016 +1000
+
+    Reverting all changes to database.yml
+
+[33mcommit a1a6c0821bec0eb862ae621751d231fff5584729[m
+Merge: cda035f 27e71cf
+Author: nikola <nikola@gtgroup.rs>
+Date:   Mon Feb 22 22:36:39 2016 +0100
+
+    merging changes
+
+[33mcommit 27e71cf285b3ae8ef1d7680ae54079ed39fd3b3b[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Mon Feb 22 23:22:19 2016 +1000
+
+    Adding Segment reporting fro projects
+
+[33mcommit 82059061cd8366764928ba066e91286e1492f2f3[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Mon Feb 22 19:12:22 2016 +1000
+
+    Adding missing file
+
+[33mcommit 62ba433ebc6ad49e97287ef5d24af5ec8f8a4f92[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Mon Feb 22 19:10:54 2016 +1000
+
+    Users may actually logout twice, second time, we dont know who they are
+
+[33mcommit 19e2634da4b8b0d9f3e69dbc8e98f2c29c5e38a5[m
+Author: nikola <nikola@gtgroup.rs>
+Date:   Mon Feb 22 16:49:07 2016 +0800
+
+    refs #2 updated collaborator model ability and document service
+
+[33mcommit 2d00928221c88164a59062111433acfdd00abe0c[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Mon Feb 22 18:28:26 2016 +1000
+
+    Adding Segment base stuff
+
+[33mcommit 571dac1943de6bb6239e35de12046eac986938b5[m
+Author: nikola <nikola@gtgroup.rs>
+Date:   Mon Feb 22 09:08:47 2016 +0800
+
+    references #2 for document collaborators
+
+[33mcommit cda035f824b4db549ceb40b953eb5e26e067eb52[m
+Author: nikola <nikola@gtgroup.rs>
+Date:   Sun Feb 21 09:34:15 2016 +0800
+
+    updated schema for document w/o user_id column
+
+[33mcommit dcfcc486a9def864c9092193a66bfc1f256f5529[m
+Author: nikola <nikola@gtgroup.rs>
+Date:   Sun Feb 21 09:33:07 2016 +0800
+
+    added test for image model and controller
+
+[33mcommit ec53a9be3a83263bd10dbf6adbafe1fd5a47590f[m
+Author: Demid <demidn@gmail.com>
+Date:   Fri Feb 19 17:35:48 2016 +0300
+
+    Revert "#Ignore DB settings". Password was changed
+    
+    This reverts commit 885e4ef22d70033ce09cbb5192cada881d983e78.
+
+[33mcommit 1607f2a73a571dc224f2d56e0b5e42943454142d[m
+Author: nikola <nikola@gtgroup.rs>
+Date:   Thu Feb 18 14:37:17 2016 +0800
+
+    upload images to s3
+
+[33mcommit 728a31f085648387a4fbde84104e9c30cde32345[m
+Author: nikola <nikola@gtgroup.rs>
+Date:   Thu Feb 18 13:19:31 2016 +0800
+
+    refs # 1 forced reload after drag-and-drop of images
+
+[33mcommit 499ef8e57a9be8a6bd26a28ad4261ca3acc45062[m
+Author: nikola <nikola@gtgroup.rs>
+Date:   Thu Feb 18 05:49:27 2016 +0800
+
+    refs #1
+    - image API endpoint
+    - refresh dropzone after file is uploaded
+
+[33mcommit d85b90d5d05e50de6a14d2353f892695eea3d379[m
+Author: PCoder <mobile.passion2015@yandex.com>
+Date:   Wed Feb 17 20:06:45 2016 +0100
+
+    #Register/Login/Success Code optimisation
+
+[33mcommit b933687899fcddd0aa378ea4c67a627acaed8d50[m
+Merge: 885e4ef cd93640
+Author: PCoder <mobile.passion2015@yandex.com>
+Date:   Wed Feb 17 18:39:23 2016 +0100
+
+    Merge branch 'v2_Den' of https://github.com/striking/grapple into v2_Den
+    
+    Conflicts:
+    	frontend/app/styles/routes/reg.less
+
+[33mcommit 885e4ef22d70033ce09cbb5192cada881d983e78[m
+Author: PCoder <mobile.passion2015@yandex.com>
+Date:   Wed Feb 17 18:20:10 2016 +0100
+
+    #Ignore DB settings
+
+[33mcommit 0c8e98486bf5507a5cbb0d86c240a3aaff8836ba[m
+Author: PCoder <mobile.passion2015@yandex.com>
+Date:   Wed Feb 17 18:12:25 2016 +0100
+
+    #Gitignore 2
+
+[33mcommit 1d8356b42a9aa1a28f0e191d97684b870b3151c9[m
+Author: PCoder <mobile.passion2015@yandex.com>
+Date:   Wed Feb 17 17:56:57 2016 +0100
+
+    #Gitignore
+
+[33mcommit 26d539589e9d4632fcf926d063342dc834f6d322[m
+Author: PCoder <mobile.passion2015@yandex.com>
+Date:   Wed Feb 17 17:55:56 2016 +0100
+
+    #Git ignore
+
+[33mcommit 667a1c7471df8624ebfe1185ce310a9e62303b4f[m
+Author: PCoder <mobile.passion2015@yandex.com>
+Date:   Wed Feb 17 17:52:23 2016 +0100
+
+    #Gitignore, Code cleaning
+
+[33mcommit 5118c83508bc9c43e5c9daf9ef0be4db09afce8b[m
+Author: PCoder <mobile.passion2015@yandex.com>
+Date:   Sat Feb 13 03:33:01 2016 +0800
+
+    #Commit - Register/Login/Success Screen (except Auto-login)
+
+[33mcommit cd93640bd83dd60d411e435a2d01955e98858c87[m
+Author: PCoder <mobile.passion2015@yandex.com>
+Date:   Wed Feb 17 18:20:10 2016 +0100
+
+    #Ignore DB settings
+
+[33mcommit e08d3f8aa4371e18472831336ac00946ca9d82fa[m
+Author: PCoder <mobile.passion2015@yandex.com>
+Date:   Wed Feb 17 18:12:25 2016 +0100
+
+    #Gitignore 2
+
+[33mcommit 574079da0e9fde12260a5d8da08ccd4543144ccd[m
+Author: PCoder <mobile.passion2015@yandex.com>
+Date:   Wed Feb 17 17:56:57 2016 +0100
+
+    #Gitignore
+
+[33mcommit fcea51527f26f6a18d2cba267ba083d3c215a70e[m
+Author: PCoder <mobile.passion2015@yandex.com>
+Date:   Wed Feb 17 17:55:56 2016 +0100
+
+    #Git ignore
+
+[33mcommit 034c569a8802cc29be3e03189147692ac22cadf7[m
+Author: PCoder <mobile.passion2015@yandex.com>
+Date:   Wed Feb 17 17:52:23 2016 +0100
+
+    #Gitignore, Code cleaning
+
+[33mcommit 8ca24bece455040075f4c70742ece4509ae8d4da[m
+Author: nikola <nikola@gtgroup.rs>
+Date:   Wed Feb 17 22:21:31 2016 +0800
+
+    references #1 added styles for dropbox area
+
+[33mcommit 4f3ee691244b048736f16985db6c743f50fa3bf9[m
+Author: nikola <nikola@gtgroup.rs>
+Date:   Wed Feb 17 22:09:31 2016 +0800
+
+    references #1 for multiple image drag and drop functionality on editor
+
+[33mcommit 954e311585458acb656c47fd1273c2932483f8f7[m
+Merge: c84a47e d954502
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Wed Feb 17 11:01:36 2016 +1000
+
+    Merge branch 'v2' of github.com:striking/grapple into v2
+
+[33mcommit c84a47e0ce5b376a86d710cc6e1fbb4e62c63722[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Wed Feb 17 11:00:58 2016 +1000
+
+    Adding Projects
+
+[33mcommit d954502e9b6f1223443f46b0258d45612ca73721[m
+Author: Demid <demidn@gmail.com>
+Date:   Tue Feb 16 14:29:33 2016 +0300
+
+    renamed model templates to document template
+
+[33mcommit 8a5cc3c8bae4a7bad9e154cae2bd4e40b17da0db[m
+Author: Demid <demidn@gmail.com>
+Date:   Tue Feb 16 11:49:27 2016 +0300
+
+    added toggle helper
+
+[33mcommit 8ea539796ce064ca30ce37e8e5989136d02d4c60[m
+Author: Demid <demidn@gmail.com>
+Date:   Tue Feb 16 11:05:59 2016 +0300
+
+    fixed new document creation bug
+
+[33mcommit b360ab3b38fb55b2689d09ebbde36bfc57b07838[m
+Author: Demid <demidn@gmail.com>
+Date:   Tue Feb 16 10:58:07 2016 +0300
+
+    removed debug code
+
+[33mcommit 203d394ea6a23955f88773d5d09698b0ffb59280[m
+Author: Demid <demidn@gmail.com>
+Date:   Tue Feb 16 10:27:46 2016 +0300
+
+    hotfix for deprecations log. until it is fixed in simple-auth
+
+[33mcommit 96fc8142408b5d1fb6ddd9d882e2d45fdad75fae[m
+Author: Demid <demidn@gmail.com>
+Date:   Tue Feb 16 09:42:27 2016 +0300
+
+    updated packages versions
+
+[33mcommit 17b443ace6b776ed8ed6ecb924299039d1c9b1ce[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Tue Feb 16 13:54:57 2016 +1000
+
+    Fixing return, to be consistent
+
+[33mcommit f587e9c07dd05c807e65c5d99e2dbfca7edc3345[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Tue Feb 16 13:35:34 2016 +1000
+
+    Cleaning
+
+[33mcommit 29c448b70e13e7e92437d0eae62755a2928bd1a9[m
+Merge: 4686746 a0d4dd6
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Tue Feb 16 12:00:44 2016 +1000
+
+    Merge branch 'v2' of github.com:striking/grapple into v2
+
+[33mcommit 4686746258728f03ab8ccc73c1b75af42e69058c[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Tue Feb 16 11:49:34 2016 +1000
+
+    Can now create a document from a template
+
+[33mcommit a0d4dd6b601269c4e236bd4de83b22916701dcc4[m
+Author: Demid <demidn@gmail.com>
+Date:   Mon Feb 15 22:18:44 2016 +0300
+
+    added template model, moved templates mock to templates route
+
+[33mcommit bee39798c3763c33c32d650887d99d4f2b29c268[m
+Author: Demid <demidn@gmail.com>
+Date:   Mon Feb 15 22:05:52 2016 +0300
+
+    added right side pane layout, added document details pane
+
+[33mcommit ddb4af7ff4096a3e228fb1c8c0f1fa4679f2949a[m
+Author: Demid <demidn@gmail.com>
+Date:   Mon Feb 15 13:21:20 2016 +0300
+
+    updated ember data to 2.3.0, added top pane to editor, implemented Saving/Saved states
+
+[33mcommit 3c72993594b45882c561e7e0eb6c39e5603baf6e[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Mon Feb 15 13:16:43 2016 +1000
+
+    Archiving of documents
+
+[33mcommit 56ed5218daf1af23daaad41f51c5c09daf28c96f[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Sun Feb 14 22:19:43 2016 +1000
+
+    Bug fix, only return the users document, not all documents. Code correct until we add collaborators who can also create documents. THen, we need to change how we find the relevant projects to consider
+
+[33mcommit 805ed25e9e8198907ab02cabea0476abff010617[m
+Merge: 38197e1 6cf7816
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Sun Feb 14 20:30:58 2016 +1000
+
+    Merge branch 'v2' into templates-experiment
+
+[33mcommit 38197e1e7bd2020c137559f8b3d8149f9fda7b3e[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Sun Feb 14 19:47:11 2016 +1000
+
+    Creating document templates, archiving them, retrieving them work and tested
+
+[33mcommit a84e747f607f6ee163ca3ab28e0d43cfbabf54b1[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Sun Feb 14 19:02:22 2016 +1000
+
+    It now creates a new document template
+
+[33mcommit 8912cb20f62496b1e89f26c46d608046e82d3828[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Sun Feb 14 10:59:45 2016 +1000
+
+    Adding retrieving of document templtates. WIP. Can get all templates of that user, or get a specific one
+
+[33mcommit 56e706a8f1a5ba97625bfe794f5deb1d37d1b86b[m
+Author: PCoder <mobile.passion2015@yandex.com>
+Date:   Sat Feb 13 03:33:01 2016 +0800
+
+    #Commit - Register/Login/Success Screen (except Auto-login)
+
+[33mcommit caf7ddd18a2a0b3b663f424a4ab3a6eb3e0f0afb[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Fri Feb 12 22:38:50 2016 +1000
+
+    WIP, template controllers
+
+[33mcommit 6cf781606b2d8d0881e9d7216e8bef2d393284f2[m
+Author: Demid <demidn@gmail.com>
+Date:   Fri Feb 12 12:08:24 2016 +0300
+
+    added autosave functionality to editor, updated secion_text model to be resolved as Model, rather than Promise, small fix to editor
+
+[33mcommit 1adc18bec0ae0185623371905be5726e975a9707[m
+Author: Demid <demidn@gmail.com>
+Date:   Fri Feb 12 12:00:51 2016 +0300
+
+    fixed typo contnet -> content that prevented saving section text correctly
+
+[33mcommit 2df05d0d68da4daa38561346504a03ca1c41dad4[m
+Author: Demid <demidn@gmail.com>
+Date:   Thu Feb 11 23:32:57 2016 +0300
+
+    code organization, html-editor component, commands update, popup pane for editor, commands for making text bold, italic, strikethrough, underline, ordered list, unordered list
+
+[33mcommit 8266d09a473624b452beada5aeb51b2e6b4ac64e[m
+Author: Demid <demidn@gmail.com>
+Date:   Mon Feb 8 10:55:48 2016 +0300
+
+    removed old code
+
+[33mcommit 5886eb5b15abe73df13edc6464a30b29e739c51d[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Thu Feb 11 20:59:26 2016 +1000
+
+    WIP
+
+[33mcommit 03c970211f0206fd414594ec78a738429ef2c1a9[m
+Merge: 66a430f 2704eb5
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Thu Feb 11 09:13:45 2016 +1000
+
+    Duplication of document implemented
+
+[33mcommit 2704eb58684f0ca6195b77be4748a1c037104406[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Wed Feb 10 20:24:59 2016 +1000
+
+    Basic duplication now working
+
+[33mcommit 66a430fd1f7c8793f3630d1dbf90bc5ca8205baa[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Tue Feb 9 21:33:05 2016 +1000
+
+    Adding list of all documents or only list of documents from this project
+
+[33mcommit a7e1c50d5e9f1816939f197920660b88feb9a8d2[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Tue Feb 9 17:13:15 2016 +1000
+
+    WIP deep duplication for templates. Core duplication works, need to adjust user who created the sections, and point to the project template
+
+[33mcommit eb808d399222faee5a71434f8ad4fdfcddfa8ccd[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Mon Feb 8 18:29:20 2016 +1000
+
+    Even this does not duplicate properly
+
+[33mcommit 73a08100cafdd32d1e094261134a019abcb1d2db[m
+Author: Demid <demidn@gmail.com>
+Date:   Thu Feb 4 16:00:09 2016 +0300
+
+    updated section css, added placeholder
+
+[33mcommit 9b43ee57da031f458036e374d3f78b7f79b30bff[m
+Author: Demid <demidn@gmail.com>
+Date:   Thu Feb 4 15:13:25 2016 +0300
+
+    added templates route / components (mocked), fix to sidebar active item state
+
+[33mcommit 7b356856fe312b97cc0fd00111a1015558c7d106[m
+Author: Demid <demidn@gmail.com>
+Date:   Thu Feb 4 14:45:48 2016 +0300
+
+    added route for documents/documents, added draft for popupable, added open doc command, restored back document list with new layout
+
+[33mcommit b38381337ef57c0ca6fb5bc1389b8fd24f9810d7[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Wed Feb 3 21:38:53 2016 +1000
+
+    Ensuring factories are correct
+
+[33mcommit b5b98effbdd5e87645990a3da11593bc421dc93d[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Tue Feb 2 19:41:13 2016 +1000
+
+    Cleaner interface
+
+[33mcommit 953880874e6b0d00a0d81e75c728b508049063d4[m
+Author: Demid <demidn@gmail.com>
+Date:   Tue Feb 2 07:16:03 2016 +0300
+
+    added new entire layout, improved appliation commands object, styles updates and preparation
+
+[33mcommit 62626a7870b35e76b03f36543e02b1d6a30e6d3f[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Tue Feb 2 13:59:46 2016 +1000
+
+    Section Texts are now part of a project
+
+[33mcommit 3ed084c8e341c60d4d28c3bf0856e709d9229204[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Tue Feb 2 12:48:09 2016 +1000
+
+    Sections now also have created_by
+
+[33mcommit 3864de456165268bd0ccf22b519586d82e6e9352[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Mon Feb 1 18:08:43 2016 +1000
+
+    Automatically creating a project for a new document with no project attached, or reusing existing project when it is provided
+
+[33mcommit 8373342e00b9c56f70d684dd0d0cfad662877d9d[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Mon Feb 1 18:00:57 2016 +1000
+
+    Automatically creating a project for a new document with no project attached
+
+[33mcommit cff45cb4abbeaba082d46f0a362f2878ded92c38[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Mon Feb 1 17:54:01 2016 +1000
+
+    Rewriting Devise Helpers into something that actually works with FactoryGirl
+
+[33mcommit bc402c9cf39282b83417ce106dff6c2be1ca48b6[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Mon Feb 1 08:51:44 2016 +1000
+
+    Documents now below to project
+
+[33mcommit fca93193540051367e5e4e1780de298ae046877d[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Mon Feb 1 08:48:01 2016 +1000
+
+    Adding projects
+
+[33mcommit faef76af683060294447cb85d01f7b8964359fe1[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Sun Jan 31 16:36:40 2016 +1000
+
+    Fixing index and keys for created by
+
+[33mcommit bc2a7d347bf63b14ff3af54fd997f480d1f7bf29[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Fri Jan 29 11:32:12 2016 +1000
+
+    Dummy
+
+[33mcommit dad1d6e6cf054e9bb2e2b02f246abd1d72140a89[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Fri Jan 29 10:44:35 2016 +1000
+
+    Bug fix
+
+[33mcommit d8adaa73b6352451a16d461a3794d1513173d030[m
+Author: Demid <demidn@gmail.com>
+Date:   Thu Jan 28 10:59:21 2016 +0300
+
+    reorganized to login / app layouts, updated design for registration, login
+
+[33mcommit cdccbc0414eb95cbff8ca90142d034c2d265174d[m
+Author: Demid <demidn@gmail.com>
+Date:   Thu Jan 28 02:38:41 2016 +0300
+
+    fixed login functionality - added tokens sending with ajax requests
+
+[33mcommit 893747140830946aa41d7e238f38033cd9d83eab[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Wed Jan 27 16:27:59 2016 +1000
+
+    Access restrictions on all relevant controllers
+
+[33mcommit a46a3f09a2f040f92ce0df7ab9486b8051f1d9db[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Tue Jan 26 23:27:24 2016 +1000
+
+    Implementing access restrictions - note, not implemented for the fuzzy search on sections, where all sections are returned
+
+[33mcommit f55b34f057f2549d959e0618bc64951bb98010df[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Tue Jan 26 22:24:30 2016 +1000
+
+    Work around for authorization SectionContainers creation. Not ideal, OK for now until access is restricted to a list of people allowed to edit the project
+
+[33mcommit 585fe1b85203a497cc4f8e80a45280e322614816[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Tue Jan 26 22:21:20 2016 +1000
+
+    Restricting access to documents and section containers
+
+[33mcommit 362e5281be6ad0b4b866dfe99f565d3ebd90484b[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Tue Jan 26 01:15:50 2016 +1000
+
+    Using Cancancan for capabilities
+
+[33mcommit fc99da130b848f2bda2b10828d258d86fceaaf2b[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Tue Jan 26 01:14:59 2016 +1000
+
+    WIP: capabilities to restrict who has access to what
+
+[33mcommit 78d1d17c969c34e48d6f78b75009bf9edf2b6a5b[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Mon Jan 25 23:39:12 2016 +1000
+
+    Adding created_by user
+
+[33mcommit 7ed12ce9362280e00ce0098f46c9caa21e459811[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Sun Jan 24 10:53:55 2016 +1000
+
+    Fixing registration documentation
+
+[33mcommit 8d162c969b7560aab496f250b1b8e27bc516ece2[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Sun Jan 24 10:51:32 2016 +1000
+
+    Fixing registration documentation
+
+[33mcommit 8e1d779b1e8fabf074de465efee9ff3fca18469d[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Sun Jan 24 10:45:23 2016 +1000
+
+    Fixing API documentation (Apipie) config
+
+[33mcommit c0b65d30bf8d339def0542954b4b35f7aed9b101[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Sun Jan 24 09:38:11 2016 +1000
+
+    Reverting Demid fix, so tests pass and its deployed while I investigate
+
+[33mcommit b3c960f2ef4fa7a9fe714880d5b7419d10cad62b[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Sun Jan 24 09:36:02 2016 +1000
+
+    Fixing Ember-cli crash
+
+[33mcommit 2950b9937605bb96e7d9d35bdb89a4bd8be03e48[m
+Merge: 2b44eff 14096ed
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Sat Jan 23 17:50:11 2016 +1000
+
+    Merge branch 'demid-test' into v2
+
+[33mcommit 2b44efffff379873c982ddb03c7fa9b0f840f4a3[m
+Author: Demid <demidn@gmail.com>
+Date:   Sat Jan 23 07:58:06 2016 +0300
+
+    organized frontend, separated into components, added command registry (event bus), fixed login, fixed sections, added drafts for html editor with plugins
+
+[33mcommit 9c143d0e140a3f2be620c8b698b3c1958bfa2644[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Fri Jan 22 17:21:43 2016 +1000
+
+    JSON registration of new users
+
+[33mcommit b53764502c6090872e4de4eb209a2cf14edaabc6[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Fri Jan 22 17:20:54 2016 +1000
+
+    Adding name for our users
+
+[33mcommit 2a94429736e847dfafb32c46a75092bb4404860b[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Fri Jan 22 17:18:18 2016 +1000
+
+    Strange Rails Ember globbing of routes
+
+[33mcommit 5287e1d3560ebbfd0bbf9245c2ad4005b3f6497e[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Fri Jan 22 17:16:00 2016 +1000
+
+    Refactor
+
+[33mcommit 87a353baba81251565174fdaedd1ffa999cd3cec[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Fri Jan 22 17:14:11 2016 +1000
+
+    Better testing helpers
+
+[33mcommit 1ee7706a81e64eea09b511d6f9b2b366b2b060f3[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Fri Jan 22 14:18:36 2016 +1000
+
+    Better testing helpers
+
+[33mcommit fd3f0bebe75aae512406f8eb9afaba1ab8a5d95e[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Mon Jan 18 14:42:11 2016 +1000
+
+    Adding password reset functionality
+
+[33mcommit 577b3c3d587e542865e2d8ee1cdc07427a655944[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Mon Jan 18 14:20:41 2016 +1000
+
+    PaperClip config - not currently used
+
+[33mcommit 37ec33833865b2d6381edb41cb4f1531a464f2ac[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Mon Jan 18 14:20:03 2016 +1000
+
+    Using Gmail for sending our emails
+
+[33mcommit 80cc47e3d5932ee84648e6d56d85ba466b3d10d3[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Mon Jan 18 14:16:13 2016 +1000
+
+    Ensuring we always run in https and only in https
+
+[33mcommit ba22d28cb26c27f2769a9e6bbdae3a9f86590c65[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Thu Jan 14 21:56:57 2016 +1000
+
+    Adding migrations to HK deployment
+
+[33mcommit 5fdaaf8318346a1cb3b9fc85dd078b46fcde59bf[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Thu Jan 14 21:39:26 2016 +1000
+
+    Minimum password length is now 6
+
+[33mcommit 57483612aab897d47e3fbe6284f60f76d4ff7ea8[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Thu Jan 14 21:38:18 2016 +1000
+
+    Putting ember routes lower, so that devise comes first and we can still create users through the devise native interface
+
+[33mcommit 14096edfb8ca0cc9085f8260adc8b59d88510274[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Thu Jan 14 21:21:18 2016 +1000
+
+    Consistent serialisation. Name of object is added in all responses - it already was there in all requests
+
+[33mcommit 8138f975f935eb92f7fbc1555bb0cf654430b1a4[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Thu Jan 14 00:32:09 2016 +1000
+
+    Adding automated deployment
+
+[33mcommit 9f6dabfaedb829d395221bf96838b807794bc6cc[m
+Author: Demid <demidn@gmail.com>
+Date:   Tue Jan 12 06:22:54 2016 +0300
+
+    added swagger editor for REST api documentation
+
+[33mcommit 97f399beea81a2587683443ad65d1d81b7e3587f[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Sat Dec 19 22:41:22 2015 +1000
+
+    Adding Active Model Serializer to EMber, and removing nested resources server side
+
+[33mcommit c4c6b5152c0b275ecb581f830e93f0565e1174a7[m
+Merge: 01c0029 8bd465c
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Thu Dec 17 13:02:11 2015 +1000
+
+    Merge branch 'demid-test' of github.com:striking/grapple into demid-test
+
+[33mcommit 8bd465cae49ad2894e1ae45fa390e02b48c51b98[m
+Author: Demid <demidn@gmail.com>
+Date:   Thu Dec 17 05:48:14 2015 +0300
+
+    fixed build problem, updated login routes to restrict access to documents pages
+
+[33mcommit 01c00291cdc2a05ee59eb9770957f90ae3652684[m
+Merge: 707398b fc5767c
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Thu Dec 17 09:34:52 2015 +1000
+
+    Merge branch 'demid-test' of github.com:striking/grapple into demid-test
+
+[33mcommit fc5767c0e7bf406c67b528ee50999d80a622bd18[m
+Author: Demid <demidn@gmail.com>
+Date:   Wed Dec 16 22:12:26 2015 +0300
+
+    fixing login functionality (dummy), updated ui
+
+[33mcommit 707398b6e04a69491431199744852953351d2ee9[m
+Merge: cf37b95 f5bc627
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Wed Dec 16 09:50:09 2015 +1000
+
+    Merge branch 'demid-test' of github.com:striking/grapple into demid-test
+
+[33mcommit f5bc627015c465ba71290a8fa1e5a4f338e906ee[m
+Author: Demid Nikitin <demidn@gmail.com>
+Date:   Tue Dec 15 17:43:29 2015 +0300
+
+    fixed packages
+
+[33mcommit cf37b9507b1cca78531f13486415cb4ec6c532c5[m
+Merge: c27e9b4 d580364
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Tue Dec 15 19:07:56 2015 +1000
+
+    Merge branch 'demid-test' of github.com:striking/grapple into demid-test
+
+[33mcommit d5803647d87d356200405594638a426fc58f0f32[m
+Author: Demid Nikitin <demidn@gmail.com>
+Date:   Tue Dec 15 06:02:02 2015 +0300
+
+    slight style update
+
+[33mcommit eba17b49878a65134c177ae1bf8f8bacfa61f463[m
+Author: Demid Nikitin <demidn@gmail.com>
+Date:   Tue Dec 15 05:47:31 2015 +0300
+
+    lib versions upgrade, bugfixes, document editor, task bar functionality
+
+[33mcommit c27e9b469b0456d3b7a813ae4b82355cb1b4aae0[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Thu Dec 10 16:35:47 2015 +1000
+
+    Revert "Disabling Ember to create users"
+    
+    This reverts commit e70b134578faaf13dee17e1aeeefc17ccffa1b24.
+
+[33mcommit 65b1e1b43eb7502df9d749e9d09f5e82d6043c85[m
+Merge: e70b134 8b5cf7c
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Thu Dec 10 16:32:07 2015 +1000
+
+    Merge branch 'demid-test' of github.com:striking/grapple into demid-test
+
+[33mcommit 8b5cf7cdffa3dcc379e9ce6b01d6eea696b014f6[m
+Author: Demid Nikitin <demidn@gmail.com>
+Date:   Thu Dec 10 08:49:46 2015 +0300
+
+    updated layout design, updated documents list design, added taskbar draft feature
+
+[33mcommit e70b134578faaf13dee17e1aeeefc17ccffa1b24[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Tue Dec 8 13:22:56 2015 +1000
+
+    Disabling Ember to create users
+
+[33mcommit 56ca5fbfa2bed302f074d56087d52fb28297bba6[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Tue Dec 8 11:01:40 2015 +1000
+
+    Adding updated Gemfile.lock for heroku
+
+[33mcommit 7779986d57e0791fad53c665d5ecf54acc5d0d6b[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Tue Dec 8 10:52:55 2015 +1000
+
+    Heroku deployment stuff
+
+[33mcommit 4141bc97769eaf455331bc0c777bfb8c2d28fd53[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Tue Dec 8 10:28:35 2015 +1000
+
+    Ading missing new rails files
+
+[33mcommit d595f495cadd506c3a5f98867f59dcd7d9b341b6[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Tue Dec 8 10:26:28 2015 +1000
+
+    Upgrading rails and rails-ember-cli to get ember-cli integtration working
+
+[33mcommit bace3a4b44f0baaad51a9d50bd9b0fed7cb8c626[m
+Author: Demid Nikitin <demidn@gmail.com>
+Date:   Fri Dec 4 11:18:30 2015 +0300
+
+    commented new feature
+
+[33mcommit be6c1ef2729afcac7ea072fd41cfe9b8654c9310[m
+Author: Demid Nikitin <demidn@gmail.com>
+Date:   Fri Dec 4 11:14:29 2015 +0300
+
+    test stories: initial commit - design functionality
+
+[33mcommit e5178e1af11f9c55ba9cb97c663eaed99dae0abc[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Sun Nov 1 14:12:07 2015 +1000
+
+    Adding search on section texts
+
+[33mcommit 788dcded40bd56f48087a88e8a6664feab16d8c4[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Wed Oct 28 12:30:55 2015 +1000
+
+    Setting proper paths for bower and node
+
+[33mcommit 010b86bf65bd2c3be8b4af82d2f1c0fcf5a79be1[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Wed Oct 28 12:26:33 2015 +1000
+
+    Setting proper paths for bower and node
+
+[33mcommit 05980845e7a20bc709b64ab0662ac7d77cce079a[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Wed Oct 28 12:20:23 2015 +1000
+
+    Adding CLI rails addon
+
+[33mcommit 87cde9aab2408a86c20d16142e0e718521e8db0f[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Wed Oct 28 12:12:54 2015 +1000
+
+    Adding CLI rails addon
+
+[33mcommit af1510468bf1a23b09ccf217e43273db5524a286[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Wed Oct 28 12:01:44 2015 +1000
+
+    Configuring CircleCI
+
+[33mcommit c5b868fed48bac9a2e9900cf892bd42f737b1cd2[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Wed Oct 28 11:59:17 2015 +1000
+
+    Adding bower to make sure it is installed
+
+[33mcommit ad904565dddeced6b91567fcb0c87e449e245e63[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Wed Oct 28 11:44:54 2015 +1000
+
+    Better API doc
+
+[33mcommit 348dbe0348df648af8666c0c3ffca64cdd8a4efb[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Tue Oct 27 18:55:13 2015 +1000
+
+    Adding ordering on the container sections
+
+[33mcommit e6fb2bde11d914df52f6f25436ef703e94134c7e[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Tue Oct 27 12:55:50 2015 +1000
+
+    Rewrite with spec syntax
+
+[33mcommit 8be97594f18d9176be4ad3f3a036a901301cf3c9[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Mon Oct 26 16:00:01 2015 +1000
+
+    Getting json test to pass in model file
+
+[33mcommit 08df2b2092702713b1f081d6183df0189a7c6b7e[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Mon Oct 26 15:51:24 2015 +1000
+
+    Documents controller working
+
+[33mcommit a37afb2449987bd19ebebfc20888b9948e975921[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Mon Oct 26 15:48:38 2015 +1000
+
+    WIP
+
+[33mcommit b0c37ace5ec82d11ad96025e5b434051728ae049[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Mon Oct 26 13:39:08 2015 +1000
+
+    Better comment
+
+[33mcommit 7060cafcabfed6443432008cb8fd584172cdd614[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Mon Oct 26 11:47:50 2015 +1000
+
+    Reusing text sections
+
+[33mcommit 15caed503443b8732f50d0885bc806bf6522c1d2[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Fri Oct 23 22:33:21 2015 +1000
+
+    Section containers and section texts working
+
+[33mcommit b2d4aa03b31276d794eaeb7fb689097143a0e079[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Fri Oct 23 18:07:11 2015 +1000
+
+    All tests of what done so far passing
+
+[33mcommit 8045ef7a3dbe254101eb3858b2283b41c448535a[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Fri Oct 23 12:59:55 2015 +1000
+
+    WIP
+
+[33mcommit 9535eaa82cd5863c1686edc8e5673fe6537d11ff[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Fri Oct 23 12:49:17 2015 +1000
+
+    WIP
+
+[33mcommit b469efa092f6860b30f8b32fc195cc116a1a7c6a[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Fri Oct 23 12:06:22 2015 +1000
+
+    WIP
+
+[33mcommit 5544ceda3d983d847d83b17002abffc17b315317[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Thu Oct 22 14:40:39 2015 +1000
+
+    Dropping v1
+
+[33mcommit 59074b095e15da4bd1c525ac6f65d8b68ea428c8[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Thu Oct 22 13:20:25 2015 +1000
+
+    WIP - text sections is working
+
+[33mcommit f14d77bedc8b4ab35ab3666a338720d6743b3d72[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Thu Oct 22 12:47:04 2015 +1000
+
+    WIP - text sections is working
+
+[33mcommit d4d4549a8315adb941e9f86fca2e9bc6b75e4af5[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Thu Oct 22 12:14:39 2015 +1000
+
+    WIP
+
+[33mcommit 1389708a786c7915bb7b4c4e622fed49c84f0ba3[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Tue Oct 20 17:05:13 2015 +1000
+
+    Fixing test
+
+[33mcommit 0a9e85d141de018ab9a39d7824a0f28ae0df108c[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Tue Oct 20 14:40:50 2015 +1000
+
+    Setting up factories
+
+[33mcommit 956012082cde8206c2d4b60087f20cc8dd36313a[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Tue Oct 20 13:49:35 2015 +1000
+
+    WIP
+
+[33mcommit 69a10b323e8e4eb9673e8316edb1300dd4a67b56[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Mon Oct 19 16:37:58 2015 +1000
+
+    Comments
+
+[33mcommit 51b74a07494755c79309792388de043aeab8233b[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Tue Oct 13 14:40:50 2015 +1000
+
+    Adding check to detect functional tests
+
+[33mcommit 82d264920a14809177ba7fb175278e4aa0030939[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Tue Oct 13 14:34:25 2015 +1000
+
+    Adding authentication tests
+
+[33mcommit dcd60ac779e417202ea1f828c838d0649ca556b5[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Thu Oct 1 14:16:07 2015 +1000
+
+    Authentication and CSRF tokens working
+
+[33mcommit aad550f7622bbadeba04455f71df4421e155fa26[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Thu Oct 1 14:09:01 2015 +1000
+
+    Authentication and CSRF tokens working
+
+[33mcommit 84cfce9cde55288ae3b0c63125a139e9c8c77266[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Thu Oct 1 12:48:56 2015 +1000
+
+    Fixing build timeout
+
+[33mcommit ca7ac398fc798de041fdbc764e9169cb5fd0fa71[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Thu Oct 1 12:38:51 2015 +1000
+
+    Version with front-end working
+
+[33mcommit c193c5cd48b56032b6865aea39fe5d78c0b40420[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Thu Oct 1 12:36:57 2015 +1000
+
+    Version with front-end working
+
+[33mcommit 181e49a7a3dd01d98334db845ee75ff8f7e750a6[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Thu Oct 1 12:29:46 2015 +1000
+
+    Adding research documentation
+
+[33mcommit 40f9e66d29f71a792caac28659a3fe2ca30d6b37[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Wed Sep 30 11:46:40 2015 +1000
+
+    Adding dummy session in order not to have cookies
+
+[33mcommit 2eba0c8e7b0fe1209eb4c6d73a3fd8d6fc4436a4[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Tue Sep 29 16:16:14 2015 +1000
+
+    Authentication working, I hope
+
+[33mcommit 8c8585d17fc4a3d128367c634ec30a2dbe6224f3[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Tue Sep 29 16:06:33 2015 +1000
+
+    Authentication working, I hope
+
+[33mcommit 040b23d886600b47063b1ffe2a6c1a394166a1fd[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Tue Sep 29 16:06:07 2015 +1000
+
+    Authentication working, I hope
+
+[33mcommit 4f7cc7aab970c8b15897d0c4e328c22b71ef3d10[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Mon Sep 28 17:39:20 2015 +1000
+
+    progress on authentication users
+
+[33mcommit e158b6c51d5324808b9ba152d989cbab73aed25e[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Mon Sep 28 17:35:02 2015 +1000
+
+    Adding devise and token authentication
+
+[33mcommit a4542dc3d7edeb486f316650c19299e167add74f[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Mon Sep 28 16:55:52 2015 +1000
+
+    Updating devise
+
+[33mcommit 70edb5b8ab476a65bd726a2ab56404ab93dd3f04[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Mon Sep 28 16:39:41 2015 +1000
+
+    Adding devise
+
+[33mcommit a5e36a8c00481ec2fbdfc248d609092aa017c368[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Mon Sep 28 15:40:00 2015 +1000
+
+    Clean test setup
+
+[33mcommit d760b0aa43bbdb8e69415b722173b6acc1303d3e[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Mon Sep 28 14:44:05 2015 +1000
+
+    Post build install for heroku, see https://github.com/rwz/ember-cli-rails
+
+[33mcommit dbaa94c5b87f29798d044b1670d72d727949b14c[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Mon Sep 28 14:42:22 2015 +1000
+
+    Empty file, to make sure Heroku detects and uses NodeJS buildpack, see https://github.com/rwz/ember-cli-rails
+
+[33mcommit c004db7e91f284f2904da6750a77372fa58d8f63[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Mon Sep 28 14:28:08 2015 +1000
+
+    Empty file, to make sure Heroku detects and uses NodeJS buildpack
+
+[33mcommit 6c7801d055556dc0fa99d87b0b6beab00727bdfd[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Mon Sep 28 14:25:39 2015 +1000
+
+    Adding Ember reference
+
+[33mcommit 6ce1ed4bab194c3fb04c1bc543ca0e00fabf9677[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Mon Sep 28 14:23:28 2015 +1000
+
+    Adding Ember app
+
+[33mcommit a6992d9436f19364748c00eac9657a59bca39a6b[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Mon Sep 28 11:29:20 2015 +1000
+
+    Importing new_project branch, and adding ember-cli-rails
+
+[33mcommit 799939690764fd92915d7ddaafa61237d7314acc[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Tue Sep 15 16:41:29 2015 +1000
+
+    Changing project versioning testing
+
+[33mcommit 7699202f6e24d5569df7ad6f3f6b5988e6094176[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Mon Sep 14 17:33:47 2015 +1000
+
+    Upgrading
+
+[33mcommit 21812a5dfcebaf731617abe3593243b1d4f64850[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Mon Aug 31 17:42:40 2015 +1000
+
+    Better json representation of project
+
+[33mcommit 191dd169f25976ea93dd37dbcebc6001bd179425[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Mon Aug 31 15:25:12 2015 +1000
+
+    Budgets belong to projects
+
+[33mcommit e14344cc287d932d5ae2896b71621b117443335b[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Mon Aug 31 15:24:20 2015 +1000
+
+    adding budget controller
+
+[33mcommit 9eab9eb97ecddd3ef8e0367628ed7af23129f133[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Mon Aug 31 14:37:46 2015 +1000
+
+    Controller for text sections of project
+
+[33mcommit e081df57d4d6f4eeeb3ee9b6f5bf4e5926edc928[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Mon Aug 31 14:37:12 2015 +1000
+
+    Missing migration
+
+[33mcommit ca2e55471ec651dd41617a41c0666a93505441d3[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Mon Aug 31 14:36:58 2015 +1000
+
+    Missing initialise file
+
+[33mcommit 548f008beaf4a605c633b1f977635536f7a22ca6[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Mon Aug 31 14:36:09 2015 +1000
+
+    adding budget
+
+[33mcommit 78f64e7472ae95d7fab428a237e4265227f1706f[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Mon Aug 31 13:58:12 2015 +1000
+
+    Adding money gems for budget
+
+[33mcommit bb111f80f45acf65a0374d7c1daa7f7d0eeaec55[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Fri Aug 28 14:25:28 2015 +1000
+
+    Adding text sections to projects
+
+[33mcommit d8ae421cee2ea782754365107242ccb3c0bedf1f[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Fri Aug 28 12:43:24 2015 +1000
+
+    Adding factory
+
+[33mcommit 2973db471e0926f6fbfd1b09279f4a7267b45eff[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Fri Aug 28 09:28:29 2015 +1000
+
+    Adding text sections
+
+[33mcommit 199e1a7ebd52d0166d37a45729832127afc6174f[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Fri Aug 28 09:27:45 2015 +1000
+
+    Adding text sections
+
+[33mcommit e03543e7e1a2b87e04b021703f1c46f93cc67a14[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Thu Aug 27 14:59:32 2015 +1000
+
+    Adding possibility for the user to specify one of the reserved field keys
+
+[33mcommit f55d4d4a988fca9863a8838c5d1e9ab2a49094e4[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Tue Aug 25 17:58:54 2015 +1000
+
+    Adding possibility of setting extra children fields when creating a category
+
+[33mcommit bdcda19ad86ab4cd3914e42df720d890eceb641c[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Tue Aug 25 14:54:12 2015 +1000
+
+    Adding comment
+
+[33mcommit e243b8612b4a5479080e163ea92277de071dc382[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Tue Aug 25 14:51:37 2015 +1000
+
+    Adding comment
+
+[33mcommit 573ef8d145f382fec26caf9fd9f7693ad4893ba3[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Tue Aug 25 14:49:08 2015 +1000
+
+    Adding destroy to items
+
+[33mcommit b8c5378f46eabaff1d4cea5aaf31e92fdd14fcb1[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Tue Aug 25 14:42:49 2015 +1000
+
+    Fixing updates
+
+[33mcommit 230207c3cbd3967dd9886a6f6c3de99d556a9c64[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Tue Aug 25 13:51:31 2015 +1000
+
+    Adding update to items
+
+[33mcommit 7bdecae5cd954d5561c3008774b0cb7dd098150f[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Tue Aug 25 12:55:50 2015 +1000
+
+    Adding item creation controller
+
+[33mcommit a24842a55e7c6042d892499ca0ab8515fb508427[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Mon Aug 24 18:19:05 2015 +1000
+
+    Ignoring non existent Watir tests
+
+[33mcommit c746b0bb40ba14c10bb35f67343af9b14107da0f[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Mon Aug 24 18:16:27 2015 +1000
+
+    Importing project rewrite
+
+[33mcommit b6c3ec13441ecd0b775cd73649acb25733f17493[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Mon Aug 17 15:07:01 2015 +1000
+
+    Removing a few more routes
+
+[33mcommit 66741fcbdb87e7b7973838c5ce8540a4035169c2[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Mon Aug 17 14:55:24 2015 +1000
+
+    Removing a few more routes
+
+[33mcommit 5097e80107f99b3d284b163d8a4af917ddbe3625[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Fri Aug 14 13:58:27 2015 +1000
+
+    More routes being removed
+
+[33mcommit 6e9a64fd689c3123d9eb09bee0b4a01c22f3da3c[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Thu Aug 13 18:14:22 2015 +1000
+
+    Cleanups, removing unnecessary code and routes
+
+[33mcommit 48344127dbfd09744108b156c7036c9c66b08630[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Thu Aug 13 17:10:33 2015 +1000
+
+    Adding landing A/B testing functionality
+
+[33mcommit b00c351c8c693df2fae2056c38f11297cdd17924[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Thu Aug 13 16:47:27 2015 +1000
+
+    Adding link to split
+
+[33mcommit 108c6f4c0fc62546bfef0500120f5cd565074baa[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Thu Aug 13 16:35:48 2015 +1000
+
+    Fixing refresh on admin
+
+[33mcommit c571dba920bce93f28edf6466e43248f3a9bacac[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Thu Aug 13 15:43:28 2015 +1000
+
+    Adding project URL to mailer dta for Aprostle
+
+[33mcommit 1fe2fb0150f86b86d7dba13dd053bed2fe2e2869[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Thu Aug 13 13:27:38 2015 +1000
+
+    Adding split for AB testing, and changing admin to rely on Warden
+
+[33mcommit 2da1b83c0172271a3e8c3da862e6b666ceab349b[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Tue Aug 11 17:26:34 2015 +1000
+
+    Fixing login page
+
+[33mcommit 4396857206ca038c84351612aa3008ac0ce3a520[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Tue Aug 11 17:19:55 2015 +1000
+
+    Typo fix
+
+[33mcommit 751a7e3a710325ce7702a1f7ea22c3c332b110dc[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Tue Aug 11 12:59:11 2015 +1000
+
+    Ability to re-run a failed project creation
+
+[33mcommit b8987cea03a120a37f414456f9133b089a4a15e2[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Tue Aug 11 12:30:57 2015 +1000
+
+    Showing errors when Basecamp account creation fails
+
+[33mcommit 91abfc4ba8ba8355ff0113dd331403fe232acdb1[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Mon Aug 10 18:20:09 2015 +1000
+
+    Adding reference
+
+[33mcommit 8efcca76dd54821301acc9e51c9351823e90404f[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Mon Aug 10 18:11:39 2015 +1000
+
+    Fixing basecamp multiple accounts authentication issue
+
+[33mcommit e8517d9889b6f4330682f8c1f0c5977bfed10825[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Fri Aug 7 20:26:22 2015 +1000
+
+    Adjusting test from seed changes
+
+[33mcommit dccee63c1b56350fe632e5424d8972e4aafcc570[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Fri Aug 7 18:19:30 2015 +1000
+
+    Fixing seed file
+
+[33mcommit 74d25052e3f92c3976ce92ae0e4551991a634f07[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Fri Aug 7 16:46:02 2015 +1000
+
+    Adding stub for segment.
+
+[33mcommit e6cb6dac180154b4246c77070692e8ae64d3f54b[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Fri Aug 7 16:45:14 2015 +1000
+
+    Revert "Failing test to check where Circle CI is sending emails"
+    
+    This reverts commit 612a98d35f51f4056f33de918532ce3f1fca3cca.
+
+[33mcommit 612a98d35f51f4056f33de918532ce3f1fca3cca[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Fri Aug 7 16:41:40 2015 +1000
+
+    Failing test to check where Circle CI is sending emails
+
+[33mcommit 64df40310e8b28a921ad278ad3236f5f8bcc76bf[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Fri Aug 7 16:01:41 2015 +1000
+
+    Adding watir tests in CircleCi build
+
+[33mcommit aad4c840a34335cf555dd73ace1ca4fd8c023108[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Fri Aug 7 15:58:45 2015 +1000
+
+    Adding watir tests to run against the local instalce
+
+[33mcommit a8d0fa3267a1f7b68193754560a8f28c68852550[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Thu Aug 6 17:10:11 2015 +1000
+
+    Adding automated deployment to testing, adding db:migrate, and everything for staging
+
+[33mcommit 12862a12f45d1ddb93e9104f80faa1520919c8ac[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Thu Aug 6 17:03:42 2015 +1000
+
+    Adding automated deployment to testing
+
+[33mcommit 32d75f030082b6e290d84bef3e92f27e1ed8f2cc[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Thu Aug 6 16:48:23 2015 +1000
+
+    Adding automated deployment to testing
+
+[33mcommit 99515a0ab123e85c54a8b4db5823df97e81fd865[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Thu Aug 6 16:23:31 2015 +1000
+
+    Better rake task
+
+[33mcommit 82a90e301c486856eff3062960bac2a0d0e5bf0d[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Thu Aug 6 16:20:45 2015 +1000
+
+    Fixing CircleCI setup
+
+[33mcommit 8f9657b3d8e1f7c6d56556111500622c7d0a6521[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Thu Aug 6 16:17:54 2015 +1000
+
+    Fixing CircleCI setup
+
+[33mcommit 43b541793aa59bb38ba7656b94d206b90ee3b5bb[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Thu Aug 6 15:43:42 2015 +1000
+
+    Fixing rake file for loading seeds up in testing
+
+[33mcommit c57a7ed1c3ebb5f13765d0365da34587eb35b902[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Thu Aug 6 14:06:33 2015 +1000
+
+    Adding sentry
+
+[33mcommit 4c1bc8e13d2a2ae137d2960d83250962514c5c78[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Wed Aug 5 15:08:05 2015 +1000
+
+    Adding info in views
+
+[33mcommit e9856ab66b2528a6790cd37d68152243a6cf583d[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Wed Aug 5 14:57:50 2015 +1000
+
+    Adding test fix to bcx
+
+[33mcommit 8c7545d0d9a89df1ead6db69af6947c067fec5d3[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Wed Aug 5 14:51:48 2015 +1000
+
+    Adding view to pick and choose which basecamp account to use
+
+[33mcommit 4caa4892926ec5ee1d3cb59bc53531215a6273e1[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Mon Aug 3 18:23:47 2015 +1000
+
+    Adding tests for Basecamp integration
+
+[33mcommit 82ea51aeca67cccc981e0276f7542b49f28c7ba3[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Fri Jul 31 18:20:30 2015 +1000
+
+    Better comment
+
+[33mcommit 15cab26bc92c61cee966c318914f30933f62aea0[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Fri Jul 31 18:18:33 2015 +1000
+
+    Better tests and bug fixes
+
+[33mcommit dbb0f528f63cf1b7e04e6dfa89ed7b9dd338c7a1[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Fri Jul 31 17:45:07 2015 +1000
+
+    Rewrite of Basecamp authentication, to support multiple accounts. Part 1
+
+[33mcommit 36aa3cc3626da40f7d6feaf5b741577955c75404[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Thu Jul 30 17:07:26 2015 +1000
+
+    Demoting older Project Managers in all cases
+
+[33mcommit 33bc9c197312c14dfd26e4f59c4d253316157a8b[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Thu Jul 30 17:07:05 2015 +1000
+
+    Fix crash when stakeholders are not properly created
+
+[33mcommit 673f5fc779addca2efb1be495854f3aa3dfa5cfa[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Thu Jul 30 12:33:17 2015 +1000
+
+    English clarification
+
+[33mcommit 156eafcb04b4c74e3e137d51085a9e8840fb6544[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Tue Jul 28 13:41:01 2015 +1000
+
+    Adding User Agent for Grapple in basecamp integration
+
+[33mcommit d2c1780eae75e2510c6ade26e81cabf79172c22d[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Tue Jul 28 13:39:55 2015 +1000
+
+    Fix bug of always showing the popup
+
+[33mcommit c98d22c3692f59d46a0c6ecff88a46be7d159e4e[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Tue Jul 28 13:06:50 2015 +1000
+
+    Adding test
+
+[33mcommit 53d3fef64495b41f0a0e8baf6aec1a117e700258[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Tue Jul 28 12:34:15 2015 +1000
+
+    Adding test
+
+[33mcommit 615fbb9e01334048d73740fde2e7bf97a0de5900[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Tue Jul 28 11:52:40 2015 +1000
+
+    Clean ups
+
+[33mcommit 01d8bf2f7b0fe44851568db601f2acbcc330fe02[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Tue Jul 28 11:46:25 2015 +1000
+
+    Adding tests
+
+[33mcommit 5e088ea707586f4eb4380abf4918ee4b669d7b8c[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Tue Jul 28 11:12:30 2015 +1000
+
+    Adding tests for basecamp refresh
+
+[33mcommit 05700c7116bdf41d0783562dac2dc690483a5b8a[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Tue Jul 28 11:11:53 2015 +1000
+
+    Marginally faster test runs
+
+[33mcommit c643706c1b0df01d9cddf1225ff93a934cb82037[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Mon Jul 27 19:12:52 2015 +1000
+
+    Adding Token refresh for Basecamp
+
+[33mcommit d27e509e16a80c2277c67be1db849d2eee393a9a[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Mon Jul 27 14:31:57 2015 +1000
+
+    Using my version of bcx gem
+
+[33mcommit 448a8f4d1bb1a9b8f9e6cea7579714d01785970d[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Mon Jul 27 14:28:19 2015 +1000
+
+    Adding test cases, and using class variables for status instead of ints
+
+[33mcommit fe501a817c4d6e02d187a3cda46f841183cb0db3[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Fri Jul 24 16:35:45 2015 +1000
+
+    Clean up
+
+[33mcommit b92ba664033742814535efc315ada21caf3e5d33[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Fri Jul 24 16:34:16 2015 +1000
+
+    Clean up
+
+[33mcommit 7693588c009381375324946689c7cac036eb5e6d[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Fri Jul 24 16:30:10 2015 +1000
+
+    Making sure a project is created on basecamp when a user requests it
+
+[33mcommit b1843aefb92f8e0ea383e924c1e57c1bd73e8944[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Fri Jul 24 16:13:00 2015 +1000
+
+    Adding tests for basecamp project creation
+
+[33mcommit 29d4cacb490c2c2fe145eede0ce39cf058ee3f92[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Fri Jul 24 13:27:36 2015 +1000
+
+    Creating stakeholders in Basecamp, and footable JS helper for displaying the project status
+
+[33mcommit b827c4302a22529e1378faa55c8c45d49cdcf416[m
+Author: André Allavena <andre.allavena@gmail.com>
+Date:   Fri Jul 24 13:26:03 2015 +1000
+
+    JS cleanup
+
+[33mcommit c95195a844930604b228c765e2597db3eda0fbeb[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Wed Jul 22 13:33:14 2015 +1000
+
+    Adding link to integrations
+
+[33mcommit a6084d9851a1d9902f0a223b714fd22542223cde[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Wed Jul 22 11:38:27 2015 +1000
+
+    Dont need this
+
+[33mcommit 6dfdc8b3c81763d20b081bfe1c3f993a014f9d88[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Tue Jul 21 17:43:06 2015 +1000
+
+    Minor fixes
+
+[33mcommit 4e7270718290226435b5b3cf31f044b6cc1470a8[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Tue Jul 21 17:28:38 2015 +1000
+
+    Basecamp integration, cleaning links
+
+[33mcommit 847724613fdf80ec1b987ddaf309cf92b68cdd15[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Tue Jul 21 17:23:49 2015 +1000
+
+    Basecamp integration
+
+[33mcommit b0506322f0b3b2fe3f9cc06a44e8d6e20ca5105d[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Mon Jul 20 17:57:34 2015 +1000
+
+    Need version
+
+[33mcommit 3d4f2e6107a559f38e86b3c9cb6ad37f7b1259f6[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Mon Jul 20 17:42:37 2015 +1000
+
+    Bug fix
+
+[33mcommit 0e282e829baed07117aea8b6f8047467f7464d88[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Mon Jul 20 16:44:35 2015 +1000
+
+    Starting on actually talking to basecamp
+
+[33mcommit b83acb25a98a557d4cbfe92f48a611ff83a639bb[m
+Merge: 19458d3 946b850
+Author: André Allavena <andre@igecorporate.com>
+Date:   Mon Jul 20 14:33:55 2015 +1000
+
+    Merge branch 'staging' into development
+
+[33mcommit 946b850549f76a377a66a9eaf64ca45b6a9b3295[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Mon Jul 20 12:53:06 2015 +1000
+
+    Dropping apostrophes in project title in pdf footer
+
+[33mcommit 19458d36399ec7e83d1d90ab6b1fefee18003c6e[m
+Merge: b2475ca 975fb38
+Author: André Allavena <andre@igecorporate.com>
+Date:   Sun Jul 19 20:26:08 2015 +1000
+
+    Merge branch 'staging' into development
+
+[33mcommit b2475caaeaf305204de364891999a508406f871a[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Sun Jul 19 20:25:17 2015 +1000
+
+    More progress in the basecamp integration
+
+[33mcommit 975fb38b6b9a73f18a36829ed8066cdce640bade[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Sun Jul 19 00:08:34 2015 +1000
+
+    Fixing budget issue of corrupting numbers when they were in the millions or larger
+
+[33mcommit 9b9778930b786490901841552e435eb08cabb4b6[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Thu Jul 16 18:26:35 2015 +1000
+
+    Adding views to support integration with Basecamp
+
+[33mcommit fefdcd9ef8da858337937dcc2c6b8d9cdfe70508[m
+Merge: 74467ac 74fdf31
+Author: André Allavena <andre@igecorporate.com>
+Date:   Thu Jul 16 12:25:37 2015 +1000
+
+    Merge branch 'basecamp' into development
+
+[33mcommit 74fdf310317d5d42c5a3b44f970858f3ce21d2ab[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Thu Jul 16 12:25:28 2015 +1000
+
+    Fixinf layout WIP
+
+[33mcommit ff8cc143d645eedf9ef6fd04f3026ff607d11f7e[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Wed Jul 15 22:58:24 2015 +1000
+
+    Basecamp views, WIP
+
+[33mcommit a6a8140e60c62c92f202250754d03392dcadecab[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Wed Jul 15 22:33:55 2015 +1000
+
+    Basecamp views, WIP
+
+[33mcommit 821331d9f4322fdfaa87d62bcd2d6c5bb97fcfbf[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Wed Jul 15 21:52:26 2015 +1000
+
+    Ignoring more files
+
+[33mcommit f63dc1fa5733155e13a03899b8be29289e4407e4[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Wed Jul 15 21:48:36 2015 +1000
+
+    Nested layouts
+
+[33mcommit 2128b5d837a96dfb58899db5148b1140fa9f0c03[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Wed Jul 15 16:44:35 2015 +1000
+
+    When creating new project, set the session project back to nil
+
+[33mcommit 3ee23e9f742569dc7badaa8b80c55d44bdb21610[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Wed Jul 15 16:13:39 2015 +1000
+
+    Adding test for omniauth
+
+[33mcommit ba07cfdb405583205cb11c1c21933ae73543acc6[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Wed Jul 15 16:12:47 2015 +1000
+
+    Adding test for omniauth
+
+[33mcommit 74467ac47893579d1bba6f7167de19b27c4f7313[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Wed Jul 15 15:01:39 2015 +1000
+
+    Adding seed file to run in prepare for tests
+
+[33mcommit d6daa763004ff12ea9de8481e6f9d562fa430e90[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Wed Jul 15 15:01:39 2015 +1000
+
+    Adding seed file to run in prepare for tests
+
+[33mcommit 1ec9dd61a001c030c8a48279d85d11287ca64d0d[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Wed Jul 15 13:40:46 2015 +1000
+
+    Removign comment
+
+[33mcommit cd1ab1c9f04da0bdbf3e91882c2d62eeb0566742[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Wed Jul 15 12:46:49 2015 +1000
+
+    Adding basecamp related models and controllers
+
+[33mcommit 4f1be6d6b2eeb69283c3faf178311b632e95e2d2[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Wed Jul 15 12:45:00 2015 +1000
+
+    Adding basecamp related models and controllers
+
+[33mcommit 0d691b49d1253ab8f68fcf76798c1a6a4c640183[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Tue Jul 14 13:00:18 2015 +1000
+
+    Fixing freemium header
+
+[33mcommit cb0b2bd317bd97697627652eac55af5cc679d06f[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Mon Jul 13 19:10:16 2015 +1000
+
+    COmmenting test
+
+[33mcommit 1cd32d499d9c0cd51e0c97ecb98e722a983f71c9[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Mon Jul 13 19:08:01 2015 +1000
+
+    Still showing user who created the project in the html and pdf charters
+
+[33mcommit 200a409e6fa31fc1eda1fb61e5392d9aa3f88b6b[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Mon Jul 13 18:49:23 2015 +1000
+
+    Fixing stakeholders, user cannot remove one self as one self is no longer shown as stakeholder
+
+[33mcommit d1caa131b4bda14c3a245b2a3ad2923b1fabe719[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Sat Jul 11 01:04:29 2015 +1000
+
+    Removing unnecessary routes
+
+[33mcommit 1e6d0f7f4fb84f80839df7cf78552139f7bd4fc9[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Sat Jul 11 00:53:33 2015 +1000
+
+    Adding pdf links, and simplying code
+
+[33mcommit 6d2e0c981bea7768e9f4c2e1c463928973926cbd[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Fri Jul 10 17:55:57 2015 +1000
+
+    Fixing colours in approvals
+
+[33mcommit c0b8fc7ed2d530b3f07aca7fc5a6c1aa75484368[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Fri Jul 10 17:24:11 2015 +1000
+
+    Potential fix
+
+[33mcommit c9933b155992465999170919a68fdf32850c2209[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Fri Jul 10 17:20:52 2015 +1000
+
+    Potential fix
+
+[33mcommit f563fef9386337993769658c9d446832d3df7ef0[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Fri Jul 10 17:15:05 2015 +1000
+
+    Fixing JS
+
+[33mcommit 5aa37e21666489af0ad1ceb82d853a2602f7997f[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Fri Jul 10 16:58:10 2015 +1000
+
+    Removing comment
+
+[33mcommit 1674f26c7f39ea1c3b54eb67d81ea23616f78b17[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Fri Jul 10 16:49:07 2015 +1000
+
+    Adding annoucement when a project is rejected
+
+[33mcommit 506e74e7281091645bc0b98b2a38cbee65cd039b[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Fri Jul 10 16:42:34 2015 +1000
+
+    Fixing issuer bug in view
+
+[33mcommit 73e291a1e7197119beabdfc25e834119e635e3f6[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Fri Jul 10 15:10:34 2015 +1000
+
+    Fixing UI bug
+
+[33mcommit bd3f19edd91fc4334c7054fb3f2d5816b629e841[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Fri Jul 10 14:34:40 2015 +1000
+
+    Fixing watir test
+
+[33mcommit 24783027e63d468773b60abf75e53142d3d55daa[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Fri Jul 10 13:51:14 2015 +1000
+
+    Fixing watir tests
+
+[33mcommit 9ba96e6322ee6cf7718c6683645d2e03bd5a372d[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Fri Jul 10 13:13:55 2015 +1000
+
+    Fixing approvals
+
+[33mcommit 8cbd4ccbff77e460ce8740ce098aad46d911e8c8[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Fri Jul 10 13:13:01 2015 +1000
+
+    Fixing approvals
+
+[33mcommit 728eaf4492c5eb75d040ed49eefd7b9638bb55b7[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Fri Jul 10 11:29:12 2015 +1000
+
+    Fixing approvals
+
+[33mcommit 825608652734b4f9b5cbba827adbaa4771e71ca8[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Thu Jul 9 23:17:36 2015 +1000
+
+    Approval bug fix
+
+[33mcommit b8d939238dd09d1c0ecf90a90f553d82aa3f03c9[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Thu Jul 9 22:35:28 2015 +1000
+
+    Showing message of approval on the charter
+
+[33mcommit 7dec414c0d8f0f869c734dd58a19ce4b53d31802[m
+Merge: bd6d9a8 9c6b713
+Author: André Allavena <andre@igecorporate.com>
+Date:   Thu Jul 9 21:04:35 2015 +1000
+
+    Merge branch 'master' into development
+
+[33mcommit 9c6b7133db44cef7a9eb9c9a6cdeacd0ad0cc0aa[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Thu Jul 9 19:02:13 2015 +1000
+
+    Showing pending approvals requests
+
+[33mcommit 923ec8af7f1a87d6e082900cae38985ae485a131[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Thu Jul 9 15:20:17 2015 +1000
+
+    Fixing canvas email addresses
+
+[33mcommit bd6d9a87e1ea855fa7a7892b1921456886c95857[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Thu Jul 9 15:20:17 2015 +1000
+
+    Fixing canvas email addresses
+
+[33mcommit c7397a116ca090dc09c9d1ea47e66604174a11e9[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Thu Jul 9 11:33:33 2015 +1000
+
+    Adding message when requesting approval
+
+[33mcommit c160635bd7ac2f1e3eb4832cd6bb1629e90b94da[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Wed Jul 8 18:00:20 2015 +1000
+
+    Removing fixed size of boxes
+
+[33mcommit 8944483935814262eb47c477f54328c836bbdd82[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Wed Jul 8 14:26:03 2015 +1000
+
+    Improving pdf
+
+[33mcommit e49302c2f7a6c265c86daa758205af3cd4d9c388[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Wed Jul 8 13:06:30 2015 +1000
+
+    Only show approvals when there are some
+
+[33mcommit 207f054202096979af3ed3fad0107e292cbe053a[m
+Merge: b97230e c4b23f4
+Author: André Allavena <andre@igecorporate.com>
+Date:   Wed Jul 8 12:52:51 2015 +1000
+
+    Merge branch 'master' into development
+
+[33mcommit c4b23f42084fb67836499e630446116786fcad2f[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Wed Jul 8 12:42:03 2015 +1000
+
+    Adding time length in project
+
+[33mcommit 6bcdba61d6cf6cb15965b42fd88d91b425cbc637[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Wed Jul 8 12:33:30 2015 +1000
+
+    Using pdf service
+
+[33mcommit 471613dda03087c1e47536084d78a05e8f13cbf9[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Wed Jul 8 12:28:45 2015 +1000
+
+    Improvements in the pdf template
+
+[33mcommit e11a002bde40513439a5627b3afec747782531bc[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Wed Jul 8 11:16:42 2015 +1000
+
+    Moving pdf generation to its own service, and using a Slim template instead. Also, merging the two views used for the pdf genreation and the project preview and approval into one
+
+[33mcommit 6c9493da85b6c9ea17022c2d78af52f0dc072b26[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Tue Jul 7 13:47:54 2015 +1000
+
+    Better paginiation of pdf
+
+[33mcommit b97230e6cdb8b8c4709f4481bbe071560c3cb452[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Mon Jul 6 17:18:27 2015 +1000
+
+    Fixing dashboard issue of not printing the correct project status
+
+[33mcommit 770aba98adccfd0db9f9521d2bbb889f7b2905a4[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Mon Jul 6 16:29:46 2015 +1000
+
+    Adding prompting text in the project creation
+
+[33mcommit 421f1949e433f8ddcaab8d7e10fd950d0955125c[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Mon Jul 6 16:29:35 2015 +1000
+
+    Removing extra comment
+
+[33mcommit 95bc07ab2c1484f6302f453241b254338adce7cc[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Wed Jul 1 21:36:30 2015 +1000
+
+    Clean up
+
+[33mcommit 4dd958c53f75fed768a8c4a97e85918e9055d779[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Tue Jun 30 18:13:54 2015 +1000
+
+    Fixing permission issues
+
+[33mcommit 90ba24b519fe1c04115173f60ee2efb4e5c58a79[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Tue Jun 30 15:40:21 2015 +1000
+
+    Adding from user on the invitations to Grapple
+
+[33mcommit 1a3da2195586415d106b70fadb4af441ea9964ca[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Tue Jun 30 15:23:55 2015 +1000
+
+    Splitting out the invitation
+
+[33mcommit ee622903893d0221c20bacc6020e2734c149c66f[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Tue Jun 30 12:12:08 2015 +1000
+
+    Fixing waits in watir tests
+
+[33mcommit da3df512063aabece5027b5a32232445e691c2bf[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Tue Jun 30 00:05:43 2015 +1000
+
+    Fixing more email templates and related tests
+
+[33mcommit c8597c47bf793cc907fcc3e57af27bcbaf306048[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Mon Jun 29 18:08:49 2015 +1000
+
+    Many bug fixes
+
+[33mcommit 74bb4cf1f31a4292a380b8527d15bdc027074fb1[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Sat Jun 27 23:32:10 2015 +1000
+
+    Adding is_sample attribute to projects
+
+[33mcommit 1a6c54bbda190843d83fbcda0709902796a164a7[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Sat Jun 27 23:31:29 2015 +1000
+
+    Adding is_sample attribute to projects
+
+[33mcommit 5e97cdd695d152a1620ddc1cf24dd6c9319fdd6b[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Fri Jun 26 12:55:19 2015 +1000
+
+    Adding welcome page to mention sample project
+
+[33mcommit 04283e86397aabcdcddd181bed4c6cce46febc39[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Thu Jun 25 19:07:37 2015 +1000
+
+    Bug fix
+
+[33mcommit ccc5ff08d7b5af0af586da1903ba98421219925b[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Thu Jun 25 16:51:26 2015 +1000
+
+    Refactor of Transaction Email Implementation
+
+[33mcommit 9dfee9524eacf343292dafeda985310937071510[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Thu Jun 25 15:42:13 2015 +1000
+
+    Minor cleanups
+
+[33mcommit 1a628a673d6bec666c01e5178d84878b6470b42a[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Thu Jun 25 15:18:30 2015 +1000
+
+    Cleaning factories
+
+[33mcommit 1946c1ba7320186fe2bf1af1a49e1d71908b0930[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Thu Jun 25 14:28:09 2015 +1000
+
+    Adding tests for coverage of Apostle mail functionality
+
+[33mcommit 5a6ed4c8c2003d0379405edd170611fcd9b2c7da[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Thu Jun 25 14:23:39 2015 +1000
+
+    Adding tests for coverage of Apostle mail functionality
+
+[33mcommit 50d44d3071892cbb7f8cc93ddd3186ebae83695b[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Thu Jun 25 12:06:36 2015 +1000
+
+    Adding comments
+
+[33mcommit 8cac637301a61d5e23f44be30c7677e6e053e68c[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Wed Jun 24 23:55:11 2015 +1000
+
+    Adding message email
+
+[33mcommit c67be9b6ec9c2ccb05c80d2f1f1e29048b7b1cd9[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Wed Jun 24 17:55:39 2015 +1000
+
+    Adding message email
+
+[33mcommit 72ccc50381e7a7044d8c68ff3e608786b6bd7660[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Wed Jun 24 17:44:21 2015 +1000
+
+    Fixing syntact
+
+[33mcommit fd0c450c68ef6892340781c7032c0b874689ba71[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Wed Jun 24 17:36:19 2015 +1000
+
+    Adding emails for notification of milestones
+
+[33mcommit 65565043dc1f88582ebf22547c63078640bc22e5[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Wed Jun 24 16:11:58 2015 +1000
+
+    Adding emails for notification of approval status
+
+[33mcommit 8b223ca2695eb1b88d9472c303f31ba2f7db9309[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Wed Jun 24 16:03:09 2015 +1000
+
+    Filtering sample stakeholder emails to onlywork in production
+
+[33mcommit ea8bf24e0a099a92fadf846c78401939edeadb59[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Wed Jun 24 13:17:31 2015 +1000
+
+    Adding stakeholders to sample project
+
+[33mcommit 845bf556cec53545036130b2e381910db3b0743c[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Wed Jun 24 12:41:48 2015 +1000
+
+    Putting Apostle mailers as background jobs
+
+[33mcommit 4182c947ec383765906cd1667f39d04feacffad3[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Tue Jun 23 18:25:32 2015 +1000
+
+    Adding output
+
+[33mcommit eabcf6372ebc5f435587a7ea49dd63aa824a5925[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Tue Jun 23 18:19:01 2015 +1000
+
+    Keeping mail delivery inline
+
+[33mcommit ead3339244c6ee284e29d39bceccba1f56cc1371[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Tue Jun 23 18:04:05 2015 +1000
+
+    Fixing tests
+
+[33mcommit 5337a5a7098c139d4718c93a085acb6948c66dd6[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Tue Jun 23 16:22:17 2015 +1000
+
+    Most project emails working
+
+[33mcommit 55c5e7dee85b47d65e9e0ddeef5a4135389df0f2[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Tue Jun 23 15:55:50 2015 +1000
+
+    Working!
+
+[33mcommit 463b979e7bc21c468338f883d2d0efc0392f7e52[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Tue Jun 23 14:59:01 2015 +1000
+
+    Removing old file
+
+[33mcommit 9823a047508afe754ea0d4b13c283be1d398473a[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Tue Jun 23 14:38:43 2015 +1000
+
+    Fixing emails for admin controller
+
+[33mcommit 93a5a56827989b6b74775d255d6534535c5b938a[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Tue Jun 23 14:34:08 2015 +1000
+
+    Mail cleanup
+
+[33mcommit 8a43b202580a3a06bbe3051e56fefcaf83d0ff00[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Tue Jun 23 13:38:45 2015 +1000
+
+    URL links working on the email data
+
+[33mcommit 0334bcd8e6a0aabb64f9e8da145751c303491a3e[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Tue Jun 23 11:44:19 2015 +1000
+
+    Adding test for Apostile data
+
+[33mcommit 067ac2d5717ac2427e549be7b63cf71418d6a064[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Tue Jun 23 00:01:33 2015 +1000
+
+    WIP. Attachments are generated correctly, however, email template not fully used properly yet
+
+[33mcommit 1e3e128dc08d124c4f0a7f6578ca4e9417bcc3b4[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Mon Jun 22 17:49:43 2015 +1000
+
+    Adding tests
+
+[33mcommit 794c1e0a3161a3d1dc12e5e3e0b03b774b15b769[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Mon Jun 22 16:39:45 2015 +1000
+
+    Fixing a few bugs, and moving stakeholder creation into a service
+
+[33mcommit 01a4af8b30ab2b176d95c50d23ec9bf66421c7e9[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Mon Jun 22 15:41:25 2015 +1000
+
+    Apostle part one
+
+[33mcommit 1990bfd22c00b9385045416b26f540d351f46e4e[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Mon Jun 22 15:41:08 2015 +1000
+
+    Fixint test
+
+[33mcommit 658addd631e35f2631080ff0678ece4477ecb30b[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Mon Jun 22 12:42:55 2015 +1000
+
+    Removing filtering out of project ID
+
+[33mcommit 172632430874c214a28ea39851ccc9d4e80d87d1[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Mon Jun 22 12:41:45 2015 +1000
+
+    Fixing breaking tests
+
+[33mcommit 029410b6966801caa9e37382650c2de4fa6ffdf1[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Mon Jun 22 12:27:36 2015 +1000
+
+    Renabling Apostile
+
+[33mcommit 59ef404b260861db54c5542072ec7734842ff85c[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Sun Jun 21 13:53:32 2015 +1000
+
+    Revert "Inline all jobs, to figure out why emails are not sent"
+    
+    This reverts commit 3ca89306741dd35481d3d22b9bc055b374609e1b.
+
+[33mcommit 3ca89306741dd35481d3d22b9bc055b374609e1b[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Sat Jun 20 21:46:42 2015 +1000
+
+    Inline all jobs, to figure out why emails are not sent
+
+[33mcommit ebdea92315696be6044c9404ab8806b9d84cc76d[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Sat Jun 20 21:39:20 2015 +1000
+
+    Removing styles from emails
+
+[33mcommit a32e07028765dd8405b233f09dfe828d0c4bd3c9[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Sat Jun 20 21:22:12 2015 +1000
+
+    Attempts for asset compile to Heroku, but this breaks emails
+
+[33mcommit 0654aab4452ec41b0a493785a38e63d35eb57fa8[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Sat Jun 20 21:14:48 2015 +1000
+
+    Revert "Removing static asset options for fixing heroku deploy"
+    
+    This reverts commit 94f3d56059145c28a504d3b5579bf11feb92a5bc.
+
+[33mcommit 04356aa18dd0451ba6ac2d3fae35c9994dd2ee5d[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Sat Jun 20 21:14:28 2015 +1000
+
+    Revert "Revert "Putting old emails back as the on the fly include wasnot reliable""
+    
+    This reverts commit dccfefe4a841c2bacdb52027029abbc155523880.
+
+[33mcommit dccfefe4a841c2bacdb52027029abbc155523880[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Sat Jun 20 21:13:43 2015 +1000
+
+    Revert "Putting old emails back as the on the fly include wasnot reliable"
+    
+    This reverts commit 7e0a007b005ad6e1f2ba07e3b5c379dd61356fc8.
+
+[33mcommit 94f3d56059145c28a504d3b5579bf11feb92a5bc[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Sat Jun 20 18:17:34 2015 +1000
+
+    Removing static asset options for fixing heroku deploy
+
+[33mcommit 7e0a007b005ad6e1f2ba07e3b5c379dd61356fc8[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Sat Jun 20 18:13:14 2015 +1000
+
+    Putting old emails back as the on the fly include wasnot reliable
+
+[33mcommit d9cdaf2b60990329828357f18e260e9413f0994e[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Sat Jun 20 18:08:03 2015 +1000
+
+    MailChimp exception fix, and allowing regular emails to work
+
+[33mcommit c7c082dacad88938b2c858b75ae9c42269c48ae8[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Fri Jun 19 21:23:11 2015 +1000
+
+    Removing flashing of notifications on charter preview
+
+[33mcommit c08664db4d8eb0cf373450c8405a799203a44751[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Fri Jun 19 20:40:49 2015 +1000
+
+    Fixing plan logic. Only show the plan on which the user is
+
+[33mcommit fa0bc71f5699e16913608ed7c515b8847415e61b[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Fri Jun 19 20:37:26 2015 +1000
+
+    Fixing plan layout
+
+[33mcommit ba5eb82a1b1d3cb787153c872e0cfea15e6924ad[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Fri Jun 19 19:27:27 2015 +1000
+
+    Fixing new lines in sample project
+
+[33mcommit e9934c7047c5da334d3fc88f4a3ae1f1d7014429[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Fri Jun 19 19:08:41 2015 +1000
+
+    Fixing budget number formatting
+
+[33mcommit 07a1eec2a10a4da1d54e6c321368777c53f8f375[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Fri Jun 19 19:01:30 2015 +1000
+
+    Finishing sample project
+
+[33mcommit 176b9be76c8d5c15e614679cb22d04c260eefa3f[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Fri Jun 19 19:01:14 2015 +1000
+
+    Hopeful fix for the Rails autoload failing
+
+[33mcommit 117613f80ca3d13674f74dc070b4012611c06221[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Fri Jun 19 17:43:28 2015 +1000
+
+    Commenting out some stakeholder stuff
+
+[33mcommit 1a996d1c75e6bd6f8d03cc581cb2805df0db119e[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Fri Jun 19 17:39:43 2015 +1000
+
+    Adding sample project, all except for the stakeholders
+
+[33mcommit b82ed4bd01cd79259b0ac02e41f8decdb96e2c39[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Fri Jun 19 14:37:00 2015 +1000
+
+    Refactoring of the other project controller dependencies
+
+[33mcommit fe65e76300bf02e6f72dc167fc47faecb7a12f9a[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Fri Jun 19 12:59:24 2015 +1000
+
+    Clean up
+
+[33mcommit a0672ec64123a82e89b533bca39a427ffcc4849f[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Fri Jun 19 12:54:25 2015 +1000
+
+    Adding service template to help add stuff to projects
+
+[33mcommit 56079d3f77202b46dbad2153a61c10cbc72f0d75[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Thu Jun 18 17:27:37 2015 +1000
+
+    WIP sample project, and moving project creation stuff into a service
+
+[33mcommit ae9e935a8402d1dc15f837eb1b71e0212b6bc5ee[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Thu Jun 18 13:38:04 2015 +1000
+
+    Adding back-end segment tracking
+
+[33mcommit a2c39888bf4e1054f388c53f02345a193466efb8[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Wed Jun 17 19:32:35 2015 +1000
+
+    Enabling JS precompile, but not CSS precompile
+
+[33mcommit 8f4e3a5a7fb26b54865b91716659f194680b9adb[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Wed Jun 17 19:14:31 2015 +1000
+
+    Revert "Precompiling assets"
+    
+    This reverts commit bd71d678c05dd85ab305f3e0b76f03b66fe19140.
+
+[33mcommit bd71d678c05dd85ab305f3e0b76f03b66fe19140[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Wed Jun 17 19:04:55 2015 +1000
+
+    Precompiling assets
+
+[33mcommit 0e59f66cef06b077d1cdea664a13283960dac68d[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Wed Jun 17 18:55:00 2015 +1000
+
+    Adding gon to pass data to JS, and adding tracking codes
+
+[33mcommit aa23b5638b7e3d6497b5238d610008fafb61f53c[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Wed Jun 17 15:54:46 2015 +1000
+
+    Cleaning layouts
+
+[33mcommit 25c5d4e7454b822e51c837a8c2edce6d17b4c448[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Wed Jun 17 14:22:55 2015 +1000
+
+    Using precompile of all JS assets
+
+[33mcommit 7f4ab6fd5fce56b216f48ff3def5dfd7af1be4e1[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Wed Jun 17 01:09:00 2015 +1000
+
+    Fixing the javascript minimification and precompile. Fixing also the budget issues
+
+[33mcommit a97a5f062642914d19c7d3e7886556869ae583de[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Tue Jun 16 17:57:09 2015 +1000
+
+    first attempt at having minification ald nice rails goodies handling javascript. Only thing disabled is budget computation on canvas page
+
+[33mcommit 05fb3e266571d17985409f062543bfcc80b0bd8d[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Tue Jun 16 12:36:15 2015 +1000
+
+    adding segment stuff, WIP
+
+[33mcommit 9ce5e4a8067ae8d1c17e0874989c98e629884d0e[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Mon Jun 15 00:05:25 2015 +1000
+
+    Showing enabled if the plan is enabled
+
+[33mcommit 06caa1b447f2f357bea5b70c5f4668ea7eadb56e[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Sun Jun 14 23:51:04 2015 +1000
+
+    Adding new plan
+
+[33mcommit 79da209ca73441145307572f343d972042d1b188[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Sun Jun 14 00:11:42 2015 +1000
+
+    Routes and htmlt cleanup of new plans
+
+[33mcommit b1a2915209db2d50dd76b04ecda49722b5bc06ac[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Sat Jun 13 16:38:03 2015 +1000
+
+    Removing unsued controller routes
+
+[33mcommit e2edad995ed4ba1f61064f1371cc776d8d48f07f[m
+Merge: 2dd997d 9b81f91
+Author: André Allavena <andre@igecorporate.com>
+Date:   Sat Jun 13 16:20:04 2015 +1000
+
+    Merge branch 'master' into development
+
+[33mcommit 9b81f917f65400768b40acf571b4b17060566070[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Sat Jun 13 15:53:54 2015 +1000
+
+    Adding code quality gems
+
+[33mcommit 2dd997dc7c539392273f0fc055542a660ebaa5d4[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Sat Jun 13 14:17:52 2015 +1000
+
+    Refactor role project manager IDs
+
+[33mcommit 1fe4fc7f0001859f4c5ea4355af65c051499dbae[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Fri Jun 12 14:37:43 2015 +1000
+
+    Fixing Ruby version
+
+[33mcommit dab51d1e969dae16396526441f5d68ddfda2f4d4[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Fri Jun 12 13:38:55 2015 +1000
+
+    Adding ruby version
+
+[33mcommit 0301c4472436c40926c8e4cf1abdff31f8a3ed0d[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Fri Jun 12 13:33:32 2015 +1000
+
+    Reverting refactor as variable is undefined
+
+[33mcommit 7df974e00e7ab3168a851b1975a65066bf79467a[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Fri Jun 12 13:25:20 2015 +1000
+
+    Getting free project allowance, and a sample project created for all new users. Old users do not get a sample project, however, they are allowed two free projects
+
+[33mcommit cc916d0d048a51da330b90f93daa96fc6d415ce6[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Fri Jun 12 11:23:54 2015 +1000
+
+    Putting project creation into a service
+
+[33mcommit e7d0ee522c15509b35da5b8b98b0a609eaf7897d[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Fri Jun 12 09:12:27 2015 +1000
+
+    Allowing one free project
+
+[33mcommit 2cba5c4408989542ebb073298317b272fb0c2169[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Thu Jun 11 00:41:13 2015 +1000
+
+    Code cleanups
+
+[33mcommit d770d3af3285bc4160fa0b8de5532ad76ea705df[m
+Merge: 7424361 45652bf
+Author: André Allavena <andre@igecorporate.com>
+Date:   Sun Jun 7 17:22:59 2015 +1000
+
+    Merge branch 'staging' into development
+
+[33mcommit 45652bf278a7678d4cfaa0c852d11daa33d2a7d2[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Sun Jun 7 17:22:03 2015 +1000
+
+    Fixing bug where a stakeholder could not be updated
+
+[33mcommit 7424361177913a343c7e381254a59ce0d5f5a72f[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Sat Jun 6 19:35:39 2015 +1000
+
+    Adding profile URL
+
+[33mcommit dc58ec1d99c7c66518fa3b0a4f638f5d1c61933d[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Sat Jun 6 17:38:52 2015 +1000
+
+    Removed project mailer to Apostile
+
+[33mcommit c44742b64f57a3a83e158b37eef093a9ec85a436[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Sat Jun 6 17:33:03 2015 +1000
+
+    REmoved project mailer to Apostile
+
+[33mcommit 5294a97490c20afbf6fd99804d200c57698d1599[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Sat Jun 6 14:33:42 2015 +1000
+
+    Sending username to Apostile
+
+[33mcommit 5362f878d14eb6eb48c0094bd6b5c206074d370a[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Sat Jun 6 14:16:41 2015 +1000
+
+    Fixing adding the correct user to Mail Chimp
+
+[33mcommit 74099e52eed98db9d75903d17347dccc868137fb[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Sat Jun 6 13:55:53 2015 +1000
+
+    Adding log statements to MailChimp
+
+[33mcommit 47efdf6f71f7481cc6727c9a750a901ebf8e605f[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Sat Jun 6 12:42:18 2015 +1000
+
+    Delayed jobs, now using Sucker Punch
+
+[33mcommit 0ff43ab1e1b0b6632af7c0bc6bf3465d1b59cc3c[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Fri Jun 5 17:39:38 2015 +1000
+
+    Work in progress on Apostile, putting mailChimp as background job
+
+[33mcommit cef2a014e11c99a289748c99f31d374d6c580e7f[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Thu Jun 4 16:21:47 2015 +1000
+
+    Moving notifications to be sent later instead of within the block
+
+[33mcommit e3fb36d97c7343584fa9b3846d58f8e12e992151[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Wed Jun 3 23:38:19 2015 +1000
+
+    Adding test for adding stakeholders on canvas page
+
+[33mcommit 18b54740e33607990e79acd2fdcce44652a6815d[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Wed Jun 3 15:43:39 2015 +1000
+
+    Ignoring test password files
+
+[33mcommit f1e3d06d6c22b60e80ec0849ebeae7d785a83abe[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Wed Jun 3 15:43:09 2015 +1000
+
+    Adding API key for the local tests to remotely activate a test user
+
+[33mcommit 53015b8bbfe45cc9e4c08bfa929b6ba925123347[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Wed Jun 3 15:41:54 2015 +1000
+
+    Adding API to remotely activate a test user
+
+[33mcommit 9343c9b2db94f8dd84402b7074d3b48ef48d6edf[m
+Merge: 3028a69 a8a1028
+Author: André Allavena <andre@igecorporate.com>
+Date:   Fri May 29 22:26:26 2015 +1000
+
+    Merge branch 'master' into development
+
+[33mcommit a8a1028f8c49d191b8a4f3d9a53c4b0552d81369[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Fri May 29 22:25:29 2015 +1000
+
+    Upgrading to Cedar-14
+
+[33mcommit 3028a692aae59231c222f2cac0c1f9a0722397af[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Fri May 29 09:31:43 2015 +1000
+
+    Removing unnecessary accessor, and making sure watir tests create different projects
+
+[33mcommit 9e2dc6402553765988deaa0c5740b0b69c3c7b69[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Thu May 28 22:59:33 2015 +1000
+
+    Fixing test
+
+[33mcommit 68acd6d12361ea20f05a174fb159223bdff29bcd[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Thu May 28 22:36:27 2015 +1000
+
+    Making sure that clicks anywhere on the button trigger the addition of traits
+
+[33mcommit 13574e6d7e1b9f5836f1dd513763af17e7d3608f[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Thu May 28 22:28:25 2015 +1000
+
+    Fixing stakeholder creation bug due to MailChimp change
+
+[33mcommit 39eeb3117e383557c1a2cab4c5c6e56ef0d4d302[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Thu May 28 20:54:45 2015 +1000
+
+    Reenabling all watir tests
+
+[33mcommit fd91be33c7ce091c664728a6d5352184a4844d1f[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Thu May 28 00:22:43 2015 +1000
+
+    Refactoring MailChimp, and subscribing users when they use the freemium product
+
+[33mcommit cee81b246a62c4b0d25e41af5cf9e2b556095bac[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Mon May 25 23:26:45 2015 +1000
+
+    Adding watir test for preview project page
+
+[33mcommit e6e61f16d8b2387c0772a0282f887e971b20f779[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Mon May 25 23:18:11 2015 +1000
+
+    Fixing html stuff in preview project
+
+[33mcommit 7625b786520816448e5ae743143b433012643292[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Mon May 25 18:27:10 2015 +1000
+
+    Part fix for the layout in the project preview
+
+[33mcommit e33f0fbba35a85b879d54ac08764c5e1de14a209[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Mon May 25 17:08:32 2015 +1000
+
+    Refactor, moving all project controller stuff into controller itself and out of approval. Showing extra traits properly
+
+[33mcommit ffcdfc14541242e0fb5d0af8bd0160fdd68c9e2f[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Wed May 20 22:05:16 2015 +1000
+
+    Commenting out old project charter
+
+[33mcommit fb96da8405cdf4d27bab185fdab56892fbf0f39d[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Tue May 19 18:13:29 2015 +1000
+
+    Refactor of project file, splitting into small methods, and extracting user authentication of that project
+
+[33mcommit 790620f6bd1819c62b416df5c7e9b31ec4b5c7b5[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Tue May 19 18:12:55 2015 +1000
+
+    Fixing bug of inclusion
+
+[33mcommit afd5f48585e222aba9ab37b5ab2e902d3f3b4d4b[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Tue May 19 18:09:15 2015 +1000
+
+    Adding comment about refactoring
+
+[33mcommit 9cbaf8e4e699e17a11b79364865e56f50d494eeb[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Tue May 19 13:07:12 2015 +1000
+
+    Traits can now be updated, and removed, and tests do check that and pass
+
+[33mcommit 034ab83809bcd047b95375c00ace8e9c19a95c55[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Tue May 19 12:12:37 2015 +1000
+
+    More work on the extra traits. Almost working, except that removed traits are not deleted
+
+[33mcommit a97478d74fd81a0173f1a1286f76cf62056f46e3[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Tue May 12 23:22:16 2015 +1000
+
+    Adding refactoring note
+
+[33mcommit 833fbf965144d3db0b3058fcb3f80fe3648235dd[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Tue May 12 22:06:59 2015 +1000
+
+    Getting updates to the extra project traits
+
+[33mcommit e3e7e0aaf5b26ea0f7e34337760fce2e652e511f[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Tue May 12 12:44:37 2015 +1000
+
+    Getting updates to extra fields to work"
+
+[33mcommit 2ef44a9ac84d1183d93ce3e01d509a955a91de7c[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Tue May 12 01:02:10 2015 +1000
+
+    Adding serializer. Not too sure if I actaully need it
+
+[33mcommit 09773c8aa04dca3584f04a08db01e3d84c5a09ba[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Tue May 12 01:00:27 2015 +1000
+
+    Extra fields are now captured and stored in the DB!
+
+[33mcommit 5abc4caa6ea722c769e71649ab2cac52c9b27f83[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Tue May 12 00:08:26 2015 +1000
+
+    Extra params pass, and upgrade to rails 4.2, the latter is not tested
+
+[33mcommit 98b9c40d08f6510b74fe21e16d5cc78a7534fbc3[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Mon May 11 19:18:09 2015 +1000
+
+    More work on the JSONB attributes. For some reasons, tests pass, but projects are not saved in real life!
+
+[33mcommit 8836943cc1f07176c13c1d982be52a2b91ad4b83[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Mon May 11 18:34:28 2015 +1000
+
+    Revert "Removing unnecessary file"
+    
+    This reverts commit 03dd3661cc6cf73b7bec86e7a9a1873bbe6b0347.
+
+[33mcommit 03dd3661cc6cf73b7bec86e7a9a1873bbe6b0347[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Mon May 11 17:46:49 2015 +1000
+
+    Removing unnecessary file
+
+[33mcommit c054b04953099cdc7e584d7dbefa879b6c53f62a[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Mon May 11 17:34:19 2015 +1000
+
+    Fixing the JSONB issue in the DB
+
+[33mcommit fd00107f398c377970c588fc3adea8d2e752af76[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Mon May 11 16:12:46 2015 +1000
+
+    all saved; JSONB part commented out
+
+[33mcommit 38355efaf8534876f23703449f6d6d344ada2fb8[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Mon May 11 16:11:51 2015 +1000
+
+    all saved; JSONB part commented out
+
+[33mcommit bdc07f0ba31ba903ff7e4b12d6605e6340a1c7a9[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Mon May 11 14:11:07 2015 +1000
+
+    Revert "Adding hstore to db"
+    
+    This reverts commit a402d57d91e826b16819063cd66b9876cba98e48.
+
+[33mcommit a402d57d91e826b16819063cd66b9876cba98e48[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Mon May 11 00:49:58 2015 +1000
+
+    Adding hstore to db
+
+[33mcommit a05cf149e7ab0ba5555e6e739a19122572cde63e[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Mon May 11 00:43:29 2015 +1000
+
+    work in progress. All seems good, just needs to be implemented in the model!
+
+[33mcommit 419484ca8b0e3f25b34e9cf4554ab4374feb1b90[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Mon May 11 00:42:46 2015 +1000
+
+    Using array of hashes for the extra traits
+
+[33mcommit 7c47f35d83831daaf05ac6815f2eb3e1b6abf1a2[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Mon May 11 00:42:03 2015 +1000
+
+    Removing focus as it doesnt work
+
+[33mcommit 42809f5f309cf045ec6cc90590b82ca75ad07887[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Mon May 11 00:41:29 2015 +1000
+
+    Correct Guardfile
+
+[33mcommit 1e1585051f5b55fdcc13cc10904980e8da48b461[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Sun May 10 23:07:23 2015 +1000
+
+    Adding guard and getting devise to work properly in tests
+
+[33mcommit b4ba6eef13a79cf44c7a71b17651014298c602d8[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Sun May 10 22:17:46 2015 +1000
+
+    Adding minitest-rails, meaning that focus no longer works. And factories and warden for tests
+
+[33mcommit c1e13fafac358dc56a947c50acd7b9d56db15247[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Sun May 10 01:00:59 2015 +1000
+
+    And now with the remove button
+
+[33mcommit 6c88d5dcae6d4c4d9b313aaf30bb00f76f47d199[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Sun May 10 00:45:21 2015 +1000
+
+    Adding extra traits for submission, working so far
+
+[33mcommit f1a48d1c169ac9c5cb52ad8c23c16e89664c1747[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Sat May 9 23:34:13 2015 +1000
+
+    Adding first try of user dymanically generated form
+
+[33mcommit 61abe5b2c9561f447ab34c9b5d0cf5916f43571f[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Sat May 9 01:09:40 2015 +1000
+
+    More test setup
+
+[33mcommit 162e2346dde08b919a282e08dea5d07d19070343[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Sat May 9 00:55:18 2015 +1000
+
+    More test setup
+
+[33mcommit d2756f1fc5e8b29da763519e91974fde588715a1[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Sat May 9 00:46:47 2015 +1000
+
+    More test setup
+
+[33mcommit ccc94829ef3adf32571234bd318bdabc42d21f40[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Sat May 9 00:25:11 2015 +1000
+
+    Adding minitest properly, hopefully for good this time.
+
+[33mcommit cf60c1a25e5c6d0261a14e9537231e063bab49e7[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Sat May 9 00:24:29 2015 +1000
+
+    Adding minitest properly, hopefully for good this time.
+
+[33mcommit 003a460541da779e9b2e58aa0536c1ca4ad6fee9[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Fri May 8 23:56:06 2015 +1000
+
+    Fixing stripe config issue for tests
+
+[33mcommit f5ee793f6e53aef698d464f4fc6fbf585fa87179[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Fri May 8 23:18:35 2015 +1000
+
+    Fixing paths for integration tests and port and file
+
+[33mcommit 93270defb1e2583ba6c1647e4f5fb3cd58473ce7[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Fri May 8 09:11:49 2015 +1000
+
+    Fixing short hand scripts to use the updated functionality
+
+[33mcommit 00e34a210484c5625af2536e8d7d0a226d781375[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Fri May 8 00:28:58 2015 +1000
+
+    Moving file
+
+[33mcommit b1f6590a62609ab748c3e7dae099a915d6fda97c[m
+Merge: d4b8c54 61c7292
+Author: André Allavena <andre@igecorporate.com>
+Date:   Fri May 8 00:27:05 2015 +1000
+
+    Merge branch 'master' of heroku.com:grapple into development
+
+[33mcommit d4b8c544397346356b77a61a1cd3623baec15ebe[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Fri May 8 00:26:51 2015 +1000
+
+    Documenting Heroku commands
+
+[33mcommit aaa735612a1190ec58e8bf56f32ae9077816d856[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Fri May 8 00:12:36 2015 +1000
+
+    Fixing deployment scripts
+
+[33mcommit ffd0b65cc0a6b1c565732715dfb9554e61185186[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Fri May 8 00:02:45 2015 +1000
+
+    Better test helpers for the site choice for watir tests
+
+[33mcommit a2a76201c146d9f041aff3e25ff8ed58bd5e207f[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Thu May 7 14:35:15 2015 +1000
+
+    Now show an error message when failing to create a project
+
+[33mcommit 22fedd25c9552df57a075258f74777406a270a99[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Thu May 7 14:13:32 2015 +1000
+
+    Adding new watir test, to test creation of a project
+
+[33mcommit d6cb2f9a572520660442f7c3cfd9b039ab149343[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Thu Apr 30 17:45:53 2015 +1000
+
+    Getting water browser integration tests to work, for login, change password and registration
+
+[33mcommit 62ffa070af751da0544a2421ea94593b73bb380b[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Thu Apr 30 13:38:34 2015 +1000
+
+    Adding watir test for login
+
+[33mcommit 6947b597c3b6d5a7fcb2dfa7065c54f02931eb81[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Wed Apr 29 16:15:50 2015 +1000
+
+    Adding new "make admin" functionality - although all admin is still what authenticates users
+
+[33mcommit 17eb96dd54429cc54419d65744f5cbadf401d5d1[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Tue Apr 21 15:47:32 2015 +1000
+
+    Adding New Relic monitoring agent
+
+[33mcommit 5d69734f3d0cf7b9d90b8669af38a793cd1a528a[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Tue Apr 21 15:00:02 2015 +1000
+
+    Adding Stripe test account for development
+
+[33mcommit 391ad0a8e9c3b6d1eff8396aa2e1cbe12df5375e[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Mon Apr 20 18:19:28 2015 +1000
+
+    Fixing deployment scripts
+
+[33mcommit 8fe3a3d0d44bddfe9a4c21b0aea8de562c6396ce[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Mon Apr 20 17:22:48 2015 +1000
+
+    Adding change password for logged in users
+
+[33mcommit ad4792a475d1bd757b7da8b0984fdf661d3f4ee7[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Mon Apr 20 17:19:03 2015 +1000
+
+    Adding change password for logged in users
+
+[33mcommit 8e2042bc49956a50cab2e5f097e6052141b3b554[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Mon Apr 20 15:43:01 2015 +1000
+
+    Adding deployment scripts
+
+[33mcommit 5134b10fed646e0c905e64303e92de124957d62b[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Thu Apr 16 15:00:57 2015 +1000
+
+    Fix https scheme on Google font
+
+[33mcommit 9e4ae11367d4e5dcf0d865d95dfbf99404a287c9[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Thu Apr 16 14:50:27 2015 +1000
+
+    Adding Gemfile.lock
+
+[33mcommit adeb7a6aa8985f616d78fc8c8b82c98962c5f50e[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Thu Apr 16 14:39:37 2015 +1000
+
+    Adding Heroku specific gem
+
+[33mcommit b3f58494f78c91add3f0eccb7211555d9b48e4f2[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Thu Apr 16 09:53:58 2015 +1000
+
+    Forcing the whole application to be SSL
+
+[33mcommit e68b4c82749facf68f7cbfbd53a2def1ffd385c9[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Thu Apr 16 09:48:42 2015 +1000
+
+    Disabling broken clock work from procfile
+
+[33mcommit 7acc528bed214c9166d6230f58be5a9d28a264da[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Wed Apr 15 16:08:34 2015 +1000
+
+    Fixing database config, removing prod password, and adding READMe
+
+[33mcommit 6ee1f5f0d6b64af13cbbb15228534dcea9ef8f5e[m
+Author: André Allavena <andre@igecorporate.com>
+Date:   Tue Apr 14 16:43:21 2015 +1000
+
+    Setting DB up for development, and removing debbuging gem as it fails to install
+
+[33mcommit 61c7292bc087713f24655cf0687655d946642cfb[m
+Author: root <neginsky58@gmail.com>
+Date:   Tue Oct 7 12:35:49 2014 +0400
+
+    home.css
+
+[33mcommit 17d075a6cd9d07de5797730e4e72e569394f3dbe[m
+Author: root <neginsky58@gmail.com>
+Date:   Tue Oct 7 12:29:45 2014 +0400
+
+    digest option
+
+[33mcommit 3ddff6aad8b6fd493b47f9c3388785fea985da57[m
+Author: root <neginsky58@gmail.com>
+Date:   Tue Oct 7 12:22:48 2014 +0400
+
+    precompile
+
+[33mcommit 84ca9dd13dcf80e734a767ae08cba60e923790d4[m
+Author: root <neginsky58@gmail.com>
+Date:   Tue Oct 7 12:12:21 2014 +0400
+
+    https for payment page
+
+[33mcommit 638f4f551e6daed6b48cb22f4b024b87e2067657[m
+Author: root <neginsky58@gmail.com>
+Date:   Tue Oct 7 10:42:24 2014 +0400
+
+    production
+
+[33mcommit 7886184d6688293ff276c718ab4596946889b1fb[m
+Author: root <neginsky58@gmail.com>
+Date:   Tue Oct 7 10:39:36 2014 +0400
+
+    production
+
+[33mcommit 2de163d167033ad41e933cbd0cd97a302ca5df0e[m
+Author: root <neginsky58@gmail.com>
+Date:   Thu Oct 2 08:46:34 2014 +0400
+
+    email template added br
+
+[33mcommit ed63080f0c27c61c101070a36ebac32109d00884[m
+Author: root <neginsky58@gmail.com>
+Date:   Thu Oct 2 08:40:42 2014 +0400
+
+    fixes bugs
+
+[33mcommit 52b59ad6812a0b9bf7de2920d09984d44c943b00[m
+Author: root <neginsky58@gmail.com>
+Date:   Mon Sep 29 22:46:22 2014 +0400
+
+    text changes
+
+[33mcommit f9d2fb688fc53465e908acc329c7095111a5f208[m
+Author: root <neginsky58@gmail.com>
+Date:   Mon Sep 29 22:24:50 2014 +0400
+
+    fixes
+
+[33mcommit b33c485018e50ab1970709957a5c9196e9859bde[m
+Author: root <neginsky58@gmail.com>
+Date:   Fri Sep 26 21:04:58 2014 +0400
+
+    fixes
+
+[33mcommit 6af7d9a047702e09b87bedcd03bdb6c7bb02c501[m
+Author: root <neginsky58@gmail.com>
+Date:   Thu Sep 25 12:19:06 2014 +0400
+
+    fixes
+
+[33mcommit 1dba04ebcb714685d1a66ecae4cee1559b1edbd8[m
+Author: root <neginsky58@gmail.com>
+Date:   Mon Sep 22 13:24:30 2014 +0400
+
+    fixes
+
+[33mcommit 045137a2864107217e8ec8fad24e7f141eef8840[m
+Author: root <neginsky58@gmail.com>
+Date:   Mon Sep 22 11:49:31 2014 +0400
+
+    fixes
+
+[33mcommit 9548744111b2fffcd86470d894d0d61548e372a4[m
+Author: root <neginsky58@gmail.com>
+Date:   Tue Sep 9 07:46:42 2014 +0800
+
+    fixes
+
+[33mcommit 167da5d55034faa747a8f8b8ed41fee7ce9b818b[m
+Author: root <neginsky58@gmail.com>
+Date:   Tue Sep 9 05:11:57 2014 +0800
+
+    fixes
+
+[33mcommit d33d97d4356ca5bcce7eb695baa6fedf24cde2d4[m
+Author: root <neginsky58@gmail.com>
+Date:   Tue Sep 2 23:47:11 2014 +0300
+
+    enable tracking
+
+[33mcommit 36dd8419db30b92bd3679cffaf4cf20f59e5b02c[m
+Author: root <neginsky58@gmail.com>
+Date:   Tue Sep 2 23:44:30 2014 +0300
+
+    bug fixes
+
+[33mcommit 827a2f773b2e6b158f7cfc0d7665aebd704a4a61[m
+Author: root <neginsky58@gmail.com>
+Date:   Tue Sep 2 20:28:57 2014 +0300
+
+    update_apis
+
+[33mcommit b3bc988d93aee5dd900073068fbaa79f8156f1bd[m
+Author: root <neginsky58@gmail.com>
+Date:   Tue Sep 2 20:26:11 2014 +0300
+
+    token correct
+
+[33mcommit a5d6ef9e0cde1661fb0942c3679b8a8a25f413a8[m
+Author: root <neginsky58@gmail.com>
+Date:   Tue Sep 2 20:22:08 2014 +0300
+
+    correct_api_token
+
+[33mcommit aef49f799d917140163dd82f995d34781e749608[m
+Author: root <neginsky58@gmail.com>
+Date:   Tue Sep 2 19:49:31 2014 +0300
+
+    debug
+
+[33mcommit 8aee274202b6eedc788bb9411ce9cf197826812c[m
+Author: root <neginsky58@gmail.com>
+Date:   Fri Aug 29 20:25:10 2014 +0300
+
+    update
+
+[33mcommit 080bf8f2e7e8ec5e894bf18059b7488577f9a313[m
+Author: root <neginsky58@gmail.com>
+Date:   Mon Aug 18 10:10:35 2014 +0300
+
+    stakeholder item issue
+
+[33mcommit ca510f7b21bc043751a1c6a4efba5e8a7d74e238[m
+Author: root <neginsky58@gmail.com>
+Date:   Mon Aug 18 10:02:05 2014 +0300
+
+    stakeholder item issue
+
+[33mcommit 0a41f5010087efcc1fbad4ac60e08a3d3192f86b[m
+Author: root <neginsky58@gmail.com>
+Date:   Mon Aug 18 09:54:01 2014 +0300
+
+    stakeholder editable issue
+
+[33mcommit e23418cf9a58698d4fd2da1db8414debcfb3be17[m
+Author: root <neginsky58@gmail.com>
+Date:   Mon Aug 18 09:53:30 2014 +0300
+
+    stakeholder editable issue
+
+[33mcommit 3d920c96188f3712cfb57bfc0c3731fb21017850[m
+Author: root <neginsky58@gmail.com>
+Date:   Mon Aug 18 09:40:41 2014 +0300
+
+    loading issue in approver status
+
+[33mcommit 545ad483176739d48f6422b833dc9e6ea288443f[m
+Author: root <neginsky58@gmail.com>
+Date:   Mon Aug 18 09:25:11 2014 +0300
+
+    stakeholder canvas editable
+
+[33mcommit 3ceee6b88a85048eb731ccbb3cfb55a2e40a8c54[m
+Author: root <neginsky58@gmail.com>
+Date:   Wed Aug 13 08:58:13 2014 +0300
+
+    email words changed
+
+[33mcommit dc811126c9d4e845822e56e4c32a0c3511b5791d[m
+Author: root <neginsky58@gmail.com>
+Date:   Wed Aug 13 08:01:04 2014 +0300
+
+    is active logic changed
+
+[33mcommit 4b59b6b3fa62cb28ecec5afeb81c0ce5920c67f4[m
+Author: root <neginsky58@gmail.com>
+Date:   Wed Aug 13 07:57:54 2014 +0300
+
+    bug fix
+
+[33mcommit 3f739350df68e988120c97c31057774351cfd20f[m
+Author: root <neginsky58@gmail.com>
+Date:   Tue Aug 12 20:24:37 2014 +0300
+
+    deploy to production
+
+[33mcommit 11e9ea69ec73f7d50954168f76fadd0d44a16e56[m
+Author: root <neginsky58@gmail.com>
+Date:   Tue Aug 12 19:52:29 2014 +0300
+
+    dashboard one button with link
+
+[33mcommit f5b6e56b18dd40ff1822c0adccd850761e81e8a3[m
+Author: root <neginsky58@gmail.com>
+Date:   Tue Aug 12 15:36:03 2014 +0300
+
+    editable canvas item fixed
+
+[33mcommit 744a487830e9f1f7c873900851ec07f988a24e34[m
+Author: root <neginsky58@gmail.com>
+Date:   Tue Aug 12 14:40:15 2014 +0300
+
+    editable canvas items
+
+[33mcommit 4676663dbf53984cb2f3867c75b51d63bcb21de3[m
+Author: root <neginsky58@gmail.com>
+Date:   Sat Aug 9 20:35:24 2014 +0300
+
+    ux changes
+
+[33mcommit b72ec40082520b0038cb0d4fb82723128132a4cf[m
+Author: root <neginsky58@gmail.com>
+Date:   Sat Aug 9 20:20:40 2014 +0300
+
+    invision UX changes
+
+[33mcommit d85051299c9f1a9b31482c7eb5f10709f5abf3b6[m
+Author: root <neginsky58@gmail.com>
+Date:   Sat Aug 9 12:27:06 2014 +0300
+
+    remove ssl plan
+
+[33mcommit dd777fc1303bbe0306cf49c477b99a43115d253a[m
+Author: root <neginsky58@gmail.com>
+Date:   Sat Aug 9 12:22:56 2014 +0300
+
+    dashboard issue
+
+[33mcommit 00c002c6d1095779205493d28a79070a43956d23[m
+Author: root <neginsky58@gmail.com>
+Date:   Sat Aug 9 12:20:39 2014 +0300
+
+    plan ssl
+
+[33mcommit a90b2134df173070d2f979cfdd09524adf2c3b93[m
+Author: root <neginsky58@gmail.com>
+Date:   Fri Aug 8 14:02:59 2014 +0300
+
+    trial process changed
+
+[33mcommit 87098b1f760c0407e2d6a78bf49b5f36f8a22c3c[m
+Merge: 6a2e139 c470cdb
+Author: root <neginsky58@gmail.com>
+Date:   Thu Aug 7 10:32:40 2014 +0300
+
+    merged
+
+[33mcommit c470cdb498a471abc620c21371196005437036e7[m
+Author: root <neginsky58@gmail.com>
+Date:   Thu Aug 7 00:29:23 2014 +0300
+
+    debug disabled
+
+[33mcommit 0d4308f8fa563020595eb43f1c0c1273297d4601[m
+Author: root <neginsky58@gmail.com>
+Date:   Wed Aug 6 23:35:01 2014 +0300
+
+    milestone issue
+
+[33mcommit d06de6279f062a73783fbf90d66d669c5a34ae50[m
+Author: root <neginsky58@gmail.com>
+Date:   Wed Aug 6 23:29:21 2014 +0300
+
+    milestone issue
+
+[33mcommit 03cedb3a47447bde8b00e1d40641fd86ddd17f91[m
+Author: root <neginsky58@gmail.com>
+Date:   Wed Aug 6 23:03:45 2014 +0300
+
+    debug enabled
+
+[33mcommit 64cd26065f817d30461a17e958f2c000deebd0a3[m
+Author: root <neginsky58@gmail.com>
+Date:   Wed Aug 6 22:46:47 2014 +0300
+
+    track js enabled
+
+[33mcommit c25147f7f59c34637592793653a8d36616f95fb0[m
+Author: root <neginsky58@gmail.com>
+Date:   Wed Aug 6 17:36:29 2014 +0300
+
+    approval issues, version
+
+[33mcommit 04e42d0ad0902c34a6a15fb3c172be152f665e55[m
+Author: root <neginsky58@gmail.com>
+Date:   Tue Aug 5 22:08:48 2014 +0300
+
+    transaction email
+
+[33mcommit 789a86c4a492351ca583fd2efbd75a9461167709[m
+Author: root <neginsky58@gmail.com>
+Date:   Tue Aug 5 21:10:40 2014 +0300
+
+    change control
+
+[33mcommit f1ca1177892738909024f07bdd55973a37ca1e28[m
+Author: root <neginsky58@gmail.com>
+Date:   Sat Jul 26 13:19:59 2014 +0300
+
+    percentage 100 issue
+
+[33mcommit 93a7fda77caf6b8015c2192bacff9dc8b8551e9c[m
+Author: root <neginsky58@gmail.com>
+Date:   Sat Jul 26 13:04:33 2014 +0300
+
+    complete approvals
+
+[33mcommit 2e2ba1b3ac0ff61a13caf463692ceebcbf7df94d[m
+Author: root <neginsky58@gmail.com>
+Date:   Thu Jul 24 23:55:39 2014 +0300
+
+    debug disable
+
+[33mcommit 76d240d84257f3d60574d0d0f34f81d6bd97d3ee[m
+Author: root <neginsky58@gmail.com>
+Date:   Thu Jul 24 18:57:09 2014 +0300
+
+    reject reason
+
+[33mcommit 60d8ce37a9766fc0a010a11edc2b4766729fb20a[m
+Author: root <neginsky58@gmail.com>
+Date:   Thu Jul 24 17:50:50 2014 +0300
+
+    milestone remove on Time/Schedule
+
+[33mcommit 7b242f5be76c705dca69be452cf5d526fc7a51df[m
+Author: root <neginsky58@gmail.com>
+Date:   Thu Jul 24 12:53:17 2014 +0300
+
+    clock job
+
+[33mcommit b5eff8919bbcdd1eada90b4373e2165a50efffbc[m
+Author: root <neginsky58@gmail.com>
+Date:   Thu Jul 24 11:45:26 2014 +0300
+
+    commented
+
+[33mcommit 4b35715296d8decb9e112dae0e2be2c74e42d21a[m
+Author: root <neginsky58@gmail.com>
+Date:   Thu Jul 24 11:38:00 2014 +0300
+
+    clock job updated
+
+[33mcommit f82964b3685dfb6abea3823be939675f6fd7251f[m
+Author: root <neginsky58@gmail.com>
+Date:   Thu Jul 24 11:16:03 2014 +0300
+
+    clock job updated
+
+[33mcommit 2e52f7c8331c2e738c058b7a0f0cea6d6c3da996[m
+Author: root <neginsky58@gmail.com>
+Date:   Thu Jul 24 11:07:25 2014 +0300
+
+    including dir issue on clock job
+
+[33mcommit c6f0648e0f442b2a9b561a09a6f35a85a5fdd8d7[m
+Author: root <neginsky58@gmail.com>
+Date:   Thu Jul 24 10:55:04 2014 +0300
+
+    clock job
+
+[33mcommit b48bc904043779586086927cf1bc3306d7f8e5e3[m
+Author: root <neginsky58@gmail.com>
+Date:   Thu Jul 24 09:39:47 2014 +0300
+
+    notification
+
+[33mcommit b74bc31afbd450e3614e6d5e3cdf3a248aad7dfe[m
+Author: root <neginsky58@gmail.com>
+Date:   Thu Jul 24 09:38:07 2014 +0300
+
+    should not go to charter once it's approved
+
+[33mcommit 49677258a1d6e65f942e567f210e1669edfc9e36[m
+Author: root <neginsky58@gmail.com>
+Date:   Wed Jul 23 18:49:50 2014 +0300
+
+    create milestone on Time/Schedule page
+
+[33mcommit f14dffb2e0935e893f50b552fa8d1d00ea89b283[m
+Author: root <neginsky58@gmail.com>
+Date:   Tue Jul 22 21:28:04 2014 +0300
+
+    debug enabled
+
+[33mcommit c79988ea4942e02a76926ca64df1897c4c5176cf[m
+Author: root <neginsky58@gmail.com>
+Date:   Tue Jul 22 20:23:08 2014 +0300
+
+    announcement of milestone completion
+
+[33mcommit 8513fe826105db47b38daf2419bcbaab5f84064f[m
+Author: root <neginsky58@gmail.com>
+Date:   Tue Jul 22 17:06:02 2014 +0300
+
+    accept approval box below announcement box
+
+[33mcommit c0089a3e524ae961cbd49304b25ddaea9d39cbd6[m
+Author: root <neginsky58@gmail.com>
+Date:   Tue Jul 22 16:45:15 2014 +0300
+
+    progress 100 error
+
+[33mcommit b7c5a761167f9f3a6a1f643909cf542f981d2547[m
+Author: root <neginsky58@gmail.com>
+Date:   Tue Jul 22 16:10:35 2014 +0300
+
+    project owner able to assign milestone
+
+[33mcommit f57ace9287aa7e0c30926872c96b3b27b10d5d92[m
+Author: root <neginsky58@gmail.com>
+Date:   Mon Jul 21 20:36:58 2014 +0300
+
+    team notified when completion of milestone
+
+[33mcommit 5b7450925a51f895c2990f1ca4763f456e2ef6bb[m
+Author: root <neginsky58@gmail.com>
+Date:   Mon Jul 21 19:39:39 2014 +0300
+
+    milestone issue
+
+[33mcommit abb4ba1632be58003cd19d4d98d27be3c68d6f3e[m
+Author: root <neginsky58@gmail.com>
+Date:   Mon Jul 21 19:31:13 2014 +0300
+
+    assigned task on dashboard
+
+[33mcommit 7f8e61dfe6dd1fe57478d5c633f3657b1dde5a2c[m
+Author: root <neginsky58@gmail.com>
+Date:   Mon Jul 21 19:09:07 2014 +0300
+
+    assign user issue
+
+[33mcommit 1d259d24d11a7edad0a5623089dddb5bc6238763[m
+Author: root <neginsky58@gmail.com>
+Date:   Mon Jul 21 18:52:05 2014 +0300
+
+    manager permission on Time Schedule Page
+
+[33mcommit 1d19fe880df36e5ddb6e812efb7958da516fa74b[m
+Author: root <neginsky58@gmail.com>
+Date:   Mon Jul 21 17:59:23 2014 +0300
+
+    milestone finish_on null issue
+
+[33mcommit 33f5e66f8d8f9437728366759fa1bdaa1c4d009c[m
+Author: root <neginsky58@gmail.com>
+Date:   Mon Jul 21 17:56:24 2014 +0300
+
+    milestone finish_on null issue
+
+[33mcommit f17aeeaac76d9a76afcf00a535feccedea261160[m
+Author: root <neginsky58@gmail.com>
+Date:   Mon Jul 21 17:38:32 2014 +0300
+
+    empty milestones
+
+[33mcommit 36c263b78876c4fb9c718c8e88cac81ea52dcf42[m
+Author: root <neginsky58@gmail.com>
+Date:   Mon Jul 21 12:31:13 2014 +0300
+
+    milestones page
+
+[33mcommit 3eeb521dd7e765a3ed933ef5060d5eb41e69dffd[m
+Author: root <neginsky58@gmail.com>
+Date:   Fri Jul 18 00:56:24 2014 +0300
+
+    reopen milestone
+
+[33mcommit 22344981acbc7e1357c8b7b07a18d120c96c06cd[m
+Author: root <neginsky58@gmail.com>
+Date:   Wed Jul 16 20:29:43 2014 +0300
+
+    update progress
+
+[33mcommit 4372fe2a63c42d0413804b635b72d212a497ec46[m
+Author: root <neginsky58@gmail.com>
+Date:   Wed Jul 16 12:45:31 2014 +0300
+
+    charter style issue
+
+[33mcommit 3f4fa95859df7b1ba31f75db340503ff58d90f20[m
+Author: root <neginsky58@gmail.com>
+Date:   Wed Jul 16 00:22:32 2014 +0300
+
+    issue approval
+
+[33mcommit 3a7a66da566385a6c931c3610aa663220ea6f7e6[m
+Author: root <neginsky58@gmail.com>
+Date:   Tue Jul 15 23:09:37 2014 +0300
+
+    login as user on admin page
+
+[33mcommit 6a2e13999c4b0a3e08755a45f0bc1d9d346b5e2b[m
+Author: root <neginsky58@gmail.com>
+Date:   Tue Jul 15 08:51:14 2014 +0300
+
+    approver issue for project owner
+
+[33mcommit e628c17c00c3509a0664b806b5d267d7dd116bba[m
+Author: root <neginsky58@gmail.com>
+Date:   Tue Jul 15 08:48:27 2014 +0300
+
+    stakeholder issue for project owner
+
+[33mcommit 03b43e35244b5dfab1b98ce0b4cc8b64d9857339[m
+Author: root <neginsky58@gmail.com>
+Date:   Tue Jul 15 08:23:14 2014 +0300
+
+    working on milestones page
+
+[33mcommit 462d11d69813a9babaa44b3782d93ad93242ab53[m
+Author: root <neginsky58@gmail.com>
+Date:   Thu Jul 10 18:01:25 2014 +0300
+
+    host changed to staging
+
+[33mcommit 3ec4f050928917f948187159e04a00e7598d7b76[m
+Author: root <neginsky58@gmail.com>
+Date:   Thu Jul 10 17:49:03 2014 +0300
+
+    attach new file issue
+
+[33mcommit efbdcac02abaea608c9f6ff20681043497714362[m
+Author: root <neginsky58@gmail.com>
+Date:   Thu Jul 10 16:32:30 2014 +0300
+
+    attachment rollback issue
+
+[33mcommit b1fedd2e65347c2a2fab4f6f05e6d74c59a75c70[m
+Author: root <neginsky58@gmail.com>
+Date:   Sun Jul 6 15:13:32 2014 +0300
+
+    admin edit issue
+
+[33mcommit ebfce259110092f479bcb0f550043db64fad3da5[m
+Author: root <neginsky58@gmail.com>
+Date:   Sun Jul 6 15:06:16 2014 +0300
+
+    plan ssl
+
+[33mcommit c25645fdd6edcf24cb322324b40fd3253e7af665[m
+Author: root <neginsky58@gmail.com>
+Date:   Sun Jul 6 15:04:28 2014 +0300
+
+    signup alert removed
+
+[33mcommit c5e54a128d36be3b42cf5a74ec41376b29ebd7c4[m
+Author: root <neginsky58@gmail.com>
+Date:   Sun Jul 6 14:51:26 2014 +0300
+
+    plan issue
+
+[33mcommit df9aa2c8444a18e53df4e71e118335fa088cad26[m
+Author: root <neginsky58@gmail.com>
+Date:   Sun Jul 6 12:37:46 2014 +0300
+
+    attachment on canvas page
+
+[33mcommit cc783906c86b6c45a24fbc1e8f9062aa7e25e33b[m
+Author: root <neginsky58@gmail.com>
+Date:   Sun Jul 6 12:20:06 2014 +0300
+
+    thank you with space
+
+[33mcommit d0643049c3f0df634e4e7f66981b26d15bd7bc02[m
+Author: root <neginsky58@gmail.com>
+Date:   Sun Jul 6 10:30:12 2014 +0300
+
+    removed alert
+
+[33mcommit 4569dd756dc7bc08f75837d9851caee5a7ef7ed1[m
+Author: root <neginsky58@gmail.com>
+Date:   Sun Jul 6 08:49:22 2014 +0300
+
+    trak.io updated
+
+[33mcommit 745c70a30dfdc822ef9be98998f9a624f332f5b1[m
+Author: root <neginsky58@gmail.com>
+Date:   Sat Jul 5 23:06:23 2014 +0300
+
+    attach file test
+
+[33mcommit 0a28798f6c0d76e48923a1a0df6b04671991adaa[m
+Author: root <neginsky58@gmail.com>
+Date:   Sat Jul 5 22:56:48 2014 +0300
+
+    attach file issue
+
+[33mcommit ffdf466eb08bc4a2929866c0aec1a9fa1de14634[m
+Author: root <neginsky58@gmail.com>
+Date:   Sat Jul 5 22:40:34 2014 +0300
+
+    host default url changed
+
+[33mcommit 7b3c2e616ed8bdacec84d3de5f143e771f1c0765[m
+Author: root <neginsky58@gmail.com>
+Date:   Sat Jul 5 22:33:59 2014 +0300
+
+    cross domain issue
+
+[33mcommit 6db7feccc490c92b2d90352009807bc5673c3a17[m
+Author: root <neginsky58@gmail.com>
+Date:   Sat Jul 5 22:13:43 2014 +0300
+
+    file attachment issue
+
+[33mcommit e4cc6497a014bb0dc5048846fb4f996cbb8d893e[m
+Author: root <neginsky58@gmail.com>
+Date:   Sat Jul 5 22:00:10 2014 +0300
+
+    attachment file issue
+
+[33mcommit 5c65b9ae98e09caf35f0a5204c079a23ff2027f0[m
+Author: root <neginsky58@gmail.com>
+Date:   Sat Jul 5 21:48:06 2014 +0300
+
+    jquery version upgraded
+
+[33mcommit 3e2f69104e1af7d5769f4aec552d4a330bad6a91[m
+Author: root <neginsky58@gmail.com>
+Date:   Sat Jul 5 21:40:48 2014 +0300
+
+    attach file issue
+
+[33mcommit 6c933372c8f465fbd7737be2d3cab0c40ee7db27[m
+Author: root <neginsky58@gmail.com>
+Date:   Sat Jul 5 21:30:29 2014 +0300
+
+    deleted files commited
+
+[33mcommit 3986623542155057cb349b52025121738c581072[m
+Author: root <neginsky58@gmail.com>
+Date:   Sat Jul 5 18:52:14 2014 +0300
+
+    mailchimp issue
+
+[33mcommit 9fdf1a5b2148a7b97f19b7e077df46f79d32c690[m
+Author: root <neginsky58@gmail.com>
+Date:   Sat Jul 5 12:47:39 2014 +0300
+
+    freemium history issue
+
+[33mcommit b79a123e80f51e1f387f31094b78f72b779b4e70[m
+Author: root <neginsky58@gmail.com>
+Date:   Sat Jul 5 12:38:07 2014 +0300
+
+    attach files, project owner
+
+[33mcommit 9fb1462fbec6dd946bf10eb5f9560cb6a8dac734[m
+Author: root <neginsky58@gmail.com>
+Date:   Sun Jun 29 17:30:03 2014 +0300
+
+    project logo uploading issue fixed, admin free access
+
+[33mcommit 7a2361844f9b087c4405920df895cd8ed07d0100[m
+Author: root <neginsky58@gmail.com>
+Date:   Sun Jun 29 17:22:57 2014 +0300
+
+    api_token issue
+
+[33mcommit 0d9f743b8fe73c2073ebf5a6b89d01ebad254fb5[m
+Author: root <neginsky58@gmail.com>
+Date:   Sun Jun 29 17:02:31 2014 +0300
+
+    debug disabled
+
+[33mcommit 7cdebd00b4b869fccabb8daa07f25ffa317091f8[m
+Author: root <neginsky58@gmail.com>
+Date:   Sun Jun 29 16:58:34 2014 +0300
+
+    aws issue
+
+[33mcommit d81a5c89cf724dea0bfc6e80b1326faadca474a6[m
+Author: root <neginsky58@gmail.com>
+Date:   Sun Jun 29 16:54:57 2014 +0300
+
+    debug
+
+[33mcommit 50d2255ded0f225fca745d033a02b6783484d169[m
+Author: root <neginsky58@gmail.com>
+Date:   Sun Jun 29 16:49:07 2014 +0300
+
+    aws s3 issue
+
+[33mcommit 6b3827e5d4bcb7199071aa269d1f9802425cb60f[m
+Author: root <neginsky58@gmail.com>
+Date:   Sun Jun 29 15:07:17 2014 +0300
+
+    aws issue
+
+[33mcommit 1e259c912231fcba909492f011eac7ae27180bb3[m
+Author: root <neginsky58@gmail.com>
+Date:   Sun Jun 29 14:55:16 2014 +0300
+
+    aws s3 credential
+
+[33mcommit 973857691814cf38c44728df8d87b612ce05aa27[m
+Author: root <neginsky58@gmail.com>
+Date:   Sun Jun 29 14:53:10 2014 +0300
+
+    aws s3 credential issue
+
+[33mcommit 427a82b751c02e52f49dc722d7d1abeb0af24490[m
+Author: root <neginsky58@gmail.com>
+Date:   Sun Jun 29 14:48:24 2014 +0300
+
+    aws issue
+
+[33mcommit 3932444cafde2e53de595ccd215bb574f97cad2a[m
+Author: root <neginsky58@gmail.com>
+Date:   Sun Jun 29 14:37:33 2014 +0300
+
+    aws s3 issue
+
+[33mcommit cd5f85be88537a3beb5fd717ba472f018c61442f[m
+Author: root <neginsky58@gmail.com>
+Date:   Sun Jun 29 14:12:20 2014 +0300
+
+    heroku variable issue
+
+[33mcommit 91794426cc6af90a057517940215531938ef314e[m
+Author: root <neginsky58@gmail.com>
+Date:   Sun Jun 29 14:06:55 2014 +0300
+
+    mailchimp issue, project logo issue
+
+[33mcommit bb57da689f52eb9683d0e5abb185883dec3b999c[m
+Author: root <neginsky58@gmail.com>
+Date:   Tue Jun 24 16:27:36 2014 +0300
+
+    changed facebook to grapple
+
+[33mcommit 5f2b304f40bb188e924731df552b518db5c476e4[m
+Author: root <neginsky58@gmail.com>
+Date:   Tue Jun 24 14:36:07 2014 +0300
+
+    admin root url issue
+
+[33mcommit d3191dfba3bd6e2cf65d6f7f1510557dcdf50ead[m
+Author: root <neginsky58@gmail.com>
+Date:   Tue Jun 24 12:55:13 2014 +0300
+
+    Subscribe function
+
+[33mcommit 13150c87b0a5ea5bf9e45022305c0ec482d7d7a7[m
+Author: root <neginsky58@gmail.com>
+Date:   Mon Jun 23 12:00:17 2014 +0300
+
+    empty project user on edit page
+
+[33mcommit a641704232881170ce565c6fe08942f723d4e154[m
+Author: root <neginsky58@gmail.com>
+Date:   Mon Jun 23 11:31:01 2014 +0300
+
+    google analytics issue
+
+[33mcommit b5399bf1659708c45ba97a1024e6052abcf7c96c[m
+Author: root <neginsky58@gmail.com>
+Date:   Sun Jun 22 17:50:50 2014 +0300
+
+    disabled manual invoice email
+
+[33mcommit 0d4531dbb541960895badc5b71a5c97a997ffb4c[m
+Author: root <neginsky58@gmail.com>
+Date:   Sun Jun 22 00:10:49 2014 +0300
+
+    admin user pagination, search
+
+[33mcommit 6fd0de937d5afb580d08ab43665d9c00aaee6c73[m
+Author: root <neginsky58@gmail.com>
+Date:   Fri Jun 20 18:49:29 2014 +0300
+
+    project duration issue, trial user permission
+
+[33mcommit cebd6635d82a5c0c10d4dc40d5a70243b6050f4b[m
+Author: root <neginsky58@gmail.com>
+Date:   Thu Jun 19 17:50:05 2014 +0300
+
+    admin edit user function
+
+[33mcommit 030525a680ac0b7bb4b3d01fa479203f06135225[m
+Author: root <neginsky58@gmail.com>
+Date:   Wed Jun 18 00:03:29 2014 +0300
+
+    admin user edit page
+
+[33mcommit fc3c6966ad545c9b1272d43ca615a9d568aba983[m
+Author: root <neginsky58@gmail.com>
+Date:   Mon Jun 16 18:36:06 2014 +0300
+
+    project start end date
+
+[33mcommit f3e1ec8c44e7245bbed67da57b86abea8b646883[m
+Author: root <neginsky58@gmail.com>
+Date:   Mon Jun 16 18:22:24 2014 +0300
+
+    charter start date, end date
+
+[33mcommit ce47bddc5be101ebab6889cb31e3eee1f782742a[m
+Author: root <neginsky58@gmail.com>
+Date:   Mon Jun 16 16:25:16 2014 +0300
+
+    removed alert
+
+[33mcommit fb408e2700289daf78eed216deedf5cea6d44fd3[m
+Author: root <neginsky58@gmail.com>
+Date:   Mon Jun 16 16:14:28 2014 +0300
+
+    devise signup trak.io
+
+[33mcommit 9bce7e16cd71dd932076ec7390d5a290e8df05e4[m
+Author: root <neginsky58@gmail.com>
+Date:   Mon Jun 16 04:33:59 2014 +0300
+
+    static pdf charter
+
+[33mcommit 395d2647205d24f1fea09d6ae09ead8f30927c76[m
+Author: root <neginsky58@gmail.com>
+Date:   Sat Jun 14 23:26:58 2014 +0300
+
+    attachment pdf
+
+[33mcommit 21a409c002589d4772edd96411d140ff41049b24[m
+Author: root <neginsky58@gmail.com>
+Date:   Sat Jun 14 23:08:05 2014 +0300
+
+    approval issue attachment
+
+[33mcommit 3f1db320e8cd0fa88b064c9466dd7718168079bd[m
+Author: root <neginsky58@gmail.com>
+Date:   Sat Jun 14 22:51:38 2014 +0300
+
+    approval attachment issue
+
+[33mcommit df3da30d8189af127af0c94e26df44ebe2231a61[m
+Author: root <neginsky58@gmail.com>
+Date:   Fri Jun 13 08:09:17 2014 +0400
+
+    project canvas
+
+[33mcommit 9de26db877ab4d9dbcef93f1ea5c9bfa0e21cbee[m
+Author: root <neginsky58@gmail.com>
+Date:   Fri Jun 13 08:00:43 2014 +0400
+
+    home link on logo
+
+[33mcommit 68fce44d7a192b6bcac2119e3eeaec39c594823c[m
+Author: root <neginsky58@gmail.com>
+Date:   Fri Jun 13 07:56:48 2014 +0400
+
+    trak io for emails on freemium, project canvas
+
+[33mcommit 493cbf1ce13a43c7f577e89b53454208d1a640b2[m
+Author: root <neginsky58@gmail.com>
+Date:   Fri Jun 13 04:53:26 2014 +0300
+
+    work
+
+[33mcommit 676bb8986aba0af1578685cf9e3cbf876280f73b[m
+Author: root <neginsky58@gmail.com>
+Date:   Thu Jun 12 18:56:17 2014 +0300
+
+    approval count issues
+
+[33mcommit abf26255d55b2dca496f15e53e8d3d0793582188[m
+Author: root <neginsky58@gmail.com>
+Date:   Thu Jun 12 18:41:42 2014 +0300
+
+    is_sent issue
+
+[33mcommit 6eb27f7d6d72476ff8449a25673c810ef1af7e9c[m
+Author: root <neginsky58@gmail.com>
+Date:   Thu Jun 12 18:35:38 2014 +0300
+
+    approval is_sent column
+
+[33mcommit 53f13c3c048363ae4603a056530b95d00af132e9[m
+Author: root <neginsky58@gmail.com>
+Date:   Thu Jun 12 18:26:58 2014 +0300
+
+    double approval issue
+
+[33mcommit ba18c0fc9afc255d69e8decdcd3dec5439b70021[m
+Author: root <neginsky58@gmail.com>
+Date:   Thu Jun 12 17:57:08 2014 +0300
+
+    host name changed
+
+[33mcommit 0376cca0dfbcb7718a8dc6ae5b000e88a7bd8097[m
+Author: root <neginsky58@gmail.com>
+Date:   Thu Jun 12 17:10:31 2014 +0300
+
+    heroku host name changed, coupon
+
+[33mcommit 3ceab48f95638bee3ec554c1a4d9099030087ea2[m
+Author: root <neginsky58@gmail.com>
+Date:   Thu Jun 12 12:38:57 2014 +0400
+
+    coupon upgrade plan
+
+[33mcommit 553107ecfed3350b7f69d5a1d08b5f074d711a6d[m
+Author: root <neginsky58@gmail.com>
+Date:   Thu Jun 12 09:57:21 2014 +0400
+
+    project manager name instead of email
+
+[33mcommit 03982000ddbfbec6b245cebb7a15f66a18f8728c[m
+Author: root <neginsky58@gmail.com>
+Date:   Thu Jun 12 08:38:52 2014 +0400
+
+    email protected issue
+
+[33mcommit 258631ec2c6315e3f8d3d696861b389b6efbaa53[m
+Author: root <neginsky58@gmail.com>
+Date:   Thu Jun 12 08:27:05 2014 +0400
+
+    user_profile nil issue
+
+[33mcommit 3324e00771220d4da517a656b30ef0fe3fc2a401[m
+Merge: 76f4364 ca2b7a7
+Author: root <neginsky58@gmail.com>
+Date:   Tue Jun 10 17:51:13 2014 +0300
+
+    merged
+
+[33mcommit ca2b7a7e9d4379ca7de2e43c4268b4e238caff46[m
+Author: root <neginsky58@gmail.com>
+Date:   Tue Jun 10 13:28:29 2014 +0400
+
+    charter issue
+
+[33mcommit 76f4364853386d22aa2b7119565dba9e22a14302[m
+Author: root <neginsky58@gmail.com>
+Date:   Mon Jun 9 16:31:12 2014 +0300
+
+    devise trak.io
+
+[33mcommit 6d151cd64556cc7314ca2a0d3907d23a350ee0bb[m
+Author: root <neginsky58@gmail.com>
+Date:   Mon Jun 9 14:23:39 2014 +0400
+
+    dynos test
+
+[33mcommit 03f1ea1cf5eb2cb0198a63418a92ebf9846f20ea[m
+Merge: d554c50 58f5ff1
+Author: root <neginsky58@gmail.com>
+Date:   Mon Jun 9 07:11:13 2014 +0400
+
+    devise issue
+
+[33mcommit 58f5ff1b19e73ff879484c05a5f99bfcc8c4c6eb[m
+Author: root <neginsky58@gmail.com>
+Date:   Mon Jun 9 04:29:30 2014 +0300
+
+    workback
+
+[33mcommit e173346d53a78ff4d5d1139e7fd0a0ad0255a575[m
+Author: root <neginsky58@gmail.com>
+Date:   Sun Jun 8 18:47:26 2014 +0300
+
+    dynos help
+
+[33mcommit c5f91d74d9f555820e5bf7677850f31466ddd40b[m
+Author: root <neginsky58@gmail.com>
+Date:   Sun Jun 8 18:40:18 2014 +0300
+
+    trak.io test on devise layout
+
+[33mcommit 0d9ea786da81b2f8d3c2c28f337d8f0060676ee2[m
+Author: root <neginsky58@gmail.com>
+Date:   Sun Jun 8 18:33:58 2014 +0300
+
+    disable load_testing
+
+[33mcommit 54c14fdc5735aa848c0b1c31ee47aa38cbee98b5[m
+Author: root <neginsky58@gmail.com>
+Date:   Sun Jun 8 10:50:43 2014 +0300
+
+    disable new relic
+
+[33mcommit 60c38fb7d6979f5076495c8494d90b97f4d28513[m
+Author: root <neginsky58@gmail.com>
+Date:   Sun Jun 8 02:05:24 2014 +0300
+
+    hook issue
+
+[33mcommit a9f941a5440e914693845304d0848cfa60dcc2ad[m
+Author: root <neginsky58@gmail.com>
+Date:   Sat Jun 7 08:19:03 2014 +0300
+
+    load test
+
+[33mcommit 0a5bba72d488b407377fa8eaecd1f4590bb9f1ff[m
+Author: root <neginsky58@gmail.com>
+Date:   Sat Jun 7 07:57:25 2014 +0300
+
+    load testing code
+
+[33mcommit cdbaa3ceff5e65d3b85011e5adeaa9e84bd3daf8[m
+Author: root <neginsky58@gmail.com>
+Date:   Sat Jun 7 06:13:52 2014 +0300
+
+    gem file issue
+
+[33mcommit 23b4a89d64d691dd0d294de22a31ad800ed0d4b3[m
+Author: root <neginsky58@gmail.com>
+Date:   Sat Jun 7 06:09:44 2014 +0300
+
+    newrelic gem
+
+[33mcommit ff3fdd61c81fa204e35f84eca974187bf93e2440[m
+Author: root <neginsky58@gmail.com>
+Date:   Fri Jun 6 13:12:41 2014 +0300
+
+    devise trak io script bottom
+
+[33mcommit 0d3dd5f356d309945dff7ce0bd3d0c3137422d2e[m
+Author: root <neginsky58@gmail.com>
+Date:   Fri Jun 6 12:46:54 2014 +0300
+
+    trak.io script issue
+
+[33mcommit d03089a4bab172c3613dbf46694b640a3f4a1e02[m
+Author: root <neginsky58@gmail.com>
+Date:   Fri Jun 6 12:31:23 2014 +0300
+
+    devise trak.io
+
+[33mcommit d554c50d9212b880a95cede7bc11be5046947799[m
+Author: root <neginsky58@gmail.com>
+Date:   Fri Jun 6 07:22:41 2014 +0400
+
+    devise trak.io
+
+[33mcommit 890ef6e78c7610163c8a108b85f657d667be9b0e[m
+Author: root <neginsky58@gmail.com>
+Date:   Fri Jun 6 04:53:35 2014 +0300
+
+    trak.io enabled auto on signup
+
+[33mcommit 443020663d4ac154d745a8e0e6823c6dd432fcd1[m
+Author: root <neginsky58@gmail.com>
+Date:   Fri Jun 6 04:50:57 2014 +0300
+
+    registration
+
+[33mcommit 069bd668bbdede01e33a02620a5bab3371ea3fd2[m
+Author: root <neginsky58@gmail.com>
+Date:   Thu Jun 5 21:30:31 2014 +0300
+
+    devise name field
+
+[33mcommit 324104e7aa860622d73521f3d04ea848ecb37951[m
+Author: root <neginsky58@gmail.com>
+Date:   Wed Jun 4 21:17:42 2014 +0300
+
+    google analytic changed, trak.io changed
+
+[33mcommit 909c658c96ca7cbdecdb7e71f5dbbbc009bc19e4[m
+Author: root <neginsky58@gmail.com>
+Date:   Wed Jun 4 21:02:51 2014 +0300
+
+    trak.io
+
+[33mcommit 0a0d66f73000f376c69730a84ae8c0826054c075[m
+Author: root <neginsky58@gmail.com>
+Date:   Wed Jun 4 20:58:03 2014 +0300
+
+    trak.io
+
+[33mcommit aa2d0c6ce2a00f4a5413a7f516bb6ba792d4e50d[m
+Author: root <neginsky58@gmail.com>
+Date:   Wed Jun 4 13:49:46 2014 +0400
+
+    on devise page analytic script
+
+[33mcommit 6b15b8e9c6d7d04e1a00071694bf088b00293d34[m
+Author: root <neginsky58@gmail.com>
+Date:   Wed Jun 4 13:45:46 2014 +0400
+
+    trak.io script ga script
+
+[33mcommit ef92bcac8048499539f8688b22661ac0dfae86fd[m
+Author: root <neginsky58@gmail.com>
+Date:   Wed Jun 4 12:59:39 2014 +0400
+
+    google analytic, trak.io
+
+[33mcommit 497c9a4fce8bf3d837eb7fb3abcee50e136f349d[m
+Author: root <neginsky58@gmail.com>
+Date:   Wed Jun 4 10:01:59 2014 +0400
+
+    permission
+
+[33mcommit 971b6413f77854dc251e8ea74befdfcd689934eb[m
+Author: root <neginsky58@gmail.com>
+Date:   Wed Jun 4 09:59:39 2014 +0400
+
+    permission
+
+[33mcommit 68debcf7903fb94c7c3b5f08cf13c45c1f6d46a6[m
+Author: root <neginsky58@gmail.com>
+Date:   Wed Jun 4 09:38:39 2014 +0400
+
+    permission denied
+
+[33mcommit 4f951e4812e52c7609473531241287d7b33af1d8[m
+Author: root <neginsky58@gmail.com>
+Date:   Tue Jun 3 17:17:41 2014 +0300
+
+    charter pdf approval issue
+
+[33mcommit b2ffabf1daf75aec773d5b3b3e72c419bff0f53c[m
+Author: root <neginsky58@gmail.com>
+Date:   Tue Jun 3 17:00:03 2014 +0300
+
+    issue 15
+
+[33mcommit 1142002eee5d1d51e32abf8bda8718a3cc1c23f2[m
+Author: root <neginsky58@gmail.com>
+Date:   Tue Jun 3 16:47:48 2014 +0300
+
+    devise error
+
+[33mcommit d3b3bf2645ae734319ed3edc7e7bc72936062d52[m
+Author: root <neginsky58@gmail.com>
+Date:   Tue Jun 3 13:40:03 2014 +0400
+
+    alert on admin login page
+
+[33mcommit 322b308f7bf2e8ce31c781ea0dcef80bc478b19b[m
+Author: root <neginsky58@gmail.com>
+Date:   Tue Jun 3 13:26:52 2014 +0400
+
+    admin/login configured
+
+[33mcommit 530511d7d02375f75bf054bf1a481266201b8f7c[m
+Author: root <neginsky58@gmail.com>
+Date:   Tue Jun 3 09:18:24 2014 +0400
+
+    issues fixe
+
+[33mcommit 61b7a5dd6c840fecfd5788bf6a08690d0cc86945[m
+Author: root <neginsky58@gmail.com>
+Date:   Tue Jun 3 06:59:38 2014 +0400
+
+    qualities word changed quality
+
+[33mcommit 85e91639c9fc7e392b694197deedffb2c94d7624[m
+Author: root <neginsky58@gmail.com>
+Date:   Mon Jun 2 14:02:20 2014 +0400
+
+    email enabled
+
+[33mcommit f9f6e2a041203f95d5099c8932ec89620bd152eb[m
+Author: root <neginsky58@gmail.com>
+Date:   Mon Jun 2 07:30:28 2014 +0400
+
+    planning-canvas uri
+
+[33mcommit 79740a9648b464e252fd278499af8b801f5f72c7[m
+Author: root <neginsky58@gmail.com>
+Date:   Mon Jun 2 07:01:21 2014 +0400
+
+    db changed
+
+[33mcommit 43c4e1495d4a29197dd57b545de212b2d196db50[m
+Author: root <neginsky58@gmail.com>
+Date:   Mon Jun 2 06:37:16 2014 +0400
+
+    db change
+
+[33mcommit 5381342ffc89e20561e7adbc3fa11a91594f8a3f[m
+Author: root <neginsky58@gmail.com>
+Date:   Sun Jun 1 14:15:06 2014 +0300
+
+    disable request local
+
+[33mcommit ac7dd57a2e8b6994b257468b6e6b8cb8d46b0eb8[m
+Author: root <neginsky58@gmail.com>
+Date:   Sun Jun 1 13:57:59 2014 +0300
+
+    ssl stripe
+
+[33mcommit fe37f28672855ed07d3097ea67f32172e75269fa[m
+Author: root <neginsky58@gmail.com>
+Date:   Sun Jun 1 10:46:46 2014 +0300
+
+    ssl revert
+
+[33mcommit 4019b8b48f50a26972048dd1d3aad0b6455ad72d[m
+Author: root <neginsky58@gmail.com>
+Date:   Sun Jun 1 10:38:21 2014 +0300
+
+    upgrade plan ssl issue
+
+[33mcommit a0c739a7af2b88d2202a40ecefb70b753a744732[m
+Author: root <neginsky58@gmail.com>
+Date:   Sun Jun 1 10:24:25 2014 +0300
+
+    freemium canvas
+
+[33mcommit 6ee5badbaa665a009f1d7f781a85515cc4eb605e[m
+Author: root <neginsky58@gmail.com>
+Date:   Sun Jun 1 08:15:45 2014 +0300
+
+    alert changed
+
+[33mcommit 849ba4034ea328e2544726c9acda9e045fbba68f[m
+Author: root <neginsky58@gmail.com>
+Date:   Sun Jun 1 08:14:09 2014 +0300
+
+    alert changed
+
+[33mcommit 6cff62f5204f3b19fec32d9c8a918c4240a30cc8[m
+Author: root <neginsky58@gmail.com>
+Date:   Sat May 31 23:45:30 2014 +0300
+
+    announcement link crashed issue
+
+[33mcommit 5549760c0a1144d510dc46c42c5dc48b57e46928[m
+Author: root <neginsky58@gmail.com>
+Date:   Sat May 31 23:37:44 2014 +0300
+
+    some issues
+
+[33mcommit 844e26ffef00dc66cdcfef0db81ecbaa18621f1c[m
+Author: root <neginsky58@gmail.com>
+Date:   Sat May 31 20:26:47 2014 +0300
+
+    trak.io tricky issue
+
+[33mcommit 18e6d19344b46e3a46403a25b35e4690b6b5957e[m
+Author: root <neginsky58@gmail.com>
+Date:   Fri May 30 21:17:12 2014 +0300
+
+    upload downlrade
+
+[33mcommit 28c0d6989a33e4cee143cef3b76c7cee148e4bde[m
+Author: root <neginsky58@gmail.com>
+Date:   Fri May 30 20:42:49 2014 +0300
+
+    deleted files
+
+[33mcommit c0ca2603224bd779a4b8b763a11564f417015738[m
+Author: root <neginsky58@gmail.com>
+Date:   Fri May 30 20:35:53 2014 +0300
+
+    trak.io scripted
+
+[33mcommit cdee239e84c63f3f5c098c9da605f248139f1e1c[m
+Author: root <neginsky58@gmail.com>
+Date:   Fri May 30 04:38:12 2014 +0300
+
+    workbackup
+
+[33mcommit 954d5871adb867a7dc9f1ab38c775ee4f46f8b82[m
+Author: root <neginsky58@gmail.com>
+Date:   Wed May 28 22:19:47 2014 +0300
+
+    total cost
+
+[33mcommit 34802a3eb3b9d8f1c213a6c4bc0bc298bedac564[m
+Author: root <neginsky58@gmail.com>
+Date:   Wed May 28 22:04:15 2014 +0300
+
+    html5 update
+
+[33mcommit 0729db2e62440a9ced6149782d804e864d7ba19d[m
+Author: root <neginsky58@gmail.com>
+Date:   Wed May 28 20:19:41 2014 +0300
+
+    html5 updated
+
+[33mcommit 0f694eae1f46a36289734ec75f12cda4f2ea8425[m
+Author: root <neginsky58@gmail.com>
+Date:   Wed May 28 19:54:47 2014 +0300
+
+    project information migrating script
+
+[33mcommit 331f6560d6559b50e4ff7fa956ea42838d789282[m
+Author: root <neginsky58@gmail.com>
+Date:   Wed May 28 10:55:51 2014 +0400
+
+    header foot link, freemium alert
+
+[33mcommit fdcb1a04fdba28aee8cd8ec5acea0a45ffb7e222[m
+Author: root <neginsky58@gmail.com>
+Date:   Wed May 28 10:03:36 2014 +0400
+
+    html5 updated as portrait layout
+
+[33mcommit e97624387a30df2b39833d4eae3e30db0067ff71[m
+Author: root <neginsky58@gmail.com>
+Date:   Tue May 27 19:19:56 2014 +0300
+
+    migration code
+
+[33mcommit 2f957695d18d042908e3c932502e7451fd93fc79[m
+Merge: b99a378 0d4893f
+Author: root <neginsky58@gmail.com>
+Date:   Tue May 27 19:08:06 2014 +0300
+
+    Merge branch 'master' of https://github.com/striking/grapple
+
+[33mcommit b99a378295c56d8b4fe5449f1466284120d5dc92[m
+Author: root <neginsky58@gmail.com>
+Date:   Tue May 27 19:06:13 2014 +0300
+
+    users migrating script
+
+[33mcommit 0d4893f71a9c3806cef51d3ac799596e9e9a74f2[m
+Author: root <neginsky58@gmail.com>
+Date:   Tue May 27 12:25:08 2014 +0400
+
+    removed pdf view button
+
+[33mcommit 61f1cc47a22328ac3563f990be22aaedd2aa1add[m
+Author: root <neginsky58@gmail.com>
+Date:   Tue May 27 12:18:31 2014 +0400
+
+    budget box margin
+
+[33mcommit 892dec450f1ed7959a379b30b50191c8685d49ee[m
+Merge: fddc837 6fce122
+Author: root <neginsky58@gmail.com>
+Date:   Tue May 27 12:11:11 2014 +0400
+
+    Merge branch 'master' of https://github.com/striking/grapple
+
+[33mcommit fddc8373081158fdb0626988da01df2b94989b23[m
+Author: root <neginsky58@gmail.com>
+Date:   Tue May 27 12:09:08 2014 +0400
+
+    html5 charter page updated, working with migration
+
+[33mcommit 6fce12258d29483651cf07316119a10e4f6e3554[m
+Author: root <neginsky58@gmail.com>
+Date:   Tue May 27 04:20:35 2014 +0300
+
+    migrating user information
+
+[33mcommit c08fac127a397fbdc15223232813c7c171b250d5[m
+Author: root <neginsky58@gmail.com>
+Date:   Mon May 26 03:31:31 2014 +0300
+
+    html5 page
+
+[33mcommit b43b0bb286b81c939934482615d26c428dce80ae[m
+Author: root <neginsky58@gmail.com>
+Date:   Thu May 22 22:36:51 2014 +0300
+
+    freemium pdf style issue
+
+[33mcommit aacfc8f9e98b573b3ffb7111aa0a9c76a0a4758d[m
+Author: root <neginsky58@gmail.com>
+Date:   Thu May 22 22:11:34 2014 +0300
+
+    optimized approval javascripts files
+
+[33mcommit 1248d9916427ac48eef19533a4a9574af7dd2e5d[m
+Author: root <neginsky58@gmail.com>
+Date:   Thu May 22 21:59:25 2014 +0300
+
+    html5 charter changes
+
+[33mcommit 94b9adbf8a281dc2e3348cd31f2b93b4113ce8c0[m
+Author: root <neginsky58@gmail.com>
+Date:   Thu May 22 20:31:15 2014 +0300
+
+    pdf url
+
+[33mcommit 445d2fea48da373a49c7b28e26aa43657a5cc7dd[m
+Author: root <neginsky58@gmail.com>
+Date:   Thu May 22 20:25:13 2014 +0300
+
+    pm issue
+
+[33mcommit 71a43f0266343fecfb210bb7359cb3121ea4c173[m
+Author: root <neginsky58@gmail.com>
+Date:   Thu May 22 20:06:41 2014 +0300
+
+    project manager undefined
+
+[33mcommit d6e6501a51eda6f38ffbdb80e79a67e7c846f816[m
+Author: root <neginsky58@gmail.com>
+Date:   Thu May 22 20:01:53 2014 +0300
+
+    smtp issue
+
+[33mcommit 0bf39fcfed44e487c6e1d934518d1910aa8396d8[m
+Author: root <neginsky58@gmail.com>
+Date:   Thu May 22 19:41:00 2014 +0300
+
+    edit profile
+
+[33mcommit b1ad6a77716c8115a6cbb709b4c5562d60e716a9[m
+Author: root <neginsky58@gmail.com>
+Date:   Thu May 22 19:07:00 2014 +0300
+
+    html5 charter
+
+[33mcommit 7e11a6b2e95d82e37522e43c9c01cf9a407f9c8f[m
+Author: root <neginsky58@gmail.com>
+Date:   Thu May 22 14:31:39 2014 +0400
+
+    workbackup
+
+[33mcommit c7f5322bf33e6d3a94ea3840cb5bb6a7dbde1db0[m
+Author: root <neginsky58@gmail.com>
+Date:   Tue May 20 18:14:47 2014 +0300
+
+    A3 landscape freemium pdf
+
+[33mcommit 1c12a09463e660449a5d530b733842f5d3719960[m
+Author: root <neginsky58@gmail.com>
+Date:   Tue May 20 14:36:41 2014 +0400
+
+    work backup
+
+[33mcommit f43e458d8ac76ca35d7c138e2b0cced92ff9fa5a[m
+Author: root <neginsky58@gmail.com>
+Date:   Tue May 20 14:31:44 2014 +0400
+
+    freemium layout
+
+[33mcommit f736477ffdb6ecfd75793dc64bd7362381ad497e[m
+Author: root <neginsky58@gmail.com>
+Date:   Tue May 20 12:35:41 2014 +0400
+
+    freemium pdf layout
+
+[33mcommit 1ee0eb9474b6c183d28d8f3fbd93a8f29ca0a183[m
+Author: root <neginsky58@gmail.com>
+Date:   Tue May 20 04:49:41 2014 +0300
+
+    workbackup
+
+[33mcommit f9676bca95c0c879f8fbf154f3424998b664a106[m
+Author: root <neginsky58@gmail.com>
+Date:   Fri May 16 20:04:31 2014 +0300
+
+    work backup
+
+[33mcommit 4d87311e306809d196cdac7f19fb90f90ecf07c5[m
+Author: root <neginsky58@gmail.com>
+Date:   Fri May 16 19:33:20 2014 +0300
+
+    project title nil issue
+
+[33mcommit 2b46c2cfdfbeeea8ee4adfc1f0bb2e3c43808eba[m
+Author: root <neginsky58@gmail.com>
+Date:   Fri May 16 19:17:39 2014 +0300
+
+    flipped side issue
+
+[33mcommit 069ab641e3301940f4a69b600ada9248899b1cc1[m
+Author: root <neginsky58@gmail.com>
+Date:   Fri May 16 04:06:27 2014 +0300
+
+    access email
+
+[33mcommit 818c34e630dac77d1c3c882039fad12564200c4b[m
+Author: root <neginsky58@gmail.com>
+Date:   Fri May 16 03:28:59 2014 +0300
+
+    work backup
+
+[33mcommit 180268e62f638e3e0fc927fd361fac0b64db414a[m
+Author: root <neginsky58@gmail.com>
+Date:   Thu May 15 14:21:22 2014 +0400
+
+    work backup
+
+[33mcommit a3819baa09d55e75f8d26579230c733a5b9889f1[m
+Author: root <neginsky58@gmail.com>
+Date:   Thu May 15 12:28:34 2014 +0400
+
+    nil user_profile issue
+
+[33mcommit ec41be1364309089e5b0aeb23ef56a948c2cf972[m
+Author: root <neginsky58@gmail.com>
+Date:   Thu May 15 11:34:45 2014 +0400
+
+    log enabled
+
+[33mcommit c68eed8dbf257e764e062623f19e8606bda7b1bd[m
+Author: root <neginsky58@gmail.com>
+Date:   Tue May 13 17:12:12 2014 +0300
+
+    announcement order changed
+
+[33mcommit 9d1bfba495fb72b4bc018a330c21e0975e2de693[m
+Author: root <neginsky58@gmail.com>
+Date:   Tue May 13 16:58:59 2014 +0300
+
+    communications fixed
+
+[33mcommit 48b732a975875c616fd969290e3a938b57836f7f[m
+Author: root <neginsky58@gmail.com>
+Date:   Tue May 13 06:20:02 2014 +0300
+
+    fix budget issue
+
+[33mcommit ca0b7c63d8952e9d5dafbc703ed530cf21fd2753[m
+Author: root <neginsky58@gmail.com>
+Date:   Tue May 13 06:13:33 2014 +0300
+
+    budget issue
+
+[33mcommit 4fd14a7237e6a4a0114e9469cc5f4d834b6a0f56[m
+Author: root <neginsky58@gmail.com>
+Date:   Tue May 13 04:02:43 2014 +0300
+
+    work backup
+
+[33mcommit e8fbbaa029fa7d5ef9c121a31f41bdcc729dc8d1[m
+Author: root <neginsky58@gmail.com>
+Date:   Mon May 12 19:02:33 2014 +0300
+
+    dashboard
+
+[33mcommit cec447eaab631918e08d08d58d5af743d739295a[m
+Author: root <neginsky58@gmail.com>
+Date:   Mon May 12 14:29:54 2014 +0400
+
+    work backup
+
+[33mcommit e6cb6f19603ed373738bfe1e0603e5245f898a2d[m
+Author: root <neginsky58@gmail.com>
+Date:   Mon May 12 12:07:56 2014 +0400
+
+    freemium entry issue
+
+[33mcommit 5b1ec53bb4dad98dba7c0d3df873e1bfa14d72a6[m
+Author: root <neginsky58@gmail.com>
+Date:   Sun May 11 21:53:15 2014 +0300
+
+    work backup
+
+[33mcommit cc9dd8f53a5bc400890a8b207be81d8f2c3b31fe[m
+Author: root <neginsky58@gmail.com>
+Date:   Sat May 10 13:35:01 2014 +0300
+
+    budget accuracy not updated issue
+
+[33mcommit 7ef7b292857faee6acc1cb014fd92518af4d9233[m
+Author: root <neginsky58@gmail.com>
+Date:   Sat May 10 13:27:00 2014 +0300
+
+    demo 10May
+
+[33mcommit b0e20a38e472b7884ba0d9e81c9382a2bff5e962[m
+Author: root <neginsky58@gmail.com>
+Date:   Sat May 10 10:38:01 2014 +0300
+
+    work backup
+
+[33mcommit 72c5bd4f9d86a5272f3bcdb5264578680a5e95ff[m
+Author: root <neginsky58@gmail.com>
+Date:   Sat May 10 09:51:17 2014 +0300
+
+    work backup
+
+[33mcommit cb74a0e526a1112d46bdbf476e45c15659810081[m
+Author: root <neginsky58@gmail.com>
+Date:   Fri May 9 14:44:50 2014 +0400
+
+    work backup
+
+[33mcommit dd5c65232af422bd87e3697d6c8449753a58e0a6[m
+Author: root <neginsky58@gmail.com>
+Date:   Fri May 9 14:28:09 2014 +0400
+
+    canvas v2
+
+[33mcommit e07ec7d541dc5d620744a6c4fdcec0f49738cdc8[m
+Author: root <neginsky58@gmail.com>
+Date:   Thu May 8 11:53:31 2014 +0400
+
+    project manager selection function
+
+[33mcommit 0ecd498f1615547626d6f214db215e8cb2c9e149[m
+Author: root <neginsky58@gmail.com>
+Date:   Thu May 8 10:48:40 2014 +0400
+
+    freemium page
+
+[33mcommit 4d9508a3adbd313c3505614e0109a180330cfded[m
+Merge: b8f5346 afd7b74
+Author: root <neginsky58@gmail.com>
+Date:   Thu May 8 03:14:59 2014 +0300
+
+    merged
+
+[33mcommit b8f53468e831583549f38c59e08e352bd9be9822[m
+Author: root <neginsky58@gmail.com>
+Date:   Thu May 8 03:12:13 2014 +0300
+
+    fremium pdf
+
+[33mcommit afd7b74d75d11daefdd19be6340b69e23605448f[m
+Author: root <neginsky58@gmail.com>
+Date:   Wed May 7 14:07:32 2014 +0400
+
+    work backup
+
+[33mcommit e15bc8ed269513950f36a8239c580e74c8111258[m
+Author: root <neginsky58@gmail.com>
+Date:   Wed May 7 13:23:47 2014 +0400
+
+    stripe
+
+[33mcommit 3f828c7e76177f9af812b55467e2c414b31049bc[m
+Author: root <neginsky58@gmail.com>
+Date:   Wed May 7 12:26:35 2014 +0400
+
+    stripe callback
+
+[33mcommit 7edd7970950c4022da34b501d95ac6b4dfe7d6b9[m
+Author: root <neginsky58@gmail.com>
+Date:   Wed May 7 12:20:48 2014 +0400
+
+    stripe callback added
+
+[33mcommit cb19d835df2c3d14f247b456a47803a579d85f2e[m
+Author: root <neginsky58@gmail.com>
+Date:   Wed May 7 12:01:03 2014 +0400
+
+    debug mode
+
+[33mcommit ffdc16112871446cecc83085417854b0e61d09a4[m
+Author: root <neginsky58@gmail.com>
+Date:   Wed May 7 11:40:52 2014 +0400
+
+    testing on heroku
+
+[33mcommit 5060972423b5d391e93e6b9941ba84a32d692e93[m
+Author: root <neginsky58@gmail.com>
+Date:   Wed May 7 03:54:52 2014 +0300
+
+    Coupon generator
+
+[33mcommit 767e3bdc89a454f2de2aaa02fe401f7afb090187[m
+Author: root <neginsky58@gmail.com>
+Date:   Tue May 6 14:13:54 2014 +0400
+
+    work backup
+
+[33mcommit 45e189374cd91469ab7946f023d3454466efc11b[m
+Author: root <neginsky58@gmail.com>
+Date:   Mon May 5 21:36:58 2014 +0300
+
+     work backup
+
+[33mcommit b04c45a27240513d635097a9047fd178abfc27de[m
+Author: root <neginsky58@gmail.com>
+Date:   Sun May 4 21:24:24 2014 +0300
+
+    working with approval page
+
+[33mcommit 7e480b9f37e9273b4bae64b2799ca8065a554793[m
+Author: root <neginsky58@gmail.com>
+Date:   Sat May 3 00:23:15 2014 +0300
+
+    pdf issue
+
+[33mcommit bb84be65df1d0b65a6e92babd6c4afd8f96d4a6e[m
+Author: root <neginsky58@gmail.com>
+Date:   Fri May 2 23:53:04 2014 +0300
+
+    pdf viewer issue
+
+[33mcommit 35d5c1369725a9ade19561ed81cf8ed62fc96b08[m
+Author: root <neginsky58@gmail.com>
+Date:   Fri May 2 23:49:29 2014 +0300
+
+    pdf wickedpdf viewer issue
+
+[33mcommit 8a3e78e97aeb574ad3cf2960be37ab5291889c6e[m
+Author: root <neginsky58@gmail.com>
+Date:   Fri May 2 23:43:36 2014 +0300
+
+    heroku wickedpdf gem
+
+[33mcommit 7cb477467a14d767e1212786260db8286f7af6b2[m
+Author: root <neginsky58@gmail.com>
+Date:   Fri May 2 23:39:48 2014 +0300
+
+    pdf embed issue
+
+[33mcommit 4dec0d350b0984be4e5ca11fb75e9fafcb9c89c3[m
+Author: root <neginsky58@gmail.com>
+Date:   Fri May 2 23:27:06 2014 +0300
+
+    pdf issue
+
+[33mcommit 6f518d648bc5093549ae09cb4a79349e07c8c046[m
+Author: root <neginsky58@gmail.com>
+Date:   Fri May 2 21:11:02 2014 +0300
+
+    test pdf
+
+[33mcommit 4b172909506b5cc41562fd1361b9fe554413afd5[m
+Author: root <neginsky58@gmail.com>
+Date:   Fri May 2 21:09:29 2014 +0300
+
+    pdf issue
+
+[33mcommit 1b748a0c219d141e08312ef4e164f4e9179fc9d0[m
+Author: root <neginsky58@gmail.com>
+Date:   Fri May 2 19:12:06 2014 +0300
+
+    allow cross
+
+[33mcommit 587e7e463b96c350f444acc03f18761ae0d38a80[m
+Author: root <neginsky58@gmail.com>
+Date:   Fri May 2 18:51:08 2014 +0300
+
+    pdf issue
+
+[33mcommit b2ad686efbcef95c404bf8d4f4c6ed1c4adf747e[m
+Author: root <neginsky58@gmail.com>
+Date:   Fri May 2 18:00:34 2014 +0300
+
+    pdf viewer
+
+[33mcommit 4923b26966dd89edda9f50a96b5dfc0a1717398a[m
+Author: root <neginsky58@gmail.com>
+Date:   Fri May 2 04:46:59 2014 +0300
+
+    work backup
+
+[33mcommit b49beb87dc17d53e3cd8d8edc679ac35b1833efb[m
+Author: root <neginsky58@gmail.com>
+Date:   Fri May 2 01:22:13 2014 +0300
+
+    fix pdf screen
+
+[33mcommit 4f834e870ba478ecb8202e03761d95af323d76cc[m
+Author: root <neginsky58@gmail.com>
+Date:   Wed Apr 30 15:35:10 2014 +0300
+
+    new project issue
+
+[33mcommit a385a2a911949353561cb8bb7e83c35b8aac6a71[m
+Author: root <neginsky58@gmail.com>
+Date:   Wed Apr 30 15:12:19 2014 +0300
+
+    log enable
+
+[33mcommit eca3db72aed4f7fcdc827155a11a3a546959fea2[m
+Author: root <neginsky58@gmail.com>
+Date:   Wed Apr 30 15:03:38 2014 +0300
+
+    assets problem
+
+[33mcommit c10a01680b01fd5b95a53674081582ca5d415add[m
+Author: root <neginsky58@gmail.com>
+Date:   Wed Apr 30 14:55:24 2014 +0300
+
+    stripe wrong name issue
+
+[33mcommit 84b76470bede265c007804c827dab24e38d5dd67[m
+Author: root <neginsky58@gmail.com>
+Date:   Wed Apr 30 14:52:32 2014 +0300
+
+    stripe key
+
+[33mcommit 78b27e8b55e6f93039ef703def3cd0d4da3c26e0[m
+Author: root <neginsky58@gmail.com>
+Date:   Wed Apr 30 13:55:02 2014 +0400
+
+    hooks controller issue
+
+[33mcommit 760e1aff7a940b2abd7e03361fb7a5db15e22c1e[m
+Author: root <neginsky58@gmail.com>
+Date:   Wed Apr 30 10:54:41 2014 +0400
+
+    work backup
+
+[33mcommit 8fe2bc5acec480411f94c8347eb3d73df4e3f1b9[m
+Author: root <neginsky58@gmail.com>
+Date:   Tue Apr 29 23:29:56 2014 +0300
+
+    workbackup
+
+[33mcommit f604a6aebfd3112909e05f5fa8cd0cb85214959a[m
+Author: root <neginsky58@gmail.com>
+Date:   Tue Apr 29 04:19:02 2014 +0300
+
+    work backup
+
+[33mcommit 785fe7b177fa9fcbd391601952399d519d456060[m
+Author: root <neginsky58@gmail.com>
+Date:   Mon Apr 28 22:05:40 2014 +0300
+
+    backup
+
+[33mcommit bbccbfb40cc784bb88c41f517e49eb85947ff7ca[m
+Author: root <neginsky58@gmail.com>
+Date:   Mon Apr 28 14:16:33 2014 +0400
+
+    work backup
+
+[33mcommit 938e222640dc3443eab7e3df74de1b6976f1384e[m
+Author: root <neginsky58@gmail.com>
+Date:   Sun Apr 27 23:49:58 2014 +0300
+
+    work backup
+
+[33mcommit f6b9584af54cf310cf667bae2268d70ff94e9ebc[m
+Author: root <neginsky58@gmail.com>
+Date:   Fri Apr 25 14:29:49 2014 +0400
+
+    backup
+
+[33mcommit c671ac26b01f44c60cf91a2b839b3548d4357c99[m
+Author: root <neginsky58@gmail.com>
+Date:   Fri Apr 25 13:59:54 2014 +0400
+
+    backup
+
+[33mcommit 364ef9b350677300e20061d47d02a116eeef1a0f[m
+Author: root <neginsky58@gmail.com>
+Date:   Fri Apr 25 04:18:50 2014 +0300
+
+    work
+
+[33mcommit 5e2278ea9774fb7320846e7d23de4c0d2321373a[m
+Author: root <neginsky58@gmail.com>
+Date:   Thu Apr 24 13:41:43 2014 +0400
+
+    backup
+
+[33mcommit 4ededa895597b50ca4cff9d8ba07a0d28d3e687e[m
+Author: root <neginsky58@gmail.com>
+Date:   Wed Apr 23 23:35:38 2014 +0300
+
+    notifier
+
+[33mcommit 225b27b100b6f61211693d2f674b9ce32843a82c[m
+Author: root <neginsky58@gmail.com>
+Date:   Wed Apr 23 17:02:37 2014 +0300
+
+    second
+
+[33mcommit c40e73b75f950d5dd26a08b7775b788752f95708[m
+Author: root <neginsky58@gmail.com>
+Date:   Wed Apr 23 15:54:40 2014 +0300
+
+    moving repo
+
+[33mcommit 7224b95b27bcbb48d9ba81c9f6409a160e2d6067[m
+Author: root <neginsky58@gmail.com>
+Date:   Wed Apr 23 15:53:23 2014 +0300
+
+    first commit
+
+[33mcommit 1a3905b850f01dbab95267720c1cdd258262db53[m
+Author: Chris O <chris@strikinggroup.com.au>
+Date:   Sun Apr 20 22:26:42 2014 -0700
+
+    Initial commit

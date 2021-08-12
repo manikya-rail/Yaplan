@@ -1,0 +1,123 @@
+{{reg/support/g-reg-notify type=notification.type msg=notification.msg}}
+{{#g-slide-out}}
+  <h4 class="q-text-center rbt-fnt-light">PROJECT DETAILS</h4>
+    <div class="mt-1 mb-1">
+      <small class="g-doc-header-name">PROJECT NAME</small>
+      <p class="no-margin">{{project.title}}</p>
+    </div>
+    <div class="mt-1 mb-1">
+      <small class="g-doc-header-name">PROJECT DESCRIPTION</small>
+      <p class="no-margin">{{project.description}}</p>
+    </div>
+    <div class="mt-1 mb-1">
+      <small class="g-doc-header-name">CATEGORY</small>
+      <p class="no-margin">{{project.category.name}}</p>
+    </div>
+    <div class="mt-1 mb-1">
+      <small class="g-doc-header-name">WORKFLOW TEMPLATE NAME</small>
+      <p class="no-margin">{{projectWorkflow.name}}</p>
+    </div>
+    <div class="mt-1 mb-1">
+      <small class="g-doc-header-name">TASKS CREATED</small>
+      <p class="no-margin">{{project.createdTasksCount}}</p>
+    </div>
+    <div class="mt-1 mb-1">
+      <small class="g-doc-header-name">TASKS COMPLETED</small>
+      <p class="no-margin">{{project.completedTasksCount}}</p>
+    </div>
+    <div class="mt-1 mb-1">
+      <small class="g-doc-header-name">DOCUMENTS ASSIGNED</small>
+      <p class="no-margin">{{project.assignedDocumentsCount}}</p>
+    </div>
+    <div class="mt-1 mb-1">
+      <small class="g-doc-header-name">COLLABORATORS ACCEPTED</small>
+      <p class="no-margin">{{collaboratorCount}}</p>
+    </div>
+  {{#if projectOwner}}
+    {{#if projectWorkflow}}
+      <div style="margin-bottom: 50px;">
+        <button
+          class="workflow-button ml-0" style="border-radius: 0; margin: 5px;"
+          {{ action 'editWorkflow' }} disabled={{nonEditable}}
+        >
+          Configure Workflow
+        </button>
+        <button
+          class='workflow-button ml-0' style="border-radius: 0; margin: 5px;"
+          {{ action 'showAssignWorkflow' }} disabled={{projectWorkflow.locked}}
+        >
+          Replace workflow
+        </button>
+        <button class="slide-out-button workflow-button ml-0" {{ action 'saveAsTemplate' }}>
+          Save as template
+        </button>
+        <button class="slide-out-button workflow-button ml-0" style="margin: 5px;" {{ action 'toggleLock' }}>
+          {{ if projectWorkflow.locked 'Unlock' 'Lock' }} Workflow
+        </button>
+      </div>
+    {{/if}}
+  {{/if}}
+{{/g-slide-out}}
+{{#if projectWorkflow }}
+  <div style="margin-top: -40px;">
+    <div class='pull-left flexed' style='margin-left: 50px;'>
+      <small style="margin-bottom: 10px; margin-top: 10px; opacity: 0.6;">CATEGORY</small>
+      <p>{{ projectWorkflow.category.name }}</p>
+    </div>
+    <div class='pull-left flexed' style='margin-left: 50px;'>
+      <small style="margin-bottom: 10px; margin-top: 10px; opacity: 0.6;">WORKFLOW</small>
+      <p>{{ projectWorkflow.name }}</p>
+    </div>
+    <div class='pull-right' style="margin-right: 50px;">
+      {{#if projectOwner}}
+        {{#unless startDate }}
+          <button class='workflow-button' {{ action 'startProject' }} style="margin-right: 50px; margin-top: -17px;">
+            Start Project
+          </button>
+        {{/unless}}
+      {{/if}}
+    </div>
+  </div>
+  <div class='clearfix'></div>
+  <div style="height: 100%">
+    <div id="workflow" style="height: 100%;"/>
+  </div>
+{{else}}
+  <div style="text-align: center;">
+    <h1>The project has not been assigned a workflow</h1>
+  </div>
+  <button
+    class="primary" type="submit"
+    style="margin: 30px auto; width:200px; text-align:center"
+    {{action 'showAssignWorkflow'}}
+  >
+    Assign Workflow
+  </button>
+{{/if}}
+{{
+  workflows/g-workflow-picker
+  active=workflowPickerActive
+  workflowTemplates=model.workflowTemplates
+  selectedTemplate=project.projectWorkflow.workflowTemplateId
+  project=model.project assignWorkflow='assignWorkflow'
+}}
+
+<style>
+  #workflow {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 120px;
+    left: 0px;
+  }
+  .ctxt-item {
+    background-color: white;
+    font-family: 'Lato', sans-serif;
+    height: 30px;
+
+  }
+  .ctxt-menu {
+    border-radius: 2px !important;
+    border-color: rgb(238, 238, 238) !important;
+  }
+</style>

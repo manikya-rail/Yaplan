@@ -1,0 +1,23 @@
+<div class="modal-overlay {{if active 'active' ''}}">
+  <div class="modal">
+    <a class="close ico_close-mo" href="" {{action (toggle "active")}}></a>
+   	<div id="plupload">
+      {{reg/support/g-reg-notify type=notification.type msg=notification.msg}}
+    	<div id="debug">No runtime found, your browser doesn't support HTML5 drag &amp; drop upload.</div>
+      {{#if inProgress}}
+      	<h2 class="progress">
+          <div class="icon"></div>
+          Uploading image ... 
+        </h2>
+    	{{else}}
+        <div class="dropzone" id="dropzone"></div>
+
+        <h2>Drag & Drop to import your image, or browse</h2>
+        <div class="buttons">
+          <button class="secondary cancel" {{action (toggle 'active')}}>Close</button>
+          <button id="g_document_image_uploader_browse" class="dark-primary">Browse</button>
+        </div>
+      {{/if}}
+    </div>
+  </div>
+</div>

@@ -1,0 +1,35 @@
+<!-- {{yield}} -->
+{{reg/support/g-reg-notify type=notification.type msg=notification.msg}}
+<div class="modal-overlay {{if active 'active' ''}}">
+	<div class="modal confirm-modal" style="width: auto; height: auto;">
+		<a class="close ico_close-mo" href="" {{action (toggle 'active')}}></a>
+		<div class="g-confirm-modal">
+				<div class="dialog-title">Archive {{title}}</div>
+				<div class="dialog-input">
+					<p>Are you sure you want to Archive this {{title}} ?</p>
+				</div>
+			<div class="action-buttons">
+			<button class="gray-btn-secondary m-btn" type="submit" {{action (toggle 'active')}} >NO</button> &nbsp;&nbsp;
+			{{!-- {{#if isDoc}}
+				<button class="primary m-btn" type="submit" {{action 'onArchiveDocument' archive_this_Document}}>YES</button>
+			{{else}}
+				{{#if archiveCategory}}
+					<button class="primary m-btn" type="submit" {{action 'onArchiveCategory' archiveCategory}}>YES</button>
+				{{else}}	
+					<button class="primary m-btn" type="submit" {{action 'onArchiveProject' archive_this_Project}}>YES</button>
+				{{/if}}
+			{{/if}} --}}
+			{{#if   (if-equal title 'Document' true false)}}
+				<button class="primary m-btn" type="submit" {{action 'onArchiveDocument' archive_this_Document}}>YES</button>
+			{{/if}}
+			{{#if   (if-equal title 'Project' true false)}}
+				<button class="primary m-btn" type="submit" {{action 'onArchiveProject' archive_this_Project}}>YES</button>
+			{{/if}}
+			{{#if   (if-equal title 'Category' true false)}}
+				<button class="primary m-btn" type="submit" {{action 'onArchiveCategory' archiveCategory}}>YES</button>
+			{{/if}}
+			</div>
+
+		</div>
+	</div>
+</div>

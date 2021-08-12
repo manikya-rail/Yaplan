@@ -1,0 +1,38 @@
+dependencies:
+  cache_directories:
+    - frontend/node_modules
+    - frontend/vendor
+  post:
+    - npm prune && npm install:
+        pwd: frontend
+    - bower prune && bower install:
+        pwd: frontend
+
+database:
+   post:
+    - bundle exec rake db:seed
+test:
+  pre:
+    - npm install frontend
+  post:
+#    - bundle exec rake test:integration_test
+
+deployment:
+  development:
+    branch: development
+    commands:
+      - git push git@heroku.com:grapple-testing.git $CIRCLE_SHA1:master
+      - heroku run rake db:migrate --app grapple-testing
+
+  staging:
+    branch: staging
+    commands:
+      - git push git@heroku.com:grapple-staging.git $CIRCLE_SHA1:master
+      - heroku run rake db:migrate --app grapple-staging
+
+  v2:
+    branch: v2
+    commands:
+      - git push git@heroku.com:grapple-v2-testing.git $CIRCLE_SHA1:master
+      - heroku run rake db:migrate --app grapple-v2-testing
+

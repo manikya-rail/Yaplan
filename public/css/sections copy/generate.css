@@ -1,0 +1,82 @@
+#section-generate{
+	z-index: 60;
+}
+
+#section-generate h1, #section-generate h3{
+	opacity: 0;
+}
+
+#section-generate .gl-card{
+	position: absolute;
+	z-index: 51;
+	width: 280px;
+	height: 410px;
+	top: 100px;
+
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+
+	-webkit-transition-duration: 1s;
+    transition-duration: 1s;
+
+	opacity: 1;
+	background-size: cover;
+}
+#section-generate .gl-card.tilt{
+	-webkit-filter: brightness(50%);
+	-moz-filter: brightness(50%);
+	filter: brightness(50%);
+}
+#section-generate .gl-card.shadow{
+	-webkit-box-shadow: 0px 0px 18px -6px rgba(0,0,0,0.7);
+	-moz-box-shadow: 0px 0px 18px -6px rgba(0,0,0,0.7);
+	box-shadow: 0px 0px 18px -6px rgba(0,0,0,0.7);
+}
+
+#section-generate .card-1{
+	left: calc(50% - 600px);
+
+	background: url('/assets/imgs/template-1.png') no-repeat;
+}
+#section-generate .card-2{
+	left: calc(50% - 300px);
+
+	background: url('/assets/imgs/template-3.png') no-repeat;
+}
+#section-generate .card-3{
+	left: 50%;
+
+	background: url('/assets/imgs/template-1.png') no-repeat;
+}
+#section-generate .card-4{
+	left: calc(50% + 300px);
+
+	background: url('/assets/imgs/template-1.png') no-repeat;
+}
+
+
+#section-generate .gl-marker{
+	position: absolute;
+	z-index: 52;
+	width: 45px;
+	height: 45px;
+	top: 283px;
+
+	background: url('/assets/imgs/mark-check.png') no-repeat;
+	background-size: cover;
+
+	-webkit-transition-duration: 1s;
+    transition-duration: 1s;
+    
+	opacity: 0;
+}
+#section-generate .gl-marker.show{
+	opacity: 1;
+}
+#section-generate .marker-1{
+	left: calc(50% - 483px);
+}
+#section-generate .marker-2{
+	left: calc(50% + 117px);
+}

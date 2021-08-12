@@ -1,0 +1,222 @@
+<div class="reg">
+ <% flash.each do |name, msg| %>
+    <%= content_tag :div, msg, class: "flash-notice warning", id: "flash_#{name}" if msg.is_a?(String) %>
+  <% end %>
+<div class="reg-top">
+    <div class="logo"></div>
+  </div>
+<%= form_for(resource, as: resource_name, url: session_path(resource_name,from_admin_panel: true)) do |f| %>
+  <h1>Yakkaplan Admin Panel</h1>
+  <div class="input-group g-reg-nao-input">
+    <span class="input input--nao">
+       <%= f.email_field :email, autofocus: true, :class => "input__field input__field--nao" %>
+      <label class="input__label input__label--nao">
+        <span class="input__label-content input__label-content--nao">Email</span>
+      </label>
+      <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
+        <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
+      </svg>
+    </span>
+    <span class="input input--nao input--password">
+       <%= f.password_field :password, autocomplete: "off", :class =>"input__field input__field--nao" %>
+      <label class="input__label input__label--nao">
+        <span class="input__label-content input__label-content--nao">Password</span>
+      </label>
+      <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
+        <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
+      </svg>
+      <a class="tool-reveal {{if passwordVisible "ico_reg_eyeon" "ico_reg_eyeoff"}}" href="" {{action (toggle "passwordVisible")}}></a>
+    </span>
+  </div>
+  <div>
+     <%= f.submit "Log in", :class => "gl-btn" %>
+  </div>
+  
+<% end %>
+</div>
+<style type="text/css">
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400');
+body {
+  font-family: 'Lato' ,sans-serif;
+  background-color: #eeeeee;
+  margin: 0;
+}
+.reg .reg-top {
+  height: 270px;
+  background: url(/assets/images/top_bg.jpg) 0 0/cover;
+}
+.reg .reg-top:after {
+    background: rgba(1,33,105,.85);
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  content: " ";
+  width: 100%;
+  height: 270px;
+}
+.reg .reg-top .logo {
+  position: relative;
+  width: 206px;
+  height: 50px;
+  top: 80px;
+  left: 50%;
+  z-index: 12;
+  transform: translateX(-50%);
+  background: url(/assets/images/logo_yp_white.png) 0 0/cover no-repeat;
+}
+.flash-notice {
+    padding: 15px;
+    box-sizing: border-box;
+    color: white;
+    font-size: 14px;
+    border-radius: 4px;
+    top: 10px;
+    width: 320px;
+    margin: 0 auto;
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    right: 0;
+    background: rgba(243, 116, 94, 0.9);
+    text-align: center;
+    font-weight: 100;
+    -moz-animation: cssAnimation 0s ease-in 5s forwards;
+    /* Firefox */
+    -webkit-animation: cssAnimation 0s ease-in 5s forwards;
+    /* Safari and Chrome */
+    -o-animation: cssAnimation 0s ease-in 5s forwards;
+    /* Opera */
+    animation: cssAnimation 0s ease-in 5s forwards;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+
+  form {
+    position: absolute;
+    top: 185px;
+    left: 50%;
+    width: 584px;
+    padding: 40px;
+    margin-left: -292px;
+    background: #fff;
+    box-shadow: 0 0 14px 0 rgba(0,0,0,.11);
+    box-sizing: border-box;
+  }
+  h1 {
+    margin: 0 0 15px;
+    color: #37474F;
+  }
+  .input-group {
+    margin: 15px 0;
+    font-size: 26px;
+  }
+  .input-group span.input {
+    margin-bottom: 25px;
+}
+.g-reg-nao-input .input__field--nao {
+    padding: .5em 0 .25em;
+    width: 100%;
+    background: 0 0;
+    color: #9da8b2;
+    font-size: 0.9em;
+    outline: none;
+}
+.g-reg-nao-input .input__field {
+    position: relative;
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+    height: 30px;
+    border: none;
+    border-radius: 0;
+    color: #aaa;
+    font-weight: 400;
+    -webkit-appearance: none;
+}
+.g-reg-nao-input .input__label--nao {
+    position: absolute;
+    top: 0em;
+    font-size: .85em;
+    left: 0;
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 0;
+    pointer-events: none;
+}
+.g-reg-nao-input .input__label {
+    display: inline-block;
+    color: #6a7989;
+    font-weight: 700;
+    font-size: 22px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.g-reg-nao-input .graphic--nao {
+    stroke: #92989e;
+    pointer-events: none;
+}
+
+.g-reg-nao-input .graphic {
+    position: absolute;
+    top: 0;
+    left: 0;
+    fill: none;
+}
+.reg .input-group .input--password {
+    position: relative;
+}
+
+.g-reg-nao-input .input--nao {
+    overflow: hidden;
+}
+
+.g-reg-nao-input .input {
+    position: relative;
+    z-index: 1;
+    display: block;
+    width: 100%;
+    vertical-align: top;
+}
+.gl-btn {
+    padding: 15px 50px;
+    color: #fff;
+    border: 0;
+    cursor: pointer;
+    border-radius: 2px;
+    font-size: 14px;
+    text-align: center; 
+    background-color: #51caff;
+
+}
+/* Change the white to any color ;) */
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 30px white inset;
+}
+
+@keyframes cssAnimation {
+    to {
+        width:0;
+        height:0;
+        padding: 0;
+        overflow:hidden;
+        display: none;
+    }
+}
+@-webkit-keyframes cssAnimation {
+    to {
+        width:0;
+        height:0;
+        padding: 0;
+        visibility:hidden;
+        display: none;
+    }
+}
+</style>

@@ -1,0 +1,30 @@
+{{settings/support/g-submenu class='content-header'}}
+<div class="filters">
+  <button class="colored" {{action "save"}} disabled='disabled'><i class="fa fa-check"></i> Save Changes</button>
+</div>
+<div class="content inner">
+  <div id='payment-method'>
+    {{settings/r-payment-method}}
+  </div>
+  <form class="g-plan">
+    {{reg/support/g-reg-notify type=notifyType}}
+    <div class="input-group g-reg-nao-input">
+      <ul class="plan-list">
+        {{#each plans as |plan|}}
+          <li {{action 'save' plan}} class="item" >
+            <div class="container" id={{plan.id}}>
+              <table class='plan_list'>
+                <tr>
+                  <td width="30%"><strong>{{plan.name}}</strong></td>
+                  <td width="20%">{{unless plan.isNotUnlimited 'Unlimited' plan.project_count}} Project(s)</td>
+                  <td width="20%">$ {{convert_cents plan.amount}} / month</td>
+                  <td class="desc" width="30%">Click to subscribe</td>
+                </tr>
+              </table>
+            </div>
+          </li>
+        {{/each}}
+      </ul>
+    </div>
+  </form>
+</div>

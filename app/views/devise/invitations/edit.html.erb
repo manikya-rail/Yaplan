@@ -1,0 +1,146 @@
+<head>
+
+<style type="text/css">
+	@import "../../bower_components/font-awesome/less/font-awesome";
+	@import url('https://fonts.googleapis.com/css?family=Roboto');
+	@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700');
+
+	body {
+		margin: 0px;
+	 	-webkit-font-smoothing: antialiased;
+    	-moz-osx-font-smoothing: grayscale;
+	}
+	.password-container {
+	 width: 360px;
+	 margin: -80px auto;
+	 font-family: 'Roboto';
+	 text-align: center;
+	 padding: 15px;
+	 box-shadow: 0px 2px 35px rgba(0, 0, 0, 0.06);
+	 background-color: #fff;
+	}
+	.reg-top .logo {
+	  position: relative;
+	  width: 206px;
+	  height: 28px;
+	  top: 80px;
+	  left: 50%;
+	  transform: translateX(-50%);
+	  background: url('/assets/images/logo-alt_icn.png') no-repeat;
+	  background-size: cover;
+	}
+	.password-container .g-form-caption {
+	 font-weight: 500;
+	 color: #2e353a;
+	 text-align: left;
+	}
+	.password-container .g-form-group {
+	 margin-bottom: 15px;
+	 border: none;
+	 text-align: left;
+	}
+	.password-container .g-form-group .g-control-label {
+	 color: #8E8E8E;
+	 display: block;
+	 font-size: 12px;
+	 margin-bottom: 12px;
+	 letter-spacing: 0.2px;
+	}
+	.password-container .g-form-group .g-form-control {
+	 border: 1px solid #747474;
+	 color: #37474f;
+	 font-size: 12px;
+	 padding-left: 12px;
+	 padding-right: 12px;
+	 width: 92%;
+	 max-width: 100%;
+	 height: 36px;
+	}
+	.password-container .g-form-group ::-webkit-input-placeholder {
+	 /* Chrome/Opera/Safari */
+	 color: #CCCCCC;
+	}
+	.password-container .g-form-group ::-moz-placeholder {
+	 /* Firefox 19+ */
+	 color: #CCCCCC;
+	}
+	.password-container .g-form-group :-ms-input-placeholder {
+	 /* IE 10+ */
+	 color: #CCCCCC;
+	}
+	.password-container .g-form-group :-moz-placeholder {
+	 /* Firefox 18- */
+	 color: #CCCCCC;
+	}
+	.password-container .g-form-group textarea {
+	 padding-top: 12px;
+	}
+	.password-container .gl-button.orange {
+	 padding: 15px 50px;
+	 color: #fff;
+	 border: 0;
+	 cursor: pointer;
+	 border-radius: 2px;
+	 font-size: 14px;
+	 font-family: 'Roboto';
+	 text-align: center;
+	 background-color: #ffa000;
+	}
+	.password-container #error_explanation h2 {
+	 font-weight: 400;
+	 font-size: 12px;
+	 color: orange;
+	 margin-bottom: 0px;
+	 text-align: left;
+	}
+	.password-container #error_explanation ul {
+	 list-style-type: none;
+	 padding: 0;
+	 font-size: 11px;
+	 color: orange;
+	 margin-top: 5px;
+	 text-align: left;
+	}
+	.password-container .text-center {
+	 text-align: center;
+	}
+	.reg-top {
+	  height: 270px;
+	  background: url('/assets/images/top-banner.jpg');
+	  background-size: cover;
+	}
+	input {
+		outline: none;
+	}
+</style>
+</head>
+<div class="reg-top">
+	<div class="logo"></div>
+	</div>   
+<div class="password-container">
+	<div class="pwd-logo"></div>
+	<h2 class="g-form-caption"><%= t 'devise.invitations.edit.header' %></h2>
+	<%= form_for resource, :as => resource_name, :url => invitation_path(resource_name), :html => { :method => :put } do |f| %>
+	  <%= devise_error_messages! %>
+	  <%= f.hidden_field :invitation_token %>
+<div class="g-form-group">
+<%= f.label :first_name, :class=>"g-control-label"%>
+	  <%= f.text_field :first_name, :class=>"g-form-control" %>
+</div>
+<div class="g-form-group">
+<%= f.label :last_name, :class=>"g-control-label"%>
+	  <%= f.text_field :last_name, :class=>"g-form-control" %>
+</div>
+<div class="g-form-group">
+	  <%= f.label :password, :class=>"g-control-label"%>
+	  <%= f.password_field :password, :class=>"g-form-control" %>
+</div>
+<div class="g-form-group">
+	  <%= f.label :password_confirmation, :class=>"g-control-label"%>
+	  <%= f.password_field :password_confirmation, :class=>"g-form-control" %>
+</div>
+<div class="text-center">
+	  <%= f.submit t("devise.invitations.edit.submit_button"), :class=>"gl-button orange small" %>
+	</div>
+	<% end %>
+</div>

@@ -1,0 +1,73 @@
+{{reg/support/g-reg-notify type=toast.type msg=toast.msg}}
+<div id="header">
+	<div>
+	</div>
+	<div class="logo clickable" {{action 'goToDashboard'}}></div>
+	<div class="welcome section-menu g-menu-dropdown" {{action (toggle 'isMenuActive')}}>{{userInformation.full_name}} &nbsp;&nbsp;&nbsp;&#9662; {{#g-popup isOpened=isMenuActive}}
+		<ul class="context-list">
+			<li {{action 'openURL'}}>Help</li>
+			<li {{action "settings"}}>Settings</li>
+			<li {{action "logout"}}>Logout</li>
+		</ul>
+		{{/g-popup}}
+	</div>
+
+	<div class="profile-pic">
+		{{#if userInformation.portrait.image.url}}
+			<img class="g-avatar" src="{{userInformation.portrait.image.url}}" />
+		{{else}}
+			<img class="g-avatar" src="../assets/images/profile/default.png"/>
+		{{/if}}
+	</div>
+
+{{!-- (toggle 'isNoficationActive' --}}
+
+	<div class="notification g-notification-section-menu active" {{action 'toggleNotification'}}>
+		<i></i>
+		{{#g-popup isOpened=isNoficationActive}}
+			<ul class="context-list">
+			{{#if loadingText}}
+						<li style="border-bottom: none;">
+							<ul class="context-list">
+								<li style="border-bottom: none;"><span><b>Loading...</b></span></li>
+							</ul>
+						</li>
+			{{else}}
+				{{#if notification.length}}
+					{{#each notification as |notifications|}}
+							<li>
+								<ul class="context-list">
+									<li><span><b>{{notifications.text}} - {{notifications.trackable.title}} </b></span></li>
+									{{#if (if-equal notifications.key 'project.invitation' true false)}}
+										{{#if   (if-equal notifications.trackableType 'Project' true false)}}
+											<span style="color:#51caff; cursor:pointer" {{action 'acceptProjectInvitation' notifications.trackable.id}}>Accept</span> <span>&nbsp;|&nbsp;</span>
+											<span style="cursor:pointer" {{action 'rejectProjectInvitation' notifications.trackable.id}}>Reject</span>
+										{{/if}}
+									{{else}}
+										{{#if (if-equal notifications.key 'document.invitation' true false)}}
+												{{#if   (if-equal notifications.trackableType 'Task' true false)}}
+													<span style="color:#51caff; cursor:pointer" {{action 'acceptDocumentInvitation' notifications.trackable.id}}>Accept</span> <span>&nbsp;|&nbsp;</span>
+													<span style="cursor:pointer" {{action 'rejectDocumentInvitation' notifications.trackable.id}}>Reject</span>
+												{{/if}}
+										{{/if}}
+									{{/if}}
+								</ul>
+							</li>
+					{{/each}}
+							{{#if (compare notification.length '>' 4)}} 
+								<span class="all-notification">{{#link-to "app.notification" class="q-text-center" tagName="a" }}View All{{/link-to}}</span>
+							{{/if}}
+				{{else}}
+					<li style="border-bottom: none;">
+						<ul class="context-list">
+							<li style="border-bottom: none;"><span><b>You have no notifications</b></span></li>
+						</ul>
+					</li>			
+				{{/if}}
+			{{/if}}
+			</ul>
+		{{/g-popup}}
+	</div>
+</div>
+
+

@@ -1,0 +1,19 @@
+#section-customize{
+	z-index: 20;
+}
+
+#section-customize h1, #section-customize h3{
+	opacity: 0;
+}
+
+#section-customize .card-1{
+	position: absolute;
+	z-index: 21;
+	width: 775px;
+	height: 775px;
+	top: 100px;
+	left: calc(50% - 388px);
+
+	background: url('/assets/imgs/customize-1.png') no-repeat;
+	background-size: cover;
+}

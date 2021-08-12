@@ -1,0 +1,24 @@
+<div class="documents-route">
+  <div class="content-header">
+    <ul class="submenu">
+      {{#link-to "app.documents.documents" href=true tagName='li'}}My Documents{{/link-to}}
+      {{#link-to "app.documents.templates" href=true tagName='li'}}Document Templates{{/link-to}}
+    </ul>
+    {{g-header-right isList=isList isTile=isTile listAction='listAction' tileAction='tileAction' }}
+  </div>
+</div>
+
+{{
+  documents/g-templates
+  documentTemplates=documentTemplates
+  clickTemplate="clickTemplate"
+  onDocumentEdit=onDocumentEdit
+  exportDocument="exportDocument"
+  editDocumentName="editDocumentName"
+  categories=categories
+  scope='user' 
+  isTile=isTile
+  isList=isList
+}}
+
+

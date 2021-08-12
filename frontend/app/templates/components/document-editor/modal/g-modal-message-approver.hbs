@@ -1,0 +1,23 @@
+<div class="modal-overlay {{if active 'active' ''}} g-modal-message-approver">
+	<div class="modal">
+		<a class="close ico_close-mo" href="" {{action (toggle 'active')}}></a>
+		<div class="g-people-modal">
+			<div class="dialog-title">Issue for approval</div>
+			<div class="dialog-people-list">
+				<div class="item-person">
+					<div class="photo">
+						{{g-avatar src=(portrait approver.id false)}}
+					</div>
+					<div class="info">
+						<span class="name">{{full-name approver.full_name}}</span>
+						<span class="email">{{approver.email}}</span>
+					</div>
+				</div>
+			</div>
+			<div class="dialog-input">
+				{{textarea value=message placeholder="Message..."}}
+			</div>
+			<button class="primary" type="submit" {{action 'confirm'}}>Request Approval</button>
+		</div>
+	</div>
+</div>

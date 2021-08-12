@@ -1,0 +1,24 @@
+{
+  "scripts": {
+    "postinstall": "./bin/heroku_install",
+    "swagger": "node scripts/swagger-editor",
+    "preswagger": "npm i"
+  },
+  "devDependencies": {
+    "bower": "*",
+    "ember-cli-form-data": "^1.1.0",
+    "ember-lodash": "^4.17.2",
+    "lodash": "^4.17.4",
+    "swagger-editor-server": "0.0.4"
+  },
+  "cacheDirectories": [
+    "frontend/node_modules",
+    "frontend/bower_components",
+    "node_modules"
+  ],
+  "dependencies": {
+    "broccoli-funnel": "^1.0.1",
+    "natives": "^1.1.6",
+    "os-tmpdir": "^2.0.0"
+  }
+}

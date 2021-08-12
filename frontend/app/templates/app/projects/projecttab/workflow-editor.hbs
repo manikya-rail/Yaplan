@@ -1,0 +1,37 @@
+{{
+  workflows/project-workflow-edit
+  projectWorkflow=model.projectWorkflow tasks=model.tasks
+  model=model
+  updateCommunication='updateCommunication'
+  project=model.project
+  docs=model.documents
+  updateAction='updateAction' updated=updated
+  collaborators=model.collaborators invitelistofmemeber='invitelistofmemeber'
+  collaborations=model.collaborations reloadPage='reloadPage'
+  assignWorkflow='assignWorkflow' toggleLock='toggleLock'
+  updateDocumentInfo='updateDocumentInfo' save='save'
+  updateDecision='updateDecision' users=collaborators
+  setCy='setCy'
+  setCyJson='setCyJson'
+  makeDirty='makeDirty'
+}}
+<style>
+  .flex-container {
+    display: flex;
+    height: 100%;
+  }
+
+  .flex-horizontally-scrolled-items {
+    display: flex;
+    width: 100%;
+    overflow-x: scroll;
+    border-right: 1px solid #EEE;
+  }
+  .flex-workflow {
+    /*min-width: 2000px;*/
+    flex-grow: 1;
+  }
+  #workflow-editor canvas:last {
+    display: none;
+  }
+</style>

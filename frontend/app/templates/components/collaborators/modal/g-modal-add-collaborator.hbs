@@ -1,0 +1,53 @@
+{{reg/support/g-reg-notify type=notification.type msg=notification.msg}}
+<div class="modal-overlay {{if active 'active' ''}} g-modal-add-collaborator">
+	<div class="modal" style="width: auto; height: auto;">
+		<a class="close ico_close-mo" href="" {{action (toggle 'active')}}></a>
+		<div class="g-people-modal">
+
+			<div class="dialog-title">Add a new collaborator</div>
+			<div class="dialog-input">
+				<div class="colloborator-modal">
+					<fieldset class="g-form-group">
+						{{!-- {{input value=name type="name" placeholder = "Name" class="g-form-control" oninput='inputChange'}} --}}
+						<input type="text" id="uname" value={{name}} placeholder="Name" class="g-form-control" oninput={{action "findNameArray"}}> 
+						<span id="nameResult"></span>
+					</fieldset>
+					<fieldset class="g-form-group">
+						{{!-- {{input value=email type="email" placeholder = "Email" class="g-form-control"}} --}}
+						<input type="text" id="uemail" value={{email}} placeholder="Email" class="g-form-control" oninput={{action "findEmailArray"}}> 
+						<span id="nameResult"></span>
+					</fieldset>
+					<fieldset class="g-form-group">
+						{{textarea value=message placeholder="Message..."  class="g-form-control"}}
+					</fieldset>
+				</div>
+			</div>
+			{{#if limited}}
+			{{else}}
+				<div class="dialog-choices">
+					<label>INVITE TO</label>
+					<div class="select-wrapper">
+						{{#x-select value=choice.project action='projectChanged'}}
+							{{#x-option value=0}}Select Project{{/x-option}}
+							{{#each projects as |project|}}
+								{{#x-option value=project.id}}{{project.title}}{{/x-option}}
+							{{/each}}
+						{{/x-select}}
+					</div>
+					<div class="select-wrapper">
+						{{#x-select value=choice.document}}
+							{{#x-option value=0}}Select Document{{/x-option}}
+							{{#each documents as |document|}}
+								{{#x-option value=document.id}}{{document.title}}{{/x-option}}
+							{{/each}}
+						{{/x-select}}
+					</div>
+				</div>
+			{{/if}}
+			<button class="primary" type="submit" disabled={{isNotFilled}} {{action 'addCollaborator'}}>Send Invite</button>
+			<div class="dialog-tagline">
+				We will notify you once the user accepts the invitation
+			</div>
+		</div>
+	</div>
+</div>

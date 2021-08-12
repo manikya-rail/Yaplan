@@ -1,0 +1,32 @@
+{{reg/support/g-reg-notify type=notification.type msg=notification.msg}}
+{{#if orderedSteps.length}}
+	<table class="templates-table-view mb-2">
+    <tr>
+      <th>Task</th>
+      <th>Description</th>
+      <th>Assigned To</th>
+      <th>Status</th>
+    </tr>
+    {{#each orderedSteps as |userTask|}}
+      <tr>
+      	<td>{{userTask.node.data.text}}</td>
+        <td>{{userTask.description}}</td>
+        <td>{{userTask.task.assignedTo.fullName}}</td>
+        <td>
+        	<i
+        		class="status-circle"
+        		style={{step-status-picker (step-status userTask) 'style'}}
+        	></i>
+          	&nbsp;&nbsp;{{step-status-picker (step-status userTask) 'status'}}
+        </td>
+      </tr>
+    {{/each}}
+	</table>
+  <br><br><br>
+{{else}}
+	<div class="g-documents empty">
+	  <hr/>
+	 <h2 class="q-text-center">It looks like there are no Tasks here for now!.</h2>
+	</div>
+{{/if}}
+{{ tasks/g-reject-popup task=selectedTask rejectTask='rejectTask' active=rejectReasonVisible }}

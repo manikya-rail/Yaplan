@@ -1,0 +1,13 @@
+plans:
+  -
+    id: Free
+    name: Free
+    amount: 0
+    currency: aud
+    interval: month
+  -
+    id: gsolo
+    name: Solo
+    amount: 15
+    currency: aud
+    interval: month

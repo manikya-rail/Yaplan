@@ -1,0 +1,22 @@
+<div class="modal-overlay {{if active 'active' ''}}">
+    <div class="modal">
+        <a class="close ico_close-mo" href="" {{action (toggle "active")}}></a>
+        <form {{action "delete" on="submit"}} class="g-project-modal">
+            <div class="dialog-title">{{if project 'Delete Projects'}}</div>
+            <div class="input-group g-reg-nao-input">
+              <span class="input input--nao">
+                <label class="input__label input__label--nao">
+                    Are You really wants to delete Project
+                </label>
+                <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60"
+                 preserveAspectRat io="none">
+                <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
+                </svg>
+              </span>
+            </div>
+            <div>
+                <button class="primary" type="submit" disabled={{isNotFilled}}>{{if project 'Delete Project'}}</button>
+            </div>
+        </form>
+    </div>
+</div>

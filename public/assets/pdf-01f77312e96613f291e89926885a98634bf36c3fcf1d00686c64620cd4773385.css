@@ -1,0 +1,90 @@
+body {
+  margin: 0;  
+  overflow: hidden;
+}
+
+.doc_container{
+  margin: 30px 60px;
+  font-family: 'sans-serif';
+  font-size: 12px;
+  font-weight: lighter;
+  color: #37474f;
+}
+.sec_container{
+  padding: 30px 0px;
+  width: 100%;
+  display: inline-block;
+}
+.doc_title{
+  font-size: 18px;
+  font-weight: bold;
+  color: #37474f;
+}
+.sec_title{
+  font-size: 15px;
+  font-weight: normal;
+}
+
+.grapple-image.align-left{
+  float: left;
+}
+
+.grapple-image.align-right{
+  float: right;
+}
+
+.grapple-image.align-center{
+  display: block;
+  margin: 0 auto;
+}
+
+.image-pane {
+  visibility:hidden;
+}
+
+
+/* Image sizing */
+img.grapple-image.size-ico {
+    width: 5%;
+    min-width: 32px;
+}
+
+img.grapple-image.size-xs {
+    width: 10%;
+    min-width: 64px;
+}
+
+img.grapple-image.size-sm {
+    width: 25%;
+    min-width: 100px;
+}
+
+img.grapple-image.size-md {
+    width: 50%;
+}
+
+img.grapple-image.size-lg {
+    width: 75%;
+}
+
+img.grapple-image.size-full {
+    width: 100%;
+}
+
+/* Table related styling */
+table{
+  border: solid #999;
+  border-width: 1px 0 0 1px;
+  border-spacing: 0;
+}
+
+tr{
+  border-bottom: 1px solid #999;
+  min-height: 20px;
+}
+
+td{
+  border: solid #999;
+  border-width: 0 1px 1px 0;
+  height: 20px;
+}

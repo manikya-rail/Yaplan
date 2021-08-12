@@ -1,0 +1,22 @@
+<!-- {{yield}} -->
+<div class="modal-overlay {{if active 'active' ''}}" style="z-index: 9999">
+  <div class="modal-auto-size">
+    <a class="close ico_close-mo" href="" {{action (toggle "active")}}></a>
+    <div class="g-form-group mb-2" >
+      <label class="g-control-label">Select Category</label>
+      <select class="g-form-control" id="template-category">
+        {{#each categories as |category|}}
+          <option
+            value={{category.id}}
+            selected={{id-equality category.id categoryId}}>
+            {{category.name}}
+          </option>
+        {{/each}}
+      </select>
+      <i class="fa fa-angle-down select-down-arrow" aria-hidden="true"></i>
+    </div>
+    <button class="primary" style="width: 215px; !important" {{ action 'CreateNewTemplate' }}>
+      Create
+    </button>
+  </div>
+</div>

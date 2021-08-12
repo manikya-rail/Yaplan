@@ -1,0 +1,49 @@
+#section-sections{
+	z-index: 30;
+}
+
+#section-sections .gl-card{
+	opacity: 1;
+	background-color: #fff;
+}
+#section-sections .sections-card-group{
+	position: absolute;
+	z-index: 31;
+	width: 1180px;
+	top: 100px;
+	left: calc(50% - 590px);
+
+	opacity: 0;
+}
+#section-sections .sections-card-group::after{
+	content: '';
+	display: block;
+	clear: both;
+}
+
+#section-sections .sections-card-group > div{
+	float: left;
+}
+#section-sections .sections-card-group > div:not(:last-child){
+	margin-right: 20px;
+}
+#section-sections .sections-card-group > .card-col-1, #section-sections .sections-card-group > .card-col-3 {
+	padding-top: 40px;
+}
+
+#section-sections .card-1, #section-sections .card-2, #section-sections .card-4, #section-sections .card-5{
+	width: 280px;
+	height: 250px;
+	margin-bottom: 20px;
+}
+#section-sections .card-3 {
+	width: 580px;
+	height: 700px;
+}
+
+#section-sections .card-1{background:url('/assets/imgs/reuse-1.png') no-repeat;background-size:cover}
+#section-sections .card-2{background:url('/assets/imgs/reuse-2.png') no-repeat;background-size:cover}
+#section-sections .card-3{background:url('/assets/imgs/reuse-3.png') no-repeat;background-size:cover}
+#section-sections .card-4{background:url('/assets/imgs/reuse-4.png') no-repeat;background-size:cover}
+#section-sections .card-5{background:url('/assets/imgs/reuse-5.png') no-repeat;background-size:cover}
+

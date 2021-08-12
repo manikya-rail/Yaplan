@@ -1,0 +1,30 @@
+<!--Pagination -->
+{{#if (compare totalRecords '>' 15)}}
+	<ul class="g-pagination">
+		<li>
+			{{#if (compare page '==' 1)}}
+				&lt; Prev
+			{{else}}
+				<a class="left btn" style="cursor:pointer" {{action "prevPage"}}>&lt; Prev</a>	
+			{{/if}}
+		</li>
+		{{#each pages as |pgNumber|}}
+			<li>
+				{{#if (compare pgNumber '==' page)}}
+					<a class="active left btn"> {{pgNumber}}</a>
+				{{else}}
+					<a class="left btn" style="cursor:pointer" {{action "callNext" pgNumber}}> {{pgNumber}}</a>
+				{{/if}}
+			</li>
+		{{/each}}
+		<li>
+			{{#if (compare page '==' totalPages)}}
+				Next &gt;
+			{{else}}
+				<a class="right btn" style="cursor:pointer" {{action "nextPage"}}>Next &gt;</a>
+			{{/if}}
+		</li>
+	</ul>
+	<div class="clearfix mb-2 pb-2"></div>
+{{/if}}
+

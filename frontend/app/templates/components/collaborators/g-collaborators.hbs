@@ -1,0 +1,8 @@
+<ul class="g-collaborators grid">
+	<li class="grid-sizer"></li>
+	{{#each collaborators as |collaborator|}}
+		<li class="{{if collaborator.active 'collaborator' ''}}">
+			{{collaborators/g-collaborator-pane collaborator=collaborator active=collaborator.active onSelectDocument="onSelectDocument"}}
+		</li>
+	{{/each}}
+</ul>

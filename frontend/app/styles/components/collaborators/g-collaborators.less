@@ -1,0 +1,48 @@
+@import 'g-collaborator-pane';
+@import 'modal/g-modal-add-collaborator';
+
+.g-collaborators {
+	.clearfix;
+	display: block;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+
+	.grid-sizer {
+		width: ~"calc(50% - 20px)";
+	}
+
+	li.collaborator {
+		float: left;
+		display: block;
+		width: ~"calc(50% - 20px)";
+		margin-bottom: 20px;
+	}
+}
+dl.modal-doc-info {
+	dt {
+  float: left;
+  clear: left;
+  margin-right: 5px;
+  font-weight: bold;
+  line-height: 30px;
+  width: 37%;
+   &::after {
+    content: ":";
+    float: right;
+  }
+	}
+	dd {
+	  margin-left: 40%;
+	  line-height: 30px;
+	  word-break: break-word;
+	}
+	.attachments {
+      line-height: 20px;
+      ul {
+        padding-left: 0;
+        margin: 12px 0;
+        list-style-type: none;
+      }
+    }
+}

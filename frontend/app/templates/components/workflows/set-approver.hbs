@@ -1,0 +1,20 @@
+<div class="modal-overlay {{if active 'active' ''}} g-modal-add-collaborator">
+  <div class="modal"  style="width: auto; height: auto;">
+    <a class="close ico_close-mo" href="" {{action (toggle 'active')}}></a>
+    <div class="g-people-modal attachment-document-modal">
+      <div class="dialog-title">Set the approver</div>
+      <!-- {{reg/support/g-reg-notify type=notification.type msg=notification.msg}} -->
+      <div class="dialog-input">
+        <div class="colloborator-modal">
+          <ul class="document-attach-list">
+            {{#each users as |user|}}
+              <li {{ action 'setApprover' user.id }} style="cursor: pointer; cursor: hand;">
+                <b>{{user.fullName}} ({{user.email}})</b>
+              </li>
+            {{/each}}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

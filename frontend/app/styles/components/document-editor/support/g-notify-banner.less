@@ -1,0 +1,42 @@
+.g-notify-banner {
+	.clearfix;
+	display: none;
+
+	height: 64px;
+	padding: 0px 20px 0px 100px;
+
+	line-height: 64px;
+	background: @orange;
+
+	&.active {
+		display: block;
+	}
+	
+	> i {
+		color: white;
+	}
+
+	.description {
+		display: inline-block;
+
+		color: white;
+		font-size: @font-size-main;
+	}
+
+	.actions {
+		display: inline-block;
+		float: right;
+
+		button {
+			border-radius: 2px;
+
+			&:first-child {
+				margin-right: 10px;
+			}
+
+			&.confirm > i {
+				color: @orange;
+			}
+		}
+	}
+}

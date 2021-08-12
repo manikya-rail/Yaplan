@@ -1,0 +1,37 @@
+<div class="modal-overlay {{if active 'active' ''}} g-modal-add-collaborator">
+  <div class="modal"  style="width: auto; height: auto;">
+    <a class="close ico_close-mo" href="" {{action (toggle 'active')}}></a>
+    <div class="g-people-modal attachment-document-modal">
+      <div class="dialog-title">Documents</div>
+      <div class="dialog-input g-vertical-doc-scroll">
+        <div class="colloborator-modal documet-list-modal">
+          <table style="margin-top: 0px;">
+        {{#if documents.length}}
+          <tr>
+            <th> <b>Document Name</b></th>
+            <th> <b>Status</b></th>
+          </tr>
+          {{#each documents as |document|}}
+            <tr>
+              <td>{{document.title}}</td>
+              <td>
+                {{#if   (if-equal document.status null true false)}}
+                  <p class="no-margin" style="color:#FFA500">Pending</p>
+                {{/if}}
+                {{#if  (if-equal document.status true true false)}}
+                  <p class="no-margin" style="color:#228B22;">Accepted</p>
+                {{/if}}
+                {{#if   (if-equal document.status false true false)}}
+                  <p class="no-margin" style="color:#FF4500;">Rejected</p>
+                {{/if}}
+              </td>
+            </tr>
+          {{/each}}
+        {{/if}}
+      </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

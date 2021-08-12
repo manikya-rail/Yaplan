@@ -1,0 +1,18 @@
+<div class="dashboard-documents-route">
+  <div class="content-header">
+    {{app/dashboard/g-edit-project  placeholder="Edit Project" onEditProjectName="editProjectName" onDeleteProject='deleteProject' onArchiveProject='archiveProject' onChangeApprover="changeApprover"}}
+    {{app/dashboard/g-project-sortby placeholder="Sort By" onChange="changeSortBy"}}
+    <ol class="g-breadcrumb">
+      {{#link-to 'app.projects.project' tagName='li' href=true}}My Projects{{/link-to}}
+      <li class="active">{{model.project.title}}</li>
+    </ol>
+    <button class="floating-plus add" {{action 'addDocument'}}></button>
+  </div>
+  <div class="content inner">
+    {{g-search placeholder="Search Documents" onChanging="changeKeyword"}}
+    {{documents/g-documents documents=model.documents clickDocument="clickDocument" addDocument="addDocument"}}
+  </div>
+</div>
+{{projects/modal/g-project-edit active=isEditProjectOpened project=model.project}}
+{{projects/modal/g-project-delete active=isDeleteProjectOpened project=model.project onDeleteProject="onDeleteProject"}}
+{{projects/modal/g-project-approver active=isChangeApproverOpened project=model.project}}

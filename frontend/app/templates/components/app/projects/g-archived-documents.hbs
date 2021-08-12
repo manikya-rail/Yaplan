@@ -1,0 +1,93 @@
+<div class='clearfix'>
+  <ul class="pull-right g-list-unstyled-project-toggle grid-list-toogle" style="margin-right: 25px;">
+   {{#if isTile}}
+        <li class=""  {{action 'isListdata'}} style="margin-right: 10px;"><i class="list-icon" aria-hidden="true"></i></li>
+        <li class="no-margin" {{action 'isTiledata'}}><i class="grid-icon active" aria-hidden="true"></i></li>
+      {{/if}}
+      {{#if isList}}
+        <li class=""  {{action 'isListdata'}} style="margin-right: 10px;"><i class="list-icon active" aria-hidden="true"></i></li>
+        <li class="no-margin " {{action 'isTiledata'}}><i class="grid-icon" aria-hidden="true"></i></li>
+      {{/if}}
+  </ul>
+</div>
+<p style="padding: 0 50px">ARCHIVED DOCUMENTS</p>
+{{reg/support/g-reg-notify type=notification.type msg=notification.msg}}
+ {{#if isTile}}
+    <div class="g-doc-holder">
+      {{#each archiveddocuments as |doc|}}
+        <div class="d-card document-card-holder">
+          <div class="c-container">
+            <div class="top-options">
+              <h3 class="document-name">{{doc.title}}</h3>
+              <div class="doc-text">{{doc.description}}</div>
+            </div>
+            <div class="bottom-options">
+              <div class="bottom-left pull-left">
+                  {{#if   (if-equal doc.collaborator_count '0' false true)}}
+                <span class="icon-collborator"><i class="user-icon"></i></span><span class="document-colla-count">{{doc.collaborator_count}}</span>
+                {{/if}}
+              </div>
+              <div class="bottom-right ">
+                <ul>
+                  <li>
+                    <div class="tooltip"><i><span class="tooltip-icon" {{action 'showDocumentInfo' doc}}></span></i>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="tooltip share-options"><i class="view-more-options" aria-hidden="true"></i>
+                      <div class="tooltiptext">
+                        <span {{action 'restoreDocument' doc.id doc.project}}>Restore Doc</span>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      {{/each}}
+    </div>
+  {{/if}}
+  {{#if isList}}
+    <table class="project-table-view">
+      {{#if archiveddocuments.length}}
+        <tr>
+          <th>Document Title</th>
+          <th>Owner</th>
+          <th>Options</th>
+        </tr>
+        {{#each archiveddocuments as |doc|}}
+          <tr>
+            <td>
+              {{doc.title}}
+            </td>
+            <td>{{doc.created_by.full_name}}</td>
+              <td class="pl-1">
+            <span>
+              <i class="tooltip-icon" {{action 'showDocumentInfo' doc}}>
+              </i>
+            </span>
+            <span>
+              <span class="view-more-options tooltip" aria-hidden="true">
+                <div class="tooltiptext">
+                  <ul>
+                    <li><a  {{action 'restoreDocument' doc.id doc.project}}>Restore Doc</a></li>
+                  </ul>
+                </div>
+              </span>
+            </span>
+          </td>
+          </tr>
+        {{/each}}
+      {{/if}}
+    </table>
+  {{/if}}
+<br/>
+{{
+  documents/modal/g-doc-info
+  active=infoDoc
+  document=documentinformation
+  categories=null
+  time_zone=time_zone
+  is_template=false
+}}

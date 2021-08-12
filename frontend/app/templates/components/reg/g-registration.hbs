@@ -1,0 +1,75 @@
+<form {{action "register" on="submit"}} class="g-registration">
+  <h1>Create a new account</h1>
+  {{reg/support/g-reg-notify type=notification.type msg=notification.msg}}
+  <div class="input-group g-reg-nao-input">
+    {{!-- <span class="input input--nao">
+      {{input value=full_name type="text" name="full_name" class="input__field input__field--nao"}}
+      <label class="input__label input__label--nao">
+        <span class="input__label-content input__label-content--nao">Name</span>
+      </label>
+      <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
+        <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
+      </svg>
+    </span> --}}
+    <span class="input input--nao">
+      {{input value=first_name type="text" name="first_name" class="input__field input__field--nao"}}
+      <label class="input__label input__label--nao">
+        <span class="input__label-content input__label-content--nao">First Name</span>
+      </label>
+      <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
+        <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
+      </svg>
+    </span>
+
+    <span class="input input--nao">
+      {{input value=last_name type="text" name="last_name" class="input__field input__field--nao"}}
+      <label class="input__label input__label--nao">
+        <span class="input__label-content input__label-content--nao">Last Name</span>
+      </label>
+      <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
+        <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
+      </svg>
+    </span>
+
+    <span class="input input--nao">
+      {{input value=identification type="text" name="email" class="input__field input__field--nao"}}
+      <label class="input__label input__label--nao">
+        <span class="input__label-content input__label-content--nao">Email</span>
+      </label>
+      <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
+        <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
+      </svg>
+    </span>
+
+    <span class="input input--nao input--password">
+      {{input value=password type=(if passwordVisible "text" "password") name="password" class="input__field input__field--nao"}}
+      <label class="input__label input__label--nao">
+        <span class="input__label-content input__label-content--nao">Password</span>
+      </label>
+      <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
+        <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
+      </svg>
+      <a class="tool-reveal {{if passwordVisible "ico_reg_eyeon" "ico_reg_eyeoff"}}" href="" {{action (toggle "passwordVisible")}}></a>
+    </span>
+
+    <span class="input input--nao input--password_confirmation">
+      {{input value=password_confirmation type=(if passwordVisible "text" "password_confirmation") name="password_confirmation" class="input__field input__field--nao"}}
+      <label class="input__label input__label--nao">
+        <span class="input__label-content input__label-content--nao">Password Confirmation</span>
+      </label>
+      <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
+        <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
+      </svg>
+      <a class="tool-reveal {{if passwordVisible "ico_reg_eyeon" "ico_reg_eyeoff"}}" href="" {{action (toggle "passwordVisible")}}></a>
+    </span>
+  </div>
+
+
+  <div>
+    <button type="submit" disabled={{isNotFilled}}>Create account</button>
+  </div>
+
+  <div class="notamember">
+    Already part of Yakkaplan? {{#link-to 'reg.login'}}Click to sign in{{/link-to}}
+  </div>
+</form>

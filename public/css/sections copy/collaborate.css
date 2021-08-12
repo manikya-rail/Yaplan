@@ -1,0 +1,61 @@
+
+#section-collaborate{
+	z-index: 50;
+}
+
+#section-collaborate h1, #section-collaborate h3{
+	opacity: 0;
+}
+
+
+#section-collaborate .gl-card{
+	position: absolute;
+	width: 580px;
+	height: 142px;
+
+	opacity: 0;
+}
+#section-collaborate .gl-card.show{
+	opacity: 1;
+}
+
+#section-collaborate .card-1{
+	z-index: 53;
+	top: 120px;
+	left: calc(33% - 290px);
+
+	background: url('/assets/imgs/collaborator-1.png') no-repeat;
+	background-size: cover;
+}
+#section-collaborate .card-2{
+	z-index: 51;
+	top: 310px;
+	left: calc(38% - 290px);
+
+	background: url('/assets/imgs/collaborator-2.png') no-repeat;
+	background-size: cover;
+}
+#section-collaborate .card-3{
+	z-index: 52;
+	top: 430px;
+	left: calc(50% - 290px);
+
+	background: url('/assets/imgs/collaborator-3.png') no-repeat;
+	background-size: cover;
+}
+#section-collaborate .card-4{
+	z-index: 55;
+	top: 55px;
+	left: calc(56% - 290px);
+
+	background: url('/assets/imgs/collaborator-4.png') no-repeat;
+	background-size: cover;
+}
+#section-collaborate .card-5{
+	z-index: 54;
+	top: 250px;
+	left: calc(66% - 290px);
+
+	background: url('/assets/imgs/collaborator-5.png') no-repeat;
+	background-size: cover;
+}

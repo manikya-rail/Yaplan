@@ -1,0 +1,94 @@
+{{#if document}}
+	<div class="modal-overlay {{if active 'active' ''}} g-modal-add-collaborator">
+		<div class="modal"  style="width: auto; height: auto;">
+			<a class="close ico_close-mo" href="" {{action (toggle 'active')}}></a>
+			<div class="g-people-modal">
+				<div class="dialog-title" style="color:#51caff">{{document.title}}</div>
+				<div class="dialog-input">
+					<div class="colloborator-modal">
+						<dl class="modal-doc-info">
+						  <dt><b>Document Category</b></dt>
+						  	<dd>{{document.category_name}}</dd>
+						  	{{#if document.assigned_to}}
+							<dt><b>Document Owner</b></dt>
+							<dd>{{document.assigned_to.email}}</dd>
+							{{/if}}
+						  	{{#if document.approver}}
+							<dt><b>Document Approver</b></dt>
+							<dd>{{document.approver.email}}</dd>
+							{{/if}}
+							<dt><b>Description</b></dt>
+							{{#if document.description}}
+							<dd><p class="min-line-height">{{document.description}}</p>
+								
+							</dd>
+							{{else}}
+							<dd>
+								Not Available
+							</dd>		
+							{{/if}}
+							{{#if document.collaborators.length}}
+						  	<dt><b>Document Collaborator</b></dt>
+						  	<dd>{{#each document.collaborators as |collaborator|}}
+						  			{{#if document.assigned_to}}
+						  				{{#if  (if-equal collaborator.id document.assigned_to.id false true)}}
+											{{collaborator.email}}
+										{{else}}
+											- <br>
+										{{/if}}
+									{{else}}
+										{{collaborator.email}}
+									{{/if}}
+								{{/each}}
+							</dd>
+							{{/if}}
+							{{#if is_template}}
+							{{else}}
+								<dt><b>Proposed Start Date</b></dt>
+								<dd>
+									{{#if document.proposed_startdate}}
+										{{fuzzy-date document.proposed_startdate time_zone}}
+									{{else}}
+										Not Set
+									{{/if}}
+								</dd>
+								<dt><b>Proposed End Date</b></dt>
+								<dd>
+									{{#if document.proposed_enddate}}
+										{{fuzzy-date document.proposed_enddate time_zone}}
+									{{else}}
+										Not Set
+									{{/if}}
+								</dd>
+							{{/if}}	
+							<dt><b>Created By</b></dt>
+							<dd>{{document.created_by.full_name}}</dd>
+							<dt><b>Created At</b></dt>
+							<dd>{{fuzzy-date document.created_at time_zone}}</dd>
+							{{#if is_template}}
+							<dt><b>Document Status</b></dt>
+							<dd style="text-transform: capitalize;">{{document.state}}</dd>
+							{{/if}}
+							<dt><b>Modified Date</b></dt>
+							<dd>{{fuzzy-date document.updated_at time_zone}}</dd>
+						</dl>
+						{{!-- {{#if is_template}} --}}
+							{{#if workflowsAssociated}}
+								<center><p style="cursor:pointer; color:#51caff" {{action 'viewWorkflows'}}>Click here to view the Workflows associated.</p></center>
+							{{/if}}
+						{{!-- {{/if}} --}}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	{{
+  	g-workflow-associated
+  	active=onShowWorkflowAssociated
+  	workflowsAssociated=workflowsAssociated
+  	categories=categories
+  	is_template=is_template
+	}}
+
+{{/if}}

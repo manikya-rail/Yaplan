@@ -1,0 +1,42 @@
+#section-template {
+	z-index: 10;
+}
+
+#section-template h1, #section-template h3{
+	opacity: 0;
+}
+
+#section-template .card-3{
+	position: absolute;
+	z-index: 13;
+	width: 280px;
+	height: 410px;
+	top: 50px;
+	left: calc(70% - 140px);
+
+	background: url('/assets/imgs/template-3.png') no-repeat;
+	background-size: cover;
+}
+#section-template .card-2{
+	position: absolute;
+	z-index: 11;
+	width: 580px;
+	height: 620px;
+	top: 100px;
+	left: calc(50% - 290px);
+
+
+	background: url('/assets/imgs/template-2.png') no-repeat;
+	background-size: cover;
+}
+#section-template .card-1{
+	position: absolute;
+	z-index: 12;
+	width: 280px;
+	height: 410px;
+	top: 280px;
+	left: calc(23% - 140px);
+
+	background: url('/assets/imgs/template-1.png') no-repeat;
+	background-size: cover;
+}

@@ -1,0 +1,38 @@
+@import '../_base';
+
+.g-search{
+  height: 30px;
+  color: #757575;
+  padding: 20px 0px;
+
+  &::before {
+    //display: none !important;
+
+    float: left;
+    .fa-icon;
+    content: @fa-var-search;
+    font-size: 26px;
+    line-height: 32px;
+  }
+
+  .wrapper {
+    display: block;
+    overflow: hidden;
+    left: 40px;
+  }
+
+  input {
+    //display: none !important;
+
+    height: 30px;
+    padding-left: 15px;
+    line-height: 30px;
+    font-size: 18px;
+    background-color: transparent;
+    color: #757575;
+    outline:0;
+    border: none;
+    width: 100%;
+    box-sizing: border-box;
+  }
+}

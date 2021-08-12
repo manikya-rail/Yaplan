@@ -1,0 +1,85 @@
+{{reg/support/g-reg-notify type=toast.type msg=toast.msg}}
+
+<div class='clearfix' style="margin-right: 10px; margin-top: 30px">
+	<ul class="pull-right g-list-unstyled-project-toggle grid-list-toogle-category">
+		<li class="mr-1 mt-0">
+			<div class="g-search-filter" style="margin-top: 7px; margin-right: 30px;">
+				<input class="g-search-field" id="searchinput" type="text" placeholder="Search by keyword" oninput={{action 'searchDocuments'}}>
+				<i id="g-search-icon" class="fa fa-search"></i>
+			</div> 
+			 <a href='#' style="float: right;position: fixed;right: 20px;top: 78px;z-index: 6;" ><span class="add-new-project" {{action 'createNewCategory'}}></span></a>
+		</li>
+	</ul>
+</div>
+
+<div class='clearfix'>
+</div>
+
+{{#if allcategories.length}}
+	<div class='g-form-group pull-right mr-2 mb-0'>
+		<select name='' id='' class='g-form-control' onchange={{action "setSortProps" value="target.value"}}>
+			<option value='updatedAt'>Most Recent</option>
+			<option value='title'>Alphabetical</option>
+		</select><i class="fa fa-angle-down select-down-arrow" aria-hidden="true"></i>
+	</div>
+{{/if}}
+<div class="clearfix"></div>
+{{#if showMessage}}
+	<center><h3>Loading ..</h3></center>
+{{else}}
+	<div class="g-categories-block">
+		<ul class="g-projects projects-block">
+			{{#each allcategories as |category|}}
+				{{#if (if-equal category.is_archived 'true' false true)}}
+					<div class='category-card'>
+						<div class="image-card" style="background-image: url('{{category.image.thumb.url}}'); background-position: 50%; background-repeat: no-repeat;background-size: cover;"></div>
+						<div class="category-label-row">
+							<label for={{category.id}} class="category-label category-ellipse">{{category.name}}</label>
+							<h3 class="no-margin"><i class="editor-icon mr-1" {{action 'editCategory' category}}  aria-hidden="true"></i><i class="archived-icon"  {{action 'archiveCategory' category}} aria-hidden="true"></i></h3>
+						</div>
+					</div>
+				{{/if}}
+			{{/each}}
+		</ul>
+	</div>
+
+	{{#unless allcategories.length}}
+		<center><h3>No Categories Available</h3></center>
+	{{/unless}}
+{{/if}}
+
+<div class="mr-2">
+	{{
+		g-pagination 
+		page=page 
+		pages=pages 
+		callNext='callNext' 
+		totalRecords=totalCategories 
+		prevPage='prevPage'
+		nextPage='nextPage'
+		totalPages=totalPages
+	}}
+</div>
+
+{{
+	projects/modal/g-category-new
+	active=onNewCategory
+	categoryEdit=categoryEdit 
+	callRefresh='callCategory'
+}}
+
+{{
+	projects/modal/g-confirm 
+	active=onArchiveCategory 
+	archive_this_Project=null
+	onArchiveProject='onArchiveProject' 
+	archive_this_Document='null'
+	onArchiveDocument="onArchiveDocument" 
+	showNotification='showNotification' 
+	refreshPage='refreshPage'
+	archiveCategory=categoryDelete 
+	callCategory='callCategory'
+	onConfirm='onConfirm'
+}}
+
+

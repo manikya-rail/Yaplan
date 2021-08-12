@@ -1,0 +1,175 @@
+<div class="modal-overlay {{ if active 'active' ''}}">
+	<div class="modal">
+		<a class="close ico_close-mo" href="" {{action (toggle "cancelConfirmActive")}}></a>
+		<div class="modal-body" style="position: relative; height: 98%;">
+			<form class="form-margin" autocomplete="off" style="margin: 0% 5%;">
+				{{#if step1}}
+					<div id='step-1'>
+						<div class="project-inst">
+							<p class="dialog-title mb-0 mt-0">Configure Project Details</p>
+							{{#if project.id}}
+								<br />
+							{{else}}
+								<p class="dialog-tagline">Please create a Project Name and Project Description, then select the most appropriate category for your type of project and click Next.</p>
+								<p class="dialog-tagline mt-0">Yakkaplan will then suggest a number of structured planning processes, or ‘Project Workflows’, that have been specifically designed for your type of project, complete with content-rich document templates to give you a head start on planning your project!</p>
+							{{/if}}
+						</div>
+						<div class="g-form-group">
+							<label class="g-control-label">PROJECT NAME</label>
+								{{input value=project.title  type="text" name="title" class="input-field-width-height g-form-control" placeholder="Project name"}}
+						</div>
+						<div class="g-form-group">
+							<label class="g-control-label">PROJECT DESCRIPTION <span class="pull-right editor-label">{{descriptionCharacterCount}}/240</span></label>
+						</div>
+						<div class="col-lg-12  input input--nao g-form-group">
+							{{textarea value=project.description type="text" row=5 name="description" class="initial-input-field-width-height g-form-control" maxlength=240  placeholder="Project description" key-up="checkCharacter" }}
+						</div>
+						{{#unless project.workflow}}
+							<div class="desk-category-view">
+								<div style='height: 40%;overflow-y: auto; position: absolute;width: 90%;'>
+									{{#each (chunk Categories 3) as |category_group|}}
+										<div class='category-row'>
+											{{#each category_group as |cat|}}
+												<div class='category-card'>
+													<div class="image-card" style="background-image: url('{{cat.image.url}}'); background-position: 50%; background-repeat: no-repeat;background-size: contain;"></div>
+													<!-- <img src='{{cat.image.url}}' class='image-card'/> -->
+													<div class="category-label-row">
+														<label for={{cat.id}} class="category-label category-ellipse">{{cat.name}}</label>
+														<div class="checkbox">
+					                    <label>
+					                    	<input id="category_id_{{cat.id}}" type="radio" name="category_id_desk" checked={{if-equal category cat.id true false}} onclick={{ action "setCheckedValue" "category" cat.id}}>
+				                        {{!-- {{input id=cat.id type="radio" name='check-1' required="true" checked=(mut (idEquality categoryIdSelected cat.id)) click="setCheckedValue"}} --}}
+				                        <span class="checkbox-material"><span class="check"></span></span>
+					                    </label>
+					                 	</div>
+													</div>
+						            </div>
+											{{/each}}
+										</div>
+									{{/each}}
+								</div>
+							</div>
+							<!-- catagory select for smaller devices -->
+							<div class="ipad-category-view">
+								<div style='height: 40%;overflow-y: auto; position: absolute;width: 90%;'>
+									{{#each (chunk Categories 2) as |category_group|}}
+										<div class='category-row'>
+											{{#each category_group as |cat|}}
+												<div class='category-card'>
+													<div class="image-card" style="background-image: url('{{cat.image.url}}'); background-position: 50%; background-repeat: no-repeat;background-size: contain;"></div>
+													<!-- <img src='{{cat.image.url}}' class='image-card'/> -->
+													<div class="category-label-row">
+														<label for={{cat.id}} class="category-label category-ellipse">{{cat.name}}</label>
+														<div class="checkbox">
+					                    <label>
+					                    	<input id="category_id_{{cat.id}}" type="radio" name="category_id" checked={{if-equal category cat.id true false}} onclick={{ action "setCheckedValue" "category" cat.id}}>
+				                        {{!-- {{input id=cat.id type="radio" name='check-1' required="true" checked=(mut (idEquality categoryIdSelected cat.id)) click="setCheckedValue"}} --}}
+				                        <span class="checkbox-material"><span class="check"></span></span>
+					                    </label>
+					                 	</div>
+													</div>
+						            </div>
+											{{/each}}
+										</div>
+									{{/each}}
+								</div>
+							</div>
+						{{/unless}}
+						<span class='button-list g-ab-modal-footer'>
+							<button class="primary button-cancel" style='margin-top: 0px; width: auto;'  {{action (toggle "cancelConfirmActive")}} disabled={{disabled}}>Cancel</button>
+							<button class="primary" style="margin-left: 10px; width: auto;" disabled={{isNotFilled}} {{ action 'proceed' bubbles=false}}>
+								{{ if project.id (if project.workflow "Update" "Next") "Next" }}
+							</button>
+						</span>
+					</div>
+				{{else}}
+					<div id='step-2'>
+						<p class="dialog-title mt-0">Workflow Templates</p>
+						<div class="desk-category-view">
+							<div style='height: 70%;overflow-y: auto; position: absolute;width: 90%;'>
+								{{#if filteredTemplates.length }}
+									{{#each (chunk filteredTemplates 3) as |template_group|}}
+										<div class='category-row'>
+											{{#each template_group as |template|}}
+												<div class='category-card' >
+													<label for="workflow_template_id_{{template.id}}" style="cursor: pointer">
+														<div class="image-card" style="background-image: url('{{template.snapshot.url}}'); background-repeat: no-repeat; background-size: contain; background-position: 50%;" {{ action 'generatePreview' template}}></div>
+														<!-- <img src='{{template.snapshot.url}}' class='image-card'  {{ action 'generatePreview' template}}/> -->
+														<div class="category-label-row">
+															<span for="template_{{template.id}}" class="category-label category-ellipse">
+																{{template.name}}
+															</span>
+															<div class="checkbox">
+				                        <input id="workflow_template_id_{{template.id}}" type="radio" name="workflow_template_id_desk" checked={{idEquality workflow_template_id template.id}} onclick={{ action "setCheckedValue" "workflow_template_id" template.id}}>
+				                        <span class="checkbox-material"><span class="check"></span></span>
+					                 		</div>
+														</div>
+													</label>
+						            </div>
+											{{/each}}
+										</div>
+									{{/each}}
+								{{else}}
+									<div style="text-align: center">
+										<h3 class="pt-2 mt-2">No workflow templates available.</h3>
+									</div>
+								{{/if}}
+							</div>
+						</div>
+						<!-- catagory select for smaller devices -->
+						<div class="ipad-category-view">
+							<div style='height: 70%;overflow-y: auto; position: absolute;width: 90%;'>
+								{{#if filteredTemplates.length }}
+									{{#each (chunk filteredTemplates 2) as |template_group|}}
+										<div class='category-row'>
+											{{#each template_group as |template|}}
+												<div class='category-card'>
+													<!-- <img src='{{template.snapshot.url}}' class='image-card' {{ action 'generatePreview' template}}/> -->
+													<div class="image-card" style="background-image: url('{{template.snapshot.url}}'); background-repeat: no-repeat; background-size: contain; background-position: 50%;" {{ action 'generatePreview' template}}></div>
+													<div class="category-label-row">
+														<label for="template_{{template.id}}" class="category-label category-ellipse">
+															{{template.name}}
+														</label>
+														<div class="checkbox">
+					                    <label>
+				                        <input id="workflow_template_id_{{template.id}}" type="radio" name="workflow_template_id" checked={{idEquality workflow_template_id template.id}} onclick={{ action "setCheckedValue" "workflow_template_id" template.id}}>
+				                        <span class="checkbox-material"><span class="check"></span></span>
+					                    </label>
+					                 	</div>
+													</div>
+						            </div>
+											{{/each}}
+										</div>
+									{{/each}}
+								{{else}}
+									<div style="text-align: center">
+										<h3 class="pt-2 mt-2">No workflow templates available.</h3>
+									</div>
+								{{/if}}
+							</div>
+						</div>
+
+						<span class='button-list g-ab-modal-footer' style="z-index: 10; background: white;">
+							<button class="primary button-cancel" style='margin-top: 0px; width: auto;' type="reset" {{action (toggle "cancelConfirmActive")}} disabled={{disabled}}>Cancel</button>
+							<button class="primary button-cancel" style='margin-top: 0px; width: auto;' {{action 'goBack' bubbles=false}} disabled={{disabled}}>Back</button>
+							<!-- <button class="primary button-cancel" style="margin-left: 10px; width: auto;" {{ action 'proceed' bubbles=false}}>
+								Skip
+							</button> -->
+							<button class="primary" style="margin-left: 10px; width: auto;" {{ action 'proceed' bubbles=false}} disabled={{disabled}}>
+								{{ if workflow_template_id "Next" "Skip" }}
+							</button>
+						</span>
+					</div>
+				{{/if}}
+			</form>
+		</div>
+	</div>
+</div>
+{{
+  workflows/workflow-template-preview snapshot=snapshot active=showPreview
+}}
+{{
+	g-confirm-popup active=cancelConfirmActive proceed='cancelEdit'
+	title=(if project.id 'Cancel project edit' 'Cancel project create')
+	message="Are you sure you want to cancel? Changes made won't be saved."
+}}

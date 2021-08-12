@@ -1,0 +1,10 @@
+{{text}}
+&nbsp;
+{{#g-popup isOpened=on}}
+  <ul class="context-list">
+    <li {{action 'clickOption' ''}}>All Projects</li>
+    {{#each options as |option|}}
+      <li {{action 'clickOption' option}}>{{option.title}}</li>
+    {{/each}}
+  </ul>
+{{/g-popup}}

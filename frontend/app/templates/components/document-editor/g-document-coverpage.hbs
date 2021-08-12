@@ -1,0 +1,140 @@
+
+<div class="content-top-pane">
+	<ol class="g-breadcrumb">
+		{{#link-to 'app.projects.project' tagName='li' href=true}}My Projects{{/link-to}}
+		<li {{action 'redirectToProject' document.is_template}}>{{document.project.title}}</li>
+		<li class="active">{{document.title}}</li>
+	</ol>
+	
+	{{#link-to "app.documents.preview" document.id tagName="button" class='back ib ib-preview secondary test'}}Preview{{/link-to}}
+
+</div>
+
+<div class="g-coverpage">
+	{{reg/support/g-reg-notify type=notification.type msg=notification.msg}}
+	<div class="g-coverpage-view">
+		<h3>Cover Page</h3>
+		<div class="g-cover-bottom-sec">
+			<div class="pull-left">
+				<input type="file" id="logoFilePicker" style="display: none" {{action "onLogoFileSelect" on="change"}} accept="image/png, image/jpeg">
+				{{#if document.logo.url}}
+				<div class="cover-profile-image" id="logoDocument" {{action "uploadLogo"}}  style="background-image: url('{{document.logo.url}}')"></div>
+				{{else}}
+				<div class="cover-profile-image" id="logoDocument" {{action "uploadLogo"}}  style="background-image: url('/assets/images/upload_dropzone_image.png');background-repeat: no-repeat; background-size: 50%; background-position: 50%;"></div>
+				{{/if}}
+			</div>
+		</div>
+		<div class="clearfix"></div>
+		<div class="pull-right mb-1 mt-2">
+			{{#if whenNoCoverPage}}
+				<button class="primary g-dis-inline" {{action "afterResizing"}}>Save Cover Image</button>
+			{{else}}
+				<button class="primary g-dis-inline" disabled='true'  {{action "afterResizing"}}>Save Cover Image</button>
+			{{/if}}
+			{{#if document.is_template}}
+  			{{#if document.is_public}}
+        {{else}}
+        	{{#link-to "app.documents.editor" document.id tagName="button" class='back active secondary test g-dis-inline'}}Edit Document{{/link-to}}
+        {{/if}}
+  		{{else}}
+  			{{#link-to "app.documents.editor" document.id tagName="button" class='back active secondary test g-dis-inline'}}Edit Document{{/link-to}}
+  		{{/if}}
+		</div>
+		<div class="clearfix"></div>
+		<input type="file" id="coverpageFilePicker" style="display: none" {{action "onFileSelect" on="change"}} accept="image/png, image/jpeg">
+		<div id="coverPageBorder" class="dropzone-border" style="border: 2px dashed #B1B1B1;">
+			{{#if document.cover_page.url}}
+				{{#if showDiv}}
+					<div class="dropzone" style="background-image: url('{{document.cover_page.url}}'); background-repeat: no-repeat; background-size : 100%">	
+					</div>
+				{{else}}
+					<img id="dropzone"  style="background-image: url('{{document.cover_page.url}}');"/>
+				{{/if}}
+			{{else}}
+					<img id="dropzone" style="background-image: url('/assets/images/upload_dropzone_image.png');"/>
+			{{/if}}
+		</div>
+		<div class="pull-right mt-1">
+			<button class="primary g-dis-inline" {{action "uploadCoverPage"}}>Upload Cover Image</button>
+		</div>
+		<div class="clearfix"></div>
+		<div class="mt-2 coverpage-txt">
+			<h3 style="text-transform: uppercase">{{document.title}}</h3>
+			<h4>{{document.subtitle}}</h4>
+
+			<h4 class="mt-2">{{doc-date document.created_at time_zone}}</h4>
+			
+		</div>
+		<div class="g-cover-bottom-sec">
+			<div class="pull-left g-cover-owner">
+				<h4 class="mt-0">{{document.created_by.full_name}}</h4>
+			</div>
+		</div>
+		<div class="clearfix"></div>
+	</div>
+</div>
+<br> 
+
+<div class="editor-rightpane g-coverpage-rightpane {{if detailsPanelVisible '' 'collapsed'}}" >
+	<div id="details-toggle"  {{action (toggle "detailsPanelVisible")}}>
+		<i class="fa fa-cog"></i>
+	</div>
+	<div class="g-doc-scroll-content" id="sideMenuCoverPage">
+		<h3 class="q-text-center">DOCUMENT DETAILS</h3>
+		<div class="cover-page-toogle-opt mt-1">
+			{{input type="checkbox" id="box-1" checked=isCoverPage change=(action "showCoverPage")}}
+			<label for="box-1">Show cover page ?</label>
+			<ul class="g-doc-list-unstyled">
+				<li class="mb-1">Upload Graphic
+					<div class="pull-right">
+						<button class="c-btn-primary" {{action "uploadCoverPage"}}>Browse</button>
+						<div class="clearfix"></div>
+					</div>
+				</li>
+				<li>
+					<div class="g-form-group">
+						<label class="g-control-label">Document Title</label>
+						<input class="g-form-control" readonly="true" value={{document.title}} type="text">
+					</div>
+				</li>
+				<li>
+					<div class="g-form-group">
+						<label class="g-control-label">Document Subtitle (Secondary title)<span class="pull-right editor-label">{{subtitleCharacterCount}}/240</span></label>
+						{{ input class="g-form-control" value=documentSubtitle 
+						type="text" maxlength=240 key-up="setDocumentSubTitle" }}
+					</div>
+				</li>
+				<li>
+					<div class="g-form-group">
+						<label class="g-control-label">Author</label>
+						<input class="g-form-control" type="text"  value={{document.created_by.full_name}} readonly="true">
+					</div>
+				</li>
+				<li class="mb-1">Document Created Date : {{fuzzy-date document.created_at time_zone}}</li>
+				<li>Upload document logo
+					<div class="pull-right">
+						<button class="c-btn-primary" {{action "uploadLogo"}}>Browse</button>
+						<div class="clearfix"></div>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div class="cover-page-toogle-opt mt-1">
+			{{input type="checkbox" id="box-2" checked=isTableContents change=(action "checkTableofContents")}}
+			<label for="box-2">Show table of contents ?</label>
+		</div>
+		<div class="cover-page-toogle-opt mt-1">
+			{{input type="checkbox" id="box-3"  checked=isheader change=(action "checkHeaderFooter")}}
+			<label for="box-3">Header/Footer</label>
+		</div>
+		<div class="cover-page-toogle-opt mt-1">
+			{{input type="checkbox" id="box-4"  checked=isPageNumber change=(action "checkPageNumber")}}
+			<label for="box-4">Show Page Number ?</label>
+		</div>
+	</div>
+
+</div>
+
+
+{{document-editor/modal/g-document-headerfooter document=document active=onActiveHeaderFooter showNotification='showNotification'}}
+

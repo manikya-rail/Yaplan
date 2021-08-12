@@ -1,0 +1,15 @@
+<div class="g-landing-subscribe">
+	<div class="form-intro {{subscribed}}">
+		<!-- Signup to our newsletter to stay updated <br> -->
+		We are just doing some finishing touches, get notified when we launch later this month and be the first to trial Grapple
+	</div>
+	<form action="//grapple.us5.list-manage.com/subscribe/post?u=d0d99b4fa14cca10f7cc00086&amp;id=37d7e7df86" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="form-content validate {{subscribed}}" target="g-landing-iframe">
+		<input type="email" placeholder="Your Email..." value="" name="EMAIL" class="required email" id="mce-EMAIL" required onchange={{action 'changeEmail' value='target.value'}}>
+		<button class="gl-button gray" type="submit">Go</button>
+		<div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_d0d99b4fa14cca10f7cc00086_37d7e7df86" tabindex="-1" value=""></div>
+	</form>
+
+	<div class="form-intro msg-thanks {{if subscribed 'false' 'true'}}">
+		Thanks, we will be in touch shortly with some updates…
+	</div>
+</div>

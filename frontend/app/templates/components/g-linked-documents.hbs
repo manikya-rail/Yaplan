@@ -1,0 +1,21 @@
+{{reg/support/g-reg-notify type=notification.type msg=notification.msg}}
+<div class="modal-overlay {{if active 'active' ''}} g-modal-add-collaborator">
+  <div class="modal"  style="width: auto; height: auto;">
+    <a class="close ico_close-mo" href="" {{action (toggle 'active')}}></a>
+    <div class="g-people-modal attachment-document-modal">
+      <div class="dialog-title">Documents</div>
+      <div class="dialog-input g-vertical-doc-scroll">
+        <div class="colloborator-modal">
+          <ul class="document-attach-list">
+          	{{#each documents as |document|}}
+              <li {{ action 'selectDocument' document.id document.accessible }} style="cursor: pointer; cursor: hand;">
+                <b>{{document.title}}</b>
+              </li>
+            {{/each}}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

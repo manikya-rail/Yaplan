@@ -1,0 +1,80 @@
+@import '../_base';
+
+.g-dropdown {
+  position: relative;
+
+  span {
+    float: left;
+    display: block;
+    padding: 0 30px 0 30px;
+    height: 38px;
+    line-height: 38px;
+    border: 1px solid transparent;
+    cursor: pointer;
+
+    &:after {
+      .fa-icon;
+      margin-left: 5px;
+      content: @fa-var-chevron-down;
+    }
+
+    &.opened{
+      background-color: @dark-gray;
+      border-color: transparent !important;
+      color: #fff;
+    }
+
+    &.opened:after {
+      content: @fa-var-chevron-up;
+    }
+
+    &:hover {
+      border-color: #eee;
+    }
+  }
+
+  .popup {
+    position: absolute;
+    display: none;
+    right: 20px;
+    top: 50px;
+    z-index: 1;
+
+    background-color: #fff;
+    border: 1px solid #eee;
+    box-shadow: 0 0 18px 0 #d1d1d1;
+
+    &.opened {
+      display: block;
+    }
+
+    .arrow {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      top: -5px;
+      right: 10px;
+      background: #fff;
+
+      transform: rotate(45deg);
+    }
+
+    ul {
+      display: block;
+      margin: 0;
+      padding: 10px 0px;
+      list-style: none;
+
+      li {
+        display: block;
+        float: none;
+        padding: 0 30px;
+        height: 40px;
+        line-height: 40px;
+        white-space: nowrap;
+
+        cursor: pointer;
+      }
+    }
+  }
+}

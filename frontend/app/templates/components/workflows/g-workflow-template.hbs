@@ -1,0 +1,69 @@
+{{yield}}
+{{#if sortedTemplates.length}}
+  <div class='g-form-group pull-right mb-0 mr-2'>
+    <select name='' id='' class='g-form-control' onchange={{action "setSortProps" value="target.value"}}>
+      <option value='updatedAt'>Most Recent</option>
+      <option value='title'>Alphabetical</option>
+      {{#if projectWorkflow}}
+        <option value='project'>Project</option>
+      {{/if}}
+      <option value='category'>Category</option>
+    </select><i class="fa fa-angle-down select-down-arrow" aria-hidden="true"></i>
+  </div>
+  <div class='clearfix'></div>
+  {{#if isGrid}}
+  	<div class="workflow-templates-container">
+  		<div class="workflow-templates">
+  				<ul class="workflow-list">
+  				  {{#each (saved-models sortedTemplates) as |template|}}
+  				    {{
+  				    	templates/workflow-template-card time_zone=time_zone
+  				    	template=template currentUser=currentUser categories=categories projectWorkflow=projectWorkflow 
+  				    }}
+  				  {{/each}}
+  				</ul>
+  		</div>
+  	</div>
+  {{else}}
+    <table class="templates-table-view">
+      {{#if sortedTemplates.length}}
+        <tr>
+          <th>Template</th>
+          <th>Category</th>
+          <th>Description</th>
+          <th>Options</th>
+        </tr>
+        {{#each sortedTemplates as |template|}}
+          <tr>
+          	{{#link-to 'app.templates.workflows.edit' template.id tagName='td' class="clickable"}}
+          		{{template.name}}
+          	{{/link-to}}
+            <td>{{template.category.name}}</td>
+            <td>{{template.description}}</td>
+            <td class="pl-1">
+              <span>
+                <i class="tooltip-icon" {{action 'showWorkflowInfo' template}}>
+                </i>
+              </span>
+              <span class="temp-tooltext">
+                  <span class="view-more-options tooltip" aria-hidden="true">
+                    <div class="tooltiptext">
+                      <ul>
+                        <li><span {{action 'generatePreview' template}}>Preview</span></li>
+                      </ul>
+                    </div>
+                  </span>
+                </span>
+            </td>
+          </tr>
+        {{/each}}
+      {{/if}}
+    </table>
+  {{/if}}
+{{else}}
+  <h3 style="display: flex; flex: 1; justify-content: center; margin-top: 60px;">No workflows available</h3>
+{{/if}}
+
+{{g-workflow-info workflow=workflowInfo time_zone=time_zone categories=categories active=onWorkflowInfo}}
+
+{{workflows/workflow-template-preview snapshot=snapshot active=showPreview selectedWorkflow=workflowInfo}}

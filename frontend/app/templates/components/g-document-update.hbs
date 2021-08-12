@@ -1,0 +1,118 @@
+<div class="modal-overlay {{if active 'active' ''}} g-modal-add-collaborator">
+	{{reg/support/g-reg-notify type=notification.type msg=notification.msg}}
+	<div class="modal"  style="width: auto; height: auto;max-height: calc(100vh - 199px); overflow-y: auto;">
+		<a class="close ico_close-mo" href="" {{action (toggle 'active')}}></a>
+		<div class="g-people-modal">
+			{{#if createDoc}}
+				<div class="dialog-title">Create Document</div>
+			{{else}}
+				<div class="dialog-title">{{document.title}}</div>
+			{{/if}}	
+		<div class="dialog-input">
+				<div class="colloborator-modal">
+					<fieldset class="g-form-group">
+						<label class="g-control-label">Document Title: </label>
+						{{input value=title type="title" placeholder = "Document Title" class="g-form-control" oninput='inputChange'}}
+					</fieldset>
+					<fieldset class="g-form-group">
+						<label class="g-control-label">Description: <span class="pull-right editor-label">{{descriptionCharacterCount}}/240</span></label>
+								{{textarea value=documentDescription placeholder="Document Description..." key-up="checkCharacter" maxlength=240   class="g-form-control"}}
+					</fieldset>
+					{{#if is_template}}
+					{{else}}
+					{{#if createDoc}}
+					{{else}}
+					<fieldset class="g-form-group">
+						<label class="g-control-label">Proposed Start Date: </label>
+								<input type="text" id="datepickers" value="pStartDate" class="g-form-control"/>
+					</fieldset>
+					<fieldset class="g-form-group">
+						<label class="g-control-label">Proposed End Date: </label>
+								<input type="text" id="datepickere" value="pEndDate" class="g-form-control"/>
+					</fieldset>
+					{{/if}}
+					{{/if}}
+					{{#if createDoc}}
+					{{#if (if-equal scope 'project' false true)}}
+					<fieldset class="g-form-group custom-radio">
+						{{!-- {{#if allProjects}} --}}
+							<div class="radio">
+								<input id="radio-1" name="radio" type="radio" value="manual" checked name="documenttype" onchange={{action "checkDocCreateOption" 'manual'}}>
+								<label for="radio-1" class="radio-label">Assign to an existing project</label>
+							</div>
+							<div class="radio">
+								<input id="radio-2" name="radio" type="radio" name="documenttype" onchange={{action "checkDocCreateOption" 'automate'}} value="automate">
+								<label for="radio-2" class="radio-label">Automate project creation</label>
+							</div>
+					</fieldset>
+					{{/if}}
+					{{/if}}
+					{{#if showProjectOptions}}
+					{{#if allProjects}}
+					<fieldset class="g-form-group">
+						<label class="g-control-label">Select Project</label>
+						<select class="g-form-control" id="document-project">
+							{{#each allProjects as |projectList|}}
+								<option
+								value={{projectList.id}}
+								>
+								{{projectList.title}}
+								</option>
+							{{/each}}
+						</select>
+						<i class="fa fa-angle-down select-down-arrow" aria-hidden="true"></i>
+					</fieldset> 
+					{{else}}
+						{{#if createDoc}}
+						{{#if (if-equal scope 'project' false true)}}
+							<fieldset class="g-form-group">
+								<label class="g-control-label">No existing projects found. Either create a new project or choose second option</label>
+							</fieldset>
+						{{/if}}
+						{{/if}}
+					{{/if}}
+					{{else}}
+						{{#if categories}}
+						<fieldset class="g-form-group">
+						<label class="g-control-label">Select Category</label>
+						<select class="g-form-control" id="document-category">
+							{{#each categories as |category|}}
+							<option
+								value={{category.id}}
+								selected={{id-equality category.id categoryId}}>
+								{{category.name}}
+							</option>
+							{{/each}}
+						</select>
+						<i class="fa fa-angle-down select-down-arrow" aria-hidden="true"></i>
+						</fieldset>
+						{{#if title}}
+							<fieldset class="g-form-group">
+								<label class="g-control-label">Yakkaplan will automatically create a project <span style="color:#51caff">Project for {{title}}</span> for this document</label>
+							</fieldset>
+						{{/if}}
+						{{/if}}
+					{{/if}}
+				</div>
+			</div>
+			{{#if createDoc}}
+				{{#if allProjects}}
+				<button class="primary" type="submit" disabled={{isNotFilled}} {{action 'createDocument'}}>Create</button>
+				{{else}}
+					{{#if showProjectOptions}}
+						{{#if (if-equal scope 'project' false true)}}
+						 	<button class="primary" type="submit" disabled='true' {{action 'createDocument'}}>Create</button>
+						{{else}}
+							<button class="primary" type="submit" disabled={{isNotFilled}} {{action 'createDocument'}}>Create</button>
+						{{/if}}
+					{{else}}
+						<button class="primary" type="submit" disabled={{isNotFilled}} {{action 'createDocument'}}>Create</button>
+					{{/if}}
+				{{/if}}
+			{{else}}
+				<button class="primary" type="submit" disabled={{isNotFilled}} {{action 'updateDetails'}}>Update</button>
+			{{/if}}
+		</div>
+	</div>
+</div>
+

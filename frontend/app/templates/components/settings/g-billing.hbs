@@ -1,0 +1,27 @@
+{{settings/support/g-submenu class='content-header'}}
+<div class="content inner g-billing">
+	<ul>
+		<li class="notifier">
+			{{reg/support/g-reg-notify type=notification.type msg=notification.msg}}
+		</li>
+		{{#each plans as |plan|}}
+			{{#unless plan.isDummy}}
+				<li class="item-plan {{if-equal subscription.plan_id plan.id 'active' ''}}" {{action 'select' plan}}>
+					<div class="name">{{plan.name}}</div>
+					<div class="num_projects">{{unless plan.isNotUnlimited 'Unlimited' plan.project_count}} Projects</div>
+					<div class="price">AUD {{dollar (convert-aud plan.amount plan.currency)}} / {{plan.interval}}</div>
+					<div class="choose">
+						<span class="marker"><i class="fa fa-check"></i></span>
+						<span class="cta">{{if-equal subscription.plan_id plan.id 'Current Plan' 'Choose Plan'}}</span>
+					</div>
+				</li>
+			{{/unless}}
+		{{/each}}
+	</ul>
+	<div class="tagline">
+		Yakkaplan is currently free while it is in Beta.  Please enjoy and share any feedback.
+	</div>
+</div>
+{{settings/support/g-modal-stripe active=isStripeDialogOpened onCardAdded='processWNewCard'}}
+{{settings/support/g-modal-subscribe plan=tempPlan card=subscription.masked_card active=isSubscribeDialogOpened onConfirm='subscribePlan' onChange='changeCard'}}
+<!-- {{settings/support/g-modal-card active=isCardDialogOpened plan=tempPlan cards=cards onSavePlan='savePlan' onAddCard='addCard'}} -->

@@ -1,0 +1,71 @@
+@import '../_base';
+
+.g-toaster {
+	.horiz-center;
+	.transition;
+	.box-shadow(0.6);
+
+	position: fixed;
+	z-index: 10;
+	
+	&.bottom {
+		bottom: -60px;
+
+		&.active {			
+			bottom: 10px;
+		}
+	}
+	&.top {
+		top: -60px;
+
+		&.active {			
+			top: 10px;
+		}
+	}
+
+	padding: 15px;
+	background-color: @mid-gray;
+	border-radius: 2px;
+	opacity: 0;
+
+	&.active {
+		opacity: 1;
+	}
+
+	i {
+		font-size: 16px;
+		color: @orange;
+	}
+
+	span {
+		display: inline-block;
+
+		&.description {
+			margin: 0 5px;
+			font-size: 16px;
+			color: white;
+		}
+	}
+
+	span.links {
+		.link {
+			display: inline-block;
+			text-decoration: none;
+			font-size: 13px;
+			color: white;
+
+			&:not(:last-child):after{
+				content: "|";
+    			margin-left: 4px;
+			}
+
+			&:hover{
+				color: @orange;
+			}
+
+			&:hover:after{
+				color: white
+			}
+		}
+	}
+}

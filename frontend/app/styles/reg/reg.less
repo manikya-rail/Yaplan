@@ -1,0 +1,224 @@
+@import '../components/reg/g-login';
+@import '../components/reg/g-forgot';
+@import '../components/reg/g-reset-password';
+@import '../components/reg/g-registration';
+@import '../components/reg/g-success';
+@import '../components/reg/support/g-reg-notify';
+@import '../components/reg/support/g-reg-nao-input';
+
+.reg {
+  position: absolute;
+  width: 100%;
+  min-height: 100%;
+  background-color: #eee;
+
+  .reg-top {
+    height: 270px;
+    background: url('/assets/images/top_bg.jpg');
+    background-size: cover;
+
+    &:after{
+      background: rgba(1,33,105,0.85);
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: block;
+      content: " ";
+      width: 100%;
+      height: 270px;
+    }
+
+    .logo {
+      position: relative;
+      width: 206px;
+      height: 50px;
+      top: 80px;
+      left: 50%;
+      z-index: 12;
+
+      transform: translateX(-50%);
+      background: url('/assets/images/logo_yp_white.png') no-repeat;
+      background-size: cover;
+    }
+  }
+
+  form {
+    .responsive(600px, {
+      left: 5% !important;
+      width: 90% !important;
+      padding: 25px;
+      margin-left: 0px;
+      });
+
+    h1 {
+      .responsive(600px, {
+        font-size: 20px !important;
+        margin: 0 0 5px !important;
+        });
+    }
+  }
+
+  .input-group{
+    margin: 0px;
+
+    font-size: @font-size-nao;  
+
+    .responsive(600px, {
+      font-size: 16px;
+      });
+
+    span.input{
+      margin-bottom: 5px;
+    }
+
+    .input--password{
+      position: relative;
+
+      a.tool-reveal{
+        position: absolute;
+        display: block;
+        bottom: 15px;
+        right: 15px;
+
+        &.ico_reg_eyeon{
+          bottom: 16px;
+        }
+      }
+    }
+  }
+
+  /**
+  Candidates for moving to controls.less
+  
+
+  input[type=text], input[type=password] {
+    width: 100%;
+    height: 45px;
+    line-height: 55px;
+    padding: 0;
+    box-sizing: border-box;
+
+    border: solid #eee;
+    border-width: 0 0 1px 0;
+    background: transparent;
+    font-size: 16px;
+    outline: none;
+
+    &:-webkit-autofill {
+      -webkit-box-shadow: 0 0 0 1000px white inset;
+    }
+
+  }
+  */
+  button {
+    width: 100%;
+    height: 56px;
+    line-height: 56px;
+    border: none;
+    color: #fff;
+    border-radius: 4px;
+    font-size: @font-size-button;
+    text-align: center;
+    background-color: @orange;
+
+    &[disabled]{
+      background-color: #b1b1b1;
+    }
+
+    .responsive(600px, {
+      margin: 15px 0px 10px !important;
+      height: 40px !important;
+      line-height: 40px !important;
+      });
+
+    &::-moz-focus-inner {
+      border: 0;
+    }
+  }
+
+}
+
+//cross browser mozilla stylings
+@-moz-document url-prefix() {
+  .g-login {
+    top: 155px;
+  }
+  .g-registration {
+    top: 155px;
+    button {
+      margin: 10px 0px;
+    }
+  }
+
+  // .document-name,.g-breadcrumb .g-document-header-limit-character,.card-header span{
+    //     position:relative;
+    //     max-width: 100%;
+    //       &:after {
+      //       content:" ";
+      //       position:absolute;
+      //       bottom:0;
+      //       right:0;
+      //       padding:15px -1px 5px 45px;   
+      //       background: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 0)), to(white), color-stop(45%, white));
+      //       background: -moz-linear-gradient(to right, rgba(255, 255, 255, 0), white 45%, white);
+      //       background: -o-linear-gradient(to right, rgba(255, 255, 255, 0), white 45%, white);
+      //       background: -ms-linear-gradient(to right, rgba(255, 255, 255, 0), white 45%, white);
+      //       background: linear-gradient(to right, rgba(255, 255, 255, 0), white 45%, white);
+      //       //background:url(ellipsis_bg.png) repeat-y; /*if using a bg image instead of gradients*/
+      //     }
+      // }
+      .document-name {
+        line-height:18px;
+        height:18px;
+      }
+      .doc-text {
+        line-height: 1.5;
+        height: 60px;
+      }
+      .g-breadcrumb .g-document-header-limit-character{
+        height: 45px; 
+        max-width: 280px; 
+      }
+      .card-header span {
+        height: 24px;
+        max-width: 260px;
+        &:after {
+          padding: 6px 5px 15px 25px !important;
+          right: 15px;
+        }
+      }
+      .over-ellipsis {
+        max-width: 280px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: inline-block;
+      }
+
+    }
+
+
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+      .g-login {
+        top: 155px;
+      }
+      .g-registration {
+        top: 155px;
+        button {
+          margin: 10px 0px;
+        }
+      }
+    }
+
+
+    @supports (-ms-ime-align: auto) {
+      .g-login {
+        top: 125px;
+      }
+      .g-registration {
+        top: 125px;
+        button {
+          margin: 10px 0px;
+        }
+      }
+    }

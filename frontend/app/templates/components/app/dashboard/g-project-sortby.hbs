@@ -1,0 +1,9 @@
+{{text}}
+
+{{#g-popup isOpened=on}}
+  <ul class="context-list">
+    <li {{action 'clickOption'}}>None</li>
+    <li {{action 'clickOption' 'title'}} data-id="title">Title</li>
+    <li {{action 'clickOption' 'date'}} data-id="date">Date</li>
+  </ul>
+{{/g-popup}}

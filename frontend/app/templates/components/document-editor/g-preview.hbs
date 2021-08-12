@@ -1,0 +1,25 @@
+<div class="pdf-view-render">
+  <div class="content-top-pane">
+    <ol class="g-breadcrumb">
+      {{#link-to 'app.projects.project' tagName='li' href=true}}My Projects{{/link-to}}
+      <li class="over-ellipsis" {{action 'redirectToProject' document.is_template}}>{{document.project.title}}</li>
+      <li class="active over-ellipsis">{{document.title}}</li>
+    </ol>
+    <span class='g-label gray lh64'>preview</span><span class="vert-ruler"></span>
+    {{#if document.is_template}}
+      {{#if document.is_public}}
+      {{else}}
+        <button class="back ib ib-edit secondary" {{action 'back'}}>Back to Edit</button>
+      {{/if}}
+    {{else}}
+      <button class="back ib ib-edit secondary" {{action 'back'}}>Back to Edit</button>
+    {{/if}}
+    <button class="download ib ib-download secondary {{if loading 'hidden' ''}}" {{action 'download'}}>PDF</button>
+  </div>
+  <div class="pdf-loading {{if loading '' 'hidden'}}">
+    Generating Preview...
+  </div>
+  <div class="pdf-preview">
+    {{pdf-document src=(concat '/pdf_documents/' document.id '.pdf?' cacheTag)}}
+  </div>
+</div>

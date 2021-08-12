@@ -1,0 +1,54 @@
+{{#if userTask}}
+<div class="modal-overlay {{if active 'active' ''}} g-modal-add-collaborator">
+	<div class="modal"  style="width: auto; height: auto;">
+		<a class="close ico_close-mo" href="" {{action (toggle 'active')}}></a>
+		<div class="g-people-modal">
+			{{#if (if-equal userTask.constructor.modelName 'activity' true false)}}
+			<div class="dialog-title" style="color:#51caff">{{userTask.text}} - {{userTask.trackable.title}}</div>
+			{{else}}
+			<div class="dialog-title" style="color:#51caff">{{userTask.task.title}} ({{userTask.projectName}})</div>
+			{{/if}}
+			<div class="dialog-input">
+				<div class="colloborator-modal">
+					<dl class="modal-doc-info">
+						<dt><b>Project Name</b></dt>
+						{{#if (if-equal userTask.constructor.modelName 'activity' true false)}}
+						<dd><p class="min-line-height" style="padding-top: 7px;">{{userTask.trackable.title}}</p></dd>
+						{{else}}
+						<dd><p class="min-line-height" style="padding-top: 7px;">{{userTask.projectName}}</p></dd>
+						{{/if}}
+						<dt><b>Description</b></dt>
+						{{#if userTask.task.description}}
+						<dd><p class="min-line-height" style="padding-top: 7px;">{{userTask.task.description}}</p>
+						</dd>
+						{{else}}
+						<dd>
+							Not Available
+						</dd>		
+						{{/if}}
+						<dt><b>Attachments</b></dt>
+						{{#if userTask.task.attachments.length}}
+						<dd class="attachments">
+							<ul>
+								{{#each userTask.task.attachments as |attachment|}}
+								<li> 
+									- <a href="{{attachment.fileAttachment.url}}" download>{{attachment.fileAttachment.name}}</a>
+								</li>
+								{{/each}}
+							</ul>
+						</dd>
+						{{else}}
+						<dd>
+							No Attachments
+						</dd>		
+						{{/if}}
+					</dl>
+					{{#if (if-equal userTask.task.type "Document" true false)}}
+					<center><p style="cursor:pointer; color:#51caff" {{action 'viewDocument' userTask.task.id}}>Click here to view the document.</p></center>
+					{{/if}}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{{/if}}

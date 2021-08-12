@@ -1,0 +1,48 @@
+{{log }}
+<div class="upper-order clickable" style={{image}} {{ action 'generatePreview' template}}></div>
+<div class="lower-order">
+	{{#if projectWorkflow}}
+		<p style="cursor: pointer;" class="over-ellipsis no-margin ">
+			{{#link-to 'app.projects.projecttab.workflow' projectId tagName='h3' class="no-margin"}}
+				{{template.name}}
+			{{/link-to}}
+		</p>
+		<span class="pull-right"><i class="tooltip-icon" {{action 'showWorkflowInfo' template}}></i></span>
+		<div class="clearfix"></div>
+		<p class="over-ellipsis no-margin pt-0-5"><b>Project: </b>{{template.projectName}}</p>
+	{{else}}
+		{{#if (is-workflow-template-owner template currentUser.user)}}
+			<p style="cursor: pointer;" class="over-ellipsis no-margin pt-0-5">
+			{{#link-to 'app.templates.workflows.edit' template.id tagName='h3' class="no-margin"}}
+				{{template.name}}
+			{{/link-to}}
+			</p>
+			<span class="pull-right"><i class="tooltip-icon" {{action 'showWorkflowInfo' template}}></i></span>
+			<div class="clearfix"></div>
+		{{else}}
+			<p style="cursor: pointer;" class="over-ellipsis no-margin pt-0-5">
+				<h3 class="no-margin">{{template.name}}</h3>
+			</p>
+			<span class="pull-right"><i class="tooltip-icon" {{action 'showWorkflowInfo' template}}></i></span>
+			<div class="clearfix"></div>
+		{{/if}}
+	{{/if}}
+	<div class="templates-desc pt-0-5">
+	<p>{{template.description}}</p>
+	</div>
+</div>
+
+{{
+	g-workflow-info 
+	workflow=template 
+	categories=categories 
+	active=onWorkflowInfo
+	time_zone=time_zone
+}}
+
+{{
+	workflows/workflow-template-preview
+	snapshot=snapshot
+	active=showPreview
+	workflow=template
+}}

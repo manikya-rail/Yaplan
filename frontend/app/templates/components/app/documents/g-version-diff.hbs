@@ -1,0 +1,53 @@
+{{reg/support/g-reg-notify type=notification.type msg=notification.msg}}
+<div class="content-top-pane">
+  <ol class="g-breadcrumb">
+    {{#if document.is_template}}
+      {{#link-to 'app.templates.documents' tagName='li' href=true}}Document Templates{{/link-to}}
+      <li class="active over-ellipsis">{{document.title}}</li>
+    {{else}}
+      {{#link-to 'app.projects.project' tagName='li' href=true}}My Projects{{/link-to}}
+      {{#link-to 'app.projects.projecttab.document' document.project.id tagName='li' href=true}}
+        {{document.project.title}}
+      {{/link-to}}
+      {{#link-to 'app.documents.document-view' document.id tagName='li' href=true class="clickable"}}
+        {{document.title}}
+      {{/link-to}}
+    {{/if}}
+  </ol>
+  {{#link-to 'app.documents.document-version-view' document.id versionNumber tagName='button' href=true class="back ib ib-back secondary"}}
+    Back
+  {{/link-to}}
+</div>
+<div class="g-document-view">
+  <div class="main-wrap">
+    <div class="doc-content-details">
+      <div class="g-doc-view-info">
+        <div class="g-doc-view-header">
+          <div class="g-doc-view-heading">
+            <h2>{{{version.title}}}</h2>
+          </div>
+          <div class="g-doc-details-info">
+            {{#each version.section_texts as |st|}}
+              <div class="section-divider">
+                {{#if (if-equal st.status 'inserted' true false)}}
+                  <ins class='created'>
+                    <p><h3 class="no-margin" class="bot-bor-srt" style="display:inline-block">{{{st.title}}}</h3></p>
+                    <p>{{{st.content}}}</p>
+                  </ins>
+                {{else if (if-equal st.status 'deleted' true false)}}
+                  <del class='deleted'>
+                    <p><h3 class="no-margin" class="bot-bor-srt" style="display:inline-block">{{{st.title}}}</h3></p>
+                    <p>{{{st.content}}}</p>
+                  </del>
+                {{else}}
+                  <p><h3 class="no-margin" class="bot-bor-srt" style="display:inline-block">{{{st.title}}}</h3></p>
+                  <p>{{{st.content}}}</p>
+                {{/if}}
+              </div>
+            {{/each}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

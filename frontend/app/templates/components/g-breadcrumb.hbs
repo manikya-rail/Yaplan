@@ -1,0 +1,13 @@
+<ol class="g-breadcrumb">
+	{{#each nodes as |node|}}
+		<li class="{{if node.active 'active' ''}}">
+			{{#if node.active}}
+				{{node.title}}
+			{{else}}
+				<a href="{{node.href}}">
+					{{node.title}}
+				</a>
+			{{/if}}
+		</li>
+	{{/each}}
+</ol>

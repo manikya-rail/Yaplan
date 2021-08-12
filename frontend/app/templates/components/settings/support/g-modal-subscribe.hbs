@@ -1,0 +1,14 @@
+<div class="modal-overlay {{if active 'active' ''}} g-modal-no-approver">
+	<div class="modal">
+		<a class="close ico_close-mo" href="" {{action (toggle "active")}}></a>
+		<div class="g-people-modal">
+			<div class="dialog-title">Subscribe to <b>{{plan.name}}</b></div>
+			<div class="dialog-tagline">
+				Using card {{card}}
+			</div>
+
+			<button class="primary" type="submit" {{action 'confirm'}}>Confirm</button>
+			<a class="dialog-link" href="" {{action "change"}}>Use another card</a>
+		</div>
+	</div>
+</div>

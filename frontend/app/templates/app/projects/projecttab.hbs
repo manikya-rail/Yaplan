@@ -1,0 +1,27 @@
+<div class="projects-route">
+  <div class="content-header collaborator-header">
+    <ul class="submenu">
+      {{#link-to "app.projects.projecttab.document" model.project.id current-when="app.projects.projecttab.archiveddocuments app.projects.projecttab.document" href=true tagName='li'}}Documents{{/link-to}}
+     	{{#link-to
+        "app.projects.projecttab.workflow"
+        model.project.id href=true tagName='li'
+        current-when="app.projects.projecttab.workflow app.projects.projecttab.workflow-editor"
+      }}
+        Workflow
+      {{/link-to}}
+      {{#link-to "app.projects.projecttab.task" model.project.id  href=true tagName='li'}}Task{{/link-to}}
+      {{#link-to "app.projects.projecttab.collaborator" model.project.id current-when="" class="collaborator" href=true tagName='li' }}Collaborators{{/link-to}}
+    </ul>
+  </div>
+  <div class="content-header g-sub-breadcrumb">
+		<ol class="g-breadcrumb">
+      <li>{{#link-to "app.projects"}}My Projects{{/link-to}}</li>
+      <li class="active">{{model.project.title}}</li>
+     <!--  <li class="active">Untitled Document</li> -->
+    </ol>
+	</div>
+  <br>
+  <br>
+  <br>
+  {{outlet}}
+</div>

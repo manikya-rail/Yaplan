@@ -1,0 +1,25 @@
+<div class="modal-overlay {{if active 'active' ''}}" style="z-index: 9999">
+  <div class="modal-auto-size">
+    <a class="close ico_close-mo" href="" {{action (toggle "active")}}></a>
+    {{#if decision}}
+      <div class="g-form-group mb-2" >
+        <label class="g-control-label">Decision</label>
+          <select>
+            <option value='yes' selected={{if-equal selectedDecision 'yes' true false}}>Yes</option>
+            <option value='no' selected={{if-equal selectedDecision 'no' true false}}>No</option>
+          </select>
+      </div>
+    {{/if}}
+    <div class="g-form-group mb-2" >
+      <label class="g-control-label">Label</label>
+        <input
+          name="label" id="workflow-label" value={{labelToEdit}}
+          class="g-form-control ember-view ember-text-field workflow-text"
+          style="width: 200px;"
+        />
+    </div>
+    <button class="primary" style="width: 215px; !important" disabled={{isNotFilled}} {{ action 'updateLabel' }}>
+      Update
+    </button>
+  </div>
+</div>

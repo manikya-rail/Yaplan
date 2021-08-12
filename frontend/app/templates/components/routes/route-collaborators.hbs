@@ -1,0 +1,14 @@
+
+<div class="content-header">
+  {{app/dashboard/g-choose-project placeholder="Filter by Project" onChange="changeProject" options=projects}}    
+  <span class="page-title">Collaborators</span>
+  <button class="floating-plus person add" {{action 'addCollaborator'}}></button>
+</div>
+
+<button {{action 'onButtonClick'}}>Click Me</button>
+<div class="content inner">
+	{{g-search placeholder="Search Connections" onChanging="changeKeyword"}}
+	{{collaborators/g-collaborators collaborators=collaborators onSelectDocument="onSelectDocument" filter=filterTrigger}}	
+</div>
+{{collaborators/modal/g-modal-add-collaborator active=isAddCollaboratorOpened projects=projects collaboratorAdded="onCollaboratorInvited"}}
+
